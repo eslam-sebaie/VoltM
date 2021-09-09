@@ -1,0 +1,1 @@
+"welcomeBorder": #D6D6D6

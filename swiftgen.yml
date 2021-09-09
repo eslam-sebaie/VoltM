@@ -1,0 +1,19 @@
+xcassets:
+  inputs: VoltM/Assets.xcassets
+  outputs:
+    templateName: swift5
+    output: VoltM/AssetsManager.swift
+    
+strings:
+    inputs: VoltM/Resources/Strings
+    outputs:
+        templateName: structured-swift5
+        output: VoltM/Resources/Strings/Strings.swift
+
+colors:
+  inputs: VoltM/Resources/Colors/color.txt
+  outputs:
+    templateName: swift5
+    output: VoltM/Resources/Colors/Colors.swift
+
+

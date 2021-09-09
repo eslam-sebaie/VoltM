@@ -1,0 +1,6 @@
+framework module Pods_VoltM_VoltMUITests {
+  umbrella header "Pods-VoltM-VoltMUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

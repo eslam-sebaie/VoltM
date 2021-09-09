@@ -1,0 +1,945 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0325EAE9C558D5E38E18ABB3 /* Pods_VoltM_VoltMUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F78F5D590CB7FF22DACEBE72 /* Pods_VoltM_VoltMUITests.framework */; };
+		631F6A36594EC18441485608 /* Pods_VoltMTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4E7461B643921A513C36B0A /* Pods_VoltMTests.framework */; };
+		96CD1E4026E514E3000BC132 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CD1E3F26E514E3000BC132 /* AppDelegate.swift */; };
+		96CD1E4226E514E3000BC132 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CD1E4126E514E3000BC132 /* SceneDelegate.swift */; };
+		96CD1E4426E514E3000BC132 /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CD1E4326E514E3000BC132 /* WelcomeVC.swift */; };
+		96CD1E4726E514E3000BC132 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96CD1E4526E514E3000BC132 /* Main.storyboard */; };
+		96CD1E4C26E514E4000BC132 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96CD1E4A26E514E4000BC132 /* LaunchScreen.storyboard */; };
+		96CD1E5726E514E4000BC132 /* VoltMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CD1E5626E514E4000BC132 /* VoltMTests.swift */; };
+		96CD1E6226E514E4000BC132 /* VoltMUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CD1E6126E514E4000BC132 /* VoltMUITests.swift */; };
+		96CD1E7226E51B47000BC132 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CD1E7126E51B47000BC132 /* UIView.swift */; };
+		96CD1E7426E51B78000BC132 /* UIViewController+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CD1E7326E51B78000BC132 /* UIViewController+Create.swift */; };
+		96CD1E7626E51BB2000BC132 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CD1E7526E51BB2000BC132 /* UIColor.swift */; };
+		96CD1E7926E51BFC000BC132 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CD1E7826E51BFC000BC132 /* Constant.swift */; };
+		96CD1E7D26E51C5A000BC132 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CD1E7C26E51C5A000BC132 /* APIRouter.swift */; };
+		96CD1E7F26E51CF0000BC132 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CD1E7E26E51CF0000BC132 /* APIManager.swift */; };
+		96CD1E8126E51D38000BC132 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CD1E8026E51D38000BC132 /* UserDefaultManager.swift */; };
+		96CD1E8326E51D5B000BC132 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CD1E8226E51D5B000BC132 /* Validator.swift */; };
+		96CD1E9126E5201B000BC132 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 96CD1E9026E5201B000BC132 /* swiftgen.yml */; };
+		96CD1E9826E52102000BC132 /* color.txt in Resources */ = {isa = PBXBuildFile; fileRef = 96CD1E9726E52102000BC132 /* color.txt */; };
+		96CD1E9A26E5212A000BC132 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 96CD1E9926E5212A000BC132 /* Localizable.strings */; };
+		96CD1E9C26E521C7000BC132 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CD1E9B26E521C7000BC132 /* Strings.swift */; };
+		96CD1E9E26E521D0000BC132 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CD1E9D26E521D0000BC132 /* Colors.swift */; };
+		96CD1EA626E52495000BC132 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96CD1EA526E52495000BC132 /* Assets.xcassets */; };
+		96CD1EA926E52583000BC132 /* AssetsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CD1EA826E52583000BC132 /* AssetsManager.swift */; };
+		BAE0822F158DD86351FEC158 /* Pods_VoltM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5334F75A8B3197EACFE5AB26 /* Pods_VoltM.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		96CD1E5326E514E4000BC132 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96CD1E3426E514E3000BC132 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 96CD1E3B26E514E3000BC132;
+			remoteInfo = VoltM;
+		};
+		96CD1E5E26E514E4000BC132 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96CD1E3426E514E3000BC132 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 96CD1E3B26E514E3000BC132;
+			remoteInfo = VoltM;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1F979156E5C6D5D0A9EF791B /* Pods-VoltM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoltM.debug.xcconfig"; path = "Target Support Files/Pods-VoltM/Pods-VoltM.debug.xcconfig"; sourceTree = "<group>"; };
+		4D635B049DAFC9C5736BACAA /* Pods-VoltM-VoltMUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoltM-VoltMUITests.debug.xcconfig"; path = "Target Support Files/Pods-VoltM-VoltMUITests/Pods-VoltM-VoltMUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		5334F75A8B3197EACFE5AB26 /* Pods_VoltM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VoltM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		63554CA262E50A373B8DEEFF /* Pods-VoltM-VoltMUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoltM-VoltMUITests.release.xcconfig"; path = "Target Support Files/Pods-VoltM-VoltMUITests/Pods-VoltM-VoltMUITests.release.xcconfig"; sourceTree = "<group>"; };
+		96CD1E3C26E514E3000BC132 /* VoltM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoltM.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		96CD1E3F26E514E3000BC132 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		96CD1E4126E514E3000BC132 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		96CD1E4326E514E3000BC132 /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
+		96CD1E4626E514E3000BC132 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		96CD1E4B26E514E4000BC132 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		96CD1E4D26E514E4000BC132 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96CD1E5226E514E4000BC132 /* VoltMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VoltMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		96CD1E5626E514E4000BC132 /* VoltMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoltMTests.swift; sourceTree = "<group>"; };
+		96CD1E5826E514E4000BC132 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96CD1E5D26E514E4000BC132 /* VoltMUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VoltMUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		96CD1E6126E514E4000BC132 /* VoltMUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoltMUITests.swift; sourceTree = "<group>"; };
+		96CD1E6326E514E4000BC132 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96CD1E7126E51B47000BC132 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		96CD1E7326E51B78000BC132 /* UIViewController+Create.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Create.swift"; sourceTree = "<group>"; };
+		96CD1E7526E51BB2000BC132 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		96CD1E7826E51BFC000BC132 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		96CD1E7C26E51C5A000BC132 /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
+		96CD1E7E26E51CF0000BC132 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		96CD1E8026E51D38000BC132 /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
+		96CD1E8226E51D5B000BC132 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
+		96CD1E9026E5201B000BC132 /* swiftgen.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
+		96CD1E9726E52102000BC132 /* color.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = color.txt; sourceTree = "<group>"; };
+		96CD1E9926E5212A000BC132 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		96CD1E9B26E521C7000BC132 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		96CD1E9D26E521D0000BC132 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		96CD1EA526E52495000BC132 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		96CD1EA826E52583000BC132 /* AssetsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsManager.swift; sourceTree = "<group>"; };
+		9D27792DF1A00AF495E854F7 /* Pods-VoltM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoltM.release.xcconfig"; path = "Target Support Files/Pods-VoltM/Pods-VoltM.release.xcconfig"; sourceTree = "<group>"; };
+		C663011ABB7FF73429958092 /* Pods-VoltMTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoltMTests.release.xcconfig"; path = "Target Support Files/Pods-VoltMTests/Pods-VoltMTests.release.xcconfig"; sourceTree = "<group>"; };
+		DE4E4093761A76D8D10F4FEC /* Pods-VoltMTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoltMTests.debug.xcconfig"; path = "Target Support Files/Pods-VoltMTests/Pods-VoltMTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E4E7461B643921A513C36B0A /* Pods_VoltMTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VoltMTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F78F5D590CB7FF22DACEBE72 /* Pods_VoltM_VoltMUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VoltM_VoltMUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		96CD1E3926E514E3000BC132 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAE0822F158DD86351FEC158 /* Pods_VoltM.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96CD1E4F26E514E4000BC132 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				631F6A36594EC18441485608 /* Pods_VoltMTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96CD1E5A26E514E4000BC132 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0325EAE9C558D5E38E18ABB3 /* Pods_VoltM_VoltMUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		53C3C7ACE21FBBF2983741C4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5334F75A8B3197EACFE5AB26 /* Pods_VoltM.framework */,
+				F78F5D590CB7FF22DACEBE72 /* Pods_VoltM_VoltMUITests.framework */,
+				E4E7461B643921A513C36B0A /* Pods_VoltMTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		96CD1E3326E514E3000BC132 = {
+			isa = PBXGroup;
+			children = (
+				96CD1E9026E5201B000BC132 /* swiftgen.yml */,
+				96CD1E3E26E514E3000BC132 /* VoltM */,
+				96CD1E5526E514E4000BC132 /* VoltMTests */,
+				96CD1E6026E514E4000BC132 /* VoltMUITests */,
+				96CD1E3D26E514E3000BC132 /* Products */,
+				F8584F4DF29504CB50F10A94 /* Pods */,
+				53C3C7ACE21FBBF2983741C4 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		96CD1E3D26E514E3000BC132 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				96CD1E3C26E514E3000BC132 /* VoltM.app */,
+				96CD1E5226E514E4000BC132 /* VoltMTests.xctest */,
+				96CD1E5D26E514E4000BC132 /* VoltMUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		96CD1E3E26E514E3000BC132 /* VoltM */ = {
+			isa = PBXGroup;
+			children = (
+				96CD1E6F26E51AD7000BC132 /* Shared */,
+				96CD1E7026E51B24000BC132 /* Extension */,
+				96CD1E7726E51BE9000BC132 /* Utilities */,
+				96CD1E7A26E51C36000BC132 /* Modal */,
+				96CD1E7B26E51C49000BC132 /* Manager */,
+				96CD1E8426E51D75000BC132 /* Views */,
+				96CD1E8626E51DF0000BC132 /* StoryBoards */,
+				96CD1E9326E520A7000BC132 /* Resources */,
+				96CD1EA526E52495000BC132 /* Assets.xcassets */,
+				96CD1EA826E52583000BC132 /* AssetsManager.swift */,
+				96CD1E4A26E514E4000BC132 /* LaunchScreen.storyboard */,
+				96CD1E4D26E514E4000BC132 /* Info.plist */,
+			);
+			path = VoltM;
+			sourceTree = "<group>";
+		};
+		96CD1E5526E514E4000BC132 /* VoltMTests */ = {
+			isa = PBXGroup;
+			children = (
+				96CD1E5626E514E4000BC132 /* VoltMTests.swift */,
+				96CD1E5826E514E4000BC132 /* Info.plist */,
+			);
+			path = VoltMTests;
+			sourceTree = "<group>";
+		};
+		96CD1E6026E514E4000BC132 /* VoltMUITests */ = {
+			isa = PBXGroup;
+			children = (
+				96CD1E6126E514E4000BC132 /* VoltMUITests.swift */,
+				96CD1E6326E514E4000BC132 /* Info.plist */,
+			);
+			path = VoltMUITests;
+			sourceTree = "<group>";
+		};
+		96CD1E6F26E51AD7000BC132 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				96CD1E3F26E514E3000BC132 /* AppDelegate.swift */,
+				96CD1E4126E514E3000BC132 /* SceneDelegate.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		96CD1E7026E51B24000BC132 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				96CD1E7126E51B47000BC132 /* UIView.swift */,
+				96CD1E7326E51B78000BC132 /* UIViewController+Create.swift */,
+				96CD1E7526E51BB2000BC132 /* UIColor.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		96CD1E7726E51BE9000BC132 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				96CD1E7826E51BFC000BC132 /* Constant.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		96CD1E7A26E51C36000BC132 /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modal;
+			sourceTree = "<group>";
+		};
+		96CD1E7B26E51C49000BC132 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				96CD1E7C26E51C5A000BC132 /* APIRouter.swift */,
+				96CD1E7E26E51CF0000BC132 /* APIManager.swift */,
+				96CD1E8026E51D38000BC132 /* UserDefaultManager.swift */,
+				96CD1E8226E51D5B000BC132 /* Validator.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		96CD1E8426E51D75000BC132 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				96CD1E8526E51D80000BC132 /* WelcomeVC */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		96CD1E8526E51D80000BC132 /* WelcomeVC */ = {
+			isa = PBXGroup;
+			children = (
+				96CD1E4326E514E3000BC132 /* WelcomeVC.swift */,
+			);
+			path = WelcomeVC;
+			sourceTree = "<group>";
+		};
+		96CD1E8626E51DF0000BC132 /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				96CD1E4526E514E3000BC132 /* Main.storyboard */,
+			);
+			path = StoryBoards;
+			sourceTree = "<group>";
+		};
+		96CD1E9326E520A7000BC132 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				96CD1E9626E520E1000BC132 /* Strings */,
+				96CD1E9526E520D8000BC132 /* Colors */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		96CD1E9526E520D8000BC132 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				96CD1E9726E52102000BC132 /* color.txt */,
+				96CD1E9D26E521D0000BC132 /* Colors.swift */,
+			);
+			path = Colors;
+			sourceTree = "<group>";
+		};
+		96CD1E9626E520E1000BC132 /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				96CD1E9926E5212A000BC132 /* Localizable.strings */,
+				96CD1E9B26E521C7000BC132 /* Strings.swift */,
+			);
+			path = Strings;
+			sourceTree = "<group>";
+		};
+		F8584F4DF29504CB50F10A94 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1F979156E5C6D5D0A9EF791B /* Pods-VoltM.debug.xcconfig */,
+				9D27792DF1A00AF495E854F7 /* Pods-VoltM.release.xcconfig */,
+				4D635B049DAFC9C5736BACAA /* Pods-VoltM-VoltMUITests.debug.xcconfig */,
+				63554CA262E50A373B8DEEFF /* Pods-VoltM-VoltMUITests.release.xcconfig */,
+				DE4E4093761A76D8D10F4FEC /* Pods-VoltMTests.debug.xcconfig */,
+				C663011ABB7FF73429958092 /* Pods-VoltMTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		96CD1E3B26E514E3000BC132 /* VoltM */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 96CD1E6626E514E4000BC132 /* Build configuration list for PBXNativeTarget "VoltM" */;
+			buildPhases = (
+				1520AF38E67FFBFB404BEE17 /* [CP] Check Pods Manifest.lock */,
+				96CD1E9226E52071000BC132 /* SwiftGen */,
+				96CD1E3826E514E3000BC132 /* Sources */,
+				96CD1E3926E514E3000BC132 /* Frameworks */,
+				96CD1E3A26E514E3000BC132 /* Resources */,
+				414E2627BBCAB0937CF08115 /* [CP] Embed Pods Frameworks */,
+				56C52264D8A226DB12BAF69F /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VoltM;
+			productName = VoltM;
+			productReference = 96CD1E3C26E514E3000BC132 /* VoltM.app */;
+			productType = "com.apple.product-type.application";
+		};
+		96CD1E5126E514E4000BC132 /* VoltMTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 96CD1E6926E514E4000BC132 /* Build configuration list for PBXNativeTarget "VoltMTests" */;
+			buildPhases = (
+				3486C216DE20EF1A803094BD /* [CP] Check Pods Manifest.lock */,
+				96CD1E4E26E514E4000BC132 /* Sources */,
+				96CD1E4F26E514E4000BC132 /* Frameworks */,
+				96CD1E5026E514E4000BC132 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				96CD1E5426E514E4000BC132 /* PBXTargetDependency */,
+			);
+			name = VoltMTests;
+			productName = VoltMTests;
+			productReference = 96CD1E5226E514E4000BC132 /* VoltMTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		96CD1E5C26E514E4000BC132 /* VoltMUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 96CD1E6C26E514E4000BC132 /* Build configuration list for PBXNativeTarget "VoltMUITests" */;
+			buildPhases = (
+				E3812526CF8DC523573E4F6D /* [CP] Check Pods Manifest.lock */,
+				96CD1E5926E514E4000BC132 /* Sources */,
+				96CD1E5A26E514E4000BC132 /* Frameworks */,
+				96CD1E5B26E514E4000BC132 /* Resources */,
+				5C937F4EF55CA658A1CA5382 /* [CP] Embed Pods Frameworks */,
+				607993DB4FDCDA18B4A4A52A /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				96CD1E5F26E514E4000BC132 /* PBXTargetDependency */,
+			);
+			name = VoltMUITests;
+			productName = VoltMUITests;
+			productReference = 96CD1E5D26E514E4000BC132 /* VoltMUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		96CD1E3426E514E3000BC132 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					96CD1E3B26E514E3000BC132 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					96CD1E5126E514E4000BC132 = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = 96CD1E3B26E514E3000BC132;
+					};
+					96CD1E5C26E514E4000BC132 = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = 96CD1E3B26E514E3000BC132;
+					};
+				};
+			};
+			buildConfigurationList = 96CD1E3726E514E3000BC132 /* Build configuration list for PBXProject "VoltM" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 96CD1E3326E514E3000BC132;
+			productRefGroup = 96CD1E3D26E514E3000BC132 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				96CD1E3B26E514E3000BC132 /* VoltM */,
+				96CD1E5126E514E4000BC132 /* VoltMTests */,
+				96CD1E5C26E514E4000BC132 /* VoltMUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		96CD1E3A26E514E3000BC132 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96CD1E4C26E514E4000BC132 /* LaunchScreen.storyboard in Resources */,
+				96CD1E9A26E5212A000BC132 /* Localizable.strings in Resources */,
+				96CD1E9126E5201B000BC132 /* swiftgen.yml in Resources */,
+				96CD1E4726E514E3000BC132 /* Main.storyboard in Resources */,
+				96CD1EA626E52495000BC132 /* Assets.xcassets in Resources */,
+				96CD1E9826E52102000BC132 /* color.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96CD1E5026E514E4000BC132 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96CD1E5B26E514E4000BC132 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1520AF38E67FFBFB404BEE17 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VoltM-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3486C216DE20EF1A803094BD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VoltMTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		414E2627BBCAB0937CF08115 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VoltM/Pods-VoltM-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VoltM/Pods-VoltM-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VoltM/Pods-VoltM-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		56C52264D8A226DB12BAF69F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VoltM/Pods-VoltM-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VoltM/Pods-VoltM-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VoltM/Pods-VoltM-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5C937F4EF55CA658A1CA5382 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VoltM-VoltMUITests/Pods-VoltM-VoltMUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VoltM-VoltMUITests/Pods-VoltM-VoltMUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VoltM-VoltMUITests/Pods-VoltM-VoltMUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		607993DB4FDCDA18B4A4A52A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VoltM-VoltMUITests/Pods-VoltM-VoltMUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VoltM-VoltMUITests/Pods-VoltM-VoltMUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VoltM-VoltMUITests/Pods-VoltM-VoltMUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		96CD1E9226E52071000BC132 /* SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftGen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n$PODS_ROOT/SwiftGen/bin/swiftgen\n";
+		};
+		E3812526CF8DC523573E4F6D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VoltM-VoltMUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		96CD1E3826E514E3000BC132 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96CD1EA926E52583000BC132 /* AssetsManager.swift in Sources */,
+				96CD1E7926E51BFC000BC132 /* Constant.swift in Sources */,
+				96CD1E7426E51B78000BC132 /* UIViewController+Create.swift in Sources */,
+				96CD1E7F26E51CF0000BC132 /* APIManager.swift in Sources */,
+				96CD1E7626E51BB2000BC132 /* UIColor.swift in Sources */,
+				96CD1E8126E51D38000BC132 /* UserDefaultManager.swift in Sources */,
+				96CD1E8326E51D5B000BC132 /* Validator.swift in Sources */,
+				96CD1E7226E51B47000BC132 /* UIView.swift in Sources */,
+				96CD1E4426E514E3000BC132 /* WelcomeVC.swift in Sources */,
+				96CD1E9E26E521D0000BC132 /* Colors.swift in Sources */,
+				96CD1E7D26E51C5A000BC132 /* APIRouter.swift in Sources */,
+				96CD1E4026E514E3000BC132 /* AppDelegate.swift in Sources */,
+				96CD1E9C26E521C7000BC132 /* Strings.swift in Sources */,
+				96CD1E4226E514E3000BC132 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96CD1E4E26E514E4000BC132 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96CD1E5726E514E4000BC132 /* VoltMTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96CD1E5926E514E4000BC132 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96CD1E6226E514E4000BC132 /* VoltMUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		96CD1E5426E514E4000BC132 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 96CD1E3B26E514E3000BC132 /* VoltM */;
+			targetProxy = 96CD1E5326E514E4000BC132 /* PBXContainerItemProxy */;
+		};
+		96CD1E5F26E514E4000BC132 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 96CD1E3B26E514E3000BC132 /* VoltM */;
+			targetProxy = 96CD1E5E26E514E4000BC132 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		96CD1E4526E514E3000BC132 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				96CD1E4626E514E3000BC132 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		96CD1E4A26E514E4000BC132 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				96CD1E4B26E514E4000BC132 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		96CD1E6426E514E4000BC132 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		96CD1E6526E514E4000BC132 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		96CD1E6726E514E4000BC132 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F979156E5C6D5D0A9EF791B /* Pods-VoltM.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = VoltM/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = sebaie.VoltM;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		96CD1E6826E514E4000BC132 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D27792DF1A00AF495E854F7 /* Pods-VoltM.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = VoltM/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = sebaie.VoltM;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		96CD1E6A26E514E4000BC132 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE4E4093761A76D8D10F4FEC /* Pods-VoltMTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = VoltMTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = sebaie.VoltMTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VoltM.app/VoltM";
+			};
+			name = Debug;
+		};
+		96CD1E6B26E514E4000BC132 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C663011ABB7FF73429958092 /* Pods-VoltMTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = VoltMTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = sebaie.VoltMTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VoltM.app/VoltM";
+			};
+			name = Release;
+		};
+		96CD1E6D26E514E4000BC132 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D635B049DAFC9C5736BACAA /* Pods-VoltM-VoltMUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = VoltMUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = sebaie.VoltMUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = VoltM;
+			};
+			name = Debug;
+		};
+		96CD1E6E26E514E4000BC132 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 63554CA262E50A373B8DEEFF /* Pods-VoltM-VoltMUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = VoltMUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = sebaie.VoltMUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = VoltM;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		96CD1E3726E514E3000BC132 /* Build configuration list for PBXProject "VoltM" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96CD1E6426E514E4000BC132 /* Debug */,
+				96CD1E6526E514E4000BC132 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		96CD1E6626E514E4000BC132 /* Build configuration list for PBXNativeTarget "VoltM" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96CD1E6726E514E4000BC132 /* Debug */,
+				96CD1E6826E514E4000BC132 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		96CD1E6926E514E4000BC132 /* Build configuration list for PBXNativeTarget "VoltMTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96CD1E6A26E514E4000BC132 /* Debug */,
+				96CD1E6B26E514E4000BC132 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		96CD1E6C26E514E4000BC132 /* Build configuration list for PBXNativeTarget "VoltMUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96CD1E6D26E514E4000BC132 /* Debug */,
+				96CD1E6E26E514E4000BC132 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 96CD1E3426E514E3000BC132 /* Project object */;
+}
