@@ -23,6 +23,21 @@ internal typealias AssetImageTypeAlias = ImageAsset.Image
 internal enum Asset {
   internal static let _1 = ImageAsset(name: "1")
   internal static let accentColor = ColorAsset(name: "AccentColor")
+  internal static let bg1 = ImageAsset(name: "BG1")
+  internal static let bg2 = ImageAsset(name: "BG2")
+  internal static let service = ImageAsset(name: "Service")
+  internal static let cart = ImageAsset(name: "cart")
+  internal static let fav = ImageAsset(name: "fav")
+  internal static let home = ImageAsset(name: "home")
+  internal static let homeIcon = ImageAsset(name: "homeIcon")
+  internal static let selectCart = ImageAsset(name: "selectCart")
+  internal static let selectFav = ImageAsset(name: "selectFav")
+  internal static let selectHome = ImageAsset(name: "selectHome")
+  internal static let selectService = ImageAsset(name: "selectService")
+  internal static let selectStore = ImageAsset(name: "selectStore")
+  internal static let seperate = ImageAsset(name: "seperate")
+  internal static let sideMenuIcon = ImageAsset(name: "sideMenuIcon")
+  internal static let store = ImageAsset(name: "store")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 

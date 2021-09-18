@@ -18,13 +18,14 @@ pod 'SwiftGen', '~> 6.0'
     pod 'Alamofire', '~> 5.2'
     pod 'SDWebImage', '~> 5.0'
     pod 'Cosmos', '~> 22.1'
-    pod 'FacebookCore'
-    pod 'FacebookLogin'
-    pod 'FBSDKLoginKit'
-    pod 'GoogleSignIn'
+#    pod 'FacebookCore'
+#    pod 'FacebookLogin'
+#    pod 'FBSDKLoginKit'
+#    pod 'GoogleSignIn'
     pod 'SwiftyJSON'
     pod 'ImageSlideshow', '~> 1.9.0'
     pod "ImageSlideshow/Kingfisher"
+    pod 'VBRRollingPit', :git => 'https://github.com/v-braun/VBRRollingPit.git'
     pod 'fluid-slider'
   target 'VoltMTests' do
     inherit! :search_paths
