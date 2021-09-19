@@ -11,11 +11,30 @@ import Foundation
 // Storyboards
 struct Storyboards {
     static let main = "Main"
+    static let home = "Home"
+    static let offer = "Offers"
+    static let products = "Products"
+    static let sideMenu = "SideMenu"
+    static let account = "Account"
 }
 
 // View Controllers
 struct ViewControllers {
-   
+    static let homeVC = "HomeVC"
+    static let offerVC = "OfferVC"
+    static let mainCategoryVC = "MainCategoryVC"
+    static let storeVC = "StoreVC"
+    static let favoriteVC = "FavoriteVC"
+    static let storeCategoryVC = "StoreCategoryVC"
+    static let storeSubCategoryVC = "StoreSubCategoryVC"
+    static let cartVC = "CartVC"
+    static let productVC = "ProductVC"
+    static let productDetailsVC = "ProductDetailsVC"
+    static let sideMenuVC = "SideMenuVC"
+    static let languageVC = "LanguageVC"
+    static let countryVC = "CountryVC"
+    static let updateInfoVC = "UpdateInfoVC"
+    static let updateAddressVC = "UpdateAddressVC"
 }
 struct URLs {
     // MARK:- base
@@ -30,6 +49,10 @@ struct UserDefaultsKeys {
    
 }
 struct TableCells {
-   
+    static let homeCell = "cell"
+}
+struct Language {
+    static let arabic = "ar"
+    static let english = "en"
 }
 
