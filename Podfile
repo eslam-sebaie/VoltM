@@ -27,6 +27,7 @@ pod 'SwiftGen', '~> 6.0'
     pod "ImageSlideshow/Kingfisher"
     pod 'VBRRollingPit', :git => 'https://github.com/v-braun/VBRRollingPit.git'
     pod 'fluid-slider'
+    pod 'MOLH'
   target 'VoltMTests' do
     inherit! :search_paths
     # Pods for testing

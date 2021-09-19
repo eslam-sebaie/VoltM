@@ -41,6 +41,10 @@ class StoreVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
         return cell
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storeCat = StoreCategoryVC.create()
+        self.present(storeCat, animated: true, completion: nil)
+    }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 220
     }

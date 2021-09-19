@@ -39,4 +39,12 @@ class StoreSubCategoryVC: UIViewController, UITableViewDataSource, UITableViewDe
         
         return cell
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let product = ProductVC.create()
+        self.present(product, animated: true, completion: nil)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 220
+    }
 }

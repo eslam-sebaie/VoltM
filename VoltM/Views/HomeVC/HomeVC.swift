@@ -34,6 +34,10 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
    
     @IBAction func sideMenuPressed(_ sender: Any) {
+        let side = SideMenuVC.create()
+        side.modalPresentationStyle = .overCurrentContext
+        side.modalTransitionStyle = .crossDissolve
+        self.present(side, animated: true, completion: nil)
     }
     
     @IBAction func offerPressed(_ sender: Any) {
@@ -63,8 +67,13 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cat = MainCategoryVC.create()
-        self.present(cat, animated: true, completion: nil)
+//        let cat = MainCategoryVC.create()
+//        self.present(cat, animated: true, completion: nil)
+        let storyboard = UIStoryboard(name: Storyboards.home, bundle: nil)
+        let tabVC = storyboard.instantiateViewController(withIdentifier: "tabViewController") as! UITabBarController
+        tabVC.selectedIndex = 1
+        self.present(tabVC, animated: true, completion: nil)
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

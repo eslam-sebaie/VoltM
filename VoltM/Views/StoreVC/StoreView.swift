@@ -20,5 +20,6 @@ class StoreView: UIView {
             storeHeader.text = L10n.store.localized
             backDesign.setImage(Asset.backAr.image, for: .normal)
         }
+        searchView.setCornerRadius(radius: 10)
     }
 }

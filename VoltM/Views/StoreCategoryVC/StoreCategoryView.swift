@@ -15,12 +15,14 @@ class StoreCategoryView: UIView {
     @IBOutlet weak var searchTF: UITextField!
     @IBOutlet weak var storeCategoryTableView: UITableView!
     @IBOutlet weak var backDesign: UIButton!
+    @IBOutlet weak var searchView: UIView!
     
     func updateUI(){
         searchTF.setCornerRadius(radius: 8)
         if L10n.lang.localized == Language.arabic {
             backDesign.setImage(Asset.backAr.image, for: .normal)
         }
+        searchView.setCornerRadius(radius: 10)
     }
     
 }

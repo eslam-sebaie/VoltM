@@ -21,6 +21,7 @@ class StoreSubCategoryView: UIView {
         if L10n.lang.localized == Language.arabic {
             backDesign.setImage(Asset.backAr.image, for: .normal)
         }
+        searchView.setCornerRadius(radius: 10)
     }
     
 }
