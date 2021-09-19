@@ -54,6 +54,13 @@ class SideMenuVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 1 {
+            let offer = OfferVC.create()
+            offer.modalPresentationStyle = .fullScreen
+            offer.modalTransitionStyle = .crossDissolve
+            self.present(offer, animated: true, completion: nil)
+            
+        }
         if indexPath.row == 2 {
             self.sideMenuView.sideMenuTableView.isHidden = true
             let country = CountryVC.create()
@@ -70,6 +77,13 @@ class SideMenuVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
             lang.modalPresentationStyle = .overCurrentContext
             lang.modalTransitionStyle = .crossDissolve
             self.present(lang, animated: true, completion: nil)
+            
+        }
+        if indexPath.row == 7 {
+            let account = UpdateInfoVC.create()
+            account.modalPresentationStyle = .fullScreen
+            account.modalTransitionStyle = .crossDissolve
+            self.present(account, animated: true, completion: nil)
             
         }
     }

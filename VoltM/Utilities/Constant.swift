@@ -15,6 +15,7 @@ struct Storyboards {
     static let offer = "Offers"
     static let products = "Products"
     static let sideMenu = "SideMenu"
+    static let account = "Account"
 }
 
 // View Controllers
@@ -32,6 +33,8 @@ struct ViewControllers {
     static let sideMenuVC = "SideMenuVC"
     static let languageVC = "LanguageVC"
     static let countryVC = "CountryVC"
+    static let updateInfoVC = "UpdateInfoVC"
+    static let updateAddressVC = "UpdateAddressVC"
 }
 struct URLs {
     // MARK:- base

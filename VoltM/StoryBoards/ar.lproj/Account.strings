@@ -1,0 +1,69 @@
+
+/* Class = "UIButton"; normalTitle = "Log Out"; ObjectID = "1Ws-0J-0iF"; */
+"1Ws-0J-0iF.normalTitle" = "خروج";
+
+/* Class = "UIButton"; normalTitle = "Address"; ObjectID = "864-E1-EOo"; */
+"864-E1-EOo.normalTitle" = "العنوان";
+
+/* Class = "UIButton"; normalTitle = "Log Out"; ObjectID = "GPd-pI-Iw6"; */
+"GPd-pI-Iw6.normalTitle" = "خروج";
+
+/* Class = "UIButton"; normalTitle = "Contact"; ObjectID = "Jug-Hh-hcM"; */
+"Jug-Hh-hcM.normalTitle" = "التواصل";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "QdK-id-xvu"; */
+"QdK-id-xvu.placeholder" = "الرقم السري";
+
+/* Class = "UITextField"; placeholder = "Name"; ObjectID = "VGQ-2Q-ugt"; */
+"VGQ-2Q-ugt.placeholder" = "الاسم";
+
+/* Class = "UIButton"; normalTitle = "Contact"; ObjectID = "aPd-Jm-uID"; */
+"aPd-Jm-uID.normalTitle" = "التواصل";
+
+/* Class = "UIButton"; normalTitle = "info"; ObjectID = "b27-cD-CbN"; */
+"b27-cD-CbN.normalTitle" = "معلومات";
+
+/* Class = "UITextField"; placeholder = "Phone Number"; ObjectID = "c5y-O5-F8f"; */
+"c5y-O5-F8f.placeholder" = "رقم التليفون";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "cB1-WI-hcm"; */
+"cB1-WI-hcm.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Address"; ObjectID = "fm0-kI-fXn"; */
+"fm0-kI-fXn.normalTitle" = "العنوان";
+
+/* Class = "UIButton"; normalTitle = "Update Address"; ObjectID = "ije-R6-5Qa"; */
+"ije-R6-5Qa.normalTitle" = "تعديل العنوان";
+
+/* Class = "UIButton"; normalTitle = "info"; ObjectID = "lhR-9M-WTS"; */
+"lhR-9M-WTS.normalTitle" = "معلومات";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "ltv-Z6-zeH"; */
+"ltv-Z6-zeH.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "Address"; ObjectID = "odc-oe-V7K"; */
+"odc-oe-V7K.placeholder" = "العنوان";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "qhh-0E-BHz"; */
+"qhh-0E-BHz.placeholder" = "البريد الالكتروني";
+
+/* Class = "UIButton"; normalTitle = "Update Info"; ObjectID = "tMu-HI-p28"; */
+"tMu-HI-p28.normalTitle" = "تعديل المعلومات";
+
+/* Class = "UIButton"; normalTitle = "Contact"; ObjectID = "tfk-9F-w31"; */
+"tfk-9F-w31.normalTitle" = "التواصل";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "uWn-M7-GX1"; */
+"uWn-M7-GX1.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "info"; ObjectID = "uYO-Ho-8d4"; */
+"uYO-Ho-8d4.normalTitle" = "معلومات";
+
+/* Class = "UIButton"; normalTitle = "Address"; ObjectID = "vd3-yn-4W7"; */
+"vd3-yn-4W7.normalTitle" = "العنوان";
+
+/* Class = "UIButton"; normalTitle = "Update Contact"; ObjectID = "yDJ-7D-ji5"; */
+"yDJ-7D-ji5.normalTitle" = "تعديل التواصل";
+
+/* Class = "UIButton"; normalTitle = "Log Out"; ObjectID = "yU3-pg-YdO"; */
+"yU3-pg-YdO.normalTitle" = "خروج";
