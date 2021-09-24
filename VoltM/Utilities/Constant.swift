@@ -35,6 +35,7 @@ struct ViewControllers {
     static let countryVC = "CountryVC"
     static let updateInfoVC = "UpdateInfoVC"
     static let updateAddressVC = "UpdateAddressVC"
+    static let updateContactVC = "UpdateContactVC"
 }
 struct URLs {
     // MARK:- base

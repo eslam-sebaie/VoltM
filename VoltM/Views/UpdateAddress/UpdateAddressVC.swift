@@ -34,6 +34,10 @@ class UpdateAddressVC: UIViewController {
         self.present(account, animated: true, completion: nil)
     }
     @IBAction func contactPressed(_ sender: Any) {
+        let contact = UpdateContactVC.create()
+        contact.modalPresentationStyle = .fullScreen
+        contact.modalTransitionStyle = .coverVertical
+        self.present(contact, animated: true, completion: nil)
     }
     
     @IBAction func updatePressed(_ sender: Any) {

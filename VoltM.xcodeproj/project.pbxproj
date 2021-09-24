@@ -13,6 +13,8 @@
 		96019E1726F647A700BAF3AA /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96019E1626F647A700BAF3AA /* HomeVC.swift */; };
 		96019E1926F647BD00BAF3AA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96019E1826F647BD00BAF3AA /* HomeView.swift */; };
 		96019E1C26F6486A00BAF3AA /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96019E1B26F6486A00BAF3AA /* HomeTableViewCell.swift */; };
+		960DB0EB26F8F54900B5352F /* UpdateContactVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960DB0EA26F8F54900B5352F /* UpdateContactVC.swift */; };
+		960DB0ED26F8F55F00B5352F /* UpdateContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960DB0EC26F8F55F00B5352F /* UpdateContactView.swift */; };
 		9685235026F7774E008C6E6A /* CartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9685234F26F7774E008C6E6A /* CartVC.swift */; };
 		9685235226F77762008C6E6A /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9685235126F77762008C6E6A /* CartView.swift */; };
 		9685235526F77772008C6E6A /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9685235426F77772008C6E6A /* CartTableViewCell.swift */; };
@@ -109,6 +111,8 @@
 		96019E1D26F6540800BAF3AA /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
 		96019E1E26F6540900BAF3AA /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Home.strings; sourceTree = "<group>"; };
 		96019E1F26F6540900BAF3AA /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		960DB0EA26F8F54900B5352F /* UpdateContactVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateContactVC.swift; sourceTree = "<group>"; };
+		960DB0EC26F8F55F00B5352F /* UpdateContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateContactView.swift; sourceTree = "<group>"; };
 		9685234F26F7774E008C6E6A /* CartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartVC.swift; sourceTree = "<group>"; };
 		9685235126F77762008C6E6A /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
 		9685235426F77772008C6E6A /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
@@ -247,6 +251,15 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		960DB0E926F8F51800B5352F /* UpdateContact */ = {
+			isa = PBXGroup;
+			children = (
+				960DB0EA26F8F54900B5352F /* UpdateContactVC.swift */,
+				960DB0EC26F8F55F00B5352F /* UpdateContactView.swift */,
+			);
+			path = UpdateContact;
+			sourceTree = "<group>";
+		};
 		9685234E26F77736008C6E6A /* CartVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -346,6 +359,13 @@
 			path = UpdateAddress;
 			sourceTree = "<group>";
 		};
+		9685239126F7DC2B008C6E6A /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modal;
+			sourceTree = "<group>";
+		};
 		96CD1E3326E514E3000BC132 = {
 			isa = PBXGroup;
 			children = (
@@ -376,6 +396,7 @@
 				96CD1E7026E51B24000BC132 /* Extension */,
 				96CD1E7726E51BE9000BC132 /* Utilities */,
 				96CD1E7B26E51C49000BC132 /* Manager */,
+				9685239126F7DC2B008C6E6A /* Modal */,
 				96CD1E8426E51D75000BC132 /* Views */,
 				96CD1E7A26E51C36000BC132 /* Localization */,
 				96CD1E8626E51DF0000BC132 /* StoryBoards */,
@@ -472,6 +493,7 @@
 				96D26D1426F6840B009BD961 /* FavoriteVC */,
 				9685238526F7D526008C6E6A /* UpdateInfoVC */,
 				9685238A26F7D805008C6E6A /* UpdateAddress */,
+				960DB0E926F8F51800B5352F /* UpdateContact */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -927,6 +949,7 @@
 				96D26D2626F68FDE009BD961 /* StoreSubCategoryVC.swift in Sources */,
 				96CD1E7926E51BFC000BC132 /* Constant.swift in Sources */,
 				96D26D1326F67928009BD961 /* StoreTableViewCell.swift in Sources */,
+				960DB0EB26F8F54900B5352F /* UpdateContactVC.swift in Sources */,
 				96E1155926F66347005EFA2C /* TabbarVC.swift in Sources */,
 				9685237626F7B850008C6E6A /* LanguageVC.swift in Sources */,
 				96CD1E7426E51B78000BC132 /* UIViewController+Create.swift in Sources */,
@@ -957,6 +980,7 @@
 				96CD1E4026E514E3000BC132 /* AppDelegate.swift in Sources */,
 				96D26D1026F67915009BD961 /* StoreView.swift in Sources */,
 				9685238726F7D553008C6E6A /* UpdateInfoVC.swift in Sources */,
+				960DB0ED26F8F55F00B5352F /* UpdateContactView.swift in Sources */,
 				9685239026F7D881008C6E6A /* UpdateAddressView.swift in Sources */,
 				96019E1926F647BD00BAF3AA /* HomeView.swift in Sources */,
 				9685235A26F780A9008C6E6A /* ProductVC.swift in Sources */,
