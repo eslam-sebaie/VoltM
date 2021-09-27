@@ -7,20 +7,78 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--WelcomeVC-->
         <scene sceneID="L1e-yd-C7I">
             <objects>
-                <viewController id="igi-Vq-QWc" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ydO-f4-YEf">
+                <viewController storyboardIdentifier="WelcomeVC" id="igi-Vq-QWc" customClass="WelcomeVC" customModule="VoltM" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ydO-f4-YEf" customClass="WelcomeView" customModule="VoltM" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BG1" translatesAutoresizingMaskIntoConstraints="NO" id="E5t-Kx-LbV">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BG2" translatesAutoresizingMaskIntoConstraints="NO" id="eBB-gW-gkl">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="142" translatesAutoresizingMaskIntoConstraints="NO" id="onC-iT-EyS">
+                                <rect key="frame" x="40" y="254.5" width="334" height="387"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoVoltm" translatesAutoresizingMaskIntoConstraints="NO" id="CJ2-GE-JCY">
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="200"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="BTK-H4-md5"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pev-zD-oGD">
+                                        <rect key="frame" x="0.0" y="342" width="334" height="45"/>
+                                        <color key="backgroundColor" red="1" green="0.74901960779999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="Uds-4M-5MK"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <state key="normal" title="Get Started">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="getStartedPressed:" destination="igi-Vq-QWc" eventType="touchUpInside" id="9n3-pN-HZn"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="JWw-zc-hTt"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.20392156862745098" green="0.25098039215686274" blue="0.29411764705882354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="JWw-zc-hTt" firstAttribute="bottom" secondItem="eBB-gW-gkl" secondAttribute="bottom" id="010-N6-kAl"/>
+                            <constraint firstItem="JWw-zc-hTt" firstAttribute="trailing" secondItem="onC-iT-EyS" secondAttribute="trailing" constant="40" id="5Ks-uF-9z0"/>
+                            <constraint firstItem="E5t-Kx-LbV" firstAttribute="top" secondItem="ydO-f4-YEf" secondAttribute="top" id="674-s9-qUx"/>
+                            <constraint firstItem="eBB-gW-gkl" firstAttribute="trailing" secondItem="JWw-zc-hTt" secondAttribute="trailing" id="Bh5-0W-ayW"/>
+                            <constraint firstItem="E5t-Kx-LbV" firstAttribute="trailing" secondItem="JWw-zc-hTt" secondAttribute="trailing" id="Hqz-Ak-GhH"/>
+                            <constraint firstItem="onC-iT-EyS" firstAttribute="leading" secondItem="JWw-zc-hTt" secondAttribute="leading" constant="40" id="PNL-Xt-gxF"/>
+                            <constraint firstItem="eBB-gW-gkl" firstAttribute="leading" secondItem="JWw-zc-hTt" secondAttribute="leading" id="U5c-CQ-tSm"/>
+                            <constraint firstItem="onC-iT-EyS" firstAttribute="centerY" secondItem="ydO-f4-YEf" secondAttribute="centerY" id="Vzp-1a-OiV"/>
+                            <constraint firstItem="onC-iT-EyS" firstAttribute="centerX" secondItem="ydO-f4-YEf" secondAttribute="centerX" id="evL-n6-HpP"/>
+                            <constraint firstItem="eBB-gW-gkl" firstAttribute="top" secondItem="ydO-f4-YEf" secondAttribute="top" id="nz2-or-5d8"/>
+                            <constraint firstItem="E5t-Kx-LbV" firstAttribute="leading" secondItem="JWw-zc-hTt" secondAttribute="leading" id="p4C-xY-XYJ"/>
+                            <constraint firstItem="JWw-zc-hTt" firstAttribute="bottom" secondItem="E5t-Kx-LbV" secondAttribute="bottom" id="xvl-tn-Ffg"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="getStartedDesign" destination="Pev-zD-oGD" id="ZWz-Fk-JXb"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="welcomeView" destination="ydO-f4-YEf" id="CXI-Wo-3Tn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Psx-vF-Pde" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-184" y="129"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="BG1" width="538" height="1162"/>
+        <image name="BG2" width="390" height="844"/>
+        <image name="logoVoltm" width="290" height="204"/>
+    </resources>
 </document>

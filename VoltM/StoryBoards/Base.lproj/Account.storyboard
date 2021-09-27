@@ -38,11 +38,16 @@
                                             <constraint firstAttribute="width" constant="58" id="iZZ-zs-lzY"/>
                                         </constraints>
                                     </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VGQ-2Q-ugt">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VGQ-2Q-ugt" customClass="HooopTextfield" customModule="VoltM" customModuleProvider="target">
                                         <rect key="frame" x="66" y="0.0" width="300" height="45"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" red="0.31764705879999999" green="0.38431372549999998" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -75,11 +80,16 @@
                                             <constraint firstAttribute="width" constant="58" id="k2P-WL-U6E"/>
                                         </constraints>
                                     </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QdK-id-xvu">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QdK-id-xvu" customClass="HooopTextfield" customModule="VoltM" customModuleProvider="target">
                                         <rect key="frame" x="66" y="0.0" width="262" height="45"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rKQ-9U-nW6">
                                         <rect key="frame" x="336" y="15" width="30" height="15"/>
@@ -135,7 +145,7 @@
                                     <action selector="logoutPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="8qI-g1-L12"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qkp-p6-Gyu">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qkp-p6-Gyu">
                                 <rect key="frame" x="162" y="138" width="90" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="90" id="H4L-Uo-1mg"/>
@@ -246,9 +256,9 @@
                             <outlet property="backDesign" destination="Mxu-rd-2kB" id="evx-Y2-QMd"/>
                             <outlet property="eyeDesign" destination="rKQ-9U-nW6" id="Y9e-Op-mP5"/>
                             <outlet property="logoutDesign" destination="GPd-pI-Iw6" id="hOa-Rw-obi"/>
-                            <outlet property="nameTF" destination="VGQ-2Q-ugt" id="2Kd-AG-aab"/>
+                            <outlet property="nameTF" destination="VGQ-2Q-ugt" id="ReF-QT-YFB"/>
                             <outlet property="nameView" destination="tgc-Ic-PEk" id="YNW-dM-kJJ"/>
-                            <outlet property="passTF" destination="QdK-id-xvu" id="e6z-SC-9ZU"/>
+                            <outlet property="passTF" destination="QdK-id-xvu" id="zKR-Vy-81p"/>
                             <outlet property="passView" destination="D0C-ZY-7YZ" id="Chr-lD-3ua"/>
                             <outlet property="updateDesign" destination="tMu-HI-p28" id="Khw-nT-xSm"/>
                             <outlet property="userImg" destination="qkp-p6-Gyu" id="ejJ-2h-3XW"/>
@@ -307,11 +317,16 @@
                                             <constraint firstAttribute="width" constant="58" id="Hku-fo-U99"/>
                                         </constraints>
                                     </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="odc-oe-V7K">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="odc-oe-V7K" customClass="HooopTextfield" customModule="VoltM" customModuleProvider="target">
                                         <rect key="frame" x="66" y="0.0" width="300" height="45"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" red="0.31764705879999999" green="0.38431372549999998" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -354,7 +369,7 @@
                                     <action selector="logOutPressed:" destination="ehU-WX-NMw" eventType="touchUpInside" id="goC-F0-06U"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ssx-M5-3p9">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ssx-M5-3p9">
                                 <rect key="frame" x="162" y="138" width="90" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="0Xx-Ek-omE"/>
@@ -445,7 +460,7 @@
                             <constraint firstItem="qhc-SD-65X" firstAttribute="top" secondItem="5i1-NN-Vt7" secondAttribute="bottom" constant="20" id="zzT-gr-8Hv"/>
                         </constraints>
                         <connections>
-                            <outlet property="addressTF" destination="odc-oe-V7K" id="MeZ-ZG-Sgn"/>
+                            <outlet property="addressTF" destination="odc-oe-V7K" id="RUf-cS-PJ6"/>
                             <outlet property="addressView" destination="qhc-SD-65X" id="sER-Jl-n0r"/>
                             <outlet property="backDesign" destination="wdJ-ru-o2u" id="5YH-FR-D4i"/>
                             <outlet property="logOutDesign" destination="yU3-pg-YdO" id="7hF-6P-nW4"/>
@@ -509,11 +524,16 @@
                                             <action selector="phonePressed:" destination="swj-Mp-gmX" eventType="touchUpInside" id="Dlm-UN-36g"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone Number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c5y-O5-F8f">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone Number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c5y-O5-F8f" customClass="HooopTextfield" customModule="VoltM" customModuleProvider="target">
                                         <rect key="frame" x="66" y="0.0" width="300" height="45"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" red="0.31764705879999999" green="0.38431372549999998" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -546,11 +566,16 @@
                                             <constraint firstAttribute="width" constant="58" id="Fwr-hh-Rhy"/>
                                         </constraints>
                                     </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qhh-0E-BHz">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qhh-0E-BHz" customClass="HooopTextfield" customModule="VoltM" customModuleProvider="target">
                                         <rect key="frame" x="66" y="0.0" width="300" height="45"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" red="0.31764705879999999" green="0.38431372549999998" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -593,7 +618,7 @@
                                     <action selector="logoutPressed:" destination="swj-Mp-gmX" eventType="touchUpInside" id="ghP-n2-bMr"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="a3d-6Z-gae">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="a3d-6Z-gae">
                                 <rect key="frame" x="162" y="138" width="90" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="90" id="dEZ-HS-rq5"/>

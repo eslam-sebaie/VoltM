@@ -150,7 +150,6 @@
                                         <state key="normal" image="back"/>
                                         <connections>
                                             <action selector="backPressed:" destination="xgD-zv-Wn5" eventType="touchUpInside" id="C8K-0Z-5gf"/>
-                                            <action selector="sideMenuPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="8Hk-kt-Z1f"/>
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="uaA-eq-Ogd">

@@ -19,6 +19,8 @@ class UpdateContactView: UIView {
     
     @IBOutlet weak var updateDesign: UIButton!
     
+    
+    
     func updateUI(){
         if L10n.lang.localized == Language.arabic {
             backDesign.setImage(Asset.backAr.image, for: .normal)

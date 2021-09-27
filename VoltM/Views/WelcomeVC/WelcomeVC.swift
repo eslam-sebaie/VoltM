@@ -9,11 +9,18 @@ import UIKit
 
 class WelcomeVC: UIViewController {
 
+    @IBOutlet var welcomeView: WelcomeView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        welcomeView.updateUI()
     }
-
-
+    class func create() -> WelcomeVC {
+        let welcomeVC: WelcomeVC = UIViewController.create(storyboardName: Storyboards.main, identifier: ViewControllers.welcomeVC)
+        return welcomeVC
+    }
+    @IBAction func getStartedPressed(_ sender: Any) {
+        
+    }
+    
 }
 

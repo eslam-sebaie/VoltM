@@ -13,7 +13,7 @@ class ProductVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet var productView: ProductView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        productView.updateConstraints()
+        productView.updateUI()
         // Do any additional setup after loading the view.
     }
     
@@ -37,7 +37,10 @@ class ProductVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.productView.productTableView.dequeueReusableCell(withIdentifier: TableCells.homeCell, for: indexPath) as! ProductTableViewCell
         cell.productImage.setCornerRadius(radius: 8)
-        
+        cell.ratePressedCompletion = { [weak self] in
+            let rate = RateVC.create()
+            self?.present(rate, animated: true, completion: nil)
+        }
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

@@ -17,12 +17,14 @@ class UpdateAddressView: UIView {
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var addressView: UIView!
     
-    @IBOutlet weak var addressTF: UITextField!
+    @IBOutlet weak var addressTF: HooopTextfield!
     
     @IBOutlet weak var updateDesign: UIButton!
     func updateUI(){
         if L10n.lang.localized == Language.arabic {
             backDesign.setImage(Asset.backAr.image, for: .normal)
+            addressTF.placeholder = "العنوان"
+            addressTF.textAlignment = .right
         }
         logOutDesign.setCornerRadius(radius: 8)
         userImage.setCornerRadius(radius: 45)

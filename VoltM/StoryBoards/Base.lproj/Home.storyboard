@@ -127,6 +127,11 @@
                             <constraint firstItem="cMy-dt-6mG" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="v05-ET-47l"/>
                             <constraint firstItem="cMy-dt-6mG" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="zIS-N4-uIh"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="NmF-5y-BOD"/>
+                            </mask>
+                        </variation>
                         <connections>
                             <outlet property="categoryTableView" destination="ImO-Xp-xCL" id="BBH-P6-d3W"/>
                             <outlet property="mainHeader" destination="25B-Qj-eEq" id="z9U-qj-MUj"/>
@@ -491,11 +496,29 @@
                                             <action selector="searchPressed:" destination="OPx-kB-GpB" eventType="touchUpInside" id="g2j-4X-Kb9"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zxL-p4-sGh">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zxL-p4-sGh" customClass="HooopTextfield" customModule="VoltM" customModuleProvider="target">
                                         <rect key="frame" x="66" y="0.0" width="300" height="45"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="requiredColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="fontColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="customTextAlignment">
+                                                <integer key="value" value="0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="selfDelegate" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" red="0.31764705879999999" green="0.38431372549999998" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -540,7 +563,7 @@
                         </constraints>
                         <connections>
                             <outlet property="backDesign" destination="m7s-Oc-jcK" id="Bdi-2R-NEy"/>
-                            <outlet property="searchTF" destination="zxL-p4-sGh" id="eBP-py-5jc"/>
+                            <outlet property="searchTF" destination="zxL-p4-sGh" id="KI0-hJ-TRn"/>
                             <outlet property="searchView" destination="AmS-kc-FUW" id="X15-dE-N30"/>
                             <outlet property="storeHeader" destination="TeE-5X-Vpo" id="pHJ-RO-d94"/>
                             <outlet property="storeTableView" destination="PSJ-jq-NQ8" id="gKV-yS-2uZ"/>
@@ -629,11 +652,16 @@
                                             <action selector="searchPressed:" destination="gJo-8J-oPu" eventType="touchUpInside" id="Nji-Wb-IbD"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KER-5z-ILQ">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KER-5z-ILQ" customClass="HooopTextfield" customModule="VoltM" customModuleProvider="target">
                                         <rect key="frame" x="66" y="0.0" width="300" height="45"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" red="0.31764705882352939" green="0.38431372549019605" blue="0.44705882352941173" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -752,7 +780,7 @@
                         </constraints>
                         <connections>
                             <outlet property="backDesign" destination="7Vh-7P-wMH" id="i6g-nQ-NBr"/>
-                            <outlet property="searchTF" destination="KER-5z-ILQ" id="tWw-hV-31v"/>
+                            <outlet property="searchTF" destination="KER-5z-ILQ" id="fau-aH-EUg"/>
                             <outlet property="searchView" destination="XjX-rz-gtg" id="b5J-nq-lf0"/>
                             <outlet property="storeCategoryTableView" destination="HbG-Or-5Pr" id="Qth-wm-BBr"/>
                             <outlet property="storeImage" destination="C3Z-03-7mw" id="oND-Mn-MyY"/>
@@ -1250,11 +1278,16 @@
                                             <action selector="searchPressed:" destination="f5N-3G-mg2" eventType="touchUpInside" id="cXw-ID-zwO"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dx6-HH-eD1">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dx6-HH-eD1" customClass="HooopTextfield" customModule="VoltM" customModuleProvider="target">
                                         <rect key="frame" x="66" y="0.0" width="300" height="45"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" red="0.31764705879999999" green="0.38431372549999998" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1369,7 +1402,7 @@
                         </constraints>
                         <connections>
                             <outlet property="backDesign" destination="P4c-4m-Wul" id="Jp1-He-ggR"/>
-                            <outlet property="searchTF" destination="dx6-HH-eD1" id="BW1-ad-4Tw"/>
+                            <outlet property="searchTF" destination="dx6-HH-eD1" id="9Nd-gm-f8n"/>
                             <outlet property="searchView" destination="Jek-K3-Mcm" id="iFg-A7-rev"/>
                             <outlet property="storeImage" destination="h7x-66-eFw" id="DfO-Ah-QrX"/>
                             <outlet property="subCatTableView" destination="8j9-3W-mmj" id="n8b-aa-9YP"/>
@@ -1387,6 +1420,9 @@
     <designables>
         <designable name="fzq-cj-NVb">
             <size key="intrinsicContentSize" width="-1" height="83"/>
+        </designable>
+        <designable name="zxL-p4-sGh">
+            <size key="intrinsicContentSize" width="65" height="18.5"/>
         </designable>
     </designables>
     <resources>

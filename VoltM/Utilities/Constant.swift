@@ -20,6 +20,7 @@ struct Storyboards {
 
 // View Controllers
 struct ViewControllers {
+    static let welcomeVC = "WelcomeVC"
     static let homeVC = "HomeVC"
     static let offerVC = "OfferVC"
     static let mainCategoryVC = "MainCategoryVC"
@@ -36,6 +37,7 @@ struct ViewControllers {
     static let updateInfoVC = "UpdateInfoVC"
     static let updateAddressVC = "UpdateAddressVC"
     static let updateContactVC = "UpdateContactVC"
+    static let rateVC = "RateVC"
 }
 struct URLs {
     // MARK:- base

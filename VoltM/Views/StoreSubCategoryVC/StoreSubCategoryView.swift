@@ -13,13 +13,15 @@ class StoreSubCategoryView: UIView {
     @IBOutlet weak var backDesign: UIButton!
     
     @IBOutlet weak var searchView: UIView!
-    @IBOutlet weak var searchTF: UITextField!
+    @IBOutlet weak var searchTF: HooopTextfield!
     @IBOutlet weak var subCatTableView: UITableView!
     
     func updateUI(){
         searchTF.setCornerRadius(radius: 8)
         if L10n.lang.localized == Language.arabic {
             backDesign.setImage(Asset.backAr.image, for: .normal)
+            searchTF.placeholder = "بحث"
+            searchTF.textAlignment = .right
         }
         searchView.setCornerRadius(radius: 10)
     }
