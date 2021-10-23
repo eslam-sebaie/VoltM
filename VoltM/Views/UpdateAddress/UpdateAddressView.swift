@@ -19,6 +19,7 @@ class UpdateAddressView: UIView {
     
     @IBOutlet weak var addressTF: HooopTextfield!
     
+    @IBOutlet weak var addressImage: UIImageView!
     @IBOutlet weak var updateDesign: UIButton!
     func updateUI(){
         if L10n.lang.localized == Language.arabic {
@@ -30,6 +31,7 @@ class UpdateAddressView: UIView {
         userImage.setCornerRadius(radius: 45)
         addressView.setCornerRadius(radius: 8)
         updateDesign.setCornerRadius(radius: 8)
+        addressImage.transform = CGAffineTransform(scaleX: -1, y: 1)
     }
     
 }

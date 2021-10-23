@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7YM-WR-1XS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7YM-WR-1XS">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -40,7 +41,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="261" id="gZX-pQ-RUb" customClass="MainCategoryTableViewCell" customModule="VoltM" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="334" height="261"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="334" height="261"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gZX-pQ-RUb" id="NvV-u4-T1K">
                                             <rect key="frame" x="0.0" y="0.0" width="334" height="261"/>
@@ -214,7 +215,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="261" id="9Zh-is-MnS" customClass="HomeTableViewCell" customModule="VoltM" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="334" height="261"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="334" height="261"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9Zh-is-MnS" id="r8C-Eu-jqp">
                                             <rect key="frame" x="0.0" y="0.0" width="334" height="261"/>
@@ -382,7 +383,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="261" id="DKG-ih-nCb" customClass="StoreTableViewCell" customModule="VoltM" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="334" height="261"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="334" height="261"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DKG-ih-nCb" id="VPG-nx-2KU">
                                             <rect key="frame" x="0.0" y="0.0" width="334" height="261"/>
@@ -563,6 +564,7 @@
                         </constraints>
                         <connections>
                             <outlet property="backDesign" destination="m7s-Oc-jcK" id="Bdi-2R-NEy"/>
+                            <outlet property="searchImage" destination="Mqc-t7-3OH" id="mEQ-6k-Yr4"/>
                             <outlet property="searchTF" destination="zxL-p4-sGh" id="KI0-hJ-TRn"/>
                             <outlet property="searchView" destination="AmS-kc-FUW" id="X15-dE-N30"/>
                             <outlet property="storeHeader" destination="TeE-5X-Vpo" id="pHJ-RO-d94"/>
@@ -593,7 +595,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stores Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d7L-Wf-CLY">
-                                <rect key="frame" x="144" y="216" width="126.5" height="26.5"/>
+                                <rect key="frame" x="144" y="216" width="126" height="26.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -683,7 +685,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="261" id="ifm-Aq-rLs" customClass="StoreCategoryTableViewCell" customModule="VoltM" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="334" height="261"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="334" height="261"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ifm-Aq-rLs" id="r8o-Eg-SoV">
                                             <rect key="frame" x="0.0" y="0.0" width="334" height="261"/>
@@ -780,6 +782,7 @@
                         </constraints>
                         <connections>
                             <outlet property="backDesign" destination="7Vh-7P-wMH" id="i6g-nQ-NBr"/>
+                            <outlet property="searchImage" destination="XsZ-sx-148" id="unk-A0-yAD"/>
                             <outlet property="searchTF" destination="KER-5z-ILQ" id="fau-aH-EUg"/>
                             <outlet property="searchView" destination="XjX-rz-gtg" id="b5J-nq-lf0"/>
                             <outlet property="storeCategoryTableView" destination="HbG-Or-5Pr" id="Qth-wm-BBr"/>
@@ -888,7 +891,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="129" id="yix-Rs-rTr" customClass="CartTableViewCell" customModule="VoltM" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="374" height="129"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="374" height="129"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yix-Rs-rTr" id="bfQ-Oi-hoi">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="129"/>
@@ -907,19 +910,19 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="lgo-Rs-pZZ">
                                                             <rect key="frame" x="124" y="19" width="234" height="78.5"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Desk Lamp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ptb-RV-hEl">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Desk Lamp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ptb-RV-hEl">
                                                                     <rect key="frame" x="0.0" y="0.0" width="234" height="21.5"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99.9 $" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ssB-w9-kdR">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="99.9 $" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ssB-w9-kdR">
                                                                     <rect key="frame" x="0.0" y="29.5" width="234" height="20.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quantity: x2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l9O-tF-gQQ">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Quantity: x2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l9O-tF-gQQ">
                                                                     <rect key="frame" x="0.0" y="58" width="234" height="20.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1099,7 +1102,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="261" id="tUw-gg-YCZ" customClass="FavoriteTableViewCell" customModule="VoltM" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="374" height="261"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="374" height="261"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tUw-gg-YCZ" id="818-Ds-q4K">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="261"/>
@@ -1309,7 +1312,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="261" id="fwJ-Gw-GHb" customClass="StoreSubCategoryTableViewCell" customModule="VoltM" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="334" height="261"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="334" height="261"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fwJ-Gw-GHb" id="1fd-QU-Dpq">
                                             <rect key="frame" x="0.0" y="0.0" width="334" height="261"/>
@@ -1402,6 +1405,7 @@
                         </constraints>
                         <connections>
                             <outlet property="backDesign" destination="P4c-4m-Wul" id="Jp1-He-ggR"/>
+                            <outlet property="searchImage" destination="7if-7O-PMP" id="ftS-ce-jPY"/>
                             <outlet property="searchTF" destination="dx6-HH-eD1" id="9Nd-gm-f8n"/>
                             <outlet property="searchView" destination="Jek-K3-Mcm" id="iFg-A7-rev"/>
                             <outlet property="storeImage" destination="h7x-66-eFw" id="DfO-Ah-QrX"/>
@@ -1418,11 +1422,17 @@
         </scene>
     </scenes>
     <designables>
+        <designable name="KER-5z-ILQ">
+            <size key="intrinsicContentSize" width="65" height="18.5"/>
+        </designable>
+        <designable name="dx6-HH-eD1">
+            <size key="intrinsicContentSize" width="65" height="18.5"/>
+        </designable>
         <designable name="fzq-cj-NVb">
             <size key="intrinsicContentSize" width="-1" height="83"/>
         </designable>
         <designable name="zxL-p4-sGh">
-            <size key="intrinsicContentSize" width="65" height="18.5"/>
+            <size key="intrinsicContentSize" width="45" height="18.5"/>
         </designable>
     </designables>
     <resources>

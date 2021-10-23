@@ -19,7 +19,13 @@ class UpdateContactView: UIView {
     
     @IBOutlet weak var updateDesign: UIButton!
     
+    @IBOutlet weak var phoneTF: HooopTextfield!
     
+    @IBOutlet weak var emailTF: HooopTextfield!
+    
+    @IBOutlet weak var phoneImage: UIImageView!
+    
+    @IBOutlet weak var emailImage: UIImageView!
     
     func updateUI(){
         if L10n.lang.localized == Language.arabic {
@@ -30,5 +36,8 @@ class UpdateContactView: UIView {
         phoneView.setCornerRadius(radius: 8)
         emailView.setCornerRadius(radius: 8)
         updateDesign.setCornerRadius(radius: 8)
+        emailImage.transform = CGAffineTransform(scaleX: -1, y: 1)
+        
+        phoneImage.transform = CGAffineTransform(scaleX: -1, y: 1)
     }
 }

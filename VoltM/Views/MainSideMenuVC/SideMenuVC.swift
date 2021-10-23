@@ -54,6 +54,14 @@ class SideMenuVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            let order = OrdersVC.create()
+            order.modalPresentationStyle = .fullScreen
+            order.modalTransitionStyle = .crossDissolve
+            self.present(order, animated: true, completion: nil)
+            
+        }
+        
         if indexPath.row == 1 {
             let offer = OfferVC.create()
             offer.modalPresentationStyle = .fullScreen

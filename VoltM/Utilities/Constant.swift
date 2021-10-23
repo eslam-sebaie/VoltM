@@ -16,11 +16,14 @@ struct Storyboards {
     static let products = "Products"
     static let sideMenu = "SideMenu"
     static let account = "Account"
+    static let Orders = "Orders"
 }
 
 // View Controllers
 struct ViewControllers {
     static let welcomeVC = "WelcomeVC"
+    static let signInVC = "SignInVC"
+    static let signUpVC = "SignUpVC"
     static let homeVC = "HomeVC"
     static let offerVC = "OfferVC"
     static let mainCategoryVC = "MainCategoryVC"
@@ -38,6 +41,8 @@ struct ViewControllers {
     static let updateAddressVC = "UpdateAddressVC"
     static let updateContactVC = "UpdateContactVC"
     static let rateVC = "RateVC"
+    static let ordersVC = "OrdersVC"
+    static let orderDetailsVC = "OrderDetailsVC"
 }
 struct URLs {
     // MARK:- base
@@ -49,6 +54,7 @@ struct ParameterKeys {
 }
 struct UserDefaultsKeys {
     static let token = "token"
+    static let email = "email"
    
 }
 struct TableCells {

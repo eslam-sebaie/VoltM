@@ -10,6 +10,8 @@ import UIKit
 class UpdateInfoVC: UIViewController {
 
     @IBOutlet var updateInfoView: UpdateInfoView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         updateInfoView.updateUI()

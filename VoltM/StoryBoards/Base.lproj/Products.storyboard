@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -89,7 +89,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="133" id="F8V-9V-Bj5" customClass="ProductTableViewCell" customModule="VoltM" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="374" height="133"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="374" height="133"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="F8V-9V-Bj5" id="gCb-gf-SVQ">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="133"/>
@@ -253,6 +253,7 @@ dolor .</string>
                             <outlet property="backDesign" destination="2Vg-W2-c1s" id="zq4-3O-4o5"/>
                             <outlet property="productHeader" destination="z6W-5O-pFf" id="j2Y-ZT-C0O"/>
                             <outlet property="productTableView" destination="Ton-w1-gIX" id="hWV-3U-13E"/>
+                            <outlet property="searchImage" destination="zNX-wf-JiB" id="w5i-uI-zih"/>
                             <outlet property="searchTF" destination="RaI-1v-hwx" id="dPm-YC-XHR"/>
                             <outlet property="searchView" destination="hI9-wH-3YM" id="GhK-ZF-H0A"/>
                         </connections>
@@ -456,7 +457,7 @@ dolor .</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b40-LR-UZx" customClass="CosmosView" customModule="Cosmos">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b40-LR-UZx" customClass="CosmosView" customModule="Cosmos">
                                 <rect key="frame" x="76.5" y="126" width="120" height="20"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
@@ -467,25 +468,25 @@ dolor .</string>
                                     <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="unfillStar"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reviews (144)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r0U-I9-o8D">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Reviews (144)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r0U-I9-o8D">
                                 <rect key="frame" x="76.5" y="148" width="97" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RdA-De-9G4">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RdA-De-9G4">
                                 <rect key="frame" x="7" y="182" width="414" height="1"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="wsq-Og-8hQ"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Eng-BJ-kBj">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Eng-BJ-kBj">
                                 <rect key="frame" x="20" y="203" width="374" height="550"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="213" id="fRI-e3-ZCw" customClass="RateTableViewCell" customModule="VoltM" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="374" height="213"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="374" height="213"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fRI-e3-ZCw" id="bvH-rD-9mY">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="213"/>
@@ -518,7 +519,7 @@ dolor .</string>
                                                                 </label>
                                                             </subviews>
                                                         </stackView>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ffR-09-JdF" customClass="CosmosView" customModule="Cosmos">
+                                                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ffR-09-JdF" customClass="CosmosView" customModule="Cosmos">
                                                             <rect key="frame" x="219" y="22" width="107" height="20"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <userDefinedRuntimeAttributes>
@@ -629,7 +630,7 @@ dolor .</string>
                                             <action selector="cancelPressed:" destination="mop-uK-YYO" eventType="touchUpInside" id="yUX-ai-g1y"/>
                                         </connections>
                                     </button>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LG0-72-wLf" customClass="CosmosView" customModule="Cosmos">
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LG0-72-wLf" customClass="CosmosView" customModule="Cosmos">
                                         <rect key="frame" x="84.5" y="162" width="205" height="40"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -700,7 +701,7 @@ dolor .</string>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Mm-Au-RFc"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.20392156862745098" green="0.25098039215686274" blue="0.29411764705882354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="dba-w9-v4O" firstAttribute="leading" secondItem="6Mm-Au-RFc" secondAttribute="leading" constant="16" id="1ox-Hi-nia"/>
                             <constraint firstItem="6Mm-Au-RFc" firstAttribute="trailing" secondItem="qOY-d2-E9b" secondAttribute="trailing" id="242-7M-uvs"/>
@@ -763,17 +764,11 @@ dolor .</string>
         </scene>
     </scenes>
     <designables>
-        <designable name="3sz-0i-Cf6">
-            <size key="intrinsicContentSize" width="80" height="12"/>
+        <designable name="FO4-Cv-tpk">
+            <size key="intrinsicContentSize" width="84" height="18.5"/>
         </designable>
-        <designable name="LG0-72-wLf">
-            <size key="intrinsicContentSize" width="205" height="37"/>
-        </designable>
-        <designable name="b40-LR-UZx">
-            <size key="intrinsicContentSize" width="120" height="20"/>
-        </designable>
-        <designable name="ffR-09-JdF">
-            <size key="intrinsicContentSize" width="120" height="20"/>
+        <designable name="RaI-1v-hwx">
+            <size key="intrinsicContentSize" width="45" height="18.5"/>
         </designable>
     </designables>
     <resources>
@@ -786,8 +781,5 @@ dolor .</string>
         <image name="productFav" width="28.5" height="26"/>
         <image name="search" width="42.5" height="22.5"/>
         <image name="unfillStar" width="37" height="35.5"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

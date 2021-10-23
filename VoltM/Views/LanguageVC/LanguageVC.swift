@@ -39,7 +39,7 @@ class LanguageVC: UIViewController {
     @IBAction func englishPressed(_ sender: Any) {
         languageView.englishView.backgroundColor = #colorLiteral(red: 1, green: 0.8431372549, blue: 0, alpha: 1)
         languageView.arabicView.backgroundColor = .white
-        MOLH.setLanguageTo(MOLHLanguage.currentAppleLanguage() == "en" ? "ar" : "en")
+        MOLH.setLanguageTo(MOLHLanguage.currentAppleLanguage() == "en" ? "en" : "en")
         exit(-1)
     }
     
@@ -47,7 +47,7 @@ class LanguageVC: UIViewController {
     @IBAction func arabicPressed(_ sender: Any) {
         languageView.arabicView.backgroundColor = #colorLiteral(red: 1, green: 0.8431372549, blue: 0, alpha: 1)
         languageView.englishView.backgroundColor = .white
-        MOLH.setLanguageTo(MOLHLanguage.currentAppleLanguage() == "en" ? "ar" : "en")
+        MOLH.setLanguageTo(MOLHLanguage.currentAppleLanguage() == "ar" ? "ar" : "ar")
         exit(-1)
     }
     

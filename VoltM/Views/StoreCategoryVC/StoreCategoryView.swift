@@ -20,12 +20,14 @@ class StoreCategoryView: UIView {
     @IBOutlet weak var backDesign: UIButton!
     @IBOutlet weak var searchView: UIView!
     
+    @IBOutlet weak var searchImage: UIImageView!
     func updateUI(){
         searchTF.setCornerRadius(radius: 8)
         if L10n.lang.localized == Language.arabic {
             backDesign.setImage(Asset.backAr.image, for: .normal)
             searchTF.placeholder = "بحث"
             searchTF.textAlignment = .right
+            searchImage.transform = CGAffineTransform(scaleX: -1, y: 1)
         }
         searchView.setCornerRadius(radius: 10)
     }

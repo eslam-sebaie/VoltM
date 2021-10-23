@@ -1,0 +1,54 @@
+
+/* Class = "UILabel"; text = "Knet"; ObjectID = "5yL-Xg-TKY"; */
+"5yL-Xg-TKY.text" = "Knet";
+
+/* Class = "UILabel"; text = "Delivered"; ObjectID = "8RW-pd-HbH"; */
+"8RW-pd-HbH.text" = "Delivered";
+
+/* Class = "UILabel"; text = "Order # : 231588336"; ObjectID = "Ghf-9F-i1B"; */
+"Ghf-9F-i1B.text" = "Order # : 231588336";
+
+/* Class = "UILabel"; text = "Total Price :"; ObjectID = "HWo-5b-80S"; */
+"HWo-5b-80S.text" = "إجمالي المبلغ :";
+
+/* Class = "UILabel"; text = "Misr Reconstruction Bldgs. 9 Sheraton"; ObjectID = "Iky-CG-HAx"; */
+"Iky-CG-HAx.text" = "Misr Reconstruction Bldgs. 9 Sheraton";
+
+/* Class = "UILabel"; text = "Desk Lamp"; ObjectID = "KzW-BF-Cbk"; */
+"KzW-BF-Cbk.text" = "Desk Lamp";
+
+/* Class = "UILabel"; text = "99.9$"; ObjectID = "R1Q-Rz-gYd"; */
+"R1Q-Rz-gYd.text" = "99.9$";
+
+/* Class = "UILabel"; text = "Delivery Address"; ObjectID = "cjt-lI-u7V"; */
+"cjt-lI-u7V.text" = "عنوان التوصيل";
+
+/* Class = "UILabel"; text = "50 $"; ObjectID = "doq-NZ-FrS"; */
+"doq-NZ-FrS.text" = "50 $";
+
+/* Class = "UILabel"; text = "Order Details"; ObjectID = "nLU-H8-m3V"; */
+"nLU-H8-m3V.text" = "Order Details";
+
+/* Class = "UILabel"; text = "Delivery :"; ObjectID = "p6J-44-xCe"; */
+"p6J-44-xCe.text" = "التوصيل :";
+
+/* Class = "UILabel"; text = "17 April 2021 17:17"; ObjectID = "pzL-H5-FaQ"; */
+"pzL-H5-FaQ.text" = "17 April 2021 17:17";
+
+/* Class = "UILabel"; text = "SubTotal :"; ObjectID = "qjj-gH-BvB"; */
+"qjj-gH-BvB.text" = "المبلغ :";
+
+/* Class = "UILabel"; text = "Order Summary"; ObjectID = "scP-p7-4Aj"; */
+"scP-p7-4Aj.text" = "تفاصيل الطلب";
+
+/* Class = "UILabel"; text = "500 $"; ObjectID = "vzn-p9-PKJ"; */
+"vzn-p9-PKJ.text" = "500 $";
+
+/* Class = "UILabel"; text = "Quantity : 9"; ObjectID = "xdi-Yq-zhs"; */
+"xdi-Yq-zhs.text" = "Quantity : 9";
+
+/* Class = "UILabel"; text = "450 $"; ObjectID = "yZu-Ww-e2f"; */
+"yZu-Ww-e2f.text" = "450 $";
+
+/* Class = "UILabel"; text = "Payment Method:"; ObjectID = "yrb-n6-aOk"; */
+"yrb-n6-aOk.text" = "طريقه الدفع :";

@@ -15,24 +15,38 @@ class UpdateInfoView: UIView {
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var nameView: UIView!
     @IBOutlet weak var passView: UIView!
-    @IBOutlet weak var nameTF: HooopTextfield!
+    @IBOutlet weak var fNameTF: HooopTextfield!
+    @IBOutlet weak var lNameTF: HooopTextfield!
     @IBOutlet weak var passTF: HooopTextfield!
     @IBOutlet weak var eyeDesign: UIButton!
     @IBOutlet weak var updateDesign: UIButton!
     
+    @IBOutlet weak var lastNameView: UIView!
+    
+    
+    @IBOutlet weak var fNameImg: UIImageView!
+    
+    @IBOutlet weak var lastImg: UIImageView!
+    @IBOutlet weak var passImage: UIImageView!
     func updateUI(){
         if L10n.lang.localized == Language.arabic {
             backDesign.setImage(Asset.backAr.image, for: .normal)
-            nameTF.placeholder = "الاسم"
-            nameTF.textAlignment = .right
+            fNameTF.placeholder = "الأسم الأول"
+            fNameTF.textAlignment = .right
+            lNameTF.placeholder = "الأسم الثاني"
+            lNameTF.textAlignment = .right
             passTF.placeholder = "الرقم السري"
             passTF.textAlignment = .right
         }
         logoutDesign.setCornerRadius(radius: 8)
         userImg.setCornerRadius(radius: 45)
         nameView.setCornerRadius(radius: 8)
+        lastNameView.setCornerRadius(radius: 8)
         passView.setCornerRadius(radius: 8)
         updateDesign.setCornerRadius(radius: 8)
+        fNameImg.transform = CGAffineTransform(scaleX: -1, y: 1)
+        lastImg.transform = CGAffineTransform(scaleX: -1, y: 1)
+        passImage.transform = CGAffineTransform(scaleX: -1, y: 1)
     }
 
 }
