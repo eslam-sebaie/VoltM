@@ -43,6 +43,7 @@ struct ViewControllers {
     static let rateVC = "RateVC"
     static let ordersVC = "OrdersVC"
     static let orderDetailsVC = "OrderDetailsVC"
+    static let chooseCountryVC = "ChooseCountryVC"
 }
 struct URLs {
     // MARK:- base

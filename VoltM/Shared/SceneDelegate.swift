@@ -13,8 +13,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+       
         if let email = UserDefaultsManager.shared().Email , email != "" {
-            print("inhome")
+            
             if let windowScene = scene as? UIWindowScene {
                 let window = UIWindow(windowScene: windowScene)
                 let storyboard = UIStoryboard(name: "Home", bundle: nil)
@@ -26,7 +27,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             }
         }
         else {
-            print("inwelcome")
+          
             if let windowScene = scene as? UIWindowScene {
                    let window = UIWindow(windowScene: windowScene)
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)

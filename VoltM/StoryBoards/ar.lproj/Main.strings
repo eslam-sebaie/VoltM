@@ -1,1 +1,69 @@
 
+/* Class = "UILabel"; text = "Country"; ObjectID = "D8t-eL-HJb"; */
+"D8t-eL-HJb.text" = "الدوله";
+
+/* Class = "UIButton"; normalTitle = "Sign Up"; ObjectID = "FGE-Yi-AfW"; */
+"FGE-Yi-AfW.normalTitle" = "Sign Up";
+
+/* Class = "UITextField"; placeholder = "First Name"; ObjectID = "FM2-kC-NZP"; */
+"FM2-kC-NZP.placeholder" = "First Name";
+
+/* Class = "UILabel"; text = "or fill this form"; ObjectID = "Gw1-JO-sgl"; */
+"Gw1-JO-sgl.text" = "or fill this form";
+
+/* Class = "UILabel"; text = "____"; ObjectID = "Kn3-YI-2C8"; */
+"Kn3-YI-2C8.text" = "____";
+
+/* Class = "UILabel"; text = "Don't have an account ?"; ObjectID = "OCt-4y-IuM"; */
+"OCt-4y-IuM.text" = "Don't have an account ?";
+
+/* Class = "UIButton"; normalTitle = "Get Started"; ObjectID = "Pev-zD-oGD"; */
+"Pev-zD-oGD.normalTitle" = "Get Started";
+
+/* Class = "UILabel"; text = "Sign Up with"; ObjectID = "STC-c2-xW7"; */
+"STC-c2-xW7.text" = "Sign Up with";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "UlI-QU-X3H"; */
+"UlI-QU-X3H.placeholder" = "Email";
+
+/* Class = "UITextField"; placeholder = "Last Name"; ObjectID = "VAk-Od-Sdy"; */
+"VAk-Od-Sdy.placeholder" = "Last Name";
+
+/* Class = "UIButton"; normalTitle = "Log In"; ObjectID = "WAG-V3-CaD"; */
+"WAG-V3-CaD.normalTitle" = "Log In";
+
+/* Class = "UITextField"; placeholder = "Phone"; ObjectID = "Zfd-NO-sYk"; */
+"Zfd-NO-sYk.placeholder" = "Phone";
+
+/* Class = "UILabel"; text = "____"; ObjectID = "c2Q-e4-eA3"; */
+"c2Q-e4-eA3.text" = "____";
+
+/* Class = "UILabel"; text = "or"; ObjectID = "eep-gf-gSJ"; */
+"eep-gf-gSJ.text" = "or";
+
+/* Class = "UIButton"; normalTitle = "Sign Up"; ObjectID = "foj-Mb-gZk"; */
+"foj-Mb-gZk.normalTitle" = "Sign Up";
+
+/* Class = "UILabel"; text = "Already have an account ?"; ObjectID = "hqf-T9-tP8"; */
+"hqf-T9-tP8.text" = "Already have an account ?";
+
+/* Class = "UITextField"; placeholder = "Choose Location"; ObjectID = "lUY-As-f74"; */
+"lUY-As-f74.placeholder" = "Choose Location";
+
+/* Class = "UILabel"; text = "Select your\nCountry"; ObjectID = "loB-dp-l95"; */
+"loB-dp-l95.text" = "اختار\nالدوله";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "oJc-OG-8uI"; */
+"oJc-OG-8uI.placeholder" = "Password";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "qKY-nM-4zF"; */
+"qKY-nM-4zF.placeholder" = "Email";
+
+/* Class = "UILabel"; text = "Login with"; ObjectID = "tu9-5U-Ro1"; */
+"tu9-5U-Ro1.text" = "Login with";
+
+/* Class = "UIButton"; normalTitle = "Login"; ObjectID = "yLy-nt-HLs"; */
+"yLy-nt-HLs.normalTitle" = "Login";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "zTW-9a-r95"; */
+"zTW-9a-r95.placeholder" = "Password";

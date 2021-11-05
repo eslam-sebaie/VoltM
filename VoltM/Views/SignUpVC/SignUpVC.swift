@@ -7,11 +7,16 @@
 
 import UIKit
 
-class SignUpVC: UIViewController {
-
+class SignUpVC: UIViewController, sendingAddress {
+    func send(address: String) {
+        signUpView.addressTF.text = address
+    }
     @IBOutlet var signUpView: SignUpView!
+    var imagePicker = UIImagePickerController()
+    var storeImg = ""
     override func viewDidLoad() {
         super.viewDidLoad()
+        imagePicker.delegate = self
         signUpView.updateUI()
         // Do any additional setup after loading the view.
     }
@@ -32,8 +37,15 @@ class SignUpVC: UIViewController {
         }
     }
     
+    @IBAction func uploadImagePressed(_ sender: Any) {
+        setImagePicker()
+    }
+    
     @IBAction func addressPressed(_ sender: Any) {
-        
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let mapVC = sb.instantiateViewController(withIdentifier: "MapVC") as! MapVC
+        mapVC.delegate = (self as sendingAddress)
+        self.present(mapVC ,animated: true, completion: nil)
     }
     @IBAction func signUpPressed(_ sender: Any) {
         guard let fname = signUpView.fNameTF.text , fname != "" else {
@@ -69,4 +81,24 @@ class SignUpVC: UIViewController {
     }
     
 
+}
+extension SignUpVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func setImagePicker(){
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.allowsEditing = true
+        self.present(imagePicker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
+        signUpView.userImage.image = image
+        //self.signUpView.showLoader()
+//        APIManager.uploadPhoto(image: image!) { (err, img) in
+//            APIManager.updateImage(emailNumber: UserDefaultsManager.shared().Email ?? "", image: img?.data ?? "") {
+//                self.signUpView.hideLoader()
+//            }
+//        }
+        
+        picker.dismiss(animated: false, completion: nil)
+    }
 }
