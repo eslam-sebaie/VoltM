@@ -13,14 +13,22 @@ enum APIRouter: URLRequestConvertible {
     
     // The endpoint name
     // MARK:- Registration
-//    case userRegister(_ name: String,_ emailNumber: String, _ address: String,_ dateOfBirth: String, _ gender: String, _ phoneNumber: String ,_ password: String, _ lat: String, _ lng: String, _ points: String)
-   
+    case userRegister(_ fname: String,_ lname: String, _ email: String,_ password: String, _ phone: String, _ address: String ,_ latitude: String, _ longitude: String, _ image: String)
+    case userLogin(_ email: String,_ password: String)
+    case countries
+    case getAllMainCategories
+    case getStores(_ mainCat_id: Int,_ country_id: Int)
+    case getStoreCategory(_ store_id: Int)
+    case getStoreSubCategory(_ parent_id: Int)
+    case searchStores(_ stroeName: String,_ country_id: Int)
     // MARK: - HttpMethod
     private var method: HTTPMethod {
         switch self {
-//        case .userRegister:
-//            return .post
-        
+        case .userRegister, .userLogin:
+            return .post
+        case .countries, .getAllMainCategories, .getStores, .getStoreCategory, .getStoreSubCategory, .searchStores:
+            return .get
+            
     
         default:
             return .delete
@@ -32,9 +40,18 @@ enum APIRouter: URLRequestConvertible {
     private var parameters: Parameters? {
         switch self {
         // MARK: - registerParameters
-//        case .userRegister(let name, let emailNumber, let address, let dateOfBirth , let gender, let phoneNumber ,let password, let lat, let lng, let points):
-//            return [ParameterKeys.name: name, ParameterKeys.email: emailNumber, ParameterKeys.address: address, ParameterKeys.dateOfBirth: dateOfBirth, ParameterKeys.gender: gender,ParameterKeys.phone: phoneNumber, ParameterKeys.password: password, "lat": lat, "lng": lng, "points": points]
-       
+        case .userRegister(let fname, let lname, let email, let password , let phone, let address ,let latitude, let longitude, let image):
+            return ["fname": fname, "lname": lname, "email": email, "password": password, "phone": phone,"address": address, "latitude": latitude, "longitude": longitude, "image": image]
+        case .userLogin(let email, let password):
+            return ["email": email, "password": password]
+        case .getStores(let mainCat_id, let country_id):
+            return ["mainCat_id": mainCat_id, "country_id": country_id]
+        case .getStoreCategory(let store_id):
+            return ["store_id": store_id]
+        case .getStoreSubCategory(let parent_id):
+            return ["parent_id": parent_id]
+        case .searchStores(let stroeName, let country_id):
+            return ["stroeName": stroeName, "country_id": country_id]
         default:
             return nil
         }
@@ -43,9 +60,23 @@ enum APIRouter: URLRequestConvertible {
     private var path: String {
         switch self {
         // MARK: - PathRegister
-//        case .userRegister:
-//            return URLs.userSignUp
-        
+        case .userRegister:
+            return URLs.userSignUp
+        case .userLogin:
+            return URLs.login
+        case .countries:
+            return URLs.Countries
+        case .getAllMainCategories:
+            return URLs.MainCategories
+        case.getStores:
+            return URLs.getAllStores
+        case.getStoreCategory:
+            return URLs.getAllCategories
+        case.getStoreSubCategory:
+            return URLs.getAllSubCategories
+        case.searchStores:
+            return URLs.searchStore
+            
         }
     }
     
@@ -56,7 +87,14 @@ enum APIRouter: URLRequestConvertible {
         //httpMethod
         urlRequest.httpMethod = method.rawValue
         print(urlRequest)
-        
+        switch self {
+       
+        case .countries, .getAllMainCategories, .getStores, .getStoreCategory, .getStoreSubCategory, .searchStores:
+            urlRequest.setValue("Bearer \(UserDefaultsManager.shared().Token ?? "")",
+                forHTTPHeaderField: HeaderKeys.Authorization)
+        default:
+            break
+        }
         // HTTP Body
         let httpBody: Data? = {
             switch self {

@@ -14,6 +14,9 @@ class LanguageView: UIView {
     @IBOutlet weak var backDesign: UIButton!
     @IBOutlet weak var englishView: UIView!
     @IBOutlet weak var arabicView: UIView!
+    @IBOutlet weak var englishDesign: UIButton!
+    @IBOutlet weak var arabicDesign: UIButton!
+    
     
     func updateUI() {
         if L10n.lang.localized == Language.arabic {

@@ -16,11 +16,12 @@ class LanguageVC: UIViewController {
         super.viewDidLoad()
         languageView.updateUI()
         if L10n.lang.localized == Language.arabic {
-            
+            languageView.arabicDesign.isEnabled = false
             languageView.arabicView.backgroundColor = #colorLiteral(red: 1, green: 0.8431372549, blue: 0, alpha: 1)
             languageView.englishView.backgroundColor = .white
         }
         else {
+            languageView.englishDesign.isEnabled = false
             self.languageView.englishView.backgroundColor = #colorLiteral(red: 1, green: 0.8431372549, blue: 0, alpha: 1)
             languageView.arabicView.backgroundColor = .white
         }

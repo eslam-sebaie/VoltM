@@ -44,19 +44,36 @@ struct ViewControllers {
     static let ordersVC = "OrdersVC"
     static let orderDetailsVC = "OrderDetailsVC"
     static let chooseCountryVC = "ChooseCountryVC"
+    static let pagesVC = "PagesVC"
 }
 struct URLs {
     // MARK:- base
-    static let base = "http://penprnt.com/penprnt/api/"
+    static let base = "https://voltm7.com/api/"
+    static let userSignUp = "register"
+    static let login = "login"
+    static let Countries = "getAllCountries"
+    static let MainCategories = "getAllMainCategories"
+    static let getAllStores = "getAllStores"
+    static let getAllCategories = "getAllCategories"
+    static let getAllSubCategories = "getAllSubCategories"
+    static let searchStore = "store/name/country_id"
 }
 struct ParameterKeys {
    
     
 }
+struct HeaderKeys {
+    static let acceptLanguage = "en"
+    static let Authorization = "Authorization"
+}
 struct UserDefaultsKeys {
     static let token = "token"
     static let email = "email"
-   
+    static let phone = "phone"
+    static let password = "password"
+    static let country = "country"
+    static let countryId = "countryId"
+    
 }
 struct TableCells {
     static let homeCell = "cell"

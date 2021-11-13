@@ -9,44 +9,78 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 class APIManager {
-//    class func userRegister(name: String, emailNumber: String, address: String, dateOfBirth: String, gender: String, phoneNumber: String ,password: String, lat: String, lng: String, points: String,completion: @escaping(Result<SignUpResponse, Error>) -> Void) {
-//        request(APIRouter.userRegister(name, emailNumber, address, dateOfBirth, gender, phoneNumber ,password, lat, lng, points)) { (response) in
-//            completion(response)
-//        }
-//    }
-  
-//    class func uploadPhoto(image: UIImage, completion: @escaping (_ error: Error?, _ upImage: uploadImage?)-> Void){
-//
-//        AF.upload(multipartFormData: { (form: MultipartFormData) in
-//
-//            if let data = image.jpegData(compressionQuality: 0.75) {
-//                form.append(data, withName: "storeFile", fileName: "storeFile.jpeg", mimeType: "storeFile/jpeg")
-//            }
-//        }, to: "http://penprnt.com/penprnt/api/uploadImage", usingThreshold: MultipartFormData.encodingMemoryThreshold, method: .post, headers: nil).response {
-//            response in
-//            guard response.error == nil else {
-//                print(response.error!)
-//
-//                return
-//            }
-//
-//            guard let data = response.data else {
-//                print("didn't get any data from API")
-//                return
-//            }
-//
-//            do {
-//
-//
-//                let decoder = JSONDecoder()
-//                let img = try decoder.decode(uploadImage.self, from: data)
-//
-//                completion(nil, img)
-//            } catch let error {
-//                completion(response.error, nil)
-//            }
-//        }
-//    }
+    class func userRegister(fname: String, lname: String, email: String, password: String, phone: String, address: String , latitude: String, longitude: String, image: String,completion: @escaping(Result<SignUpResponse, Error>) -> Void) {
+        request(APIRouter.userRegister(fname, lname, email, password, phone, address ,latitude, longitude, image)) { (response) in
+            completion(response)
+        }
+    }
+    class func userLogin( email: String, password: String, completion: @escaping(Result<SignUpResponse, Error>) -> Void) {
+        request(APIRouter.userLogin(email, password)) { (response) in
+            completion(response)
+        }
+    }
+    class func getAllCountries(completion: @escaping(Result<CountryResponse, Error>) -> Void ) {
+        request(APIRouter.countries) { (response) in
+            completion(response)
+        }
+    }
+    class func getAllMainCategory(completion: @escaping(Result<CountryResponse, Error>) -> Void ) {
+        request(APIRouter.getAllMainCategories) { (response) in
+            completion(response)
+        }
+    }
+    class func getStores(mainCat_id: Int,country_id: Int, completion: @escaping(Result<StoreResponse, Error>) -> Void) {
+        request(APIRouter.getStores(mainCat_id, country_id)) { (response) in
+            completion(response)
+        }
+    }
+    class func getStoresCategory(store_id: Int, completion: @escaping(Result<StoresCategoryResponse, Error>) -> Void) {
+        request(APIRouter.getStoreCategory(store_id)) { (response) in
+            completion(response)
+        }
+    }
+    class func getStoresSubCategory(parent_id: Int, completion: @escaping(Result<StoresCategoryResponse, Error>) -> Void) {
+        request(APIRouter.getStoreSubCategory(parent_id)) { (response) in
+            completion(response)
+        }
+    }
+    class func searchStores(stroeName: String,country_id: Int, completion: @escaping(Result<StoreResponse, Error>) -> Void) {
+        request(APIRouter.searchStores(stroeName, country_id)) { (response) in
+            completion(response)
+        }
+    }
+    class func uploadPhoto(image: UIImage, completion: @escaping (_ error: Error?, _ upImage: uploadImage?)-> Void){
+
+        AF.upload(multipartFormData: { (form: MultipartFormData) in
+
+            if let data = image.jpegData(compressionQuality: 0.75) {
+                form.append(data, withName: "image", fileName: "image.jpeg", mimeType: "image/jpeg")
+            }
+        }, to: "https://voltm7.com/api/uploadImage", usingThreshold: MultipartFormData.encodingMemoryThreshold, method: .post, headers: nil).response {
+            response in
+            guard response.error == nil else {
+                print(response.error!)
+
+                return
+            }
+
+            guard let data = response.data else {
+                print("didn't get any data from API")
+                return
+            }
+
+            do {
+
+
+                let decoder = JSONDecoder()
+                let img = try decoder.decode(uploadImage.self, from: data)
+
+                completion(nil, img)
+            } catch let error {
+                completion(response.error, nil)
+            }
+        }
+    }
     
 }
 

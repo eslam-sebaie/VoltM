@@ -10,15 +10,45 @@ import UIKit
 class StoreCategoryVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet var storeCategoryView: StoreCategoryView!
+    var receiveStoreID = 0
+    var receiveStoreInfo = StoreInfo(id: 0, name: StoreLocalize(en: "", ar: ""), image: "", address: "", countryID: 0, cityID: 0, mainCatID: 0, createdAt: "", updatedAt: "")
+    var storeCategories = [StoresCategoryInfo]()
     override func viewDidLoad() {
         super.viewDidLoad()
         storeCategoryView.updateUI()
+        if L10n.lang.localized == Language.arabic {
+            storeCategoryView.storeName.text = receiveStoreInfo.name?.ar
+        }
+        else {
+            storeCategoryView.storeName.text = receiveStoreInfo.name?.en
+        }
+        storeCategoryView.storeLocation.text = receiveStoreInfo.address
+        storeCategoryView.storeImage.sd_setImage(with: URL(string: receiveStoreInfo.image ?? ""), completed: nil)
         // Do any additional setup after loading the view.
     }
     
     class func create() -> StoreCategoryVC {
         let storeCategoryVC: StoreCategoryVC = UIViewController.create(storyboardName: Storyboards.home, identifier: ViewControllers.storeCategoryVC)
         return storeCategoryVC
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        getStoreCategory()
+    }
+    
+    func getStoreCategory() {
+        self.view.showLoader()
+        APIManager.getStoresCategory(store_id: receiveStoreID) { response in
+            switch response {
+            case .failure( _):
+                self.show_Alert("Sorry!", "SomeThing went Wrong.")
+                self.view.hideLoader()
+            case .success(let result):
+                
+                self.storeCategories = result.data ?? []
+                self.storeCategoryView.storeCategoryTableView.reloadData()
+                self.view.hideLoader()
+            }
+        }
     }
     
     @IBAction func backPressed(_ sender: Any) {
@@ -29,7 +59,7 @@ class StoreCategoryVC: UIViewController, UITableViewDataSource, UITableViewDeleg
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return storeCategories.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -37,11 +67,19 @@ class StoreCategoryVC: UIViewController, UITableViewDataSource, UITableViewDeleg
         cell.mainView.setCornerRadius(radius: 10)
         cell.catImage.setCornerRadius(radius: 10)
         cell.catCardView.dropShadow(radius: 8, shadow: 2)
-        
+        cell.catImage.sd_setImage(with: URL(string: storeCategories[indexPath.row].image ?? ""), completed: nil)
+        if L10n.lang.localized == Language.arabic {
+            cell.catName.text = storeCategories[indexPath.row].name.ar
+        }
+        else {
+            cell.catName.text = storeCategories[indexPath.row].name.en
+        }
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storeSubCat = StoreSubCategoryVC.create()
+        storeSubCat.receiveCatID = storeCategories[indexPath.row].id
+        storeSubCat.receiveCatImage = storeCategories[indexPath.row].image ?? ""
         self.present(storeSubCat, animated: true, completion: nil)
     }
     

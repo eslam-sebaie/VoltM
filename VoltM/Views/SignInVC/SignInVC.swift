@@ -43,7 +43,30 @@ class SignInVC: UIViewController {
             return
         }
         
+        let response = Validation.shared.validate(values: (type: Validation.ValidationType.email, email))
         
+        switch response {
+        case .failure(_, let message):
+            self.show_Alert("Invalid", message.localized())
+        case .success:
+            self.view.showLoader()
+            APIManager.userLogin(email: email, password: pass) { (response) in
+                switch response {
+                case .failure(let err):
+                    print(err)
+                    self.show_Alert("Sorry!", "Email Or Password Is Wrong.")
+                    self.view.hideLoader()
+                case .success(let result):
+                    UserDefaultsManager.shared().Token = result.token
+                    UserDefaultsManager.shared().Email = result.data?.email
+                    UserDefaultsManager.shared().phone = result.data?.phone
+                    UserDefaultsManager.shared().Password = pass
+                    self.view.hideLoader()
+                    let country = ChooseCountryVC.create()
+                    self.present(country, animated: true, completion: nil)
+                }
+            }
+        }
     }
     
     @IBAction func signUpPressed(_ sender: Any) {

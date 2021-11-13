@@ -6,18 +6,41 @@
 //
 
 import UIKit
-
+import SDWebImage
 class StoreSubCategoryVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet var StoreSubCatView: StoreSubCategoryView!
+    var receiveCatID = 0
+    var receiveCatImage = ""
+    var storeSubCategories = [StoresCategoryInfo]()
     override func viewDidLoad() {
         super.viewDidLoad()
         StoreSubCatView.updateUI()
+        StoreSubCatView.storeImage.sd_setImage(with: URL(string: receiveCatImage), completed: nil)
         // Do any additional setup after loading the view.
     }
     class func create() -> StoreSubCategoryVC {
         let storeSubCategoryVC: StoreSubCategoryVC = UIViewController.create(storyboardName: Storyboards.home, identifier: ViewControllers.storeSubCategoryVC)
         return storeSubCategoryVC
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        getStoreSubCategory()
+    }
+    
+    func getStoreSubCategory() {
+        self.view.showLoader()
+        APIManager.getStoresSubCategory(parent_id: receiveCatID) { response in
+            switch response {
+            case .failure( _):
+                self.show_Alert("Sorry!", "SomeThing went Wrong.")
+                self.view.hideLoader()
+            case .success(let result):
+                
+                self.storeSubCategories = result.data ?? []
+                self.StoreSubCatView.subCatTableView.reloadData()
+                self.view.hideLoader()
+            }
+        }
     }
     
     @IBAction func backPressed(_ sender: Any) {
@@ -28,7 +51,7 @@ class StoreSubCategoryVC: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return storeSubCategories.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -36,7 +59,13 @@ class StoreSubCategoryVC: UIViewController, UITableViewDataSource, UITableViewDe
         cell.mainView.setCornerRadius(radius: 10)
         cell.subCatImage.setCornerRadius(radius: 10)
         cell.subCatCardView.dropShadow(radius: 8, shadow: 2)
-        
+        cell.subCatImage.sd_setImage(with: URL(string: storeSubCategories[indexPath.row].image ?? ""), completed: nil)
+        if L10n.lang.localized == Language.arabic {
+            cell.subCatName.text = storeSubCategories[indexPath.row].name.ar
+        }
+        else {
+            cell.subCatName.text = storeSubCategories[indexPath.row].name.en
+        }
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

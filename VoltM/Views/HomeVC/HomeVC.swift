@@ -67,12 +67,19 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let cat = MainCategoryVC.create()
-//        self.present(cat, animated: true, completion: nil)
-        let storyboard = UIStoryboard(name: Storyboards.home, bundle: nil)
-        let tabVC = storyboard.instantiateViewController(withIdentifier: "tabViewController") as! UITabBarController
-        tabVC.selectedIndex = 1
-        self.present(tabVC, animated: true, completion: nil)
+        if indexPath.row == 0 {
+            let storyboard = UIStoryboard(name: Storyboards.home, bundle: nil)
+            let tabVC = storyboard.instantiateViewController(withIdentifier: "tabViewController") as! UITabBarController
+            tabVC.selectedIndex = 1
+            self.present(tabVC, animated: true, completion: nil)
+        }
+        else {
+            let storyboard = UIStoryboard(name: Storyboards.home, bundle: nil)
+            let tabVC = storyboard.instantiateViewController(withIdentifier: "tabViewController") as! UITabBarController
+            tabVC.selectedIndex = 2
+            self.present(tabVC, animated: true, completion: nil)
+        }
+       
         
     }
     

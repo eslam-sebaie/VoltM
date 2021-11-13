@@ -19,8 +19,8 @@ class WelcomeVC: UIViewController {
         return welcomeVC
     }
     @IBAction func getStartedPressed(_ sender: Any) {
-        let signin = SignInVC.create()
-        self.present(signin, animated: true, completion: nil)
+        let page = PagesVC.create()
+        self.present(page, animated: true, completion: nil)
     }
     
 }

@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import CoreLocation
+import MapKit
 
 class SignUpVC: UIViewController, sendingAddress {
     func send(address: String) {
@@ -13,7 +15,9 @@ class SignUpVC: UIViewController, sendingAddress {
     }
     @IBOutlet var signUpView: SignUpView!
     var imagePicker = UIImagePickerController()
-    var storeImg = ""
+    var storeImg: String?
+    var lat = 0.0
+    var lng = 0.0
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePicker.delegate = self
@@ -48,31 +52,75 @@ class SignUpVC: UIViewController, sendingAddress {
         self.present(mapVC ,animated: true, completion: nil)
     }
     @IBAction func signUpPressed(_ sender: Any) {
-        guard let fname = signUpView.fNameTF.text , fname != "" else {
-            self.show_Alert("Sorry", "InCorrect FirstName")
-            return
-        }
-        guard let lname = signUpView.lNameTF.text , lname != "" else {
-            self.show_Alert("Sorry", "InCorrect LastName")
-            return
-        }
-        guard let email = signUpView.emailTF.text , email != "" else {
-            self.show_Alert("Sorry", "InCorrect Email")
-            return
-        }
-        guard let pass = signUpView.passwordTF.text , pass != "" else {
-            self.show_Alert("Sorry", "InCorrect Password")
-            return
-        }
-        guard let phone = signUpView.phoneTF.text , phone != "" else {
-            self.show_Alert("Sorry", "InCorrect Phone")
-            return
-        }
-        guard let address = signUpView.addressTF.text , address != "" else {
-            self.show_Alert("Sorry", "InCorrect Address")
+        guard let img = storeImg , img != "" else {
+            self.show_Alert("Sorry", "Upload Your Image.")
             return
         }
         
+        guard let fname = signUpView.fNameTF.text , fname != "" else {
+            self.show_Alert("Sorry", "Please Enter FirstName")
+            return
+        }
+        guard let lname = signUpView.lNameTF.text , lname != "" else {
+            self.show_Alert("Sorry", "Please Enter LastName")
+            return
+        }
+        guard let email = signUpView.emailTF.text , email != "" else {
+            self.show_Alert("Sorry", "Wrong Email")
+            return
+        }
+        guard let pass = signUpView.passwordTF.text , pass != "" else {
+            self.show_Alert("Sorry", "Please Enter Password")
+            return
+        }
+        guard let phone = signUpView.phoneTF.text , phone != "" else {
+            self.show_Alert("Sorry", "Please Enter Phone")
+            return
+        }
+        guard let address = signUpView.addressTF.text , address != "" else {
+            self.show_Alert("Sorry", "Please Enter Address")
+            return
+        }
+        
+        let searchRequest = MKLocalSearch.Request()
+        searchRequest.naturalLanguageQuery = self.signUpView.addressTF.text ?? ""
+        let activeSearch = MKLocalSearch(request: searchRequest)
+        activeSearch.start { (response, err) in
+            if response == nil {
+                
+                self.show_Alert("Sorry!","No Result Found")
+                
+            }
+            else {
+                
+                let latitude = response?.boundingRegion.center.latitude
+                let longitude = response?.boundingRegion.center.longitude
+                
+                self.lat = Double(latitude!)
+                self.lng = Double(longitude!)
+                let response = Validation.shared.validate(values: (type: Validation.ValidationType.email, email))
+                
+                switch response {
+                case .failure(_, let message):
+                    self.show_Alert("Sorry!", message.localized())
+                case .success:
+                    self.view.showLoader()
+                    APIManager.userRegister(fname: fname, lname: lname, email: email, password: pass, phone: phone, address: address, latitude: String(self.lat), longitude: String(self.lng), image: img) { (response) in
+                            switch response {
+                            case .failure(let err):
+                                print(err)
+                                self.show_Alert("Sorry!", "Email Or Phone are Aleardy Token.")
+                                self.view.hideLoader()
+                            case .success(let result):
+                                print(result)
+                                self.view.hideLoader()
+                                let signIn = SignInVC.create()
+                                self.present(signIn, animated: true, completion: nil)
+                            }
+                        }
+                }
+            }
+        }
     }
     
     @IBAction func loginPressed(_ sender: Any) {
@@ -92,13 +140,17 @@ extension SignUpVC: UIImagePickerControllerDelegate, UINavigationControllerDeleg
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
         signUpView.userImage.image = image
-        //self.signUpView.showLoader()
-//        APIManager.uploadPhoto(image: image!) { (err, img) in
+        self.signUpView.showLoader()
+        APIManager.uploadPhoto(image: image!) { (err, img) in
+            self.storeImg = img?.data ?? ""
+            print(self.storeImg)
 //            APIManager.updateImage(emailNumber: UserDefaultsManager.shared().Email ?? "", image: img?.data ?? "") {
-//                self.signUpView.hideLoader()
+                self.signUpView.hideLoader()
 //            }
-//        }
+            
+        }
         
         picker.dismiss(animated: false, completion: nil)
     }
 }
+
