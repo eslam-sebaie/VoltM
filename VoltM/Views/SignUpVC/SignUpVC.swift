@@ -53,32 +53,32 @@ class SignUpVC: UIViewController, sendingAddress {
     }
     @IBAction func signUpPressed(_ sender: Any) {
         guard let img = storeImg , img != "" else {
-            self.show_Alert("Sorry", "Upload Your Image.")
+            self.show_Alert(L10n.sorry.localized, L10n.uploadYourImage.localized)
             return
         }
         
         guard let fname = signUpView.fNameTF.text , fname != "" else {
-            self.show_Alert("Sorry", "Please Enter FirstName")
+            self.show_Alert(L10n.sorry.localized, L10n.pleaseEnterFirstName.localized)
             return
         }
         guard let lname = signUpView.lNameTF.text , lname != "" else {
-            self.show_Alert("Sorry", "Please Enter LastName")
+            self.show_Alert(L10n.sorry.localized, L10n.pleaseEnterLastName.localized)
             return
         }
         guard let email = signUpView.emailTF.text , email != "" else {
-            self.show_Alert("Sorry", "Wrong Email")
+            self.show_Alert(L10n.sorry.localized, L10n.wrongEmail.localized)
             return
         }
         guard let pass = signUpView.passwordTF.text , pass != "" else {
-            self.show_Alert("Sorry", "Please Enter Password")
+            self.show_Alert(L10n.sorry.localized, L10n.pleaseEnterPassword.localized)
             return
         }
         guard let phone = signUpView.phoneTF.text , phone != "" else {
-            self.show_Alert("Sorry", "Please Enter Phone")
+            self.show_Alert(L10n.sorry.localized, L10n.pleaseEnterPhone.localized)
             return
         }
         guard let address = signUpView.addressTF.text , address != "" else {
-            self.show_Alert("Sorry", "Please Enter Address")
+            self.show_Alert(L10n.sorry.localized, L10n.pleaseEnterAddress.localized)
             return
         }
         
@@ -88,7 +88,7 @@ class SignUpVC: UIViewController, sendingAddress {
         activeSearch.start { (response, err) in
             if response == nil {
                 
-                self.show_Alert("Sorry!","No Result Found")
+                self.show_Alert(L10n.sorry.localized,L10n.noResultFound.localized)
                 
             }
             else {
@@ -102,14 +102,14 @@ class SignUpVC: UIViewController, sendingAddress {
                 
                 switch response {
                 case .failure(_, let message):
-                    self.show_Alert("Sorry!", message.localized())
+                    self.show_Alert(L10n.sorry.localized, message.localized())
                 case .success:
                     self.view.showLoader()
                     APIManager.userRegister(fname: fname, lname: lname, email: email, password: pass, phone: phone, address: address, latitude: String(self.lat), longitude: String(self.lng), image: img) { (response) in
                             switch response {
                             case .failure(let err):
                                 print(err)
-                                self.show_Alert("Sorry!", "Email Or Phone are Aleardy Token.")
+                                self.show_Alert(L10n.sorry.localized, L10n.emailOrPhoneAreAleardyToken.localized)
                                 self.view.hideLoader()
                             case .success(let result):
                                 print(result)
@@ -143,10 +143,7 @@ extension SignUpVC: UIImagePickerControllerDelegate, UINavigationControllerDeleg
         self.signUpView.showLoader()
         APIManager.uploadPhoto(image: image!) { (err, img) in
             self.storeImg = img?.data ?? ""
-            print(self.storeImg)
-//            APIManager.updateImage(emailNumber: UserDefaultsManager.shared().Email ?? "", image: img?.data ?? "") {
-                self.signUpView.hideLoader()
-//            }
+            self.signUpView.hideLoader()
             
         }
         

@@ -21,12 +21,14 @@ enum APIRouter: URLRequestConvertible {
     case getStoreCategory(_ store_id: Int)
     case getStoreSubCategory(_ parent_id: Int)
     case searchStores(_ stroeName: String,_ country_id: Int)
+    case searchCatStores(_ categoryName: String,_ store_id: Int)
+    case searchSubCatStores(_ subCategoryName: String,_ parent_id: Int)
     // MARK: - HttpMethod
     private var method: HTTPMethod {
         switch self {
         case .userRegister, .userLogin:
             return .post
-        case .countries, .getAllMainCategories, .getStores, .getStoreCategory, .getStoreSubCategory, .searchStores:
+        case .countries, .getAllMainCategories, .getStores, .getStoreCategory, .getStoreSubCategory, .searchStores, .searchCatStores, .searchSubCatStores:
             return .get
             
     
@@ -52,6 +54,10 @@ enum APIRouter: URLRequestConvertible {
             return ["parent_id": parent_id]
         case .searchStores(let stroeName, let country_id):
             return ["stroeName": stroeName, "country_id": country_id]
+        case .searchCatStores(let categoryName, let store_id):
+            return ["categoryName": categoryName, "store_id": store_id]
+        case .searchSubCatStores(let subCategoryName, let parent_id):
+            return ["subCategoryName": subCategoryName, "parent_id": parent_id]
         default:
             return nil
         }
@@ -76,6 +82,10 @@ enum APIRouter: URLRequestConvertible {
             return URLs.getAllSubCategories
         case.searchStores:
             return URLs.searchStore
+        case.searchCatStores:
+            return URLs.searchCat
+        case.searchSubCatStores:
+            return URLs.searchSubCat
             
         }
     }
@@ -89,7 +99,7 @@ enum APIRouter: URLRequestConvertible {
         print(urlRequest)
         switch self {
        
-        case .countries, .getAllMainCategories, .getStores, .getStoreCategory, .getStoreSubCategory, .searchStores:
+        case .countries, .getAllMainCategories, .getStores, .getStoreCategory, .getStoreSubCategory, .searchStores, .searchCatStores, .searchSubCatStores:
             urlRequest.setValue("Bearer \(UserDefaultsManager.shared().Token ?? "")",
                 forHTTPHeaderField: HeaderKeys.Authorization)
         default:

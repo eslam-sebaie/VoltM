@@ -31,13 +31,19 @@ class StoreVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         APIManager.getStores(mainCat_id: receiveMainCategoryID, country_id: UserDefaultsManager.shared().countryId ?? 0) { response in
             switch response {
             case .failure( _):
-                self.show_Alert("Sorry!", "SomeThing went Wrong.")
+                self.show_Alert(L10n.sorry.localized, L10n.wentWrong.localized)
                 self.view.hideLoader()
             case .success(let result):
+                if result.status == false {
+                    self.show_Alert(L10n.sorry.localized, L10n.noStores.localized)
+                    self.view.hideLoader()
+                }
+                else {
+                    self.storeInfo = result.data ?? []
+                    self.storeView.storeTableView.reloadData()
+                    self.view.hideLoader()
+                }
                 
-                self.storeInfo = result.data ?? []
-                self.storeView.storeTableView.reloadData()
-                self.view.hideLoader()
             }
         }
     }
@@ -48,19 +54,29 @@ class StoreVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBAction func searchPressed(_ sender: Any) {
         guard let name = storeView.searchTF.text , name != "" else {
-            show_Alert("Please", "Enter Store Name.")
+            show_Alert(L10n.please.localized, L10n.storeName.localized)
             return
         }
         self.view.showLoader()
         APIManager.searchStores(stroeName: name, country_id: UserDefaultsManager.shared().countryId ?? 0) { response in
             switch response {
             case .failure( _):
-                self.show_Alert("Sorry!", "SomeThing went Wrong.")
-            case .success(let result):
-                
-                self.storeInfo = result.data ?? []
-                self.storeView.storeTableView.reloadData()
+                self.show_Alert(L10n.sorry.localized, L10n.wentWrong.localized)
                 self.view.hideLoader()
+            case .success(let result):
+                if result.status == false {
+                    self.show_Alert(L10n.sorry.localized, L10n.noStores.localized)
+                    self.storeView.searchTF.text = ""
+                    self.storeInfo = []
+                    self.storeView.storeTableView.reloadData()
+                    self.view.hideLoader()
+                }
+                else {
+                    self.storeInfo = result.data ?? []
+                    self.storeView.storeTableView.reloadData()
+                    self.view.hideLoader()
+                }
+                
             }
         }
     }

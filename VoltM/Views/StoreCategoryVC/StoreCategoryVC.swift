@@ -40,13 +40,19 @@ class StoreCategoryVC: UIViewController, UITableViewDataSource, UITableViewDeleg
         APIManager.getStoresCategory(store_id: receiveStoreID) { response in
             switch response {
             case .failure( _):
-                self.show_Alert("Sorry!", "SomeThing went Wrong.")
+                self.show_Alert(L10n.sorry.localized, L10n.wentWrong.localized)
                 self.view.hideLoader()
             case .success(let result):
-                
-                self.storeCategories = result.data ?? []
-                self.storeCategoryView.storeCategoryTableView.reloadData()
-                self.view.hideLoader()
+                if result.status == false {
+                    self.show_Alert(L10n.sorry.localized, L10n.noCategories.localized)
+                    self.view.hideLoader()
+                }
+                else {
+                    self.storeCategories = result.data ?? []
+                    self.storeCategoryView.storeCategoryTableView.reloadData()
+                    self.view.hideLoader()
+                }
+               
             }
         }
     }
@@ -56,6 +62,32 @@ class StoreCategoryVC: UIViewController, UITableViewDataSource, UITableViewDeleg
     }
     
     @IBAction func searchPressed(_ sender: Any) {
+        guard let name = storeCategoryView.searchTF.text , name != "" else {
+            show_Alert(L10n.please.localized, L10n.catName.localized)
+            return
+        }
+        self.view.showLoader()
+        APIManager.searchCatStores(categoryName: name, store_id: receiveStoreInfo.id) { response in
+            switch response {
+            case .failure( _):
+                self.show_Alert(L10n.sorry.localized, L10n.wentWrong.localized)
+                self.view.hideLoader()
+            case .success(let result):
+                if result.status == false {
+                    self.show_Alert(L10n.sorry.localized, L10n.noCategories.localized)
+                    self.storeCategories = []
+                    self.storeCategoryView.searchTF.text = ""
+                    self.storeCategoryView.storeCategoryTableView.reloadData()
+                    self.view.hideLoader()
+                }
+                else {
+                    self.storeCategories = result.data ?? []
+                    self.storeCategoryView.storeCategoryTableView.reloadData()
+                    self.view.hideLoader()
+                }
+               
+            }
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

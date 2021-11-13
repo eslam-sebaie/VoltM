@@ -29,7 +29,7 @@ class MainCategoryVC: UIViewController, UITableViewDataSource, UITableViewDelega
         APIManager.getAllMainCategory { response in
             switch response {
             case .failure( _):
-                self.show_Alert("Sorry", "SomeThing went Wrong")
+                self.show_Alert(L10n.sorry.localized, L10n.wentWrong.localized)
                 self.view.hideLoader()
             case .success(let result):
                 

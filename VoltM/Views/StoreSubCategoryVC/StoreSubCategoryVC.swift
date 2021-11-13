@@ -32,12 +32,17 @@ class StoreSubCategoryVC: UIViewController, UITableViewDataSource, UITableViewDe
         APIManager.getStoresSubCategory(parent_id: receiveCatID) { response in
             switch response {
             case .failure( _):
-                self.show_Alert("Sorry!", "SomeThing went Wrong.")
+                self.show_Alert(L10n.sorry.localized, L10n.wentWrong.localized)
                 self.view.hideLoader()
             case .success(let result):
-                
-                self.storeSubCategories = result.data ?? []
-                self.StoreSubCatView.subCatTableView.reloadData()
+                if result.status == false {
+                    self.show_Alert(L10n.sorry.localized, L10n.noSubCat.localized)
+                }
+                else {
+                    self.storeSubCategories = result.data ?? []
+                    self.StoreSubCatView.subCatTableView.reloadData()
+                    
+                }
                 self.view.hideLoader()
             }
         }
@@ -48,6 +53,32 @@ class StoreSubCategoryVC: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     @IBAction func searchPressed(_ sender: Any) {
+        guard let name = StoreSubCatView.searchTF.text , name != "" else {
+            show_Alert(L10n.please.localized, L10n.subCatName.localized)
+            return
+        }
+        self.view.showLoader()
+        APIManager.searchSubCatStores(subCategoryName: name, parent_id: receiveCatID) { response in
+            switch response {
+            case .failure( _):
+                self.show_Alert(L10n.sorry.localized, L10n.wentWrong.localized)
+                self.view.hideLoader()
+            case .success(let result):
+                if result.status == false {
+                    self.show_Alert(L10n.sorry.localized, L10n.noSubCat.localized)
+                    self.storeSubCategories = []
+                    self.StoreSubCatView.searchTF.text = ""
+                    self.StoreSubCatView.subCatTableView.reloadData()
+                    self.view.hideLoader()
+                }
+                else {
+                    self.storeSubCategories = result.data ?? []
+                    self.StoreSubCatView.subCatTableView.reloadData()
+                    self.view.hideLoader()
+                }
+               
+            }
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

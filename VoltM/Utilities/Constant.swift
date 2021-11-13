@@ -57,6 +57,8 @@ struct URLs {
     static let getAllCategories = "getAllCategories"
     static let getAllSubCategories = "getAllSubCategories"
     static let searchStore = "store/name/country_id"
+    static let searchCat = "category/name/store_id"
+    static let searchSubCat = "subCategory/name/category_id"
 }
 struct ParameterKeys {
    

@@ -49,6 +49,16 @@ class APIManager {
             completion(response)
         }
     }
+    class func searchCatStores(categoryName: String,store_id: Int, completion: @escaping(Result<StoresCategoryResponse, Error>) -> Void) {
+        request(APIRouter.searchCatStores(categoryName, store_id)) { (response) in
+            completion(response)
+        }
+    }
+    class func searchSubCatStores(subCategoryName: String,parent_id: Int, completion: @escaping(Result<StoresCategoryResponse, Error>) -> Void) {
+        request(APIRouter.searchSubCatStores(subCategoryName, parent_id)) { (response) in
+            completion(response)
+        }
+    }
     class func uploadPhoto(image: UIImage, completion: @escaping (_ error: Error?, _ upImage: uploadImage?)-> Void){
 
         AF.upload(multipartFormData: { (form: MultipartFormData) in

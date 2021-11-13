@@ -35,11 +35,11 @@ class SignInVC: UIViewController {
     
     @IBAction func loginPressed(_ sender: Any) {
         guard let email = signInView.emailTF.text , email != "" else {
-            self.show_Alert("Sorry", "InCorrect Email")
+            self.show_Alert(L10n.sorry.localized, L10n.inCorrectEmail.localized)
             return
         }
         guard let pass = signInView.passwordTF.text , pass != "" else {
-            self.show_Alert("Sorry", "InCorrect Password")
+            self.show_Alert(L10n.sorry.localized, L10n.inCorrectPassword.localized)
             return
         }
         
@@ -47,14 +47,14 @@ class SignInVC: UIViewController {
         
         switch response {
         case .failure(_, let message):
-            self.show_Alert("Invalid", message.localized())
+            self.show_Alert(L10n.sorry.localized, message.localized())
         case .success:
             self.view.showLoader()
             APIManager.userLogin(email: email, password: pass) { (response) in
                 switch response {
                 case .failure(let err):
                     print(err)
-                    self.show_Alert("Sorry!", "Email Or Password Is Wrong.")
+                    self.show_Alert(L10n.sorry.localized, L10n.emailOrPasswordIsWrong.localized)
                     self.view.hideLoader()
                 case .success(let result):
                     UserDefaultsManager.shared().Token = result.token
