@@ -59,6 +59,8 @@ struct URLs {
     static let searchStore = "store/name/country_id"
     static let searchCat = "category/name/store_id"
     static let searchSubCat = "subCategory/name/category_id"
+    static let getProducts = "product/subCategory_id"
+    static let searchProducts = "product/name/subCategory_id"
 }
 struct ParameterKeys {
    

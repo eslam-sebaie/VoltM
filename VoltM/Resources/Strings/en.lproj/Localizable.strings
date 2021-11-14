@@ -10,7 +10,7 @@
 "NoCategories" = "NoCategories";
 "catName" = "catName";
 "noSubCat" = "noSubCat";
-"subCatName" = "noSubCat";
+"subCatName" = "subCatName";
 "InCorrect Email" = "InCorrect Email";
 "InCorrect Password" = "InCorrect Password";
 "Email Or Password Is Wrong." = "Email Or Password Is Wrong.";
@@ -24,3 +24,5 @@
 "No Result Found" = "No Result Found";
 "Email Or Phone are Aleardy Token." = "Email Or Phone are Aleardy Token.";
 "OK" = "OK";
+"productName" = "productName";
+"noproductName" = "noproductName";

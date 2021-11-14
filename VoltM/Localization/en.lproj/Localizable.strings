@@ -34,3 +34,5 @@
 "No Result Found" = "No Result Found";
 "Email Or Phone are Aleardy Token." = "Email Or Phone are Aleardy Token.";
 "OK" = "OK";
+"productName" = "Enter Product Name.";
+"noproductName" = "No Products Found";

@@ -18,6 +18,8 @@ class ProductTableViewCell: UITableViewCell {
     @IBOutlet weak var favDesign: UIButton!
     @IBOutlet weak var productRate: CosmosView!
     var ratePressedCompletion: (() -> Void)?
+    var favPressedCompletion: (() -> Void)?
+    var cartPressedCompletion: (() -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,9 +33,11 @@ class ProductTableViewCell: UITableViewCell {
     }
     
     @IBAction func favPressed(_ sender: Any) {
+        favPressedCompletion?()
     }
     
     @IBAction func cartPressed(_ sender: Any) {
+        cartPressedCompletion?()
     }
     
     @IBAction func ratePressed(_ sender: Any) {

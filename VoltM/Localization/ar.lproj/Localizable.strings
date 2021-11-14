@@ -34,3 +34,5 @@
 "No Result Found" = "لا يوجد نتائج";
 "Email Or Phone are Aleardy Token." = "البريد الالكتروني او الرقم مسجلين من قبل.";
 "OK" = "موافق";
+"productName" = "إدخل إسم المنتج";
+"noproductName" = "لا يوجد منتجات";

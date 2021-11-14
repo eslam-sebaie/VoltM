@@ -58,7 +58,7 @@ class StoreVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             return
         }
         self.view.showLoader()
-        APIManager.searchStores(stroeName: name, country_id: UserDefaultsManager.shared().countryId ?? 0) { response in
+        APIManager.searchStores(storeName: name, country_id: UserDefaultsManager.shared().countryId ?? 0) { response in
             switch response {
             case .failure( _):
                 self.show_Alert(L10n.sorry.localized, L10n.wentWrong.localized)

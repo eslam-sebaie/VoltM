@@ -44,8 +44,8 @@ class APIManager {
             completion(response)
         }
     }
-    class func searchStores(stroeName: String,country_id: Int, completion: @escaping(Result<StoreResponse, Error>) -> Void) {
-        request(APIRouter.searchStores(stroeName, country_id)) { (response) in
+    class func searchStores(storeName: String,country_id: Int, completion: @escaping(Result<StoreResponse, Error>) -> Void) {
+        request(APIRouter.searchStores(storeName, country_id)) { (response) in
             completion(response)
         }
     }
@@ -56,6 +56,16 @@ class APIManager {
     }
     class func searchSubCatStores(subCategoryName: String,parent_id: Int, completion: @escaping(Result<StoresCategoryResponse, Error>) -> Void) {
         request(APIRouter.searchSubCatStores(subCategoryName, parent_id)) { (response) in
+            completion(response)
+        }
+    }
+    class func getProducts(subCategory_id: Int, completion: @escaping(Result<ProductResponse, Error>) -> Void) {
+        request(APIRouter.getProducts(subCategory_id)) { (response) in
+            completion(response)
+        }
+    }
+    class func searchProducts(productName: String,subCategory_id: Int, completion: @escaping(Result<ProductResponse, Error>) -> Void) {
+        request(APIRouter.searchProducts(productName,subCategory_id)) { (response) in
             completion(response)
         }
     }

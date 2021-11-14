@@ -26,6 +26,8 @@ internal enum L10n {
   internal static let noResultFound = L10n.tr("Localizable", "No Result Found")
   /// NoCategories
   internal static let noCategories = L10n.tr("Localizable", "NoCategories")
+  /// noproductName
+  internal static let noproductName = L10n.tr("Localizable", "noproductName")
   /// NoStores
   internal static let noStores = L10n.tr("Localizable", "NoStores")
   /// noSubCat
@@ -44,6 +46,8 @@ internal enum L10n {
   internal static let pleaseEnterPassword = L10n.tr("Localizable", "Please Enter Password")
   /// Please Enter Phone
   internal static let pleaseEnterPhone = L10n.tr("Localizable", "Please Enter Phone")
+  /// productName
+  internal static let productName = L10n.tr("Localizable", "productName")
   /// Service
   internal static let service = L10n.tr("Localizable", "Service")
   /// Sign in into your Account
@@ -54,7 +58,7 @@ internal enum L10n {
   internal static let store = L10n.tr("Localizable", "Store")
   /// StoreName
   internal static let storeName = L10n.tr("Localizable", "StoreName")
-  /// noSubCat
+  /// subCatName
   internal static let subCatName = L10n.tr("Localizable", "subCatName")
   /// Upload Your Image.
   internal static let uploadYourImage = L10n.tr("Localizable", "Upload Your Image.")

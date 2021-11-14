@@ -20,15 +20,17 @@ enum APIRouter: URLRequestConvertible {
     case getStores(_ mainCat_id: Int,_ country_id: Int)
     case getStoreCategory(_ store_id: Int)
     case getStoreSubCategory(_ parent_id: Int)
-    case searchStores(_ stroeName: String,_ country_id: Int)
+    case searchStores(_ storeName: String,_ country_id: Int)
     case searchCatStores(_ categoryName: String,_ store_id: Int)
     case searchSubCatStores(_ subCategoryName: String,_ parent_id: Int)
+    case getProducts(_ subcategory_id: Int)
+    case searchProducts(_ productName: String,_ subcategory_id: Int)
     // MARK: - HttpMethod
     private var method: HTTPMethod {
         switch self {
         case .userRegister, .userLogin:
             return .post
-        case .countries, .getAllMainCategories, .getStores, .getStoreCategory, .getStoreSubCategory, .searchStores, .searchCatStores, .searchSubCatStores:
+        case .countries, .getAllMainCategories, .getStores, .getStoreCategory, .getStoreSubCategory, .searchStores, .searchCatStores, .searchSubCatStores, .getProducts, .searchProducts:
             return .get
             
     
@@ -52,12 +54,16 @@ enum APIRouter: URLRequestConvertible {
             return ["store_id": store_id]
         case .getStoreSubCategory(let parent_id):
             return ["parent_id": parent_id]
-        case .searchStores(let stroeName, let country_id):
-            return ["stroeName": stroeName, "country_id": country_id]
+        case .searchStores(let storeName, let country_id):
+            return ["storeName": storeName, "country_id": country_id]
         case .searchCatStores(let categoryName, let store_id):
             return ["categoryName": categoryName, "store_id": store_id]
         case .searchSubCatStores(let subCategoryName, let parent_id):
             return ["subCategoryName": subCategoryName, "parent_id": parent_id]
+        case .getProducts(let subcategory_id):
+            return ["subcategory_id": subcategory_id]
+        case .searchProducts(let productName, let subcategory_id):
+            return ["productName": productName, "subcategory_id": subcategory_id]
         default:
             return nil
         }
@@ -86,6 +92,10 @@ enum APIRouter: URLRequestConvertible {
             return URLs.searchCat
         case.searchSubCatStores:
             return URLs.searchSubCat
+        case.getProducts:
+            return URLs.getProducts
+        case.searchProducts:
+            return URLs.searchProducts
             
         }
     }
@@ -99,7 +109,7 @@ enum APIRouter: URLRequestConvertible {
         print(urlRequest)
         switch self {
        
-        case .countries, .getAllMainCategories, .getStores, .getStoreCategory, .getStoreSubCategory, .searchStores, .searchCatStores, .searchSubCatStores:
+        case .countries, .getAllMainCategories, .getStores, .getStoreCategory, .getStoreSubCategory, .searchStores, .searchCatStores, .searchSubCatStores, .getProducts, .searchProducts:
             urlRequest.setValue("Bearer \(UserDefaultsManager.shared().Token ?? "")",
                 forHTTPHeaderField: HeaderKeys.Authorization)
         default:

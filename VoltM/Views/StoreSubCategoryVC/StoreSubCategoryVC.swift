@@ -101,6 +101,7 @@ class StoreSubCategoryVC: UIViewController, UITableViewDataSource, UITableViewDe
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let product = ProductVC.create()
+        product.receiveSubCatId = storeSubCategories[indexPath.row].id
         self.present(product, animated: true, completion: nil)
     }
     
