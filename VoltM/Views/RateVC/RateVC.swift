@@ -46,32 +46,35 @@ class RateVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         rateView.popRateView.isHidden = false
     }
     @IBAction func sendReviewPressed(_ sender: Any) {
-        guard let rate = rateView.popRate.text, rate != "" else {
-            show_Alert(L10n.please.localized, "Enter Rate Value.")
-            return
+        if rateView.popRate.rating == 0.0 {
+            show_Alert(L10n.please.localized, L10n.enterRateValue.localized)
         }
-        guard let rateTF = rateView.rateTF.text, rateTF != "" else {
-            show_Alert(L10n.please.localized, "Enter Your Comment.")
-            return
-        }
-        self.view.showLoader()
-        APIManager.sendReview(rate: rateTF, value: rate, product_id: receiveProducts.id, user_id: UserDefaultsManager.shared().userId ?? 0) { response in
-            switch response {
-            case .failure( _):
-                self.show_Alert(L10n.sorry.localized, L10n.wentWrong.localized)
-                self.view.hideLoader()
-            case .success(let result):
-                if result.status == false {
+        else {
+            guard let rateTF = rateView.rateTF.text, rateTF != "" else {
+                show_Alert(L10n.please.localized, L10n.enterYourComment.localized)
+                return
+            }
+            self.view.showLoader()
+            APIManager.sendReview(rate: rateTF, value: String(rateView.popRate.rating), product_id: receiveProducts.id, user_id: String(UserDefaultsManager.shared().userId ?? 0)) { response in
+                switch response {
+                case .failure( _):
                     self.show_Alert(L10n.sorry.localized, L10n.wentWrong.localized)
                     self.view.hideLoader()
+                case .success(let result):
+                    if result.status == false {
+                        self.show_Alert(L10n.sorry.localized, L10n.wentWrong.localized)
+                        self.view.hideLoader()
+                    }
+                    else {
+                        self.view.hideLoader()
+                        self.dismiss(animated: true, completion: nil)
+                    }
+                    
                 }
-                else {
-                    self.view.hideLoader()
-                    self.dismiss(animated: true, completion: nil)
-                }
-                
             }
         }
+        
+       
     }
     
     @IBAction func cancelPressed(_ sender: Any) {

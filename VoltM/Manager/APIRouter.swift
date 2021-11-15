@@ -25,7 +25,7 @@ enum APIRouter: URLRequestConvertible {
     case searchSubCatStores(_ subCategoryName: String,_ parent_id: Int)
     case getProducts(_ subcategory_id: Int)
     case searchProducts(_ productName: String,_ subcategory_id: Int)
-    case sendReview(_ rate: String,_ value: String, _ product_id: Int, _ user_id: Int)
+    case sendReview(_ rate: String,_ value: String, _ product_id: Int, _ user_id: String)
     // MARK: - HttpMethod
     private var method: HTTPMethod {
         switch self {

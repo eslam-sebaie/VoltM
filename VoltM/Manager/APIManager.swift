@@ -69,7 +69,7 @@ class APIManager {
             completion(response)
         }
     }
-    class func sendReview( rate: String, value: String, product_id: Int, user_id: Int, completion: @escaping(Result<ReviewResponse, Error>) -> Void) {
+    class func sendReview( rate: String, value: String, product_id: Int, user_id: String, completion: @escaping(Result<ReviewResponse, Error>) -> Void) {
         request(APIRouter.sendReview(rate,value,product_id,user_id)) { (response) in
             completion(response)
         }
@@ -118,6 +118,7 @@ extension APIManager{
             case .success(let value):
                 completion(.success(value))
             case .failure(let error):
+                print(error)
                 completion(.failure(error))
             }
         }

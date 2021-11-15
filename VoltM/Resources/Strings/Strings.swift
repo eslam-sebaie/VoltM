@@ -16,6 +16,10 @@ internal enum L10n {
   internal static let emailOrPasswordIsWrong = L10n.tr("Localizable", "Email Or Password Is Wrong.")
   /// Email Or Phone are Aleardy Token.
   internal static let emailOrPhoneAreAleardyToken = L10n.tr("Localizable", "Email Or Phone are Aleardy Token.")
+  /// Enter Rate Value.
+  internal static let enterRateValue = L10n.tr("Localizable", "Enter Rate Value.")
+  /// Enter Your Comment.
+  internal static let enterYourComment = L10n.tr("Localizable", "Enter Your Comment.")
   /// InCorrect Email
   internal static let inCorrectEmail = L10n.tr("Localizable", "InCorrect Email")
   /// InCorrect Password
