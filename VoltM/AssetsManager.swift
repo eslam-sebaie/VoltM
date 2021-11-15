@@ -39,6 +39,7 @@ internal enum Asset {
   internal static let service = ImageAsset(name: "Service")
   internal static let cart = ImageAsset(name: "cart")
   internal static let cartAr = ImageAsset(name: "cartAr")
+  internal static let circle = DataAsset(name: "circle")
   internal static let fav = ImageAsset(name: "fav")
   internal static let favAr = ImageAsset(name: "favAr")
   internal static let home = ImageAsset(name: "home")
@@ -154,6 +155,34 @@ internal extension ColorAsset.Color {
     #endif
   }
 }
+
+internal struct DataAsset {
+  internal fileprivate(set) var name: String
+
+  #if os(iOS) || os(tvOS) || os(macOS)
+  @available(iOS 9.0, macOS 10.11, *)
+  internal var data: NSDataAsset {
+    guard let data = NSDataAsset(asset: self) else {
+      fatalError("Unable to load data asset named \(name).")
+    }
+    return data
+  }
+  #endif
+}
+
+#if os(iOS) || os(tvOS) || os(macOS)
+@available(iOS 9.0, macOS 10.11, *)
+internal extension NSDataAsset {
+  convenience init?(asset: DataAsset) {
+    let bundle = BundleToken.bundle
+    #if os(iOS) || os(tvOS)
+    self.init(name: asset.name, bundle: bundle)
+    #elseif os(macOS)
+    self.init(name: NSDataAsset.Name(asset.name), bundle: bundle)
+    #endif
+  }
+}
+#endif
 
 internal struct ImageAsset {
   internal fileprivate(set) var name: String

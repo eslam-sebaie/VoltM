@@ -18,6 +18,12 @@ internal struct ColorName {
   internal let rgbaValue: UInt32
   internal var color: Color { return Color(named: self) }
 
+  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#ffbf00"></span>
+  /// Alpha: 100% <br/> (0xffbf00ff)
+  internal static let ableColor = ColorName(rgbaValue: 0xffbf00ff)
+  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#c0c0c0"></span>
+  /// Alpha: 100% <br/> (0xc0c0c0ff)
+  internal static let diableButton = ColorName(rgbaValue: 0xc0c0c0ff)
   /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#d6d6d6"></span>
   /// Alpha: 100% <br/> (0xd6d6d6ff)
   internal static let welcomeBorder = ColorName(rgbaValue: 0xd6d6d6ff)

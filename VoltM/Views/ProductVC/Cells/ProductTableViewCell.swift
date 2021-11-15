@@ -17,6 +17,7 @@ class ProductTableViewCell: UITableViewCell {
     @IBOutlet weak var productPrice: UILabel!
     @IBOutlet weak var favDesign: UIButton!
     @IBOutlet weak var productRate: CosmosView!
+    @IBOutlet weak var totalReview: UILabel!
     var ratePressedCompletion: (() -> Void)?
     var favPressedCompletion: (() -> Void)?
     var cartPressedCompletion: (() -> Void)?

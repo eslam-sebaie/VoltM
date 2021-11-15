@@ -69,6 +69,11 @@ class APIManager {
             completion(response)
         }
     }
+    class func sendReview( rate: String, value: String, product_id: Int, user_id: Int, completion: @escaping(Result<ReviewResponse, Error>) -> Void) {
+        request(APIRouter.sendReview(rate,value,product_id,user_id)) { (response) in
+            completion(response)
+        }
+    }
     class func uploadPhoto(image: UIImage, completion: @escaping (_ error: Error?, _ upImage: uploadImage?)-> Void){
 
         AF.upload(multipartFormData: { (form: MultipartFormData) in

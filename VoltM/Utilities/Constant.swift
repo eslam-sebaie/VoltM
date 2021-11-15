@@ -61,6 +61,7 @@ struct URLs {
     static let searchSubCat = "subCategory/name/category_id"
     static let getProducts = "product/subCategory_id"
     static let searchProducts = "product/name/subCategory_id"
+    static let sendReview = "add/review/product"
 }
 struct ParameterKeys {
    
@@ -77,6 +78,7 @@ struct UserDefaultsKeys {
     static let password = "password"
     static let country = "country"
     static let countryId = "countryId"
+    static let userId = "userId"
     
 }
 struct TableCells {

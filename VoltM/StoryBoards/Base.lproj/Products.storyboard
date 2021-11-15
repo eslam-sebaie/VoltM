@@ -169,34 +169,42 @@ dolor .</string>
                                                                 <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="unfillStar"/>
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
-                                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b1D-vt-weg">
-                                                            <rect key="frame" x="114" y="100" width="87" height="17"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b1D-vt-weg">
+                                                            <rect key="frame" x="126" y="96.5" width="82" height="15"/>
                                                             <connections>
                                                                 <action selector="ratePressed:" destination="F8V-9V-Bj5" eventType="touchUpInside" id="Kek-Dj-u40"/>
                                                             </connections>
                                                         </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(10)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KYY-S7-aDI">
+                                                            <rect key="frame" x="216" y="97" width="21" height="14"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstItem="b1D-vt-weg" firstAttribute="trailing" secondItem="3sz-0i-Cf6" secondAttribute="trailing" id="4Hq-mK-m4j"/>
                                                         <constraint firstItem="3sz-0i-Cf6" firstAttribute="leading" secondItem="mRp-9s-AAn" secondAttribute="trailing" constant="8" id="7jG-yW-a7h"/>
+                                                        <constraint firstItem="b1D-vt-weg" firstAttribute="bottom" secondItem="3sz-0i-Cf6" secondAttribute="bottom" id="Bkv-pD-ElV"/>
                                                         <constraint firstItem="mRp-9s-AAn" firstAttribute="leading" secondItem="LrG-U1-5oE" secondAttribute="leading" constant="8" id="CgW-b0-1aO"/>
+                                                        <constraint firstItem="b1D-vt-weg" firstAttribute="trailing" secondItem="3sz-0i-Cf6" secondAttribute="trailing" id="EVw-Ma-3RW"/>
                                                         <constraint firstItem="3sz-0i-Cf6" firstAttribute="top" secondItem="yFA-nQ-w3t" secondAttribute="bottom" constant="4" id="F3T-EL-r7A"/>
                                                         <constraint firstItem="IqR-FN-cw7" firstAttribute="leading" secondItem="o0X-aI-FCA" secondAttribute="trailing" constant="8" id="PKb-4z-CGM"/>
                                                         <constraint firstAttribute="trailing" secondItem="6C2-aD-fuJ" secondAttribute="trailing" constant="8" id="Rcn-Tx-HAA"/>
+                                                        <constraint firstItem="KYY-S7-aDI" firstAttribute="centerY" secondItem="b1D-vt-weg" secondAttribute="centerY" id="SYE-69-fmD"/>
                                                         <constraint firstAttribute="trailing" secondItem="w2o-Py-m5d" secondAttribute="trailing" constant="8" id="VaR-ec-Rci"/>
                                                         <constraint firstItem="o0X-aI-FCA" firstAttribute="leading" secondItem="mRp-9s-AAn" secondAttribute="trailing" constant="8" id="bMm-43-VqC"/>
                                                         <constraint firstItem="yFA-nQ-w3t" firstAttribute="top" secondItem="6C2-aD-fuJ" secondAttribute="bottom" constant="8" id="c8v-nM-1Lj"/>
                                                         <constraint firstItem="mRp-9s-AAn" firstAttribute="top" secondItem="LrG-U1-5oE" secondAttribute="top" constant="8" id="f3p-JT-LCL"/>
-                                                        <constraint firstItem="b1D-vt-weg" firstAttribute="bottom" secondItem="3sz-0i-Cf6" secondAttribute="bottom" id="fe8-gf-Rdr"/>
+                                                        <constraint firstItem="b1D-vt-weg" firstAttribute="leading" secondItem="3sz-0i-Cf6" secondAttribute="leading" id="gwe-Yq-I2P"/>
                                                         <constraint firstItem="6C2-aD-fuJ" firstAttribute="leading" secondItem="mRp-9s-AAn" secondAttribute="trailing" constant="8" id="ljm-EL-0y4"/>
-                                                        <constraint firstItem="b1D-vt-weg" firstAttribute="top" secondItem="3sz-0i-Cf6" secondAttribute="top" id="lve-7M-mp9"/>
                                                         <constraint firstItem="6C2-aD-fuJ" firstAttribute="top" secondItem="o0X-aI-FCA" secondAttribute="bottom" constant="4" id="m6p-DP-5b7"/>
                                                         <constraint firstItem="yFA-nQ-w3t" firstAttribute="leading" secondItem="mRp-9s-AAn" secondAttribute="trailing" constant="8" id="mgy-sl-ynv"/>
                                                         <constraint firstAttribute="trailing" secondItem="IqR-FN-cw7" secondAttribute="trailing" constant="8" id="oiY-sM-kgH"/>
+                                                        <constraint firstItem="KYY-S7-aDI" firstAttribute="leading" secondItem="b1D-vt-weg" secondAttribute="trailing" constant="8" id="owT-FQ-M95"/>
                                                         <constraint firstItem="IqR-FN-cw7" firstAttribute="centerY" secondItem="o0X-aI-FCA" secondAttribute="centerY" id="p73-lJ-thP"/>
+                                                        <constraint firstItem="b1D-vt-weg" firstAttribute="top" secondItem="3sz-0i-Cf6" secondAttribute="top" id="uCG-EV-yKK"/>
                                                         <constraint firstItem="o0X-aI-FCA" firstAttribute="top" secondItem="LrG-U1-5oE" secondAttribute="top" constant="8" id="ueD-We-nGg"/>
-                                                        <constraint firstItem="b1D-vt-weg" firstAttribute="leading" secondItem="3sz-0i-Cf6" secondAttribute="leading" id="usi-2u-eKu"/>
                                                         <constraint firstItem="w2o-Py-m5d" firstAttribute="centerY" secondItem="yFA-nQ-w3t" secondAttribute="centerY" id="vxn-Ir-f3G"/>
                                                     </constraints>
                                                 </view>
@@ -216,6 +224,7 @@ dolor .</string>
                                             <outlet property="productName" destination="o0X-aI-FCA" id="3lI-87-IpP"/>
                                             <outlet property="productPrice" destination="yFA-nQ-w3t" id="QkG-17-Lib"/>
                                             <outlet property="productRate" destination="3sz-0i-Cf6" id="MBf-gW-dij"/>
+                                            <outlet property="totalReview" destination="KYY-S7-aDI" id="T3Y-rn-Gwa"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -763,23 +772,11 @@ dolor .</string>
         </scene>
     </scenes>
     <designables>
-        <designable name="3sz-0i-Cf6">
-            <size key="intrinsicContentSize" width="80" height="12"/>
-        </designable>
         <designable name="FO4-Cv-tpk">
-            <size key="intrinsicContentSize" width="99" height="18.5"/>
-        </designable>
-        <designable name="LG0-72-wLf">
-            <size key="intrinsicContentSize" width="205" height="37"/>
+            <size key="intrinsicContentSize" width="84" height="18.5"/>
         </designable>
         <designable name="RaI-1v-hwx">
-            <size key="intrinsicContentSize" width="65" height="18.5"/>
-        </designable>
-        <designable name="b40-LR-UZx">
-            <size key="intrinsicContentSize" width="120" height="20"/>
-        </designable>
-        <designable name="ffR-09-JdF">
-            <size key="intrinsicContentSize" width="120" height="20"/>
+            <size key="intrinsicContentSize" width="45" height="18.5"/>
         </designable>
     </designables>
     <resources>

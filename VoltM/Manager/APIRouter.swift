@@ -25,10 +25,11 @@ enum APIRouter: URLRequestConvertible {
     case searchSubCatStores(_ subCategoryName: String,_ parent_id: Int)
     case getProducts(_ subcategory_id: Int)
     case searchProducts(_ productName: String,_ subcategory_id: Int)
+    case sendReview(_ rate: String,_ value: String, _ product_id: Int, _ user_id: Int)
     // MARK: - HttpMethod
     private var method: HTTPMethod {
         switch self {
-        case .userRegister, .userLogin:
+        case .userRegister, .userLogin, .sendReview:
             return .post
         case .countries, .getAllMainCategories, .getStores, .getStoreCategory, .getStoreSubCategory, .searchStores, .searchCatStores, .searchSubCatStores, .getProducts, .searchProducts:
             return .get
@@ -64,6 +65,8 @@ enum APIRouter: URLRequestConvertible {
             return ["subcategory_id": subcategory_id]
         case .searchProducts(let productName, let subcategory_id):
             return ["productName": productName, "subcategory_id": subcategory_id]
+        case .sendReview(let rate,let value, let product_id, let user_id):
+            return ["rate": rate, "value": value, "product_id": product_id, "user_id": user_id]
         default:
             return nil
         }
@@ -96,6 +99,8 @@ enum APIRouter: URLRequestConvertible {
             return URLs.getProducts
         case.searchProducts:
             return URLs.searchProducts
+        case .sendReview:
+            return URLs.sendReview
             
         }
     }
@@ -109,7 +114,7 @@ enum APIRouter: URLRequestConvertible {
         print(urlRequest)
         switch self {
        
-        case .countries, .getAllMainCategories, .getStores, .getStoreCategory, .getStoreSubCategory, .searchStores, .searchCatStores, .searchSubCatStores, .getProducts, .searchProducts:
+        case .countries, .getAllMainCategories, .getStores, .getStoreCategory, .getStoreSubCategory, .searchStores, .searchCatStores, .searchSubCatStores, .getProducts, .searchProducts, .sendReview:
             urlRequest.setValue("Bearer \(UserDefaultsManager.shared().Token ?? "")",
                 forHTTPHeaderField: HeaderKeys.Authorization)
         default:

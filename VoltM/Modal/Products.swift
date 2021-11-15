@@ -33,3 +33,22 @@ struct ProductInfo: Codable {
 struct ProductLocalize: Codable {
     let en, ar: String
 }
+
+struct ReviewResponse: Codable {
+    let data: ReviewInfo?
+    let status: Bool
+    let message: String
+}
+
+// MARK: - DataClass
+struct ReviewInfo: Codable {
+    let rate, value, userID: String?
+    let productID, id: Int?
+
+    enum CodingKeys: String, CodingKey {
+        case rate, value
+        case userID = "user_id"
+        case productID = "product_id"
+        case id
+    }
+}

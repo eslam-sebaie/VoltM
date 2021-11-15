@@ -13,6 +13,7 @@ class ProductVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet var productView: ProductView!
     var receiveSubCatId = 0
     var storeProducts = [ProductInfo]()
+    var imageLoader = ImageLoader()
     override func viewDidLoad() {
         super.viewDidLoad()
         productView.updateUI()
@@ -88,8 +89,10 @@ class ProductVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.productView.productTableView.dequeueReusableCell(withIdentifier: TableCells.homeCell, for: indexPath) as! ProductTableViewCell
         cell.productImage.setCornerRadius(radius: 8)
-        cell.productImage.sd_setImage(with: URL(string: storeProducts[indexPath.row].image ?? ""), completed: nil)
-        cell.productPrice.text = "\(storeProducts[indexPath.row].price ?? 0)"
+        imageLoader.obtainImageWithPath(imagePath: storeProducts[indexPath.row].image ?? "") { (image) in
+            cell.productImage.image = image
+        }
+        cell.productPrice.text = "\(storeProducts[indexPath.row].price ?? 0) \(getCountryCurrency())"
         if L10n.lang.localized == Language.arabic {
             cell.productName.text = storeProducts[indexPath.row].name?.ar
             cell.productDesc.text = storeProducts[indexPath.row].desc?.ar
@@ -101,6 +104,7 @@ class ProductVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
         cell.ratePressedCompletion = { [weak self] in
             let rate = RateVC.create()
+            rate.receiveProducts = (self?.storeProducts[indexPath.row])!
             self?.present(rate, animated: true, completion: nil)
         }
         cell.favPressedCompletion = { [weak self] in
@@ -109,14 +113,16 @@ class ProductVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 //            self?.present(rate, animated: true, completion: nil)
         }
         cell.cartPressedCompletion = { [weak self] in
-            print("In Cart")
-//            let rate = RateVC.create()
-//            self?.present(rate, animated: true, completion: nil)
+            let details = ProductDetailsVC.create()
+            details.receiveProducts = (self?.storeProducts[indexPath.row])!
+            details.modalPresentationStyle = .overCurrentContext
+            self?.present(details, animated: true, completion: nil)
         }
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let details = ProductDetailsVC.create()
+        details.receiveProducts = (self.storeProducts[indexPath.row])
         details.modalPresentationStyle = .overCurrentContext
         self.present(details, animated: true, completion: nil)
     }

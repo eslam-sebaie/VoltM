@@ -25,6 +25,8 @@ class ProductDetailsView: UIView {
         productImage.setCornerRadius(radius: 8)
         productQty.setCornerRadius(radius: 8)
         stepperVal.setCornerRadius(radius: 6)
+        continueDesign.isEnabled = false
+        continueDesign.backgroundColor = ColorName.diableButton.color
         continueDesign.setCornerRadius(radius: 9)
         if L10n.lang.localized == Language.arabic {
             backDesign.setImage(Asset.backAr.image, for: .normal)

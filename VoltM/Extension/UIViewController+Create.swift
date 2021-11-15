@@ -20,6 +20,29 @@ extension UIViewController {
         self.present(alert, animated: true, completion: nil)
         
     }
+    func getCountryCurrency() -> String {
+        if UserDefaultsManager.shared().countryId == 1 {
+            return "EGP"
+        }
+        else if UserDefaultsManager.shared().countryId == 2 {
+            return "SAR"
+        }
+        else if UserDefaultsManager.shared().countryId == 3 {
+            return "KWD"
+        }
+        else if UserDefaultsManager.shared().countryId == 4 {
+            return "SYP"
+        }
+        else if UserDefaultsManager.shared().countryId == 5 {
+            return "LBP"
+        }
+        else if UserDefaultsManager.shared().countryId == 6 {
+            return "QAR"
+        }
+        else {
+            return ""
+        }
+    }
   
     func showAlert(title: String,massage: String, present : UIViewController,titleBtn: String, completion: @escaping()->Void){
             let  alertError = UIAlertController(title: title , message: massage , preferredStyle: .alert)

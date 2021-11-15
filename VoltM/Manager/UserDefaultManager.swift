@@ -84,5 +84,16 @@ class UserDefaultsManager {
             return UserDefaults.standard.integer(forKey: UserDefaultsKeys.countryId)
         }
     }
+    var userId: Int? {
+        set {
+            UserDefaults.standard.set(newValue, forKey: UserDefaultsKeys.userId)
+        }
+        get {
+            guard UserDefaults.standard.object(forKey: UserDefaultsKeys.userId) != nil else {
+                return nil
+            }
+            return UserDefaults.standard.integer(forKey: UserDefaultsKeys.userId)
+        }
+    }
     
 }

@@ -16,6 +16,8 @@
 		960DB0EB26F8F54900B5352F /* UpdateContactVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960DB0EA26F8F54900B5352F /* UpdateContactVC.swift */; };
 		960DB0ED26F8F55F00B5352F /* UpdateContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960DB0EC26F8F55F00B5352F /* UpdateContactView.swift */; };
 		9647C00A26FF3C9300C03A5B /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9647C00926FF3C9300C03A5B /* WelcomeView.swift */; };
+		965395DD274309B60018F624 /* circle.gif in Resources */ = {isa = PBXBuildFile; fileRef = 965395DC274309B60018F624 /* circle.gif */; };
+		965395DF274311600018F624 /* circle2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 965395DE274311600018F624 /* circle2.gif */; };
 		96746ED7272458380074421B /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96746ED6272458380074421B /* SignInVC.swift */; };
 		96746ED9272458450074421B /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96746ED8272458450074421B /* SignInView.swift */; };
 		96746EDB272458530074421B /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96746EDA272458530074421B /* SignUpVC.swift */; };
@@ -144,6 +146,8 @@
 		960DB0EA26F8F54900B5352F /* UpdateContactVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateContactVC.swift; sourceTree = "<group>"; };
 		960DB0EC26F8F55F00B5352F /* UpdateContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateContactView.swift; sourceTree = "<group>"; };
 		9647C00926FF3C9300C03A5B /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		965395DC274309B60018F624 /* circle.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = circle.gif; sourceTree = "<group>"; };
+		965395DE274311600018F624 /* circle2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = circle2.gif; sourceTree = "<group>"; };
 		96746ED6272458380074421B /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		96746ED8272458450074421B /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		96746EDA272458530074421B /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
@@ -497,6 +501,8 @@
 				96CD1EA526E52495000BC132 /* Assets.xcassets */,
 				96CD1EA826E52583000BC132 /* AssetsManager.swift */,
 				96CD1E4A26E514E4000BC132 /* LaunchScreen.storyboard */,
+				965395DC274309B60018F624 /* circle.gif */,
+				965395DE274311600018F624 /* circle2.gif */,
 				96CD1E4D26E514E4000BC132 /* Info.plist */,
 			);
 			path = VoltM;
@@ -1012,8 +1018,10 @@
 				96CD1E4C26E514E4000BC132 /* LaunchScreen.storyboard in Resources */,
 				96CD1E9126E5201B000BC132 /* swiftgen.yml in Resources */,
 				96CD1E4726E514E3000BC132 /* Main.storyboard in Resources */,
+				965395DF274311600018F624 /* circle2.gif in Resources */,
 				96E1155326F65B06005EFA2C /* Localizable.strings in Resources */,
 				9685238026F7D308008C6E6A /* Account.storyboard in Resources */,
+				965395DD274309B60018F624 /* circle.gif in Resources */,
 				96EB066D2702350C00586EB4 /* Orders.storyboard in Resources */,
 				9685236B26F7A5C6008C6E6A /* SideMenu.storyboard in Resources */,
 				96D26CFF26F66CDD009BD961 /* Offers.storyboard in Resources */,
