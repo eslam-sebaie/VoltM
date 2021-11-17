@@ -52,3 +52,36 @@ struct ReviewInfo: Codable {
         case id
     }
 }
+
+struct GetReviewResponse: Codable {
+    let data: [GetReviewInfo]?
+    let totalReviewsNumber: Int?
+    let totalReviewsRate: Double?
+    let message: String
+    let status: Bool
+}
+
+// MARK: - Datum
+struct GetReviewInfo: Codable {
+    let id: Int
+    let rate, value: String
+    let userID, productID: Int
+    let createdAt: String
+    let user: UserResponse
+
+    enum CodingKeys: String, CodingKey {
+        case id, rate, value
+        case userID = "user_id"
+        case productID = "product_id"
+        case createdAt = "created_at"
+        case user
+    }
+}
+
+// MARK: - User
+struct UserResponse: Codable {
+    let id: Int
+    let fname, lname: String
+    let image: String
+    let email: String
+}

@@ -26,12 +26,13 @@ enum APIRouter: URLRequestConvertible {
     case getProducts(_ subcategory_id: Int)
     case searchProducts(_ productName: String,_ subcategory_id: Int)
     case sendReview(_ rate: String,_ value: String, _ product_id: Int, _ user_id: String)
+    case getReview(_ product_id: Int)
     // MARK: - HttpMethod
     private var method: HTTPMethod {
         switch self {
         case .userRegister, .userLogin, .sendReview:
             return .post
-        case .countries, .getAllMainCategories, .getStores, .getStoreCategory, .getStoreSubCategory, .searchStores, .searchCatStores, .searchSubCatStores, .getProducts, .searchProducts:
+        case .countries, .getAllMainCategories, .getStores, .getStoreCategory, .getStoreSubCategory, .searchStores, .searchCatStores, .searchSubCatStores, .getProducts, .searchProducts, .getReview:
             return .get
             
     
@@ -67,6 +68,8 @@ enum APIRouter: URLRequestConvertible {
             return ["productName": productName, "subcategory_id": subcategory_id]
         case .sendReview(let rate,let value, let product_id, let user_id):
             return ["rate": rate, "value": value, "product_id": product_id, "user_id": user_id]
+        case .getReview(let product_id):
+            return ["product_id": product_id]
         default:
             return nil
         }
@@ -101,6 +104,8 @@ enum APIRouter: URLRequestConvertible {
             return URLs.searchProducts
         case .sendReview:
             return URLs.sendReview
+        case .getReview:
+            return URLs.getReview
             
         }
     }
@@ -114,7 +119,7 @@ enum APIRouter: URLRequestConvertible {
         print(urlRequest)
         switch self {
        
-        case .countries, .getAllMainCategories, .getStores, .getStoreCategory, .getStoreSubCategory, .searchStores, .searchCatStores, .searchSubCatStores, .getProducts, .searchProducts, .sendReview:
+        case .countries, .getAllMainCategories, .getStores, .getStoreCategory, .getStoreSubCategory, .searchStores, .searchCatStores, .searchSubCatStores, .getProducts, .searchProducts, .sendReview, .getReview:
             urlRequest.setValue("Bearer \(UserDefaultsManager.shared().Token ?? "")",
                 forHTTPHeaderField: HeaderKeys.Authorization)
         default:
