@@ -26,12 +26,13 @@ class UpdateAddressView: UIView {
             backDesign.setImage(Asset.backAr.image, for: .normal)
             addressTF.placeholder = "العنوان"
             addressTF.textAlignment = .right
+            addressImage.transform = CGAffineTransform(scaleX: -1, y: 1)
         }
         logOutDesign.setCornerRadius(radius: 8)
         userImage.setCornerRadius(radius: 45)
         addressView.setCornerRadius(radius: 8)
         updateDesign.setCornerRadius(radius: 8)
-        addressImage.transform = CGAffineTransform(scaleX: -1, y: 1)
+        
     }
     
 }

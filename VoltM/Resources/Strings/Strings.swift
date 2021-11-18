@@ -70,6 +70,8 @@ internal enum L10n {
   internal static let wentWrong = L10n.tr("Localizable", "WentWrong")
   /// Wrong Email
   internal static let wrongEmail = L10n.tr("Localizable", "Wrong Email")
+  /// You Didn‘t Update Any Thing.
+  internal static let youDidnTUpdateAnyThing = L10n.tr("Localizable", "You Didn‘t Update Any Thing.")
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces

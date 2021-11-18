@@ -744,11 +744,6 @@ dolor .</string>
                             <constraint firstItem="6Mm-Au-RFc" firstAttribute="trailing" secondItem="Vau-Pj-D76" secondAttribute="trailing" constant="20" id="t9h-l0-dwP"/>
                             <constraint firstItem="Eng-BJ-kBj" firstAttribute="top" secondItem="RdA-De-9G4" secondAttribute="bottom" constant="20" id="u5u-RE-GaV"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="Vau-Pj-D76"/>
-                            </mask>
-                        </variation>
                         <connections>
                             <outlet property="backDesign" destination="dba-w9-v4O" id="AcQ-zi-ULO"/>
                             <outlet property="popProductImage" destination="7wX-Df-aGi" id="2Zz-LL-aLe"/>
@@ -781,13 +776,13 @@ dolor .</string>
             <size key="intrinsicContentSize" width="80" height="12"/>
         </designable>
         <designable name="FO4-Cv-tpk">
-            <size key="intrinsicContentSize" width="84" height="18.5"/>
+            <size key="intrinsicContentSize" width="99" height="18.5"/>
         </designable>
         <designable name="LG0-72-wLf">
             <size key="intrinsicContentSize" width="205" height="37"/>
         </designable>
         <designable name="RaI-1v-hwx">
-            <size key="intrinsicContentSize" width="45" height="18.5"/>
+            <size key="intrinsicContentSize" width="65" height="18.5"/>
         </designable>
         <designable name="b40-LR-UZx">
             <size key="intrinsicContentSize" width="120" height="20"/>

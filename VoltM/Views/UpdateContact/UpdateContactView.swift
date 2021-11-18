@@ -30,14 +30,14 @@ class UpdateContactView: UIView {
     func updateUI(){
         if L10n.lang.localized == Language.arabic {
             backDesign.setImage(Asset.backAr.image, for: .normal)
+            emailImage.transform = CGAffineTransform(scaleX: -1, y: 1)
+            phoneImage.transform = CGAffineTransform(scaleX: -1, y: 1)
         }
         logoutDesign.setCornerRadius(radius: 8)
         userImage.setCornerRadius(radius: 45)
         phoneView.setCornerRadius(radius: 8)
         emailView.setCornerRadius(radius: 8)
         updateDesign.setCornerRadius(radius: 8)
-        emailImage.transform = CGAffineTransform(scaleX: -1, y: 1)
         
-        phoneImage.transform = CGAffineTransform(scaleX: -1, y: 1)
     }
 }

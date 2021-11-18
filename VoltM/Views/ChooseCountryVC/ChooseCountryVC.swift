@@ -11,7 +11,7 @@ class ChooseCountryVC: UIViewController, UICollectionViewDataSource, UICollectio
 
     @IBOutlet var chooseCountryView: ChooseCountryView!
     var image = ["Egypt":"egypt2", "Saudi Arabia":"saudi-arabia", "Kuwait":"kwait2", "Syrian":"syria","Lebanon":"lebanon", "Qatar":"qatar"]
-    
+    var countryDic = [String:Int]()
     var idArray = [Int]()
     var nameArray = [String]()
     override func viewDidLoad() {
@@ -34,7 +34,7 @@ class ChooseCountryVC: UIViewController, UICollectionViewDataSource, UICollectio
     
     func getAllCountries(){
         self.view.showLoader()
-        APIManager.getAllCountries { response in
+        APIManager.getAllCountriesStores { response in
             switch response {
             case .failure( _):
                 self.show_Alert(L10n.sorry.localized, L10n.wentWrong.localized)
@@ -42,9 +42,13 @@ class ChooseCountryVC: UIViewController, UICollectionViewDataSource, UICollectio
             case .success(let result):
                
                 for i in result.data ?? []{
-                    self.nameArray.append(i.name ?? "")
-                    self.idArray.append(i.id ?? 0)
+                    self.nameArray.append(i.country?.name ?? "")
+                    self.idArray.append(i.countryID ?? 0)
+                    self.countryDic[i.country?.name ?? ""] = i.countryID ?? 0
                 }
+                self.nameArray = Array(Set(self.nameArray))
+                print("Sebaie")
+                print(self.nameArray)
                 self.view.hideLoader()
                 self.chooseCountryView.countryCollectionView.reloadData()
                 
@@ -68,7 +72,7 @@ class ChooseCountryVC: UIViewController, UICollectionViewDataSource, UICollectio
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         UserDefaultsManager.shared().country = nameArray[indexPath.row]
-        UserDefaultsManager.shared().countryId = idArray[indexPath.row]
+        UserDefaultsManager.shared().countryId = countryDic[nameArray[indexPath.row]]
         let storyboard = UIStoryboard(name: Storyboards.home, bundle: nil)
         let tabVC = storyboard.instantiateViewController(withIdentifier: "tabViewController")
         self.present(tabVC, animated: true, completion: nil)

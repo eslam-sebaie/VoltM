@@ -37,6 +37,9 @@ class UpdateInfoView: UIView {
             lNameTF.textAlignment = .right
             passTF.placeholder = "الرقم السري"
             passTF.textAlignment = .right
+            fNameImg.transform = CGAffineTransform(scaleX: -1, y: 1)
+            lastImg.transform = CGAffineTransform(scaleX: -1, y: 1)
+            passImage.transform = CGAffineTransform(scaleX: -1, y: 1)
         }
         logoutDesign.setCornerRadius(radius: 8)
         userImg.setCornerRadius(radius: 45)
@@ -44,9 +47,7 @@ class UpdateInfoView: UIView {
         lastNameView.setCornerRadius(radius: 8)
         passView.setCornerRadius(radius: 8)
         updateDesign.setCornerRadius(radius: 8)
-        fNameImg.transform = CGAffineTransform(scaleX: -1, y: 1)
-        lastImg.transform = CGAffineTransform(scaleX: -1, y: 1)
-        passImage.transform = CGAffineTransform(scaleX: -1, y: 1)
+        
     }
 
 }

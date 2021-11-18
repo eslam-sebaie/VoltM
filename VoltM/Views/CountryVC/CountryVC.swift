@@ -12,7 +12,7 @@ class CountryVC: UIViewController, UICollectionViewDataSource, UICollectionViewD
     @IBOutlet var countryView: CountryView!
     var delegate: sideMenuProtocol?
     var image = ["Egypt":"egypt2", "Saudi Arabia":"saudi-arabia", "Kuwait":"kwait2", "Syrian":"syria","Lebanon":"lebanon", "Qatar":"qatar"]
-    
+    var countryDic = [String:Int]()
     var idArray = [Int]()
     var nameArray = [String]()
     override func viewDidLoad() {
@@ -29,17 +29,20 @@ class CountryVC: UIViewController, UICollectionViewDataSource, UICollectionViewD
     }
     func getAllCountries(){
         self.view.showLoader()
-        APIManager.getAllCountries { response in
+        APIManager.getAllCountriesStores { response in
             switch response {
             case .failure( _):
-                self.show_Alert("Sorry", "SomeThing went Wrong")
+                self.show_Alert(L10n.sorry.localized, L10n.wentWrong.localized)
                 self.view.hideLoader()
             case .success(let result):
                
                 for i in result.data ?? []{
-                    self.nameArray.append(i.name ?? "")
-                    self.idArray.append(i.id ?? 0)
+                    self.nameArray.append(i.country?.name ?? "")
+                    self.idArray.append(i.countryID ?? 0)
+                    self.countryDic[i.country?.name ?? ""] = i.countryID ?? 0
                 }
+                self.nameArray = Array(Set(self.nameArray))
+                
                 self.view.hideLoader()
                 self.countryView.countryCollection.reloadData()
                 
@@ -68,8 +71,10 @@ class CountryVC: UIViewController, UICollectionViewDataSource, UICollectionViewD
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         UserDefaultsManager.shared().country = nameArray[indexPath.row]
-        UserDefaultsManager.shared().countryId = idArray[indexPath.row]
-        
+        UserDefaultsManager.shared().countryId = countryDic[nameArray[indexPath.row]]
+        print("SebaieYoussef")
+        print(UserDefaultsManager.shared().country)
+        print(UserDefaultsManager.shared().countryId)
         let storyboard = UIStoryboard(name: Storyboards.home, bundle: nil)
         let tabVC = storyboard.instantiateViewController(withIdentifier: "tabViewController")
         self.present(tabVC, animated: true, completion: nil)

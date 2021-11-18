@@ -63,6 +63,9 @@ struct URLs {
     static let searchProducts = "product/name/subCategory_id"
     static let sendReview = "add/review/product"
     static let getReview = "reviews/product"
+    static let getUser = "get/user/profile"
+    static let updateUser = "user/id"
+    static let allCountriesSrores = "getAllStoress"
 }
 struct ParameterKeys {
    

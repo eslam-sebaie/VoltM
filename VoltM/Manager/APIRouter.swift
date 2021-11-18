@@ -16,6 +16,7 @@ enum APIRouter: URLRequestConvertible {
     case userRegister(_ fname: String,_ lname: String, _ email: String,_ password: String, _ phone: String, _ address: String ,_ latitude: String, _ longitude: String, _ image: String)
     case userLogin(_ email: String,_ password: String)
     case countries
+    case allCountries
     case getAllMainCategories
     case getStores(_ mainCat_id: Int,_ country_id: Int)
     case getStoreCategory(_ store_id: Int)
@@ -27,12 +28,14 @@ enum APIRouter: URLRequestConvertible {
     case searchProducts(_ productName: String,_ subcategory_id: Int)
     case sendReview(_ rate: String,_ value: String, _ product_id: Int, _ user_id: String)
     case getReview(_ product_id: Int)
+    case getUserData(_ id: Int)
+    case updateUserData(_ id: Int, _ fname: String,_ lname: String, _ email: String,_ password: String, _ phone: String, _ address: String ,_ latitude: String, _ longitude: String, _ image: String)
     // MARK: - HttpMethod
     private var method: HTTPMethod {
         switch self {
-        case .userRegister, .userLogin, .sendReview:
+        case .userRegister, .userLogin, .sendReview, .updateUserData:
             return .post
-        case .countries, .getAllMainCategories, .getStores, .getStoreCategory, .getStoreSubCategory, .searchStores, .searchCatStores, .searchSubCatStores, .getProducts, .searchProducts, .getReview:
+        case .countries, .getAllMainCategories, .getStores, .getStoreCategory, .getStoreSubCategory, .searchStores, .searchCatStores, .searchSubCatStores, .getProducts, .searchProducts, .getReview, .getUserData, .allCountries:
             return .get
             
     
@@ -70,6 +73,10 @@ enum APIRouter: URLRequestConvertible {
             return ["rate": rate, "value": value, "product_id": product_id, "user_id": user_id]
         case .getReview(let product_id):
             return ["product_id": product_id]
+        case .getUserData(let id):
+            return ["id": id]
+        case .updateUserData(let id ,let fname, let lname, let email, let password , let phone, let address ,let latitude, let longitude, let image):
+            return ["id": id, "fname": fname, "lname": lname, "email": email, "password": password, "phone": phone,"address": address, "latitude": latitude, "longitude": longitude, "image": image]
         default:
             return nil
         }
@@ -84,6 +91,8 @@ enum APIRouter: URLRequestConvertible {
             return URLs.login
         case .countries:
             return URLs.Countries
+        case .allCountries:
+            return URLs.allCountriesSrores
         case .getAllMainCategories:
             return URLs.MainCategories
         case.getStores:
@@ -106,6 +115,10 @@ enum APIRouter: URLRequestConvertible {
             return URLs.sendReview
         case .getReview:
             return URLs.getReview
+        case .getUserData:
+            return URLs.getUser
+        case .updateUserData:
+            return URLs.updateUser
             
         }
     }
@@ -119,7 +132,7 @@ enum APIRouter: URLRequestConvertible {
         print(urlRequest)
         switch self {
        
-        case .countries, .getAllMainCategories, .getStores, .getStoreCategory, .getStoreSubCategory, .searchStores, .searchCatStores, .searchSubCatStores, .getProducts, .searchProducts, .sendReview, .getReview:
+        case .countries, .getAllMainCategories, .getStores, .getStoreCategory, .getStoreSubCategory, .searchStores, .searchCatStores, .searchSubCatStores, .getProducts, .searchProducts, .sendReview, .getReview, .getUserData, .updateUserData, .allCountries:
             urlRequest.setValue("Bearer \(UserDefaultsManager.shared().Token ?? "")",
                 forHTTPHeaderField: HeaderKeys.Authorization)
         default:

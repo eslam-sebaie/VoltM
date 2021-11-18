@@ -118,10 +118,13 @@ class RateVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         cell.userName.text = "\(self.getReviewsInfo[indexPath.row].user.fname) \(self.getReviewsInfo[indexPath.row].user.lname)"
         cell.rateReview.text = self.getReviewsInfo[indexPath.row].rate
         cell.userImage.sd_setImage(with: URL(string: self.getReviewsInfo[indexPath.row].user.image), completed: nil)
-        let x = String(format:"%.1f", self.getReviewsInfo[indexPath.row].value)
+        let rateVal = Double(self.getReviewsInfo[indexPath.row].value)
+        let x = String(format:"%.1f",rateVal!)
         cell.userRate.rating = Double(x) ?? 0.0
         let day = (self.getReviewsInfo[indexPath.row].createdAt)
-        cell.userRate.text = String(day.prefix(10))
+        
+        let date = (day.prefix(10))
+        cell.userDate.text = String(date)
         
         return cell
     }

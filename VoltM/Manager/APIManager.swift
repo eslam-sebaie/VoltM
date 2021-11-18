@@ -24,6 +24,11 @@ class APIManager {
             completion(response)
         }
     }
+    class func getAllCountriesStores(completion: @escaping(Result<allCountryResponse, Error>) -> Void ) {
+        request(APIRouter.allCountries) { (response) in
+            completion(response)
+        }
+    }
     class func getAllMainCategory(completion: @escaping(Result<CountryResponse, Error>) -> Void ) {
         request(APIRouter.getAllMainCategories) { (response) in
             completion(response)
@@ -79,12 +84,22 @@ class APIManager {
             completion(response)
         }
     }
+    class func getUserData(id: Int, completion: @escaping(Result<userResponse, Error>) -> Void) {
+        request(APIRouter.getUserData(id)) { (response) in
+            completion(response)
+        }
+    }
+    class func updateUser(id: Int, fname: String, lname: String, email: String, password: String, phone: String, address: String , latitude: String, longitude: String, image: String,completion: @escaping(Result<SignUpResponse, Error>) -> Void) {
+        request(APIRouter.updateUserData(id,fname, lname, email, password, phone, address ,latitude, longitude, image)) { (response) in
+            completion(response)
+        }
+    }
     class func uploadPhoto(image: UIImage, completion: @escaping (_ error: Error?, _ upImage: uploadImage?)-> Void){
 
         AF.upload(multipartFormData: { (form: MultipartFormData) in
 
             if let data = image.jpegData(compressionQuality: 0.75) {
-                form.append(data, withName: "image", fileName: "image.jpeg", mimeType: "image/jpeg")
+                form.append(data, withName: "image", fileName: "\(Date.init().timeIntervalSince1970).jpeg", mimeType: "\(Date.init().timeIntervalSince1970)/jpeg")
             }
         }, to: "https://voltm7.com/api/uploadImage", usingThreshold: MultipartFormData.encodingMemoryThreshold, method: .post, headers: nil).response {
             response in
