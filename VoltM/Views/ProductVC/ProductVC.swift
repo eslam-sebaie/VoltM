@@ -14,6 +14,7 @@ class ProductVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var receiveSubCatId = 0
     var storeProducts = [ProductInfo]()
     var imageLoader = ImageLoader()
+    var productsID = [Int]()
     override func viewDidLoad() {
         super.viewDidLoad()
         productView.updateUI()
@@ -51,6 +52,7 @@ class ProductVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             }
         }
     }
+   
     
     @IBAction func searchPressed(_ sender: Any) {
         guard let name = productView.searchTF.text , name != "" else {
@@ -108,9 +110,7 @@ class ProductVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             self?.present(rate, animated: true, completion: nil)
         }
         cell.favPressedCompletion = { [weak self] in
-            print("In Fav")
-//            let rate = RateVC.create()
-//            self?.present(rate, animated: true, completion: nil)
+            print("moved")
         }
         cell.cartPressedCompletion = { [weak self] in
             let details = ProductDetailsVC.create()
@@ -127,6 +127,6 @@ class ProductVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         self.present(details, animated: true, completion: nil)
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 140
+        return 111
     }
 }

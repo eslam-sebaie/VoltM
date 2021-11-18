@@ -30,12 +30,15 @@ enum APIRouter: URLRequestConvertible {
     case getReview(_ product_id: Int)
     case getUserData(_ id: Int)
     case updateUserData(_ id: Int, _ fname: String,_ lname: String, _ email: String,_ password: String, _ phone: String, _ address: String ,_ latitude: String, _ longitude: String, _ image: String)
+    case addFavorite( _ user_id: Int, _ product_id: Int)
+    case getFavorite( _ user_id: Int)
+    case deleteFavorite( _ user_id: Int, _ product_id: Int)
     // MARK: - HttpMethod
     private var method: HTTPMethod {
         switch self {
-        case .userRegister, .userLogin, .sendReview, .updateUserData:
+        case .userRegister, .userLogin, .sendReview, .updateUserData, .addFavorite, .deleteFavorite:
             return .post
-        case .countries, .getAllMainCategories, .getStores, .getStoreCategory, .getStoreSubCategory, .searchStores, .searchCatStores, .searchSubCatStores, .getProducts, .searchProducts, .getReview, .getUserData, .allCountries:
+        case .countries, .getAllMainCategories, .getStores, .getStoreCategory, .getStoreSubCategory, .searchStores, .searchCatStores, .searchSubCatStores, .getProducts, .searchProducts, .getReview, .getUserData, .allCountries, .getFavorite:
             return .get
             
     
@@ -77,6 +80,12 @@ enum APIRouter: URLRequestConvertible {
             return ["id": id]
         case .updateUserData(let id ,let fname, let lname, let email, let password , let phone, let address ,let latitude, let longitude, let image):
             return ["id": id, "fname": fname, "lname": lname, "email": email, "password": password, "phone": phone,"address": address, "latitude": latitude, "longitude": longitude, "image": image]
+        case .addFavorite(let user_id,let product_id):
+            return ["user_id": user_id, "product_id": product_id]
+        case .getFavorite(let user_id):
+            return ["user_id": user_id]
+        case .deleteFavorite(let user_id,let product_id):
+            return ["user_id": user_id, "product_id": product_id]
         default:
             return nil
         }
@@ -119,6 +128,12 @@ enum APIRouter: URLRequestConvertible {
             return URLs.getUser
         case .updateUserData:
             return URLs.updateUser
+        case .addFavorite:
+            return URLs.setFavorite
+        case .getFavorite:
+            return URLs.getFavorite
+        case .deleteFavorite:
+            return URLs.deleteFavorite
             
         }
     }
@@ -132,7 +147,7 @@ enum APIRouter: URLRequestConvertible {
         print(urlRequest)
         switch self {
        
-        case .countries, .getAllMainCategories, .getStores, .getStoreCategory, .getStoreSubCategory, .searchStores, .searchCatStores, .searchSubCatStores, .getProducts, .searchProducts, .sendReview, .getReview, .getUserData, .updateUserData, .allCountries:
+        case .countries, .getAllMainCategories, .getStores, .getStoreCategory, .getStoreSubCategory, .searchStores, .searchCatStores, .searchSubCatStores, .getProducts, .searchProducts, .sendReview, .getReview, .getUserData, .updateUserData, .allCountries, .addFavorite, .getFavorite, .deleteFavorite:
             urlRequest.setValue("Bearer \(UserDefaultsManager.shared().Token ?? "")",
                 forHTTPHeaderField: HeaderKeys.Authorization)
         default:

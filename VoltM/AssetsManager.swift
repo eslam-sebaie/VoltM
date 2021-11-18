@@ -45,6 +45,7 @@ internal enum Asset {
   internal static let home = ImageAsset(name: "home")
   internal static let homeAr = ImageAsset(name: "homeAr")
   internal static let homeIcon = ImageAsset(name: "homeIcon")
+  internal static let love1 = ImageAsset(name: "love1")
   internal static let offerAr = ImageAsset(name: "offerAr")
   internal static let offers = ImageAsset(name: "offers")
   internal static let selectCart = ImageAsset(name: "selectCart")

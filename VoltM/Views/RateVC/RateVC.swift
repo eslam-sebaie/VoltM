@@ -55,7 +55,7 @@ class RateVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
                 self.view.hideLoader()
             case .success(let result):
                 if result.status == false {
-                    self.show_Alert(L10n.sorry.localized, L10n.wentWrong.localized)
+                    self.show_Alert(L10n.sorry.localized, L10n.noReviewsFound.localized)
                     self.view.hideLoader()
                 }
                 else {

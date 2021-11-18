@@ -66,6 +66,9 @@ struct URLs {
     static let getUser = "get/user/profile"
     static let updateUser = "user/id"
     static let allCountriesSrores = "getAllStoress"
+    static let setFavorite = "add/product/favorite"
+    static let getFavorite = "get/product/favorite"
+    static let deleteFavorite = "delete/product/favorite"
 }
 struct ParameterKeys {
    

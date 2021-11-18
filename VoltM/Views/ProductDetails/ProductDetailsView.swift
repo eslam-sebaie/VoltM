@@ -19,6 +19,7 @@ class ProductDetailsView: UIView {
     @IBOutlet weak var stepperVal: UIStepper!
     @IBOutlet weak var continueDesign: UIButton!
     
+    @IBOutlet weak var favDesign: UIButton!
     @IBOutlet weak var backDesign: UIButton!
     func updateUI(){
         mainView.setCornerRadius(radius: 20)

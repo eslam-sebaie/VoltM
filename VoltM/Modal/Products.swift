@@ -85,3 +85,66 @@ struct UserResponse: Codable {
     let image: String
     let email: String
 }
+
+
+struct FavoriteResponse: Codable {
+    let data: FavoriteInfo?
+    let status: Bool
+    let message: String
+}
+
+// MARK: - DataClass
+struct FavoriteInfo: Codable {
+    let productID: Int?
+    let userID,id: Int
+
+    enum CodingKeys: String, CodingKey {
+        case userID = "user_id"
+        case productID = "product_id"
+        case id
+    }
+}
+
+struct getFavResponse: Codable {
+    let data: [getFavInfo]?
+    let message: String
+    let status: Bool
+}
+
+// MARK: - Datum
+struct getFavInfo: Codable {
+    let id, userID, productID: Int?
+    let product: ProductInfo?
+
+    enum CodingKeys: String, CodingKey {
+        case id
+        case userID = "user_id"
+        case productID = "product_id"
+        case product
+    }
+}
+
+// MARK: - Product
+struct ProductFavResponse: Codable {
+    let id: Int
+    let image: String
+    let name: ProductLocalize?
+    let price: Int
+    let desc: ProductLocalize?
+    let offer, newPrice: Int?
+    let categoryID, subcategoryID, storeID: Int
+    let createdAt, updatedAt: String
+    let qty: Int
+
+    enum CodingKeys: String, CodingKey {
+        case id, image, name, price, desc, offer
+        case newPrice = "new_price"
+        case categoryID = "category_id"
+        case subcategoryID = "subcategory_id"
+        case storeID = "store_id"
+        case createdAt = "created_at"
+        case updatedAt = "updated_at"
+        case qty
+    }
+}
+
