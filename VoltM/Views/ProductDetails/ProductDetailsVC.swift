@@ -12,7 +12,7 @@ class ProductDetailsVC: UIViewController {
     @IBOutlet var productDetailsView: ProductDetailsView!
     var receiveProducts = ProductInfo(id: 0, name: ProductLocalize(en: "", ar: ""), image: "", price: 0, newPrice: 0, desc: ProductLocalize(en: "", ar: ""), offer: false)
     var imageLoader = ImageLoader()
-    var checkFav = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         productDetailsView.updateUI()
@@ -32,60 +32,10 @@ class ProductDetailsVC: UIViewController {
         return productDetailsVC
     }
     override func viewWillAppear(_ animated: Bool) {
-        getFavorite()
+       
     }
-    func getFavorite() {
-        
-        self.view.showLoader()
-        APIManager.getFav(user_id: UserDefaultsManager.shared().userId ?? 0) { response in
-            switch response {
-            case .failure( _):
-                self.show_Alert(L10n.sorry.localized, L10n.wentWrong.localized)
-                self.view.hideLoader()
-            case .success(let result):
-                if result.status {
-                    for i in result.data ?? [] {
-                        if i.productID == self.receiveProducts.id {
-                            self.checkFav = true
-                            self.productDetailsView.favDesign.setImage(Asset.love.image, for: .normal)
-                        }
-                    }
-                }
-                else {
-                    self.checkFav = false
-                    self.productDetailsView.favDesign.setImage(Asset.productFav.image, for: .normal)
-                }
-                self.view.hideLoader()
-            }
-        }
-    }
+    
     @IBAction func favPressed(_ sender: Any) {
-        if checkFav {
-            APIManager.deleteFav(user_id: UserDefaultsManager.shared().userId ?? 0, product_id: self.receiveProducts.id) { response in
-                switch response {
-                case .failure( _):
-                    self.show_Alert(L10n.sorry.localized, L10n.wentWrong.localized)
-                    self.view.hideLoader()
-                case .success( _):
-                    self.productDetailsView.favDesign.setImage(Asset.productFav.image, for: .normal)
-                    self.view.hideLoader()
-                    self.checkFav = false
-                }
-            }
-        }
-        else {
-            APIManager.addFav(user_id: UserDefaultsManager.shared().userId ?? 0, product_id: self.receiveProducts.id) { response in
-                switch response {
-                case .failure( _):
-                    self.show_Alert(L10n.sorry.localized, L10n.wentWrong.localized)
-                    self.view.hideLoader()
-                case .success( _):
-                    self.productDetailsView.favDesign.setImage(Asset.love.image, for: .normal)
-                    self.view.hideLoader()
-                    self.checkFav = true
-                }
-            }
-        }
         
     }
     @IBAction func backPressed(_ sender: Any) {

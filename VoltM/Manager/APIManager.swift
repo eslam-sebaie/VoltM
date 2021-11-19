@@ -94,21 +94,7 @@ class APIManager {
             completion(response)
         }
     }
-    class func addFav(user_id: Int,product_id: Int, completion: @escaping(Result<FavoriteResponse, Error>) -> Void) {
-        request(APIRouter.addFavorite(user_id,product_id)) { (response) in
-            completion(response)
-        }
-    }
-    class func getFav(user_id: Int, completion: @escaping(Result<getFavResponse, Error>) -> Void) {
-        request(APIRouter.getFavorite(user_id)) { (response) in
-            completion(response)
-        }
-    }
-    class func deleteFav(user_id: Int,product_id: Int, completion: @escaping(Result<FavoriteResponse, Error>) -> Void) {
-        request(APIRouter.deleteFavorite(user_id,product_id)) { (response) in
-            completion(response)
-        }
-    }
+    
     class func uploadPhoto(image: UIImage, completion: @escaping (_ error: Error?, _ upImage: uploadImage?)-> Void){
 
         AF.upload(multipartFormData: { (form: MultipartFormData) in
