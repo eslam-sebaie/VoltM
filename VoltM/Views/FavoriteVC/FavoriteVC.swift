@@ -15,6 +15,7 @@ class FavoriteVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         favoriteView.updateUI()
+        print("Sebaie")
         // Do any additional setup after loading the view.
     }
     class func create() -> FavoriteVC {
