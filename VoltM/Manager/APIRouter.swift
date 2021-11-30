@@ -35,7 +35,7 @@ enum APIRouter: URLRequestConvertible {
     case deleteFavorite( _ user_id: Int, _ product_id: Int)
     case addCart( _ user_id: Int, _ store_id: Int, _ cart: [[String:AnyObject]])
     case getCart(_ user_id: Int)
-    case deleteCart(_ cart_id: Int, _ product_id: Int)
+    case deleteCart(_ cart_id: Int, _ product_id: Int, _ id: Int)
     case confirmCart(_ cart_id: Int, _ user_id: Int)
     case getOrders(_ user_id: Int)
     // MARK: - HttpMethod
@@ -94,8 +94,8 @@ enum APIRouter: URLRequestConvertible {
             return ["user_id": user_id, "store_id": store_id, "cart": cart]
         case .getCart(let user_id):
             return ["user_id": user_id]
-        case .deleteCart(let cart_id, let product_id):
-            return ["cart_id": cart_id, "product_id":product_id]
+        case .deleteCart(let cart_id, let product_id, let id):
+            return ["cart_id": cart_id, "product_id":product_id, "id": id]
         case .confirmCart(let cart_id,let user_id):
             return ["cart_id": cart_id, "user_id": user_id]
         case .getOrders(let user_id):

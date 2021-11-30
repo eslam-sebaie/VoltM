@@ -110,7 +110,8 @@ class CartVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             self.view.showLoader()
             let cID = cartInfo[indexPath.row].cartID
             let pID = cartInfo[indexPath.row].productID
-            APIManager.deleteCart(cart_id: cID, product_id: pID) {_ in
+            let id = cartInfo[indexPath.row].id
+            APIManager.deleteCart(cart_id: cID, product_id: pID, id: id) {_ in
                 self.cartView.hideLoader()
                 self.cartInfo.remove(at: indexPath.row)
                 if self.cartInfo.count == 0 {

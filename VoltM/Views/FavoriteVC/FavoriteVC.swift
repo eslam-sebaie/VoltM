@@ -75,5 +75,18 @@ class FavoriteVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 185
     }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            self.view.showLoader()
+            
+            let pID = favInfo[indexPath.row].productID
+            
+            APIManager.deleteFav(user_id: UserDefaultsManager.shared().userId ?? 0, product_id: pID ?? 0) {_ in
+                self.view.hideLoader()
+                self.favInfo.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            }
+        }
+    }
    
 }

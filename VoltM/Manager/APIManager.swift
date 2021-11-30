@@ -119,8 +119,8 @@ class APIManager {
             completion(response)
         }
     }
-    class func deleteCart(cart_id: Int,product_id: Int,completion: @escaping(Result<CartResponse, Error>) -> Void) {
-        request(APIRouter.deleteCart(cart_id,product_id)) { (response) in
+    class func deleteCart(cart_id: Int,product_id: Int, id: Int, completion: @escaping(Result<CartResponse, Error>) -> Void) {
+        request(APIRouter.deleteCart(cart_id,product_id,id)) { (response) in
             completion(response)
         }
     }
