@@ -33,15 +33,19 @@ enum APIRouter: URLRequestConvertible {
     case addFavorite( _ user_id: Int, _ product_id: Int)
     case getFavorite( _ user_id: Int)
     case deleteFavorite( _ user_id: Int, _ product_id: Int)
+    case addCart( _ user_id: Int, _ store_id: Int, _ cart: [[String:AnyObject]])
+    case getCart(_ user_id: Int)
+    case deleteCart(_ cart_id: Int, _ product_id: Int)
+    case confirmCart(_ cart_id: Int, _ user_id: Int)
+    case getOrders(_ user_id: Int)
     // MARK: - HttpMethod
     private var method: HTTPMethod {
         switch self {
-        case .userRegister, .userLogin, .sendReview, .updateUserData, .addFavorite, .deleteFavorite:
+        case .userRegister, .userLogin, .sendReview, .updateUserData, .addFavorite, .deleteFavorite, .addCart, .deleteCart, .confirmCart:
             return .post
-        case .countries, .getAllMainCategories, .getStores, .getStoreCategory, .getStoreSubCategory, .searchStores, .searchCatStores, .searchSubCatStores, .getProducts, .searchProducts, .getReview, .getUserData, .allCountries, .getFavorite:
+        case .countries, .getAllMainCategories, .getStores, .getStoreCategory, .getStoreSubCategory, .searchStores, .searchCatStores, .searchSubCatStores, .getProducts, .searchProducts, .getReview, .getUserData, .allCountries, .getFavorite, .getCart, .getOrders:
             return .get
             
-    
         default:
             return .delete
         }
@@ -86,6 +90,16 @@ enum APIRouter: URLRequestConvertible {
             return ["user_id": user_id]
         case .deleteFavorite(let user_id,let product_id):
             return ["user_id": user_id, "product_id": product_id]
+        case .addCart(let user_id,let store_id, let cart):
+            return ["user_id": user_id, "store_id": store_id, "cart": cart]
+        case .getCart(let user_id):
+            return ["user_id": user_id]
+        case .deleteCart(let cart_id, let product_id):
+            return ["cart_id": cart_id, "product_id":product_id]
+        case .confirmCart(let cart_id,let user_id):
+            return ["cart_id": cart_id, "user_id": user_id]
+        case .getOrders(let user_id):
+            return ["user_id": user_id]
         default:
             return nil
         }
@@ -134,6 +148,16 @@ enum APIRouter: URLRequestConvertible {
             return URLs.getFavorite
         case .deleteFavorite:
             return URLs.deleteFavorite
+        case.addCart:
+            return URLs.addCart
+        case .getCart:
+            return URLs.getCart
+        case .deleteCart:
+            return URLs.deleteCart
+        case.confirmCart:
+            return URLs.confirmCart
+        case .getOrders:
+            return URLs.getOrders
             
         }
     }
@@ -147,7 +171,7 @@ enum APIRouter: URLRequestConvertible {
         print(urlRequest)
         switch self {
        
-        case .countries, .getAllMainCategories, .getStores, .getStoreCategory, .getStoreSubCategory, .searchStores, .searchCatStores, .searchSubCatStores, .getProducts, .searchProducts, .sendReview, .getReview, .getUserData, .updateUserData, .allCountries, .addFavorite, .getFavorite, .deleteFavorite:
+        case .countries, .getAllMainCategories, .getStores, .getStoreCategory, .getStoreSubCategory, .searchStores, .searchCatStores, .searchSubCatStores, .getProducts, .searchProducts, .sendReview, .getReview, .getUserData, .updateUserData, .allCountries, .addFavorite, .getFavorite, .deleteFavorite, .addCart, .getCart, .deleteCart, .confirmCart, .getOrders:
             urlRequest.setValue("Bearer \(UserDefaultsManager.shared().Token ?? "")",
                 forHTTPHeaderField: HeaderKeys.Authorization)
         default:

@@ -32,6 +32,15 @@ class ProductVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     override func viewWillAppear(_ animated: Bool) {
         getStoreProducts()
     }
+    
+    @IBAction func cartPressed(_ sender: Any) {
+        let storyboard = UIStoryboard(name: Storyboards.home, bundle: nil)
+        let tabVC = storyboard.instantiateViewController(withIdentifier: "tabViewController") as! UITabBarController
+        tabVC.selectedIndex = 3
+        self.present(tabVC, animated: true, completion: nil)
+    }
+    
+    
     func getStoreProducts() {
         self.view.showLoader()
         APIManager.getProducts(subCategory_id: receiveSubCatId) { response in
@@ -95,6 +104,8 @@ class ProductVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             cell.productImage.image = image
         }
         cell.productPrice.text = "\(storeProducts[indexPath.row].price ?? 0) \(getCountryCurrency())"
+        cell.productRate.rating = storeProducts[indexPath.row].review_rate ?? 0.0
+        cell.totalReview.text = "(\(storeProducts[indexPath.row].review_number ?? 0))"
         if L10n.lang.localized == Language.arabic {
             cell.productName.text = storeProducts[indexPath.row].name?.ar
             cell.productDesc.text = storeProducts[indexPath.row].desc?.ar

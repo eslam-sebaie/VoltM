@@ -48,6 +48,8 @@
 		9685239026F7D881008C6E6A /* UpdateAddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9685238F26F7D881008C6E6A /* UpdateAddressView.swift */; };
 		969EEBB6274025B1001A4595 /* CountryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969EEBB5274025B1001A4595 /* CountryCollectionViewCell.swift */; };
 		969FEF2E2741CD6E00BC2826 /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969FEF2D2741CD6E00BC2826 /* Products.swift */; };
+		96A71C70274A6DDC0064E575 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A71C6F274A6DDC0064E575 /* Cart.swift */; };
+		96C6D6C6274E95B30057666D /* Orders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C6D6C5274E95B30057666D /* Orders.swift */; };
 		96CD1E4026E514E3000BC132 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CD1E3F26E514E3000BC132 /* AppDelegate.swift */; };
 		96CD1E4226E514E3000BC132 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CD1E4126E514E3000BC132 /* SceneDelegate.swift */; };
 		96CD1E4426E514E3000BC132 /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CD1E4326E514E3000BC132 /* WelcomeVC.swift */; };
@@ -180,6 +182,8 @@
 		9685238F26F7D881008C6E6A /* UpdateAddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateAddressView.swift; sourceTree = "<group>"; };
 		969EEBB5274025B1001A4595 /* CountryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCollectionViewCell.swift; sourceTree = "<group>"; };
 		969FEF2D2741CD6E00BC2826 /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
+		96A71C6F274A6DDC0064E575 /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
+		96C6D6C5274E95B30057666D /* Orders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orders.swift; sourceTree = "<group>"; };
 		96CD1E3C26E514E3000BC132 /* VoltM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoltM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96CD1E3F26E514E3000BC132 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96CD1E4126E514E3000BC132 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -451,6 +455,8 @@
 				967E1B44273E86D2002B06B0 /* Auth.swift */,
 				967E1B46273F4005002B06B0 /* stores.swift */,
 				969FEF2D2741CD6E00BC2826 /* Products.swift */,
+				96A71C6F274A6DDC0064E575 /* Cart.swift */,
+				96C6D6C5274E95B30057666D /* Orders.swift */,
 			);
 			path = Modal;
 			sourceTree = "<group>";
@@ -597,10 +603,10 @@
 				9685237926F7C7E1008C6E6A /* CountryVC */,
 				9685236526F7990D008C6E6A /* ProductDetails */,
 				9685234E26F77736008C6E6A /* CartVC */,
-				9685236C26F7A7E3008C6E6A /* MainSideMenuVC */,
-				96D26CF726F66C6E009BD961 /* OffersVC */,
 				96EB066527022A3500586EB4 /* OrdersVC */,
 				96EB06722702360800586EB4 /* OrderDetailsVC */,
+				9685236C26F7A7E3008C6E6A /* MainSideMenuVC */,
+				96D26CF726F66C6E009BD961 /* OffersVC */,
 				96DC285D273705A000B397D4 /* Service */,
 			);
 			path = Views;
@@ -1187,6 +1193,7 @@
 				96E1155926F66347005EFA2C /* TabbarVC.swift in Sources */,
 				9685237626F7B850008C6E6A /* LanguageVC.swift in Sources */,
 				96CD1E7426E51B78000BC132 /* UIViewController+Create.swift in Sources */,
+				96A71C70274A6DDC0064E575 /* Cart.swift in Sources */,
 				969EEBB6274025B1001A4595 /* CountryCollectionViewCell.swift in Sources */,
 				9685235526F77772008C6E6A /* CartTableViewCell.swift in Sources */,
 				96DC285C273580AF00B397D4 /* PagesCollectionViewCell.swift in Sources */,
@@ -1244,6 +1251,7 @@
 				96D26D1826F68436009BD961 /* FavoriteView.swift in Sources */,
 				96DC28642737067300B397D4 /* ServiceTableViewCell.swift in Sources */,
 				96CD1E4226E514E3000BC132 /* SceneDelegate.swift in Sources */,
+				96C6D6C6274E95B30057666D /* Orders.swift in Sources */,
 				96EB06742702363300586EB4 /* OrderDetailsVC.swift in Sources */,
 				967E1B47273F4005002B06B0 /* stores.swift in Sources */,
 				96D26D2826F68FF3009BD961 /* StoreSubCategoryView.swift in Sources */,

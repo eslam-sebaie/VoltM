@@ -109,6 +109,31 @@ class APIManager {
             completion(response)
         }
     }
+    class func getCart(user_id: Int, completion: @escaping(Result<getCartResponse, Error>) -> Void) {
+        request(APIRouter.getCart(user_id)) { (response) in
+            completion(response)
+        }
+    }
+    class func addCart(user_id: Int, store_id: Int, Cart: [[String:AnyObject]],completion: @escaping(Result<CartResponse, Error>) -> Void) {
+        request(APIRouter.addCart(user_id, store_id, Cart)) { (response) in
+            completion(response)
+        }
+    }
+    class func deleteCart(cart_id: Int,product_id: Int,completion: @escaping(Result<CartResponse, Error>) -> Void) {
+        request(APIRouter.deleteCart(cart_id,product_id)) { (response) in
+            completion(response)
+        }
+    }
+    class func confirmCart(cart_id: Int, user_id: Int,completion: @escaping(Result<CartResponse, Error>) -> Void) {
+        request(APIRouter.confirmCart(cart_id,user_id)) { (response) in
+            completion(response)
+        }
+    }
+    class func getOrders(user_id: Int, completion: @escaping(Result<OrderResponse, Error>) -> Void) {
+        request(APIRouter.getOrders(user_id)) { (response) in
+            completion(response)
+        }
+    }
     class func uploadPhoto(image: UIImage, completion: @escaping (_ error: Error?, _ upImage: uploadImage?)-> Void){
 
         AF.upload(multipartFormData: { (form: MultipartFormData) in

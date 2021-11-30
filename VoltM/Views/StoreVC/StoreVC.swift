@@ -104,6 +104,7 @@ class StoreVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         let storeCat = StoreCategoryVC.create()
         storeCat.receiveStoreID = storeInfo[indexPath.row].id
         storeCat.receiveStoreInfo = storeInfo[indexPath.row]
+        UserDefaultsManager.shared().storeId = storeInfo[indexPath.row].id
         self.present(storeCat, animated: true, completion: nil)
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

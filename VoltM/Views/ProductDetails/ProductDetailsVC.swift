@@ -10,12 +10,13 @@ import UIKit
 class ProductDetailsVC: UIViewController {
     
     @IBOutlet var productDetailsView: ProductDetailsView!
-    var receiveProducts = ProductInfo(id: 0, name: ProductLocalize(en: "", ar: ""), image: "", price: 0, newPrice: 0, desc: ProductLocalize(en: "", ar: ""), offer: false)
+    var receiveProducts = ProductInfo(id: 0, name: ProductLocalize(en: "", ar: ""), image: "", price: 0, newPrice: 0, desc: ProductLocalize(en: "", ar: ""), offer: false, review_number: 0, review_rate: 0.0, qty: 0)
     var imageLoader = ImageLoader()
     var checkFav = false
     override func viewDidLoad() {
         super.viewDidLoad()
         productDetailsView.updateUI()
+        productDetailsView.stepperVal.maximumValue = Double(receiveProducts.qty ?? 0)
         imageLoader.obtainImageWithPath(imagePath: receiveProducts.image ?? "") { (image) in
             self.productDetailsView.productImage.image = image
         }
@@ -102,9 +103,33 @@ class ProductDetailsVC: UIViewController {
             productDetailsView.continueDesign.backgroundColor = ColorName.ableColor.color
         }
     }
-    
+    var cartDic = [String:String]()
+    var cartArrayDic = [[String:String]]()
     @IBAction func continuePressed(_ sender: Any) {
-        print("in continue")
+        self.view.showLoader()
+        let quantity = Double(productDetailsView.productQty.text ?? "") ?? 0
+        cartDic["product_id"] = String(receiveProducts.id)
+        cartDic["qty"] = String(quantity)
+        cartArrayDic.append(cartDic)
+        print(cartDic)
+        APIManager.addCart(user_id: UserDefaultsManager.shared().userId ?? 0,  store_id: UserDefaultsManager.shared().storeId ?? 0, Cart: cartArrayDic as [[String:AnyObject]]) { response in
+            switch response {
+            case .failure( _):
+                self.show_Alert(L10n.sorry.localized, L10n.wentWrong.localized)
+                self.view.hideLoader()
+            case .success(let result):
+                print(result)
+                if result.status {
+                    self.dismiss(animated: true, completion: nil)
+                }
+                else {
+                    self.show_Alert(L10n.sorry.localized, L10n.wentWrong.localized)
+                }
+                self.cartDic = [:]
+                self.cartArrayDic = [[:]]
+                self.view.hideLoader()
+            }
+        }
     }
     
 }

@@ -69,6 +69,11 @@ struct URLs {
     static let setFavorite = "add/product/favorite"
     static let getFavorite = "get/product/favorite"
     static let deleteFavorite = "delete/product/favorite"
+    static let addCart = "addNewCart"
+    static let getCart = "getProductFromCart"
+    static let deleteCart = "deleteProductInCart"
+    static let confirmCart = "confirm/cart"
+    static let getOrders = "user/orders"
 }
 struct ParameterKeys {
    
@@ -86,6 +91,7 @@ struct UserDefaultsKeys {
     static let country = "country"
     static let countryId = "countryId"
     static let userId = "userId"
+    static let storeId = "storeId"
     
 }
 struct TableCells {

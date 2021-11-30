@@ -9,7 +9,6 @@ import UIKit
 
 class OrdersTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var orderImage: UIImageView!
     
     @IBOutlet weak var orderNumber: UILabel!
     
@@ -17,6 +16,7 @@ class OrdersTableViewCell: UITableViewCell {
     
     @IBOutlet weak var orderDate: UILabel!
     
+    @IBOutlet weak var mainView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

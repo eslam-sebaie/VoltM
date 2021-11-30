@@ -95,5 +95,16 @@ class UserDefaultsManager {
             return UserDefaults.standard.integer(forKey: UserDefaultsKeys.userId)
         }
     }
+    var storeId: Int? {
+        set {
+            UserDefaults.standard.set(newValue, forKey: UserDefaultsKeys.storeId)
+        }
+        get {
+            guard UserDefaults.standard.object(forKey: UserDefaultsKeys.storeId) != nil else {
+                return nil
+            }
+            return UserDefaults.standard.integer(forKey: UserDefaultsKeys.storeId)
+        }
+    }
     
 }

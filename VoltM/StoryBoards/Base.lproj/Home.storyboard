@@ -799,10 +799,10 @@
             </objects>
             <point key="canvasLocation" x="760.86956521739137" y="797.54464285714278"/>
         </scene>
-        <!--ServiceVC-->
+        <!--View Controller-->
         <scene sceneID="u6o-rs-apy">
             <objects>
-                <viewController storyboardIdentifier="ServiceVC" modalPresentationStyle="fullScreen" id="83l-oB-dg1" customClass="ServiceVC" customModule="VoltM" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="83l-oB-dg1" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mGc-Kf-3lJ" customClass="ServiceView" customModule="VoltM" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -893,10 +893,6 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="83l-oB-dg1" id="aqb-oJ-AlZ"/>
-                                    <outlet property="delegate" destination="83l-oB-dg1" id="VXD-xv-pWl"/>
-                                </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wz1-ei-3oa">
                                 <rect key="frame" x="20" y="117" width="374" height="45"/>
@@ -913,9 +909,6 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="58" id="zSc-zz-Jbb"/>
                                         </constraints>
-                                        <connections>
-                                            <action selector="searchPressed:" destination="83l-oB-dg1" eventType="touchUpInside" id="xF2-nh-ME0"/>
-                                        </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CTQ-ne-dHl" customClass="HooopTextfield" customModule="VoltM" customModuleProvider="target">
                                         <rect key="frame" x="66" y="0.0" width="300" height="45"/>
@@ -986,9 +979,6 @@
                         </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="Service" selectedImage="selectService" id="qpo-lz-2sm"/>
-                    <connections>
-                        <outlet property="serviceView" destination="mGc-Kf-3lJ" id="pGr-8e-X6W"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mWJ-78-Gmt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1048,7 +1038,7 @@
                                 </subviews>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OpH-86-Zqv">
-                                <rect key="frame" x="20" y="116.5" width="374" height="501.5"/>
+                                <rect key="frame" x="20" y="116.5" width="374" height="607.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="129" id="yix-Rs-rTr" customClass="CartTableViewCell" customModule="VoltM" customModuleProvider="target">
@@ -1183,6 +1173,7 @@
                             <constraint firstItem="epa-BS-ZU8" firstAttribute="top" secondItem="RhO-at-7WB" secondAttribute="bottom" constant="20" id="7yc-3b-uA5"/>
                             <constraint firstItem="fgI-V7-hTT" firstAttribute="bottom" secondItem="epa-BS-ZU8" secondAttribute="bottom" constant="20" id="9Af-qY-cKb"/>
                             <constraint firstItem="B6i-GX-qLx" firstAttribute="top" secondItem="gWi-ho-WjQ" secondAttribute="top" id="CIl-W4-mWc"/>
+                            <constraint firstItem="epa-BS-ZU8" firstAttribute="top" secondItem="OpH-86-Zqv" secondAttribute="bottom" constant="24" id="DAv-p8-8Ky"/>
                             <constraint firstItem="xs4-xZ-uv9" firstAttribute="leading" secondItem="fgI-V7-hTT" secondAttribute="leading" id="Du0-xa-8gG"/>
                             <constraint firstItem="Jmg-L5-6wH" firstAttribute="top" secondItem="fgI-V7-hTT" secondAttribute="top" constant="24" id="MOJ-ov-zr4"/>
                             <constraint firstItem="RhO-at-7WB" firstAttribute="top" secondItem="OpH-86-Zqv" secondAttribute="bottom" constant="20" id="Q5U-XN-Zum"/>
@@ -1201,6 +1192,11 @@
                             <constraint firstItem="OpH-86-Zqv" firstAttribute="leading" secondItem="fgI-V7-hTT" secondAttribute="leading" constant="20" id="v2Z-7s-rpk"/>
                             <constraint firstItem="xs4-xZ-uv9" firstAttribute="bottom" secondItem="fgI-V7-hTT" secondAttribute="bottom" id="ybs-ef-07E"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="RhO-at-7WB"/>
+                            </mask>
+                        </variation>
                         <connections>
                             <outlet property="cartHeader" destination="yWR-TV-vlW" id="txE-si-rNP"/>
                             <outlet property="cartTableView" destination="OpH-86-Zqv" id="epI-yl-DRU"/>
@@ -1584,19 +1580,19 @@
     </scenes>
     <designables>
         <designable name="CTQ-ne-dHl">
-            <size key="intrinsicContentSize" width="65" height="18.5"/>
+            <size key="intrinsicContentSize" width="45" height="18.5"/>
         </designable>
         <designable name="KER-5z-ILQ">
-            <size key="intrinsicContentSize" width="65" height="18.5"/>
+            <size key="intrinsicContentSize" width="45" height="18.5"/>
         </designable>
         <designable name="dx6-HH-eD1">
-            <size key="intrinsicContentSize" width="65" height="18.5"/>
+            <size key="intrinsicContentSize" width="45" height="18.5"/>
         </designable>
         <designable name="fzq-cj-NVb">
             <size key="intrinsicContentSize" width="-1" height="83"/>
         </designable>
         <designable name="zxL-p4-sGh">
-            <size key="intrinsicContentSize" width="65" height="18.5"/>
+            <size key="intrinsicContentSize" width="45" height="18.5"/>
         </designable>
     </designables>
     <resources>

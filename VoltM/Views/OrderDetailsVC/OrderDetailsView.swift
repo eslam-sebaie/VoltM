@@ -9,6 +9,7 @@ import UIKit
 
 class OrderDetailsView: UIView {
 
+    @IBOutlet weak var addressView: UIView!
     @IBOutlet weak var orderDetailsHeader: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var backDesign: UIButton!
@@ -23,7 +24,9 @@ class OrderDetailsView: UIView {
             backDesign.setImage(Asset.backAr.image, for: .normal)
             orderDetailsHeader.text = "تفاصيل الطلب"
         }
+        addressView.setCornerRadius(radius: 25)
     }
+    
     
     
 }
