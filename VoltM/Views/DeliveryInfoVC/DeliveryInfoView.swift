@@ -22,7 +22,9 @@ class DeliveryInfoView: UIView {
     @IBOutlet weak var addressIcon: UIImageView!
     @IBOutlet weak var countryDesign: UIButton!
     
+    @IBOutlet weak var addressIcon2: UIImageView!
     @IBOutlet weak var backDesign: UIButton!
+    @IBOutlet weak var addressIcon3: UIImageView!
     func updateUI(){
         if L10n.lang.localized == Language.arabic {
             countryDesign.setTitle(L10n.continue.localized, for: .normal)
@@ -34,8 +36,12 @@ class DeliveryInfoView: UIView {
             countryTF.textAlignment = .right
             addressTF.placeholder = "العنوان"
             addressTF.textAlignment = .right
+            goverTF.text = L10n.chooseYourGovernorate.localized
+            goverTF.textAlignment = .right
             phoneIcon.transform = CGAffineTransform(scaleX: -1, y: 1)
             addressIcon.transform = CGAffineTransform(scaleX: -1, y: 1)
+            addressIcon2.transform = CGAffineTransform(scaleX: -1, y: 1)
+            addressIcon3.transform = CGAffineTransform(scaleX: -1, y: 1)
         }
         phoneTF.text = UserDefaultsManager.shared().phone
         countryTF.text = UserDefaultsManager.shared().country

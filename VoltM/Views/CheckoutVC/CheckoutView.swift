@@ -59,7 +59,7 @@ class CheckoutView: UIView {
             totalPriceHeader.text = "السعر الكلي"
             payHeader.text = "إدفع بواسطه"
             cashHeader.text = "نقدا عند التسليم"
-            continueDesign.setTitle(L10n.continue.localized, for: .normal)
+            continueDesign.setTitle("تأكيد", for: .normal)
         }
         addressLabel.text = UserDefaultsManager.shared().address
         addressView.setCornerRadius(radius: 16)

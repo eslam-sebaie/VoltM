@@ -46,6 +46,7 @@ struct ViewControllers {
     static let chooseCountryVC = "ChooseCountryVC"
     static let pagesVC = "PagesVC"
     static let deliveryInfoVC = "DeliveryInfoVC"
+    static let checkoutVC = "CheckoutVC"
 }
 struct URLs {
     // MARK:- base
@@ -76,7 +77,7 @@ struct URLs {
     static let confirmCart = "confirm/cart"
     static let getOrders = "user/orders"
     static let getCities = "getCites/country/id"
-    
+    static let getDelivery = "getDelivaries/sameCityPrice/country_id"
 }
 struct ParameterKeys {
    
@@ -97,6 +98,7 @@ struct UserDefaultsKeys {
     static let storeId = "storeId"
     static let address = "address"
     static let gover = "gover"
+    static let cityId = "cityId"
     
 }
 struct TableCells {

@@ -139,6 +139,11 @@ class APIManager {
             completion(response)
         }
     }
+    class func getDelivery(country_id: Int, completion: @escaping(Result<deliveryResponse, Error>) -> Void) {
+        request(APIRouter.getDelivery(country_id)) { (response) in
+            completion(response)
+        }
+    }
     class func uploadPhoto(image: UIImage, completion: @escaping (_ error: Error?, _ upImage: uploadImage?)-> Void){
 
         AF.upload(multipartFormData: { (form: MultipartFormData) in

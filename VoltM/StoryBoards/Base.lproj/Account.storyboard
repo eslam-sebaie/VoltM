@@ -838,13 +838,13 @@
             <size key="intrinsicContentSize" width="102.5" height="21"/>
         </designable>
         <designable name="c5y-O5-F8f">
-            <size key="intrinsicContentSize" width="116.5" height="18.5"/>
+            <size key="intrinsicContentSize" width="96.5" height="18.5"/>
         </designable>
         <designable name="odc-oe-V7K">
-            <size key="intrinsicContentSize" width="82.5" height="21"/>
+            <size key="intrinsicContentSize" width="62.5" height="21"/>
         </designable>
         <designable name="qhh-0E-BHz">
-            <size key="intrinsicContentSize" width="54.5" height="18.5"/>
+            <size key="intrinsicContentSize" width="34.5" height="18.5"/>
         </designable>
     </designables>
     <resources>

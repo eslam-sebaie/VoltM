@@ -60,3 +60,15 @@ struct CartDetail: Codable {
         case qty, product
     }
 }
+
+
+struct deliveryResponse: Codable {
+    let data: [deliveryInfo]?
+    let message: String
+    let status: Bool
+}
+
+// MARK: - Datum
+struct deliveryInfo: Codable {
+    let id, sameCityPrice, diffCityPrice: Int?
+}

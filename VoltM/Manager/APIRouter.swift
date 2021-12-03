@@ -39,12 +39,13 @@ enum APIRouter: URLRequestConvertible {
     case confirmCart(_ cart_id: Int, _ user_id: Int)
     case getOrders(_ user_id: Int)
     case getCity(_ country_id: Int)
+    case getDelivery(_ country_id: Int)
     // MARK: - HttpMethod
     private var method: HTTPMethod {
         switch self {
         case .userRegister, .userLogin, .sendReview, .updateUserData, .addFavorite, .deleteFavorite, .addCart, .deleteCart, .confirmCart:
             return .post
-        case .countries, .getAllMainCategories, .getStores, .getStoreCategory, .getStoreSubCategory, .searchStores, .searchCatStores, .searchSubCatStores, .getProducts, .searchProducts, .getReview, .getUserData, .allCountries, .getFavorite, .getCart, .getOrders, .getCity:
+        case .countries, .getAllMainCategories, .getStores, .getStoreCategory, .getStoreSubCategory, .searchStores, .searchCatStores, .searchSubCatStores, .getProducts, .searchProducts, .getReview, .getUserData, .allCountries, .getFavorite, .getCart, .getOrders, .getCity, .getDelivery:
             return .get
             
         default:
@@ -102,6 +103,8 @@ enum APIRouter: URLRequestConvertible {
         case .getOrders(let user_id):
             return ["user_id": user_id]
         case .getCity(let country_id):
+            return ["country_id": country_id]
+        case .getDelivery(let country_id):
             return ["country_id": country_id]
         default:
             return nil
@@ -163,6 +166,8 @@ enum APIRouter: URLRequestConvertible {
             return URLs.getOrders
         case .getCity:
             return URLs.getCities
+        case .getDelivery:
+            return URLs.getDelivery
             
         }
     }
@@ -176,7 +181,7 @@ enum APIRouter: URLRequestConvertible {
         print(urlRequest)
         switch self {
        
-        case .countries, .getAllMainCategories, .getStores, .getStoreCategory, .getStoreSubCategory, .searchStores, .searchCatStores, .searchSubCatStores, .getProducts, .searchProducts, .sendReview, .getReview, .getUserData, .updateUserData, .allCountries, .addFavorite, .getFavorite, .deleteFavorite, .addCart, .getCart, .deleteCart, .confirmCart, .getOrders, .getCity:
+        case .countries, .getAllMainCategories, .getStores, .getStoreCategory, .getStoreSubCategory, .searchStores, .searchCatStores, .searchSubCatStores, .getProducts, .searchProducts, .sendReview, .getReview, .getUserData, .updateUserData, .allCountries, .addFavorite, .getFavorite, .deleteFavorite, .addCart, .getCart, .deleteCart, .confirmCart, .getOrders, .getCity, .getDelivery:
             urlRequest.setValue("Bearer \(UserDefaultsManager.shared().Token ?? "")",
                 forHTTPHeaderField: HeaderKeys.Authorization)
         default:

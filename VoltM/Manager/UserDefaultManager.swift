@@ -73,7 +73,7 @@ class UserDefaultsManager {
             return UserDefaults.standard.string(forKey: UserDefaultsKeys.address)
         }
     }
-    var gover: String? {
+    var gover: Int? {
         set {
             UserDefaults.standard.set(newValue, forKey: UserDefaultsKeys.gover)
         }
@@ -81,7 +81,7 @@ class UserDefaultsManager {
             guard UserDefaults.standard.object(forKey: UserDefaultsKeys.gover) != nil else {
                 return nil
             }
-            return UserDefaults.standard.string(forKey: UserDefaultsKeys.gover)
+            return UserDefaults.standard.integer(forKey: UserDefaultsKeys.gover)
         }
     }
     var country: String? {
@@ -126,6 +126,17 @@ class UserDefaultsManager {
                 return nil
             }
             return UserDefaults.standard.integer(forKey: UserDefaultsKeys.storeId)
+        }
+    }
+    var cityId: Int? {
+        set {
+            UserDefaults.standard.set(newValue, forKey: UserDefaultsKeys.cityId)
+        }
+        get {
+            guard UserDefaults.standard.object(forKey: UserDefaultsKeys.cityId) != nil else {
+                return nil
+            }
+            return UserDefaults.standard.integer(forKey: UserDefaultsKeys.cityId)
         }
     }
     

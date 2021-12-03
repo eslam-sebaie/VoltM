@@ -56,12 +56,18 @@ class CartVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             }
         }
     }
-
+    var subPrice = 0
     @IBAction func continuePressed(_ sender: Any) {
+      
+        for i in cartInfo {
+            subPrice += ((i.qty) * (i.product?.price ?? 0))
+        }
+        print("Rony")
+        print(subPrice)
         let deliveryInfo = DeliveryInfoVC.create()
         deliveryInfo.receiveCartID = cartInfo[0].cartID
+        deliveryInfo.subTotal = subPrice
         self.present(deliveryInfo, animated: true, completion: nil)
-        
 //        self.view.showLoader()
 //        APIManager.confirmCart(cart_id: cartInfo[0].cartID, user_id: UserDefaultsManager.shared().userId ?? 0) { response in
 //            switch response {

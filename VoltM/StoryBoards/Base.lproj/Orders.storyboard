@@ -281,7 +281,9 @@
                             <constraint firstItem="Qzb-wi-ANK" firstAttribute="centerY" secondItem="5nU-ik-vCZ" secondAttribute="centerY" id="tFu-rA-5vA"/>
                         </constraints>
                         <connections>
-                            <outlet property="addressIcon" destination="cGL-tF-LyS" id="Hc9-Rn-bkF"/>
+                            <outlet property="addressIcon" destination="Zyo-NF-qkE" id="WUi-04-ufv"/>
+                            <outlet property="addressIcon2" destination="xaD-SA-hui" id="Vf6-OH-9Ua"/>
+                            <outlet property="addressIcon3" destination="cGL-tF-LyS" id="8hj-fK-CS2"/>
                             <outlet property="addressTF" destination="hfS-RH-AX8" id="7dS-zX-0bg"/>
                             <outlet property="addressView" destination="GSX-tj-LB2" id="h9L-kM-wGD"/>
                             <outlet property="backDesign" destination="5nU-ik-vCZ" id="ICC-v5-C33"/>
@@ -1017,31 +1019,39 @@
                                                         </constraints>
                                                     </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="4Ga-ZY-aEf">
-                                                        <rect key="frame" x="81" y="62" width="212" height="27"/>
+                                                        <rect key="frame" x="77" y="62" width="220" height="35"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5eu-ar-oHG">
-                                                                <rect key="frame" x="0.0" y="0.0" width="27" height="27"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="27" id="9om-vT-3ka"/>
-                                                                    <constraint firstAttribute="height" constant="27" id="cDi-ZL-w3K"/>
+                                                                    <constraint firstAttribute="width" constant="35" id="9om-vT-3ka"/>
+                                                                    <constraint firstAttribute="height" constant="35" id="cDi-ZL-w3K"/>
                                                                 </constraints>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <state key="normal" backgroundImage="check"/>
                                                             </button>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cash" translatesAutoresizingMaskIntoConstraints="NO" id="Z9k-fj-0Un">
-                                                                <rect key="frame" x="43" y="0.0" width="22" height="27"/>
+                                                                <rect key="frame" x="51" y="0.0" width="22" height="35"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="19" id="XTn-2T-M2o"/>
                                                                     <constraint firstAttribute="width" constant="22" id="dDQ-pO-UrV"/>
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cash on Delivery" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="68d-T3-LG4">
-                                                                <rect key="frame" x="81" y="0.0" width="131" height="27"/>
+                                                                <rect key="frame" x="89" y="0.0" width="131" height="35"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="35" id="gkJ-KJ-mBq"/>
+                                                                </constraints>
                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="5eu-ar-oHG" firstAttribute="leading" secondItem="4Ga-ZY-aEf" secondAttribute="leading" id="52M-ub-eVW"/>
+                                                            <constraint firstAttribute="height" constant="35" id="T7q-xe-hvs"/>
+                                                            <constraint firstItem="5eu-ar-oHG" firstAttribute="top" secondItem="4Ga-ZY-aEf" secondAttribute="top" id="eBZ-BY-UpM"/>
+                                                        </constraints>
                                                     </stackView>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.31764705879999999" green="0.38431372549999998" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1062,7 +1072,7 @@
                                                     <constraint firstAttribute="height" constant="45" id="LEQ-98-RuE"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                <state key="normal" title="Continue">
+                                                <state key="normal" title="Confirm">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
@@ -1160,16 +1170,16 @@
     </scenes>
     <designables>
         <designable name="31m-6a-tEC">
-            <size key="intrinsicContentSize" width="116.5" height="18.5"/>
+            <size key="intrinsicContentSize" width="96.5" height="18.5"/>
         </designable>
         <designable name="N26-di-h3i">
-            <size key="intrinsicContentSize" width="216" height="21"/>
+            <size key="intrinsicContentSize" width="196" height="21"/>
         </designable>
         <designable name="YyH-7C-imL">
-            <size key="intrinsicContentSize" width="81" height="21"/>
+            <size key="intrinsicContentSize" width="61" height="21"/>
         </designable>
         <designable name="hfS-RH-AX8">
-            <size key="intrinsicContentSize" width="82.5" height="21"/>
+            <size key="intrinsicContentSize" width="62.5" height="21"/>
         </designable>
     </designables>
     <resources>

@@ -14,7 +14,9 @@ class DeliveryInfoVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet var deliveryInfoView: DeliveryInfoView!
     var pickerView = UIPickerView()
     var cityInfo = [CountryInfo]()
+    var goverID = 0
     var receiveCartID = 0
+    var subTotal = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         pickerView.delegate = self
@@ -53,8 +55,11 @@ class DeliveryInfoVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             self.show_Alert(L10n.sorry.localized, L10n.chooseYourGovernorate.localized)
             return
         }
-        UserDefaultsManager.shared().gover = self.deliveryInfoView.goverTF.text
-        
+        UserDefaultsManager.shared().gover = self.goverID
+        let checkout = CheckoutVC.create()
+        checkout.receiveCartID = receiveCartID
+        checkout.subTotal = subTotal
+        self.present(checkout, animated: true, completion: nil)
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -69,6 +74,7 @@ class DeliveryInfoVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         self.deliveryInfoView.goverTF.text = cityInfo[row].name
+        self.goverID = cityInfo[row].id ?? 0
     }
     
 }
