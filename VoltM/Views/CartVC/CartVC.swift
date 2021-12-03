@@ -58,26 +58,27 @@ class CartVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
 
     @IBAction func continuePressed(_ sender: Any) {
-        self.view.showLoader()
-//        for i in cartInfo {
-//            self.productsId.append(i.product?.id ?? 0)
+        let deliveryInfo = DeliveryInfoVC.create()
+        deliveryInfo.receiveCartID = cartInfo[0].cartID
+        self.present(deliveryInfo, animated: true, completion: nil)
+        
+//        self.view.showLoader()
+//        APIManager.confirmCart(cart_id: cartInfo[0].cartID, user_id: UserDefaultsManager.shared().userId ?? 0) { response in
+//            switch response {
+//            case .failure( _):
+//                self.show_Alert(L10n.sorry.localized, L10n.wentWrong.localized)
+//                self.view.hideLoader()
+//            case .success(let result):
+//                if result.status == false {
+//                    self.show_Alert(L10n.sorry.localized, L10n.wentWrong.localized)
+//                    self.view.hideLoader()
+//                }
+//                else {
+//                    // will Go to CheckOut
+//                    self.view.hideLoader()
+//                }
+//            }
 //        }
-        APIManager.confirmCart(cart_id: cartInfo[0].cartID, user_id: UserDefaultsManager.shared().userId ?? 0) { response in
-            switch response {
-            case .failure( _):
-                self.show_Alert(L10n.sorry.localized, L10n.wentWrong.localized)
-                self.view.hideLoader()
-            case .success(let result):
-                if result.status == false {
-                    self.show_Alert(L10n.sorry.localized, L10n.wentWrong.localized)
-                    self.view.hideLoader()
-                }
-                else {
-                    // will Go to CheckOut
-                    self.view.hideLoader()
-                }
-            }
-        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

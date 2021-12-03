@@ -15,6 +15,10 @@
 		96019E1C26F6486A00BAF3AA /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96019E1B26F6486A00BAF3AA /* HomeTableViewCell.swift */; };
 		960DB0EB26F8F54900B5352F /* UpdateContactVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960DB0EA26F8F54900B5352F /* UpdateContactVC.swift */; };
 		960DB0ED26F8F55F00B5352F /* UpdateContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960DB0EC26F8F55F00B5352F /* UpdateContactView.swift */; };
+		960F6F2A275A793C0085A799 /* DeliveryInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960F6F29275A793C0085A799 /* DeliveryInfoVC.swift */; };
+		960F6F2C275A794E0085A799 /* DeliveryInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960F6F2B275A794E0085A799 /* DeliveryInfoView.swift */; };
+		960F6F2F275A88B00085A799 /* CheckoutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960F6F2E275A88B00085A799 /* CheckoutVC.swift */; };
+		960F6F31275A88CB0085A799 /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960F6F30275A88CB0085A799 /* CheckoutView.swift */; };
 		9647C00A26FF3C9300C03A5B /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9647C00926FF3C9300C03A5B /* WelcomeView.swift */; };
 		965395DD274309B60018F624 /* circle.gif in Resources */ = {isa = PBXBuildFile; fileRef = 965395DC274309B60018F624 /* circle.gif */; };
 		965395DF274311600018F624 /* circle2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 965395DE274311600018F624 /* circle2.gif */; };
@@ -147,6 +151,10 @@
 		96019E1F26F6540900BAF3AA /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		960DB0EA26F8F54900B5352F /* UpdateContactVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateContactVC.swift; sourceTree = "<group>"; };
 		960DB0EC26F8F55F00B5352F /* UpdateContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateContactView.swift; sourceTree = "<group>"; };
+		960F6F29275A793C0085A799 /* DeliveryInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryInfoVC.swift; sourceTree = "<group>"; };
+		960F6F2B275A794E0085A799 /* DeliveryInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryInfoView.swift; sourceTree = "<group>"; };
+		960F6F2E275A88B00085A799 /* CheckoutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutVC.swift; sourceTree = "<group>"; };
+		960F6F30275A88CB0085A799 /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
 		9647C00926FF3C9300C03A5B /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		965395DC274309B60018F624 /* circle.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = circle.gif; sourceTree = "<group>"; };
 		965395DE274311600018F624 /* circle2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = circle2.gif; sourceTree = "<group>"; };
@@ -329,6 +337,24 @@
 				960DB0EC26F8F55F00B5352F /* UpdateContactView.swift */,
 			);
 			path = UpdateContact;
+			sourceTree = "<group>";
+		};
+		960F6F28275A791B0085A799 /* DeliveryInfoVC */ = {
+			isa = PBXGroup;
+			children = (
+				960F6F29275A793C0085A799 /* DeliveryInfoVC.swift */,
+				960F6F2B275A794E0085A799 /* DeliveryInfoView.swift */,
+			);
+			path = DeliveryInfoVC;
+			sourceTree = "<group>";
+		};
+		960F6F2D275A88840085A799 /* CheckoutVC */ = {
+			isa = PBXGroup;
+			children = (
+				960F6F2E275A88B00085A799 /* CheckoutVC.swift */,
+				960F6F30275A88CB0085A799 /* CheckoutView.swift */,
+			);
+			path = CheckoutVC;
 			sourceTree = "<group>";
 		};
 		96746ED4272458100074421B /* SignInVC */ = {
@@ -603,6 +629,8 @@
 				9685237926F7C7E1008C6E6A /* CountryVC */,
 				9685236526F7990D008C6E6A /* ProductDetails */,
 				9685234E26F77736008C6E6A /* CartVC */,
+				960F6F28275A791B0085A799 /* DeliveryInfoVC */,
+				960F6F2D275A88840085A799 /* CheckoutVC */,
 				96EB066527022A3500586EB4 /* OrdersVC */,
 				96EB06722702360800586EB4 /* OrderDetailsVC */,
 				9685236C26F7A7E3008C6E6A /* MainSideMenuVC */,
@@ -1184,6 +1212,7 @@
 				96D26D2B26F6900B009BD961 /* StoreSubCategoryTableViewCell.swift in Sources */,
 				96CD1EA926E52583000BC132 /* AssetsManager.swift in Sources */,
 				96DC28572735808800B397D4 /* PagesVC.swift in Sources */,
+				960F6F2F275A88B00085A799 /* CheckoutVC.swift in Sources */,
 				96D26D2626F68FDE009BD961 /* StoreSubCategoryVC.swift in Sources */,
 				96CD1E7926E51BFC000BC132 /* Constant.swift in Sources */,
 				96D26D1326F67928009BD961 /* StoreTableViewCell.swift in Sources */,
@@ -1196,6 +1225,7 @@
 				96A71C70274A6DDC0064E575 /* Cart.swift in Sources */,
 				969EEBB6274025B1001A4595 /* CountryCollectionViewCell.swift in Sources */,
 				9685235526F77772008C6E6A /* CartTableViewCell.swift in Sources */,
+				960F6F2A275A793C0085A799 /* DeliveryInfoVC.swift in Sources */,
 				96DC285C273580AF00B397D4 /* PagesCollectionViewCell.swift in Sources */,
 				96CD1E7F26E51CF0000BC132 /* APIManager.swift in Sources */,
 				9685237826F7B85F008C6E6A /* LanguageView.swift in Sources */,
@@ -1208,6 +1238,7 @@
 				96D26CFE26F66CA9009BD961 /* OfferTableViewCell.swift in Sources */,
 				96CD1E8126E51D38000BC132 /* UserDefaultManager.swift in Sources */,
 				96019E1726F647A700BAF3AA /* HomeVC.swift in Sources */,
+				960F6F31275A88CB0085A799 /* CheckoutView.swift in Sources */,
 				9685236926F79940008C6E6A /* ProductDetailsView.swift in Sources */,
 				96DC28592735809B00B397D4 /* PagesView.swift in Sources */,
 				9685237B26F7C7FD008C6E6A /* CountryVC.swift in Sources */,
@@ -1235,6 +1266,7 @@
 				96D26D1026F67915009BD961 /* StoreView.swift in Sources */,
 				9685238726F7D553008C6E6A /* UpdateInfoVC.swift in Sources */,
 				96EB066727022A5F00586EB4 /* OrdersVC.swift in Sources */,
+				960F6F2C275A794E0085A799 /* DeliveryInfoView.swift in Sources */,
 				960DB0ED26F8F55F00B5352F /* UpdateContactView.swift in Sources */,
 				9685239026F7D881008C6E6A /* UpdateAddressView.swift in Sources */,
 				96019E1926F647BD00BAF3AA /* HomeView.swift in Sources */,
@@ -1510,12 +1542,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = K8C84U26G9;
 				INFOPLIST_FILE = VoltM/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = sebaie.VoltM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1530,12 +1564,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = K8C84U26G9;
 				INFOPLIST_FILE = VoltM/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = sebaie.VoltM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1550,6 +1586,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5GK8Y3B9X4;
 				INFOPLIST_FILE = VoltMTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1572,6 +1609,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5GK8Y3B9X4;
 				INFOPLIST_FILE = VoltMTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1592,7 +1630,9 @@
 			baseConfigurationReference = 4D635B049DAFC9C5736BACAA /* Pods-VoltM-VoltMUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5GK8Y3B9X4;
 				INFOPLIST_FILE = VoltMUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1612,7 +1652,9 @@
 			baseConfigurationReference = 63554CA262E50A373B8DEEFF /* Pods-VoltM-VoltMUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5GK8Y3B9X4;
 				INFOPLIST_FILE = VoltMUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

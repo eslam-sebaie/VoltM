@@ -99,6 +99,7 @@ class UpdateAddressVC: UIViewController, sendingAddress {
                     self.lat = Double(latitude!)
                     self.lng = Double(longitude!)
                     self.view.showLoader()
+                    UserDefaultsManager.shared().address = address
                     APIManager.updateUser(id: UserDefaultsManager.shared().userId ?? 0,fname: self.userInfo.fname!, lname: self.userInfo.lname!, email: self.userInfo.email ?? "", password: UserDefaultsManager.shared().Password ?? "", phone: self.userInfo.phone!, address: address, latitude: String(self.lat), longitude: String(self.lng), image: self.img) { (response) in
                         switch response {
                         case .failure(let err):

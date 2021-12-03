@@ -12,6 +12,10 @@ import Foundation
 internal enum L10n {
   /// catName
   internal static let catName = L10n.tr("Localizable", "catName")
+  /// Choose Your governorate
+  internal static let chooseYourGovernorate = L10n.tr("Localizable", "Choose Your governorate")
+  /// Continue
+  internal static let `continue` = L10n.tr("Localizable", "Continue")
   /// Email Or Password Is Wrong.
   internal static let emailOrPasswordIsWrong = L10n.tr("Localizable", "Email Or Password Is Wrong.")
   /// Email Or Phone are Aleardy Token.

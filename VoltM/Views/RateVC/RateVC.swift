@@ -12,7 +12,7 @@ class RateVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet var rateView: RateView!
     var imageLoader = ImageLoader()
-    var receiveProducts = ProductInfo(id: 0, name: ProductLocalize(en: "", ar: ""), image: "", price: 0, newPrice: 0, desc: ProductLocalize(en: "", ar: ""), offer: false, review_number: 0, review_rate: 0.0, qty: 0)
+    var receiveProducts = ProductInfo(id: 0, name: ProductLocalize(en: "", ar: ""), image: "", price: 0, newPrice: 0, desc: ProductLocalize(en: "", ar: ""), offer: "", review_number: 0, review_rate: 0.0, qty: 0)
     var getReviewsInfo = [GetReviewInfo]()
     override func viewDidLoad() {
         super.viewDidLoad()

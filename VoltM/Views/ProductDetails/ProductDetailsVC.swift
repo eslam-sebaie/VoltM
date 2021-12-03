@@ -10,7 +10,7 @@ import UIKit
 class ProductDetailsVC: UIViewController {
     
     @IBOutlet var productDetailsView: ProductDetailsView!
-    var receiveProducts = ProductInfo(id: 0, name: ProductLocalize(en: "", ar: ""), image: "", price: 0, newPrice: 0, desc: ProductLocalize(en: "", ar: ""), offer: false, review_number: 0, review_rate: 0.0, qty: 0)
+    var receiveProducts = ProductInfo(id: 0, name: ProductLocalize(en: "", ar: ""), image: "", price: 0, newPrice: 0, desc: ProductLocalize(en: "", ar: ""), offer: "", review_number: 0, review_rate: 0.0, qty: 0)
     var imageLoader = ImageLoader()
     var checkFav = false
     override func viewDidLoad() {

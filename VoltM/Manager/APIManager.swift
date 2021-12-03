@@ -134,6 +134,11 @@ class APIManager {
             completion(response)
         }
     }
+    class func getCity(country_id: Int, completion: @escaping(Result<CountryResponse, Error>) -> Void) {
+        request(APIRouter.getCity(country_id)) { (response) in
+            completion(response)
+        }
+    }
     class func uploadPhoto(image: UIImage, completion: @escaping (_ error: Error?, _ upImage: uploadImage?)-> Void){
 
         AF.upload(multipartFormData: { (form: MultipartFormData) in

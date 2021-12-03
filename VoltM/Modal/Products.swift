@@ -20,7 +20,7 @@ struct ProductInfo: Codable {
     let price: Int?
     let newPrice: Int?
     let desc: ProductLocalize?
-    let offer: Bool?
+    let offer: String?
     let review_number: Int?
     let review_rate: Double?
     let qty: Int?
@@ -133,7 +133,8 @@ struct ProductFavResponse: Codable {
     let name: ProductLocalize?
     let price: Int
     let desc: ProductLocalize?
-    let offer, newPrice: Int?
+    let newPrice: Int?
+    let offer: String?
     let categoryID, subcategoryID, storeID: Int
     let createdAt, updatedAt: String
     let qty: Int

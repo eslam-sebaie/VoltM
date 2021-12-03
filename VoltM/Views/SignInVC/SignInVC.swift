@@ -61,6 +61,7 @@ class SignInVC: UIViewController {
                     UserDefaultsManager.shared().Email = result.data?.email
                     UserDefaultsManager.shared().phone = result.data?.phone
                     UserDefaultsManager.shared().userId = result.data?.id
+                    UserDefaultsManager.shared().address = result.data?.address
                     UserDefaultsManager.shared().Password = pass
                     self.view.hideLoader()
                     let country = ChooseCountryVC.create()

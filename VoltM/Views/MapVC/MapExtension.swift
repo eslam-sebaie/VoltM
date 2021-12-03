@@ -46,7 +46,14 @@ extension MapVC: MKMapViewDelegate {
             
             let streetName = placemark.thoroughfare
             DispatchQueue.main.async {
-                
+                print("SebaieYoussef")
+                print(placemark.addressDictionary?["State"])
+                print(placemark.country)
+                print(placemark.locality)
+                print(placemark.subLocality)
+                print(placemark.thoroughfare)
+                print(placemark.postalCode)
+                print(placemark.subThoroughfare)
 //                self.searchBar.text = "\(streetNumber ?? "") \(streetName ?? "")"
                 self.mapView.addressLabel.text = "\(streetNumber ?? "") \(streetName ?? "")"
                 

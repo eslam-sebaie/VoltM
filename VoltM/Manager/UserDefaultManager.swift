@@ -62,6 +62,28 @@ class UserDefaultsManager {
             return UserDefaults.standard.string(forKey: UserDefaultsKeys.phone)
         }
     }
+    var address: String? {
+        set {
+            UserDefaults.standard.set(newValue, forKey: UserDefaultsKeys.address)
+        }
+        get {
+            guard UserDefaults.standard.object(forKey: UserDefaultsKeys.address) != nil else {
+                return nil
+            }
+            return UserDefaults.standard.string(forKey: UserDefaultsKeys.address)
+        }
+    }
+    var gover: String? {
+        set {
+            UserDefaults.standard.set(newValue, forKey: UserDefaultsKeys.gover)
+        }
+        get {
+            guard UserDefaults.standard.object(forKey: UserDefaultsKeys.gover) != nil else {
+                return nil
+            }
+            return UserDefaults.standard.string(forKey: UserDefaultsKeys.gover)
+        }
+    }
     var country: String? {
         set {
             UserDefaults.standard.set(newValue, forKey: UserDefaultsKeys.country)
