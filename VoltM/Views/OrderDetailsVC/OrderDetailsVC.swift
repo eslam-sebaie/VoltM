@@ -19,14 +19,36 @@ class OrderDetailsVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         orderDetailsView.updateUI()
-        orderDetailsView.subTotalLabel.text = "\(receiveTotalPrice) \(getCountryCurrency())"
-        orderDetailsView.deliveryLabel.text = "50"
-        orderDetailsView.totalPriceLabel.text = "\(receiveTotalPrice + 50) \(getCountryCurrency())"
         orderDetailsView.orderDetailsTableView.reloadData()
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
         getUser()
+        getDelivery()
+    }
+    func getDelivery(){
+        self.view.showLoader()
+        APIManager.getDelivery(country_id: UserDefaultsManager.shared().countryId ?? 0) { response in
+            switch response {
+            case .failure( _):
+                self.show_Alert(L10n.sorry.localized, L10n.wentWrong.localized)
+                self.view.hideLoader()
+            case .success(let result):
+                if UserDefaultsManager.shared().gover == UserDefaultsManager.shared().cityId {
+                    self.orderDetailsView.deliveryLabel.text = "\(result.data?[0].sameCityPrice ?? 0) \(self.getCountryCurrency())"
+                    self.orderDetailsView.subTotalLabel.text = "\(self.receiveTotalPrice) \(self.getCountryCurrency())"
+                    let total = (self.receiveTotalPrice + (result.data?[0].sameCityPrice)!)
+                    self.orderDetailsView.totalPriceLabel.text = "\(total) \(self.getCountryCurrency())"
+                }
+                else {
+                    self.orderDetailsView.deliveryLabel.text = "\(result.data?[0].diffCityPrice ?? 0) \(self.getCountryCurrency())"
+                    self.orderDetailsView.subTotalLabel.text = "\(self.receiveTotalPrice) \(self.getCountryCurrency())"
+                    let total = (self.receiveTotalPrice + (result.data?[0].diffCityPrice)!)
+                    self.orderDetailsView.totalPriceLabel.text = "\(total) \(self.getCountryCurrency())"
+                }
+                self.view.hideLoader()
+            }
+        }
     }
     
     func getUser(){

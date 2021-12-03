@@ -74,6 +74,8 @@ internal enum L10n {
   internal static let storeName = L10n.tr("Localizable", "StoreName")
   /// subCatName
   internal static let subCatName = L10n.tr("Localizable", "subCatName")
+  /// Success
+  internal static let success = L10n.tr("Localizable", "Success")
   /// Upload Your Image.
   internal static let uploadYourImage = L10n.tr("Localizable", "Upload Your Image.")
   /// WentWrong
@@ -82,6 +84,8 @@ internal enum L10n {
   internal static let wrongEmail = L10n.tr("Localizable", "Wrong Email")
   /// You Didn‘t Update Any Thing.
   internal static let youDidnTUpdateAnyThing = L10n.tr("Localizable", "You Didn‘t Update Any Thing.")
+  /// Your Request Will Be Procced
+  internal static let yourRequestWillBeProcced = L10n.tr("Localizable", "Your Request Will Be Procced")
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces

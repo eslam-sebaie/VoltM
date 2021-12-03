@@ -36,7 +36,7 @@ class DeliveryInfoView: UIView {
             countryTF.textAlignment = .right
             addressTF.placeholder = "العنوان"
             addressTF.textAlignment = .right
-            goverTF.text = L10n.chooseYourGovernorate.localized
+            goverTF.placeholder = L10n.chooseYourGovernorate.localized
             goverTF.textAlignment = .right
             phoneIcon.transform = CGAffineTransform(scaleX: -1, y: 1)
             addressIcon.transform = CGAffineTransform(scaleX: -1, y: 1)
@@ -46,6 +46,7 @@ class DeliveryInfoView: UIView {
         phoneTF.text = UserDefaultsManager.shared().phone
         countryTF.text = UserDefaultsManager.shared().country
         addressTF.text = UserDefaultsManager.shared().address
+        
         countryDesign.setCornerRadius(radius: 8)
         phoneView.setCornerRadius(radius: 8)
         countryView.setCornerRadius(radius: 8)

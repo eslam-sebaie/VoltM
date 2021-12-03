@@ -50,7 +50,7 @@ extension UIViewController {
                 completion()
             }))
           
-            alertError.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            //alertError.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
             
             present.self.present(alertError, animated: true)
         }

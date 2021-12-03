@@ -63,7 +63,7 @@ class OrdersVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.ordersView.orderTableView.dequeueReusableCell(withIdentifier: TableCells.homeCell, for: indexPath) as! OrdersTableViewCell
         cell.orderNumber.text = "Order # : \(orderInfo[indexPath.row].orderNumber)"
-        if orderInfo[indexPath.row].status {
+        if orderInfo[indexPath.row].status == false {
             if L10n.lang.localized == Language.arabic {
                 cell.orderStatus.text = "تحت الطلب"
             }

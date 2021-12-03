@@ -69,9 +69,12 @@ class CheckoutVC: UIViewController {
                 }
                 else {
                     self.view.hideLoader()
-                    let storyboard = UIStoryboard(name: Storyboards.home, bundle: nil)
-                    let tabVC = storyboard.instantiateViewController(withIdentifier: "tabViewController")
-                    self.present(tabVC, animated: true, completion: nil)
+                    self.showAlert(title: L10n.success.localized, massage: L10n.yourRequestWillBeProcced.localized, present: self, titleBtn: L10n.ok.localized) {
+                        let storyboard = UIStoryboard(name: Storyboards.home, bundle: nil)
+                        let tabVC = storyboard.instantiateViewController(withIdentifier: "tabViewController")
+                        self.present(tabVC, animated: true, completion: nil)
+                    }
+                    
                 }
             }
         }

@@ -23,8 +23,10 @@ class OrderDetailsView: UIView {
         if L10n.lang.localized == Language.arabic {
             backDesign.setImage(Asset.backAr.image, for: .normal)
             orderDetailsHeader.text = "تفاصيل الطلب"
+            payementLabel.text = "نقدا"
         }
         addressView.setCornerRadius(radius: 25)
+        payementLabel.text = "Cash"
     }
     
     
