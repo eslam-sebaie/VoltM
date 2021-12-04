@@ -803,7 +803,7 @@
         <scene sceneID="u6o-rs-apy">
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="83l-oB-dg1" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="mGc-Kf-3lJ" customClass="ServiceView" customModule="VoltM" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="mGc-Kf-3lJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -845,7 +845,7 @@
                                 <rect key="frame" x="20" y="186" width="374" height="603"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="117" id="FhU-9i-Yrg" customClass="ServiceTableViewCell" customModule="VoltM" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="117" id="FhU-9i-Yrg">
                                         <rect key="frame" x="0.0" y="44.5" width="374" height="117"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FhU-9i-Yrg" id="DZM-mz-4a6">
@@ -887,10 +887,6 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <connections>
-                                            <outlet property="serviceImage" destination="N2i-4Y-DEi" id="EO2-rB-Mn5"/>
-                                            <outlet property="servieName" destination="DDt-Tj-X9K" id="zfl-vU-wM1"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -973,10 +969,6 @@
                             <constraint firstItem="tPq-7L-vWe" firstAttribute="trailing" secondItem="LIv-P2-3wE" secondAttribute="trailing" id="xUA-jz-GVP"/>
                             <constraint firstItem="MPc-4Q-og8" firstAttribute="top" secondItem="wz1-ei-3oa" secondAttribute="bottom" constant="24" id="xiV-gg-dxA"/>
                         </constraints>
-                        <connections>
-                            <outlet property="searchTF" destination="CTQ-ne-dHl" id="3PC-iE-beY"/>
-                            <outlet property="searchView" destination="wz1-ei-3oa" id="VW4-Pd-2GS"/>
-                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="Service" selectedImage="selectService" id="qpo-lz-2sm"/>
                 </viewController>
@@ -1580,13 +1572,13 @@
     </scenes>
     <designables>
         <designable name="CTQ-ne-dHl">
-            <size key="intrinsicContentSize" width="65" height="18.5"/>
+            <size key="intrinsicContentSize" width="45" height="18.5"/>
         </designable>
         <designable name="KER-5z-ILQ">
             <size key="intrinsicContentSize" width="45" height="18.5"/>
         </designable>
         <designable name="dx6-HH-eD1">
-            <size key="intrinsicContentSize" width="65" height="18.5"/>
+            <size key="intrinsicContentSize" width="45" height="18.5"/>
         </designable>
         <designable name="fzq-cj-NVb">
             <size key="intrinsicContentSize" width="-1" height="83"/>

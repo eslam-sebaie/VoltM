@@ -47,6 +47,7 @@ struct ViewControllers {
     static let pagesVC = "PagesVC"
     static let deliveryInfoVC = "DeliveryInfoVC"
     static let checkoutVC = "CheckoutVC"
+    static let aboutUsVC = "AboutUsVC"
 }
 struct URLs {
     // MARK:- base

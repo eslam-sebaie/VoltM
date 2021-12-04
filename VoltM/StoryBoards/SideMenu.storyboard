@@ -450,8 +450,115 @@ Country</string>
             </objects>
             <point key="canvasLocation" x="1500.0000000000002" y="115.84821428571428"/>
         </scene>
+        <!--About UsVC-->
+        <scene sceneID="30n-pU-dXA">
+            <objects>
+                <viewController storyboardIdentifier="AboutUsVC" id="wHK-Wz-8yU" customClass="AboutUsVC" customModule="VoltM" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oN2-e8-oxe" customClass="AboutUsView" customModule="VoltM" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BG1" translatesAutoresizingMaskIntoConstraints="NO" id="hjY-7Z-mGD">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BG2" translatesAutoresizingMaskIntoConstraints="NO" id="FNh-w5-t2G">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hV8-6a-50t">
+                                <rect key="frame" x="20" y="68" width="38" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="BZF-kT-T1X"/>
+                                    <constraint firstAttribute="width" constant="38" id="R87-rc-KZ5"/>
+                                </constraints>
+                                <state key="normal" image="back"/>
+                                <connections>
+                                    <action selector="backPressed:" destination="wHK-Wz-8yU" eventType="touchUpInside" id="Ffc-a7-KOm"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Kxf-kV-KDA">
+                                <rect key="frame" x="136.5" y="72" width="141.5" height="30"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="about" translatesAutoresizingMaskIntoConstraints="NO" id="bDr-oN-uCk">
+                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="67y-pm-1G9"/>
+                                            <constraint firstAttribute="height" constant="30" id="CTh-tx-Ru9"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Who Are We" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4vr-Mn-AiG">
+                                        <rect key="frame" x="45" y="0.0" width="96.5" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="aboutimage" translatesAutoresizingMaskIntoConstraints="NO" id="RQb-04-ocd">
+                                <rect key="frame" x="20" y="130" width="374" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="yNp-EP-Q1Y"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bk9-x9-zbe">
+                                <rect key="frame" x="20" y="346" width="374" height="284.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="FwR-Wb-jDA"/>
+                                </constraints>
+                                <string key="text"> An application specialized in home electrical maintenance that allows you to request specialized technicians to deliver you to your home
+
+ In addition to the presence of specialized sections within the application
+ Department of the field of lighting
+ And Communications Department
+ From various local stores on the ground, you place the order and get it to you on time
+
+ We act as a link between you and the provider of the services provided.</string>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="19r-XO-pgk"/>
+                        <color key="backgroundColor" red="0.20392156859999999" green="0.25098039220000001" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="bk9-x9-zbe" firstAttribute="top" secondItem="RQb-04-ocd" secondAttribute="bottom" constant="16" id="2LN-YO-wn5"/>
+                            <constraint firstAttribute="bottom" secondItem="hjY-7Z-mGD" secondAttribute="bottom" id="2XN-yl-ndk"/>
+                            <constraint firstItem="19r-XO-pgk" firstAttribute="trailing" secondItem="FNh-w5-t2G" secondAttribute="trailing" id="56Y-B5-RqW"/>
+                            <constraint firstItem="hjY-7Z-mGD" firstAttribute="top" secondItem="19r-XO-pgk" secondAttribute="top" id="6Lh-hQ-d2M"/>
+                            <constraint firstItem="hV8-6a-50t" firstAttribute="top" secondItem="19r-XO-pgk" secondAttribute="top" constant="24" id="7gI-te-GZY"/>
+                            <constraint firstItem="19r-XO-pgk" firstAttribute="trailing" secondItem="bk9-x9-zbe" secondAttribute="trailing" constant="20" id="Azh-aI-T1X"/>
+                            <constraint firstItem="19r-XO-pgk" firstAttribute="trailing" secondItem="hjY-7Z-mGD" secondAttribute="trailing" id="Hcw-sH-2fC"/>
+                            <constraint firstItem="FNh-w5-t2G" firstAttribute="leading" secondItem="oN2-e8-oxe" secondAttribute="leading" id="Htz-rT-yXT"/>
+                            <constraint firstItem="Kxf-kV-KDA" firstAttribute="centerX" secondItem="oN2-e8-oxe" secondAttribute="centerX" id="NFF-tP-Ura"/>
+                            <constraint firstItem="bk9-x9-zbe" firstAttribute="leading" secondItem="19r-XO-pgk" secondAttribute="leading" constant="20" id="Nsv-gm-d9H"/>
+                            <constraint firstItem="FNh-w5-t2G" firstAttribute="top" secondItem="19r-XO-pgk" secondAttribute="top" id="Ny0-TU-1B6"/>
+                            <constraint firstItem="RQb-04-ocd" firstAttribute="leading" secondItem="19r-XO-pgk" secondAttribute="leading" constant="20" id="S12-pS-7ih"/>
+                            <constraint firstItem="RQb-04-ocd" firstAttribute="top" secondItem="hV8-6a-50t" secondAttribute="bottom" constant="24" id="YCR-ak-eof"/>
+                            <constraint firstItem="hV8-6a-50t" firstAttribute="leading" secondItem="19r-XO-pgk" secondAttribute="leading" constant="20" id="ZQR-Tp-uvL"/>
+                            <constraint firstItem="19r-XO-pgk" firstAttribute="trailing" secondItem="RQb-04-ocd" secondAttribute="trailing" constant="20" id="fvJ-TP-Lvg"/>
+                            <constraint firstItem="hjY-7Z-mGD" firstAttribute="leading" secondItem="oN2-e8-oxe" secondAttribute="leading" id="gVM-GZ-bmk"/>
+                            <constraint firstItem="Kxf-kV-KDA" firstAttribute="centerY" secondItem="hV8-6a-50t" secondAttribute="centerY" id="sLd-Lj-AxV"/>
+                            <constraint firstAttribute="bottom" secondItem="FNh-w5-t2G" secondAttribute="bottom" id="sgw-5d-Cw9"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="aboutLabel" destination="bk9-x9-zbe" id="Lpi-pR-1Da"/>
+                            <outlet property="backDesign" destination="hV8-6a-50t" id="Lzx-4C-HHS"/>
+                            <outlet property="header" destination="4vr-Mn-AiG" id="uEF-qo-Mbj"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="aboutView" destination="oN2-e8-oxe" id="1gx-jN-HHJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4xc-2v-t4V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2163.768115942029" y="115.84821428571428"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="BG1" width="538" height="1162"/>
+        <image name="BG2" width="390" height="844"/>
+        <image name="about" width="26.5" height="26.5"/>
+        <image name="aboutimage" width="350" height="185"/>
         <image name="back" width="38" height="38"/>
         <image name="countryImg" width="29" height="29.5"/>
         <image name="languageImg" width="31" height="31"/>

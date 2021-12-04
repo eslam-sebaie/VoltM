@@ -17,9 +17,9 @@ class SideMenuVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
  
 
     @IBOutlet var sideMenuView: SideMenuView!
-    var menuNameEn = ["Orders", "Offers", "Country", "Languages", "Privacy Policy", "About Us", "Support", "Account"]
+    var menuNameEn = ["Orders", "Offers", "Country", "Languages", "Privacy Policy", "Who Are We?", "Support", "Account"]
     var menuImg = [Asset.orderImg.image, Asset.offerImg.image, Asset.countryImg.image,Asset.languageImg.image, Asset.privacyImage.image, Asset.aboutImg.image, Asset.supportImg.image, Asset.accountImg.image]
-    var menuNameAr = ["الطلبات", "العروض", "الدول", "اللغه", "سياسه الخصوصيه", "معلومات عنا", "الدعم", "حسابك"]
+    var menuNameAr = ["الطلبات", "العروض", "الدول", "اللغه", "سياسه الخصوصيه", "من نحن؟", "الدعم", "حسابك"]
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -87,6 +87,13 @@ class SideMenuVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
             self.present(lang, animated: true, completion: nil)
             
         }
+        if indexPath.row == 5{
+            let about = AboutUsVC.create()
+            about.modalPresentationStyle = .fullScreen
+            about.modalTransitionStyle = .crossDissolve
+            self.present(about, animated: true, completion: nil)
+            
+        }
         if indexPath.row == 7 {
             let account = UpdateInfoVC.create()
             account.modalPresentationStyle = .fullScreen
@@ -94,6 +101,7 @@ class SideMenuVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
             self.present(account, animated: true, completion: nil)
             
         }
+       
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
