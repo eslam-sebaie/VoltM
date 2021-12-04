@@ -12,6 +12,10 @@ class OfferTableViewCell: UITableViewCell {
     
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var offerImage: UIImageView!
+    @IBOutlet weak var storeView: UIView!
+    @IBOutlet weak var storeName: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

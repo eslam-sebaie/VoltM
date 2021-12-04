@@ -21,11 +21,11 @@ struct ProductInfo: Codable {
     let newPrice: Int?
     let desc: ProductLocalize?
     let offer: String?
-    let review_number: Int?
+    let review_number, storeID: Int?
     let review_rate: Double?
     let qty: Int?
     enum CodingKeys: String, CodingKey {
-        case id, name, image, price
+        case id, name, image, price, storeID
         case newPrice = "new_price"
         case desc, offer, review_number,review_rate, qty
     }

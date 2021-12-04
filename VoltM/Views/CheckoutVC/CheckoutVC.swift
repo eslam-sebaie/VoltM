@@ -24,6 +24,27 @@ class CheckoutVC: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         getDelivery()
+        getTime()
+    }
+    func getTime(){
+        self.view.showLoader()
+        APIManager.getTime(country_id: UserDefaultsManager.shared().countryId ?? 0) { response in
+            switch response {
+            case .failure( _):
+                self.show_Alert(L10n.sorry.localized, L10n.wentWrong.localized)
+                self.view.hideLoader()
+            case .success(let result):
+                if UserDefaultsManager.shared().gover == UserDefaultsManager.shared().cityId {
+                    self.checkoutView.deliveryTimeLabel.text = "\(result.data?[0].estimationTimeSameCity ?? 0) Days"
+                    
+                }
+                else {
+                    self.checkoutView.deliveryTimeLabel.text = "\(result.data?[0].estimationTimeDiffCity ?? 0) Days"
+                   
+                }
+                self.view.hideLoader()
+            }
+        }
     }
     
     func getDelivery(){

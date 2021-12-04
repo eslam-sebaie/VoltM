@@ -19,6 +19,7 @@
 		960F6F2C275A794E0085A799 /* DeliveryInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960F6F2B275A794E0085A799 /* DeliveryInfoView.swift */; };
 		960F6F2F275A88B00085A799 /* CheckoutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960F6F2E275A88B00085A799 /* CheckoutVC.swift */; };
 		960F6F31275A88CB0085A799 /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960F6F30275A88CB0085A799 /* CheckoutView.swift */; };
+		960F6F33275BB8710085A799 /* Offer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960F6F32275BB8710085A799 /* Offer.swift */; };
 		9647C00A26FF3C9300C03A5B /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9647C00926FF3C9300C03A5B /* WelcomeView.swift */; };
 		965395DD274309B60018F624 /* circle.gif in Resources */ = {isa = PBXBuildFile; fileRef = 965395DC274309B60018F624 /* circle.gif */; };
 		965395DF274311600018F624 /* circle2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 965395DE274311600018F624 /* circle2.gif */; };
@@ -155,6 +156,7 @@
 		960F6F2B275A794E0085A799 /* DeliveryInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryInfoView.swift; sourceTree = "<group>"; };
 		960F6F2E275A88B00085A799 /* CheckoutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutVC.swift; sourceTree = "<group>"; };
 		960F6F30275A88CB0085A799 /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
+		960F6F32275BB8710085A799 /* Offer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Offer.swift; sourceTree = "<group>"; };
 		9647C00926FF3C9300C03A5B /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		965395DC274309B60018F624 /* circle.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = circle.gif; sourceTree = "<group>"; };
 		965395DE274311600018F624 /* circle2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = circle2.gif; sourceTree = "<group>"; };
@@ -483,6 +485,7 @@
 				969FEF2D2741CD6E00BC2826 /* Products.swift */,
 				96A71C6F274A6DDC0064E575 /* Cart.swift */,
 				96C6D6C5274E95B30057666D /* Orders.swift */,
+				960F6F32275BB8710085A799 /* Offer.swift */,
 			);
 			path = Modal;
 			sourceTree = "<group>";
@@ -1294,6 +1297,7 @@
 				96DC28612737064E00B397D4 /* ServiceView.swift in Sources */,
 				96DC285F273705FA00B397D4 /* ServiceVC.swift in Sources */,
 				96EB0662270204B100586EB4 /* RateTableViewCell.swift in Sources */,
+				960F6F33275BB8710085A799 /* Offer.swift in Sources */,
 				96EB065F2702049C00586EB4 /* RateView.swift in Sources */,
 				96746EDB272458530074421B /* SignUpVC.swift in Sources */,
 				9685235226F77762008C6E6A /* CartView.swift in Sources */,

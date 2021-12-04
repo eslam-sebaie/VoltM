@@ -1583,7 +1583,7 @@
             <size key="intrinsicContentSize" width="65" height="18.5"/>
         </designable>
         <designable name="KER-5z-ILQ">
-            <size key="intrinsicContentSize" width="65" height="18.5"/>
+            <size key="intrinsicContentSize" width="45" height="18.5"/>
         </designable>
         <designable name="dx6-HH-eD1">
             <size key="intrinsicContentSize" width="65" height="18.5"/>
@@ -1592,7 +1592,7 @@
             <size key="intrinsicContentSize" width="-1" height="83"/>
         </designable>
         <designable name="zxL-p4-sGh">
-            <size key="intrinsicContentSize" width="65" height="18.5"/>
+            <size key="intrinsicContentSize" width="45" height="18.5"/>
         </designable>
     </designables>
     <resources>

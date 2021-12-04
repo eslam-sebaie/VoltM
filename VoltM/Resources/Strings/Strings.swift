@@ -32,6 +32,8 @@ internal enum L10n {
   internal static let lang = L10n.tr("Localizable", "lang")
   /// No Favorites Found
   internal static let noFavoritesFound = L10n.tr("Localizable", "No Favorites Found")
+  /// No Offer Found.
+  internal static let noOfferFound = L10n.tr("Localizable", "No Offer Found.")
   /// No Orders Found.
   internal static let noOrdersFound = L10n.tr("Localizable", "No Orders Found.")
   /// No Result Found

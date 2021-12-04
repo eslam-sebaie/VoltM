@@ -72,3 +72,13 @@ struct deliveryResponse: Codable {
 struct deliveryInfo: Codable {
     let id, sameCityPrice, diffCityPrice: Int?
 }
+struct TimeResponse: Codable {
+    let data: [TimeInfo]?
+    let message: String
+    let status: Bool
+}
+
+// MARK: - Datum
+struct TimeInfo: Codable {
+    let id, estimationTimeSameCity, estimationTimeDiffCity: Int
+}

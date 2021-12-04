@@ -78,6 +78,8 @@ struct URLs {
     static let getOrders = "user/orders"
     static let getCities = "getCites/country/id"
     static let getDelivery = "getDelivaries/sameCityPrice/country_id"
+    static let getTime = "getDelivaries/estimationTimeSameCity/country_id"
+    static let getOffer = "getProduct/Offer"
 }
 struct ParameterKeys {
    
