@@ -94,6 +94,11 @@ class SideMenuVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
             self.present(about, animated: true, completion: nil)
             
         }
+        if indexPath.row == 6{
+            guard let number = URL(string: "tel://" + "0500472089") else { return }
+            UIApplication.shared.open(number)
+        }
+        
         if indexPath.row == 7 {
             let account = UpdateInfoVC.create()
             account.modalPresentationStyle = .fullScreen
