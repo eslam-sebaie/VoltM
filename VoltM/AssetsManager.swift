@@ -115,6 +115,8 @@ internal enum Asset {
   internal static let orderDetailsEn = ImageAsset(name: "orderDetailsEn")
   internal static let ordersHeaderAr = ImageAsset(name: "ordersHeaderAr")
   internal static let ordersHeaderEn = ImageAsset(name: "ordersHeaderEn")
+  internal static let pageService = ImageAsset(name: "pageService")
+  internal static let pageUser = ImageAsset(name: "pageUser")
   internal static let phoneIcon = ImageAsset(name: "phoneIcon")
   internal static let qatar = ImageAsset(name: "qatar")
   internal static let saudiArabia = ImageAsset(name: "saudi-arabia")

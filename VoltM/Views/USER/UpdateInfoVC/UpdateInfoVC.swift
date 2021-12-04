@@ -77,7 +77,7 @@ class UpdateInfoVC: UIViewController {
     }
     
     @IBAction func logoutPressed(_ sender: Any) {
-        let signIn = SignInVC.create()
+        let signIn = WelcomeVC.create()
         UserDefaultsManager.shared().Token = ""
         UserDefaultsManager.shared().Email = ""
         UserDefaultsManager.shared().phone = ""
