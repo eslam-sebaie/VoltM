@@ -13,6 +13,7 @@ class OfferVC: UIViewController,UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet var offerView: OfferView!
     var offerInfo = [OfferInfo]()
+    var productInfo = [ProductInfo]()
     override func viewDidLoad() {
         super.viewDidLoad()
         offerView.updateUI()
@@ -20,6 +21,7 @@ class OfferVC: UIViewController,UITableViewDataSource, UITableViewDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         getOffers()
+        getOffers1()
     }
     
     func getOffers(){
@@ -38,6 +40,19 @@ class OfferVC: UIViewController,UITableViewDataSource, UITableViewDelegate {
                     self.show_Alert(L10n.sorry.localized, L10n.noOrdersFound.localized)
                     self.view.hideLoader()
                 }
+                self.view.hideLoader()
+            }
+        }
+    }
+    func getOffers1(){
+        self.view.showLoader()
+        APIManager.getOffer1(country_id: UserDefaultsManager.shared().countryId ?? 0) { response in
+            switch response {
+            case .failure( _):
+                self.show_Alert(L10n.sorry.localized, L10n.wentWrong.localized)
+                self.view.hideLoader()
+            case .success(let result):
+                self.productInfo = result.data ?? []
                 self.view.hideLoader()
             }
         }
@@ -73,11 +88,11 @@ class OfferVC: UIViewController,UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let details = ProductDetailsVC.create()
-//        details.receiveProducts = (self.offerInfo[indexPath.row])
-//        UserDefaultsManager.shared().storeId = offerInfo[indexPath.row].storeID
-//        details.modalPresentationStyle = .overCurrentContext
-//        self.present(details, animated: true, completion: nil)
+        let details = ProductDetailsVC.create()
+        details.receiveProducts = (self.productInfo[indexPath.row])
+        UserDefaultsManager.shared().storeId = offerInfo[indexPath.row].storeID
+        details.modalPresentationStyle = .overCurrentContext
+        self.present(details, animated: true, completion: nil)
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

@@ -37,3 +37,8 @@ struct OfferInfo: Codable {
     }
 }
 
+struct OfferResponse1: Codable {
+    let data: [ProductInfo]?
+    let message: String
+    let status: Bool
+}
