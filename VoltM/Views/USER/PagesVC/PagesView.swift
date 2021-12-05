@@ -21,6 +21,7 @@ class PagesView: UIView {
         
         if L10n.lang.localized == Language.arabic {
             nextDesign.setTitle("التالي", for: .normal)
+            
         }
     }
 }

@@ -11,4 +11,5 @@ class PagesCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var pageImage: UIImageView!
     
     @IBOutlet weak var pageContent: UILabel!
+    
 }

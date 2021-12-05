@@ -70,6 +70,7 @@ class PagesVC: UIViewController, UICollectionViewDataSource, UICollectionViewDel
         cell.pageImage.image = UIImage(named: pageImage[indexPath.row])
         if L10n.lang.localized == Language.arabic {
             cell.pageContent.text = pageContentAR[indexPath.row]
+            cell.pageContent.textAlignment = .right
         }
         else {
             cell.pageContent.text = pageContent[indexPath.row]
