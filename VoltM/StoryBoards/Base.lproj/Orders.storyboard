@@ -134,7 +134,7 @@
                                                             <constraint firstAttribute="width" constant="58" id="e85-rU-kGt"/>
                                                         </constraints>
                                                     </button>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Choose Your Governorate" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N26-di-h3i" customClass="HooopTextfield" customModule="VoltM" customModuleProvider="target">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Choose Your City" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N26-di-h3i" customClass="HooopTextfield" customModule="VoltM" customModuleProvider="target">
                                                         <rect key="frame" x="66" y="0.0" width="292" height="45"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1170,16 +1170,16 @@
     </scenes>
     <designables>
         <designable name="31m-6a-tEC">
-            <size key="intrinsicContentSize" width="96.5" height="18.5"/>
+            <size key="intrinsicContentSize" width="116.5" height="18.5"/>
         </designable>
         <designable name="N26-di-h3i">
-            <size key="intrinsicContentSize" width="196" height="21"/>
+            <size key="intrinsicContentSize" width="151.5" height="21"/>
         </designable>
         <designable name="YyH-7C-imL">
-            <size key="intrinsicContentSize" width="61" height="21"/>
+            <size key="intrinsicContentSize" width="81" height="21"/>
         </designable>
         <designable name="hfS-RH-AX8">
-            <size key="intrinsicContentSize" width="62.5" height="21"/>
+            <size key="intrinsicContentSize" width="82.5" height="21"/>
         </designable>
     </designables>
     <resources>

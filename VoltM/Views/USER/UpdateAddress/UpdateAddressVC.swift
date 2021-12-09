@@ -8,7 +8,7 @@
 import UIKit
 import CoreLocation
 import MapKit
-class UpdateAddressVC: UIViewController, sendingAddress {
+class UpdateAddressVC: UIViewController, sendingAddress, UIPickerViewDelegate, UIPickerViewDataSource {
     func send(address: String) {
         updateAddressView.addressTF.text = address
     }
@@ -18,14 +18,39 @@ class UpdateAddressVC: UIViewController, sendingAddress {
     var lng = 0.0
     var img = ""
     var imagePicker = UIImagePickerController()
+    var pickerView = UIPickerView()
+    var cityInfo = [CountryInfo]()
+    var cityID = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         updateAddressView.updateUI()
         self.updateAddressView.userName.text = "\(self.userInfo.fname ?? "") \(self.userInfo.lname ?? "")"
         self.updateAddressView.userImage.sd_setImage(with: URL(string: self.userInfo.image ?? ""), completed: nil)
         self.updateAddressView.addressTF.text = self.userInfo.address ?? ""
+        self.updateAddressView.countryTF.text = UserDefaultsManager.shared().country
+        self.updateAddressView.cityTF.text = UserDefaultsManager.shared().serviceCity ?? ""
         self.img = self.userInfo.image ?? ""
         imagePicker.delegate = self
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        self.updateAddressView.cityTF.inputView = pickerView
+
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        getCity()
+    }
+    func getCity() {
+        self.view.showLoader()
+        APIManager.getCity(country_id: UserDefaultsManager.shared().countryId ?? 0) { response in
+            switch response {
+            case .failure( _):
+                self.show_Alert(L10n.sorry.localized, L10n.wentWrong.localized)
+                self.view.hideLoader()
+            case .success(let result):
+                self.cityInfo = result.data ?? []
+                self.view.hideLoader()
+            }
+        }
     }
     class func create() -> UpdateAddressVC {
         let updateAddressVC: UpdateAddressVC = UIViewController.create(storyboardName: Storyboards.account, identifier: ViewControllers.updateAddressVC)
@@ -45,6 +70,8 @@ class UpdateAddressVC: UIViewController, sendingAddress {
         UserDefaultsManager.shared().phone = ""
         UserDefaultsManager.shared().userId = 0
         UserDefaultsManager.shared().Password = ""
+        UserDefaultsManager.shared().serviceCity = ""
+        UserDefaultsManager.shared().serviceCityId = 0
         self.present(signIn, animated: true, completion: nil)
     }
     
@@ -58,6 +85,19 @@ class UpdateAddressVC: UIViewController, sendingAddress {
     @IBAction func imagePressed(_ sender: Any) {
         setImagePicker()
     }
+    
+    @IBAction func saveCityPressed(_ sender: Any) {
+        guard let city = updateAddressView.cityTF.text , city != "" else {
+            self.show_Alert(L10n.sorry.localized, L10n.chooseYourCity.localized)
+            return
+        }
+        UserDefaultsManager.shared().serviceCity = city
+        UserDefaultsManager.shared().serviceCityId = self.cityID
+        let storyboard = UIStoryboard(name: Storyboards.home, bundle: nil)
+        let tabVC = storyboard.instantiateViewController(withIdentifier: "tabViewController")
+        self.present(tabVC, animated: true, completion: nil)
+    }
+    
     @IBAction func infoPressed(_ sender: Any) {
         let account = UpdateInfoVC.create()
         account.modalPresentationStyle = .fullScreen
@@ -73,13 +113,14 @@ class UpdateAddressVC: UIViewController, sendingAddress {
     }
     
     @IBAction func updatePressed(_ sender: Any) {
+        
         guard let address = updateAddressView.addressTF.text , address != "" else {
             self.show_Alert(L10n.sorry.localized, L10n.pleaseEnterAddress.localized)
             return
         }
-        if updateAddressView.addressTF.text == userInfo.address && userInfo.image == self.img{
+        if updateAddressView.addressTF.text == userInfo.address && userInfo.image == self.img  {
             self.show_Alert(L10n.sorry.localized, L10n.youDidnTUpdateAnyThing.localized)
-            
+
         }
         else {
             let searchRequest = MKLocalSearch.Request()
@@ -120,6 +161,21 @@ class UpdateAddressVC: UIViewController, sendingAddress {
             }
         }
     }
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return cityInfo.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return cityInfo[row].name
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        self.updateAddressView.cityTF.text = cityInfo[row].name
+        self.cityID = cityInfo[row].id ?? 0
+    }
+    
 }
 extension UpdateAddressVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func setImagePicker(){

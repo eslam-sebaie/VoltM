@@ -120,6 +120,7 @@ internal enum Asset {
   internal static let phoneIcon = ImageAsset(name: "phoneIcon")
   internal static let qatar = ImageAsset(name: "qatar")
   internal static let saudiArabia = ImageAsset(name: "saudi-arabia")
+  internal static let save = ImageAsset(name: "save")
   internal static let storeBG = ImageAsset(name: "storeBG")
   internal static let syria = ImageAsset(name: "syria")
   internal static let uncheck = ImageAsset(name: "uncheck")

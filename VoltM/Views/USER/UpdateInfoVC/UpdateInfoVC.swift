@@ -83,6 +83,8 @@ class UpdateInfoVC: UIViewController {
         UserDefaultsManager.shared().phone = ""
         UserDefaultsManager.shared().userId = 0
         UserDefaultsManager.shared().Password = ""
+        UserDefaultsManager.shared().serviceCity = ""
+        UserDefaultsManager.shared().serviceCityId = 0
         self.present(signIn, animated: true, completion: nil)
     }
     

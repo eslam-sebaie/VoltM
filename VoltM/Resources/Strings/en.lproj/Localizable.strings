@@ -32,8 +32,11 @@
 "No Reviews Found" = "No Reviews Found";
 "No Favorites Found" = "No Favorites Found";
 "No Orders Found." = "No Orders Found.";
-"Choose Your governorate" = "Choose Your governorate";
+"Choose Your city" = "Choose Your city";
 "Continue" = "Continue";
 "Success" = "Success";
 "Your Request Will Be Procced" = "Your Request Will Be Procced";
 "No Offer Found." = "No Offer Found.";
+"ServiceName" = "Enter Sevice Name.";
+"No Service Found." = "No Service Found.";
+"Do You Want To Change Your City" = "Do You Want To Change Your City";

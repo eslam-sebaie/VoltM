@@ -48,6 +48,8 @@ struct ViewControllers {
     static let deliveryInfoVC = "DeliveryInfoVC"
     static let checkoutVC = "CheckoutVC"
     static let aboutUsVC = "AboutUsVC"
+    static let serviceVC = "ServiceVC"
+    static let subServiceVC = "SubServiceVC"
 }
 struct URLs {
     // MARK:- base
@@ -81,6 +83,7 @@ struct URLs {
     static let getDelivery = "getDelivaries/sameCityPrice/country_id"
     static let getTime = "getDelivaries/estimationTimeSameCity/country_id"
     static let getOffer = "getProduct/Offer"
+    static let getServices = "get/mainServies"
 }
 struct ParameterKeys {
    
@@ -102,7 +105,8 @@ struct UserDefaultsKeys {
     static let address = "address"
     static let gover = "gover"
     static let cityId = "cityId"
-    
+    static let serviceCityId = "serviceCityId"
+    static let serviceCity = "serviceCity"
 }
 struct TableCells {
     static let homeCell = "cell"

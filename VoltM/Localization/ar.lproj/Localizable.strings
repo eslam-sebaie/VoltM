@@ -42,7 +42,10 @@
 "No Reviews Found" = "لا يوجد تعليقات";
 "No Favorites Found" = "لا يوجد مفضله";
 "No Orders Found." = "لا يوجد طلبات.";
-"Choose Your governorate" = "اختار محافظتك";
+"Choose Your city" = "اختار مدينتك";
 "Success" = "نجاح";
 "Your Request Will Be Procced" = "جاري تنفيذ طلبك";
 "No Offer Found." = "لا يوجد عروض";
+"ServiceName" = "ادخل اسم الخدمه.";
+"No Service Found." = "لا يوجد خدمات";
+"Do You Want To Change Your City" = "هل تريد تغيير مدينتك";

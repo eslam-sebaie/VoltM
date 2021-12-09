@@ -95,6 +95,17 @@ class UserDefaultsManager {
             return UserDefaults.standard.string(forKey: UserDefaultsKeys.country)
         }
     }
+    var serviceCity: String? {
+        set {
+            UserDefaults.standard.set(newValue, forKey: UserDefaultsKeys.serviceCity)
+        }
+        get {
+            guard UserDefaults.standard.object(forKey: UserDefaultsKeys.serviceCity) != nil else {
+                return nil
+            }
+            return UserDefaults.standard.string(forKey: UserDefaultsKeys.serviceCity)
+        }
+    }
     var countryId: Int? {
         set {
             UserDefaults.standard.set(newValue, forKey: UserDefaultsKeys.countryId)
@@ -104,6 +115,17 @@ class UserDefaultsManager {
                 return nil
             }
             return UserDefaults.standard.integer(forKey: UserDefaultsKeys.countryId)
+        }
+    }
+    var serviceCityId: Int? {
+        set {
+            UserDefaults.standard.set(newValue, forKey: UserDefaultsKeys.serviceCityId)
+        }
+        get {
+            guard UserDefaults.standard.object(forKey: UserDefaultsKeys.serviceCityId) != nil else {
+                return nil
+            }
+            return UserDefaults.standard.integer(forKey: UserDefaultsKeys.serviceCityId)
         }
     }
     var userId: Int? {

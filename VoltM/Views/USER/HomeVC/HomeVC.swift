@@ -77,6 +77,7 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             let storyboard = UIStoryboard(name: Storyboards.home, bundle: nil)
             let tabVC = storyboard.instantiateViewController(withIdentifier: "tabViewController") as! UITabBarController
             tabVC.selectedIndex = 2
+            tabVC.modalTransitionStyle = .crossDissolve
             self.present(tabVC, animated: true, completion: nil)
         }
        

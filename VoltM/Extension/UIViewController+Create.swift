@@ -54,6 +54,19 @@ extension UIViewController {
             
             present.self.present(alertError, animated: true)
         }
+    
+    func showAlert1(title: String,massage: String, present : UIViewController,titleBtn: String, completion: @escaping()->Void, completion1: @escaping()->Void){
+            let  alertError = UIAlertController(title: title , message: massage , preferredStyle: .alert)
+            alertError.addAction(UIAlertAction(title: titleBtn, style: .default, handler: { action in
+                completion()
+            }))
+          
+            alertError.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { action in
+                completion1()
+            }))
+            
+            present.self.present(alertError, animated: true)
+        }
 
     
     func convertTimeStamp(date: Int) -> String {

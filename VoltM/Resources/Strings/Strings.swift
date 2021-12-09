@@ -12,10 +12,12 @@ import Foundation
 internal enum L10n {
   /// catName
   internal static let catName = L10n.tr("Localizable", "catName")
-  /// Choose Your governorate
-  internal static let chooseYourGovernorate = L10n.tr("Localizable", "Choose Your governorate")
+  /// Choose Your city
+  internal static let chooseYourCity = L10n.tr("Localizable", "Choose Your city")
   /// Continue
   internal static let `continue` = L10n.tr("Localizable", "Continue")
+  /// Do You Want To Change Your City
+  internal static let doYouWantToChangeYourCity = L10n.tr("Localizable", "Do You Want To Change Your City")
   /// Email Or Password Is Wrong.
   internal static let emailOrPasswordIsWrong = L10n.tr("Localizable", "Email Or Password Is Wrong.")
   /// Email Or Phone are Aleardy Token.
@@ -40,6 +42,8 @@ internal enum L10n {
   internal static let noResultFound = L10n.tr("Localizable", "No Result Found")
   /// No Reviews Found
   internal static let noReviewsFound = L10n.tr("Localizable", "No Reviews Found")
+  /// No Service Found.
+  internal static let noServiceFound = L10n.tr("Localizable", "No Service Found.")
   /// NoCategories
   internal static let noCategories = L10n.tr("Localizable", "NoCategories")
   /// noproductName
@@ -66,6 +70,8 @@ internal enum L10n {
   internal static let productName = L10n.tr("Localizable", "productName")
   /// Service
   internal static let service = L10n.tr("Localizable", "Service")
+  /// Enter Sevice Name.
+  internal static let serviceName = L10n.tr("Localizable", "ServiceName")
   /// Sign in into your Account
   internal static let signInLabel = L10n.tr("Localizable", "signInLabel")
   /// Sorry
