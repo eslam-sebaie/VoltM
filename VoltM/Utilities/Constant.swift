@@ -50,6 +50,7 @@ struct ViewControllers {
     static let aboutUsVC = "AboutUsVC"
     static let serviceVC = "ServiceVC"
     static let subServiceVC = "SubServiceVC"
+    static let serviceDetailsVC = "ServiceDetailsVC"
 }
 struct URLs {
     // MARK:- base
@@ -84,6 +85,10 @@ struct URLs {
     static let getTime = "getDelivaries/estimationTimeSameCity/country_id"
     static let getOffer = "getProduct/Offer"
     static let getServices = "get/mainServies"
+    static let getSubServices = "get/SubServies"
+    static let serviceOrder = "services/order"
+    static let searchService = "search/mainServies"
+    static let getServicesOrder = "get/services/order"
 }
 struct ParameterKeys {
    

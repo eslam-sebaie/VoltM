@@ -164,6 +164,26 @@ class APIManager {
             completion(response)
         }
     }
+    class func getSubServices(services_id: Int, completion: @escaping(Result<ServiceResponse, Error>) -> Void) {
+        request(APIRouter.getSubServices(services_id)) { (response) in
+            completion(response)
+        }
+    }
+    class func serviceOrder(services_id: Int, user_id: Int, notes: String ,completion: @escaping(Result<ServiceResponse, Error>) -> Void) {
+        request(APIRouter.serviceOrder(services_id, user_id, notes)) { (response) in
+            completion(response)
+        }
+    }
+    class func searchService(name: String,country_id: Int,city_id: Int ,completion: @escaping(Result<ServiceResponse, Error>) -> Void) {
+        request(APIRouter.searchService(name, country_id, city_id)) { (response) in
+            completion(response)
+        }
+    }
+    class func getServiceOrders(user_id: Int, completion: @escaping(Result<ServiceOrder, Error>) -> Void) {
+        request(APIRouter.getServiceOrder(user_id)) { (response) in
+            completion(response)
+        }
+    }
     class func uploadPhoto(image: UIImage, completion: @escaping (_ error: Error?, _ upImage: uploadImage?)-> Void){
 
         AF.upload(multipartFormData: { (form: MultipartFormData) in

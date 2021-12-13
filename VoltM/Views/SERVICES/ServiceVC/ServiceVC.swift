@@ -122,8 +122,30 @@ class ServiceVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBAction func searchPressed(_ sender: Any) {
         guard let name = serviceView.searchTF.text , name != "" else {
-            show_Alert(L10n.please.localized, L10n.storeName.localized)
+            show_Alert(L10n.please.localized, L10n.noServiceFound.localized)
             return
+        }
+        self.view.showLoader()
+        APIManager.searchService(name: name, country_id: UserDefaultsManager.shared().countryId ?? 0, city_id: UserDefaultsManager.shared().serviceCityId ?? 0) { response in
+            switch response {
+            case .failure( _):
+                self.show_Alert(L10n.sorry.localized, L10n.wentWrong.localized)
+                self.view.hideLoader()
+            case .success(let result):
+                if result.status == false {
+                    self.show_Alert(L10n.sorry.localized, L10n.noStores.localized)
+                    self.serviceView.searchTF.text = ""
+                    self.serviceInfo = []
+                    self.serviceView.serviceTableView.reloadData()
+                    self.view.hideLoader()
+                }
+                else {
+                    self.serviceInfo = result.data ?? []
+                    self.serviceView.serviceTableView.reloadData()
+                    self.view.hideLoader()
+                }
+                
+            }
         }
     }
     
@@ -134,7 +156,9 @@ class ServiceVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = serviceView.serviceTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ServiceTableViewCell
         cell.serviceImage.setCornerRadius(radius: 8)
-        imageLoader.obtainImageWithPath(imagePath: serviceInfo[indexPath.row].image) { (image) in
+        let img = serviceInfo[indexPath.row].image
+        let image = img.replace(string: " ", replacement: "%20")
+        imageLoader.obtainImageWithPath(imagePath: image) { (image) in
             cell.serviceImage.image = image
             
         }

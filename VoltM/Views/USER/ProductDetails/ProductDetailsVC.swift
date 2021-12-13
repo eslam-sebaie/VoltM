@@ -17,7 +17,9 @@ class ProductDetailsVC: UIViewController {
         super.viewDidLoad()
         productDetailsView.updateUI()
         productDetailsView.stepperVal.maximumValue = Double(receiveProducts.qty ?? 0)
-        imageLoader.obtainImageWithPath(imagePath: receiveProducts.image ?? "") { (image) in
+        let img = receiveProducts.image ?? ""
+        let image = img.replace(string: " ", replacement: "%20")
+        imageLoader.obtainImageWithPath(imagePath: image) { (image) in
             self.productDetailsView.productImage.image = image
         }
         productDetailsView.productPrice.text = "\(receiveProducts.price ?? 0) \(getCountryCurrency())"

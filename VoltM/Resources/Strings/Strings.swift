@@ -22,6 +22,8 @@ internal enum L10n {
   internal static let emailOrPasswordIsWrong = L10n.tr("Localizable", "Email Or Password Is Wrong.")
   /// Email Or Phone are Aleardy Token.
   internal static let emailOrPhoneAreAleardyToken = L10n.tr("Localizable", "Email Or Phone are Aleardy Token.")
+  /// Enter Notes
+  internal static let enterNotes = L10n.tr("Localizable", "Enter Notes")
   /// Enter Rate Value.
   internal static let enterRateValue = L10n.tr("Localizable", "Enter Rate Value.")
   /// Enter Your Comment.
@@ -44,6 +46,8 @@ internal enum L10n {
   internal static let noReviewsFound = L10n.tr("Localizable", "No Reviews Found")
   /// No Service Found.
   internal static let noServiceFound = L10n.tr("Localizable", "No Service Found.")
+  /// No SubService Found.
+  internal static let noSubServiceFound = L10n.tr("Localizable", "No SubService Found.")
   /// NoCategories
   internal static let noCategories = L10n.tr("Localizable", "NoCategories")
   /// noproductName

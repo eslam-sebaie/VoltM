@@ -90,7 +90,9 @@ class StoreVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         cell.mainView.setCornerRadius(radius: 10)
         cell.storeImage.setCornerRadius(radius: 10)
         cell.storeCardView.dropShadow(radius: 10, shadow: 2)
-        cell.storeImage.sd_setImage(with: URL(string: storeInfo[indexPath.row].image ?? ""), completed: nil)
+        let img = storeInfo[indexPath.row].image ?? ""
+        let image = img.replace(string: " ", replacement: "%20")
+        cell.storeImage.sd_setImage(with: URL(string: image), completed: nil)
         if L10n.lang.localized == Language.arabic {
             cell.storeName.text = storeInfo[indexPath.row].name?.ar
         }

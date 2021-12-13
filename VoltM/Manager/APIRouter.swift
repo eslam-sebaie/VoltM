@@ -43,12 +43,16 @@ enum APIRouter: URLRequestConvertible {
     case getTime(_ country_id: Int)
     case getOffer(_ country_id: Int)
     case getServices(_ country_id: Int, _ city_id: Int)
+    case getSubServices(_ services_id: Int)
+    case serviceOrder(_ services_id: Int,  _ user_id: Int, _ notes: String)
+    case searchService(_ name: String,_ country_id: Int, _ city_id: Int)
+    case getServiceOrder(_ user_id: Int)
     // MARK: - HttpMethod
     private var method: HTTPMethod {
         switch self {
-        case .userRegister, .userLogin, .sendReview, .updateUserData, .addFavorite, .deleteFavorite, .addCart, .deleteCart, .confirmCart:
+        case .userRegister, .userLogin, .sendReview, .updateUserData, .addFavorite, .deleteFavorite, .addCart, .deleteCart, .confirmCart, .serviceOrder:
             return .post
-        case .countries, .getAllMainCategories, .getStores, .getStoreCategory, .getStoreSubCategory, .searchStores, .searchCatStores, .searchSubCatStores, .getProducts, .searchProducts, .getReview, .getUserData, .allCountries, .getFavorite, .getCart, .getOrders, .getCity, .getDelivery, .getTime, .getOffer, .getServices:
+        case .countries, .getAllMainCategories, .getStores, .getStoreCategory, .getStoreSubCategory, .searchStores, .searchCatStores, .searchSubCatStores, .getProducts, .searchProducts, .getReview, .getUserData, .allCountries, .getFavorite, .getCart, .getOrders, .getCity, .getDelivery, .getTime, .getOffer, .getServices, .getSubServices, .searchService, .getServiceOrder:
             return .get
             
         default:
@@ -115,6 +119,14 @@ enum APIRouter: URLRequestConvertible {
             return ["country_id": country_id]
         case .getServices(let country_id, let city_id):
             return ["country_id": country_id, "city_id": city_id]
+        case .getSubServices(let services_id):
+            return ["services_id": services_id]
+        case .serviceOrder(let services_id, let user_id, let notes):
+            return ["services_id": services_id, "user_id": user_id, "notes": notes]
+        case .searchService(let name, let country_id, let city_id):
+            return ["name": name, "country_id": country_id, "city_id": city_id]
+        case .getServiceOrder(let user_id):
+            return ["user_id": user_id]
         default:
             return nil
         }
@@ -183,7 +195,14 @@ enum APIRouter: URLRequestConvertible {
             return URLs.getOffer
         case .getServices:
             return URLs.getServices
-            
+        case .getSubServices:
+            return URLs.getSubServices
+        case .serviceOrder:
+            return URLs.serviceOrder
+        case .searchService:
+            return URLs.searchService
+        case .getServiceOrder:
+            return URLs.getServicesOrder
         }
     }
     
@@ -196,7 +215,7 @@ enum APIRouter: URLRequestConvertible {
         print(urlRequest)
         switch self {
        
-        case .countries, .getAllMainCategories, .getStores, .getStoreCategory, .getStoreSubCategory, .searchStores, .searchCatStores, .searchSubCatStores, .getProducts, .searchProducts, .sendReview, .getReview, .getUserData, .updateUserData, .allCountries, .addFavorite, .getFavorite, .deleteFavorite, .addCart, .getCart, .deleteCart, .confirmCart, .getOrders, .getCity, .getDelivery, .getTime, .getOffer, .getServices:
+        case .countries, .getAllMainCategories, .getStores, .getStoreCategory, .getStoreSubCategory, .searchStores, .searchCatStores, .searchSubCatStores, .getProducts, .searchProducts, .sendReview, .getReview, .getUserData, .updateUserData, .allCountries, .addFavorite, .getFavorite, .deleteFavorite, .addCart, .getCart, .deleteCart, .confirmCart, .getOrders, .getCity, .getDelivery, .getTime, .getOffer, .getServices, .getSubServices, .serviceOrder, .searchService:
             urlRequest.setValue("Bearer \(UserDefaultsManager.shared().Token ?? "")",
                 forHTTPHeaderField: HeaderKeys.Authorization)
         default:

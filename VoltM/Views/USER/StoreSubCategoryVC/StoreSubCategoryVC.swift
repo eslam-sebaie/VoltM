@@ -90,7 +90,11 @@ class StoreSubCategoryVC: UIViewController, UITableViewDataSource, UITableViewDe
         cell.mainView.setCornerRadius(radius: 10)
         cell.subCatImage.setCornerRadius(radius: 10)
         cell.subCatCardView.dropShadow(radius: 8, shadow: 2)
-        cell.subCatImage.sd_setImage(with: URL(string: storeSubCategories[indexPath.row].image ?? ""), completed: nil)
+        
+        let img = storeSubCategories[indexPath.row].image ?? ""
+        let image = img.replace(string: " ", replacement: "%20")
+        
+        cell.subCatImage.sd_setImage(with: URL(string: image), completed: nil)
         if L10n.lang.localized == Language.arabic {
             cell.subCatName.text = storeSubCategories[indexPath.row].name.ar
         }

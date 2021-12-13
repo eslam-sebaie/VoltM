@@ -20,6 +20,8 @@
 		960F6F2F275A88B00085A799 /* CheckoutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960F6F2E275A88B00085A799 /* CheckoutVC.swift */; };
 		960F6F31275A88CB0085A799 /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960F6F30275A88CB0085A799 /* CheckoutView.swift */; };
 		960F6F33275BB8710085A799 /* Offer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960F6F32275BB8710085A799 /* Offer.swift */; };
+		9618900C2766633000104C5E /* ServiceDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9618900B2766633000104C5E /* ServiceDetailsVC.swift */; };
+		9618900E2766634000104C5E /* ServiceDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9618900D2766634000104C5E /* ServiceDetailsView.swift */; };
 		963474D9275BCC94006F0A28 /* AboutUsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963474D8275BCC94006F0A28 /* AboutUsVC.swift */; };
 		963474DB275BCCC9006F0A28 /* AboutUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963474DA275BCCC9006F0A28 /* AboutUsView.swift */; };
 		9647C00A26FF3C9300C03A5B /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9647C00926FF3C9300C03A5B /* WelcomeView.swift */; };
@@ -163,6 +165,8 @@
 		960F6F2E275A88B00085A799 /* CheckoutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutVC.swift; sourceTree = "<group>"; };
 		960F6F30275A88CB0085A799 /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
 		960F6F32275BB8710085A799 /* Offer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Offer.swift; sourceTree = "<group>"; };
+		9618900B2766633000104C5E /* ServiceDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailsVC.swift; sourceTree = "<group>"; };
+		9618900D2766634000104C5E /* ServiceDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailsView.swift; sourceTree = "<group>"; };
 		963474D8275BCC94006F0A28 /* AboutUsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsVC.swift; sourceTree = "<group>"; };
 		963474DA275BCCC9006F0A28 /* AboutUsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsView.swift; sourceTree = "<group>"; };
 		9647C00926FF3C9300C03A5B /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
@@ -371,6 +375,15 @@
 			path = CheckoutVC;
 			sourceTree = "<group>";
 		};
+		9618900A2766621F00104C5E /* ServiceDetailsVC */ = {
+			isa = PBXGroup;
+			children = (
+				9618900B2766633000104C5E /* ServiceDetailsVC.swift */,
+				9618900D2766634000104C5E /* ServiceDetailsView.swift */,
+			);
+			path = ServiceDetailsVC;
+			sourceTree = "<group>";
+		};
 		963474D5275BC6FC006F0A28 /* USER */ = {
 			isa = PBXGroup;
 			children = (
@@ -412,6 +425,8 @@
 			children = (
 				96D7B832275F9B580083CFBA /* ServiceVC */,
 				96E394B5276258F4005B0E97 /* SubServiceVC */,
+				9618900A2766621F00104C5E /* ServiceDetailsVC */,
+				966DFF202767A68A0015341F /* ServicesOrderVC */,
 			);
 			path = SERVICES;
 			sourceTree = "<group>";
@@ -423,6 +438,13 @@
 				963474DA275BCCC9006F0A28 /* AboutUsView.swift */,
 			);
 			path = AboutUs;
+			sourceTree = "<group>";
+		};
+		966DFF202767A68A0015341F /* ServicesOrderVC */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ServicesOrderVC;
 			sourceTree = "<group>";
 		};
 		96746ED4272458100074421B /* SignInVC */ = {
@@ -1293,6 +1315,7 @@
 				96E394B427623B73005B0E97 /* Services.swift in Sources */,
 				9685237826F7B85F008C6E6A /* LanguageView.swift in Sources */,
 				96746ED9272458450074421B /* SignInView.swift in Sources */,
+				9618900C2766633000104C5E /* ServiceDetailsVC.swift in Sources */,
 				96D7B836275F9B810083CFBA /* ServiceView.swift in Sources */,
 				96E394B927625B35005B0E97 /* SubServiceView.swift in Sources */,
 				96D26D1E26F68C01009BD961 /* StoreCategoryVC.swift in Sources */,
@@ -1321,6 +1344,7 @@
 				9685237326F7A880008C6E6A /* SideMenuTableViewCell.swift in Sources */,
 				9685235F26F780D2008C6E6A /* ProductTableViewCell.swift in Sources */,
 				9685237026F7A86A008C6E6A /* SideMenuVC.swift in Sources */,
+				9618900E2766634000104C5E /* ServiceDetailsView.swift in Sources */,
 				9685235C26F780BB008C6E6A /* ProductView.swift in Sources */,
 				96CD1E7D26E51C5A000BC132 /* APIRouter.swift in Sources */,
 				96EB066927022A7800586EB4 /* OrdersView.swift in Sources */,

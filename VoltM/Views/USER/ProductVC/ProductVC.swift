@@ -100,7 +100,9 @@ class ProductVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.productView.productTableView.dequeueReusableCell(withIdentifier: TableCells.homeCell, for: indexPath) as! ProductTableViewCell
         cell.productImage.setCornerRadius(radius: 8)
-        imageLoader.obtainImageWithPath(imagePath: storeProducts[indexPath.row].image ?? "") { (image) in
+        let img = storeProducts[indexPath.row].image ?? ""
+        let image = img.replace(string: " ", replacement: "%20")
+        imageLoader.obtainImageWithPath(imagePath: image) { (image) in
             cell.productImage.image = image
         }
         cell.productPrice.text = "\(storeProducts[indexPath.row].price ?? 0) \(getCountryCurrency())"
