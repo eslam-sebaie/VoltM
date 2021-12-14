@@ -17,9 +17,11 @@ class SideMenuVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
  
 
     @IBOutlet var sideMenuView: SideMenuView!
-    var menuNameEn = ["Orders", "Offers", "Country", "Languages", "Privacy Policy", "Who Are We?", "Support", "Account"]
-    var menuImg = [Asset.orderImg.image, Asset.offerImg.image, Asset.countryImg.image,Asset.languageImg.image, Asset.privacyImage.image, Asset.aboutImg.image, Asset.supportImg.image, Asset.accountImg.image]
-    var menuNameAr = ["الطلبات", "العروض", "الدول", "اللغه", "سياسه الخصوصيه", "من نحن؟", "الدعم", "حسابك"]
+    var menuNameEn = ["Products Orders","Services Orders","Offers", "Country", "Languages", "Privacy Policy", "Who Are We?", "Support", "Account"]
+    var menuImg = [Asset.orderImg.image,Asset.orderImg.image, Asset.offerImg.image, Asset.countryImg.image,Asset.languageImg.image, Asset.privacyImage.image, Asset.aboutImg.image, Asset.supportImg.image, Asset.accountImg.image]
+   var menuNameAr =  ["طلبات المنتجات","طلبات الخدمات","العروض", "الدوله", "اللغه", "سياسه الخصوصيه", "من نحن؟", "الدعم", "الحساب"]
+//    var menuNameAr1 = ["طلبات المنتجات", "طلبات الخدمه", "العروض"]
+//    var menuNameAr = ["الطلبات", "العروض", "الدول", "اللغه", "سياسه الخصوصيه", "من نحن؟", "الدعم", "حسابك"]
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -63,13 +65,21 @@ class SideMenuVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
         }
         
         if indexPath.row == 1 {
+            let order = ServiceOrderVC.create()
+            order.modalPresentationStyle = .fullScreen
+            order.modalTransitionStyle = .crossDissolve
+            self.present(order, animated: true, completion: nil)
+            
+        }
+        
+        if indexPath.row == 2 {
             let offer = OfferVC.create()
             offer.modalPresentationStyle = .fullScreen
             offer.modalTransitionStyle = .crossDissolve
             self.present(offer, animated: true, completion: nil)
             
         }
-        if indexPath.row == 2 {
+        if indexPath.row == 3 {
             self.sideMenuView.sideMenuTableView.isHidden = true
             let country = CountryVC.create()
             country.delegate = self
@@ -78,7 +88,7 @@ class SideMenuVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
             self.present(country, animated: true, completion: nil)
             
         }
-        if indexPath.row == 3 {
+        if indexPath.row == 4 {
             self.sideMenuView.sideMenuTableView.isHidden = true
             let lang = LanguageVC.create()
             lang.delegate = self
@@ -87,19 +97,19 @@ class SideMenuVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
             self.present(lang, animated: true, completion: nil)
             
         }
-        if indexPath.row == 5{
+        if indexPath.row == 6{
             let about = AboutUsVC.create()
             about.modalPresentationStyle = .fullScreen
             about.modalTransitionStyle = .crossDissolve
             self.present(about, animated: true, completion: nil)
             
         }
-        if indexPath.row == 6{
+        if indexPath.row == 7{
             guard let number = URL(string: "tel://" + "0500472089") else { return }
             UIApplication.shared.open(number)
         }
         
-        if indexPath.row == 7 {
+        if indexPath.row == 8 {
             let account = UpdateInfoVC.create()
             account.modalPresentationStyle = .fullScreen
             account.modalTransitionStyle = .crossDissolve

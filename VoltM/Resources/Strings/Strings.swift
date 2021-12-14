@@ -46,6 +46,8 @@ internal enum L10n {
   internal static let noReviewsFound = L10n.tr("Localizable", "No Reviews Found")
   /// No Service Found.
   internal static let noServiceFound = L10n.tr("Localizable", "No Service Found.")
+  /// No Service‘s Orders Found.
+  internal static let noServiceSOrdersFound = L10n.tr("Localizable", "No Service‘s Orders Found.")
   /// No SubService Found.
   internal static let noSubServiceFound = L10n.tr("Localizable", "No SubService Found.")
   /// NoCategories

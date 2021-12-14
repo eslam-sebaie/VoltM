@@ -215,7 +215,7 @@ enum APIRouter: URLRequestConvertible {
         print(urlRequest)
         switch self {
        
-        case .countries, .getAllMainCategories, .getStores, .getStoreCategory, .getStoreSubCategory, .searchStores, .searchCatStores, .searchSubCatStores, .getProducts, .searchProducts, .sendReview, .getReview, .getUserData, .updateUserData, .allCountries, .addFavorite, .getFavorite, .deleteFavorite, .addCart, .getCart, .deleteCart, .confirmCart, .getOrders, .getCity, .getDelivery, .getTime, .getOffer, .getServices, .getSubServices, .serviceOrder, .searchService:
+        case .countries, .getAllMainCategories, .getStores, .getStoreCategory, .getStoreSubCategory, .searchStores, .searchCatStores, .searchSubCatStores, .getProducts, .searchProducts, .sendReview, .getReview, .getUserData, .updateUserData, .allCountries, .addFavorite, .getFavorite, .deleteFavorite, .addCart, .getCart, .deleteCart, .confirmCart, .getOrders, .getCity, .getDelivery, .getTime, .getOffer, .getServices, .getSubServices, .serviceOrder, .searchService, .getServiceOrder:
             urlRequest.setValue("Bearer \(UserDefaultsManager.shared().Token ?? "")",
                 forHTTPHeaderField: HeaderKeys.Authorization)
         default:

@@ -51,6 +51,7 @@ struct ViewControllers {
     static let serviceVC = "ServiceVC"
     static let subServiceVC = "SubServiceVC"
     static let serviceDetailsVC = "ServiceDetailsVC"
+    static let serviceOrderVC = "ServiceOrderVC"
 }
 struct URLs {
     // MARK:- base

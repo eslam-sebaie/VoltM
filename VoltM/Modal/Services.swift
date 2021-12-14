@@ -29,9 +29,10 @@ struct ServiceOrder: Codable {
 
 // MARK: - Datum
 struct ServiceOrderInfo: Codable {
-    let id, repairCategoryID, userID: Int?
-    let status: Bool?
-    let notes, createdAt, updatedAt: String?
+    let id, repairCategoryID, userID: Int
+    let status: Bool
+    let notes, createdAt, updatedAt: String
+    let repairCategory: RepairCategory
 
     enum CodingKeys: String, CodingKey {
         case id
@@ -40,5 +41,15 @@ struct ServiceOrderInfo: Codable {
         case status, notes
         case createdAt = "created_at"
         case updatedAt = "updated_at"
+        case repairCategory = "repair_category"
     }
 }
+
+// MARK: - RepairCategory
+struct RepairCategory: Codable {
+    let id: Int
+    let name: ProductLocalize
+    let price: Int
+    let image: String
+}
+
