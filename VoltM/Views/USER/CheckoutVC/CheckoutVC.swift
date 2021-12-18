@@ -11,7 +11,7 @@ class CheckoutVC: UIViewController {
 
     @IBOutlet var checkoutView: CheckoutView!
     var receiveCartID = 0
-    var subTotal = 0
+    var subTotal = 0.0
     override func viewDidLoad() {
         super.viewDidLoad()
         checkoutView.updateUI()

@@ -16,7 +16,7 @@ class DeliveryInfoVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     var cityInfo = [CountryInfo]()
     var goverID = 0
     var receiveCartID = 0
-    var subTotal = 0
+    var subTotal = 0.0
     override func viewDidLoad() {
         super.viewDidLoad()
         pickerView.delegate = self

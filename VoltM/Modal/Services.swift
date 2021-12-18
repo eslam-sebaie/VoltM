@@ -17,7 +17,7 @@ struct ServiceInfo: Codable {
     let id: Int
     let name: ProductLocalize
     let image: String
-    let price: Int?
+    let price: Double?
 }
 
 
@@ -49,7 +49,7 @@ struct ServiceOrderInfo: Codable {
 struct RepairCategory: Codable {
     let id: Int
     let name: ProductLocalize
-    let price: Int
+    let price: Double
     let image: String
 }
 

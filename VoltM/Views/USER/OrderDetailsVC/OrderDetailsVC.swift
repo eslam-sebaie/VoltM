@@ -15,7 +15,7 @@ class OrderDetailsVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     var cartDetails = [CartDetail]()
     var userInfo = SignUpInfo(fname: "", lname: "" , email: "",phone: "",password: "",address: "", latitude: "",longitude: "", image: "", id: 0)
     var imageLoader = ImageLoader()
-    var receiveTotalPrice = 0
+    var receiveTotalPrice = 0.0
     override func viewDidLoad() {
         super.viewDidLoad()
         orderDetailsView.updateUI()

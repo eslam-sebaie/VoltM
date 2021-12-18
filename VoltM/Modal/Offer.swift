@@ -17,10 +17,11 @@ struct OfferInfo: Codable {
     let id: Int
     let image: String
     let name: ProductLocalize?
-    let price: Int
+    let price: Double
     let desc: ProductLocalize
     let offer: String
-    let newPrice, categoryID, subcategoryID, storeID: Int?
+    let newPrice: Double?
+    let categoryID, subcategoryID, storeID: Int?
     let qty, reviewNumber, reviewRate: Int?
     let store: StoreInfo?
 

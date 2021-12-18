@@ -56,11 +56,12 @@ class CartVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             }
         }
     }
-    var subPrice = 0
+    var subPrice = 0.0
     @IBAction func continuePressed(_ sender: Any) {
       
         for i in cartInfo {
-            subPrice += ((i.qty) * (i.product?.price ?? 0))
+            let doubleQTY = Double(i.qty)
+            subPrice += ( doubleQTY * (i.product?.price ?? 0.0))
         }
         let deliveryInfo = DeliveryInfoVC.create()
         deliveryInfo.receiveCartID = cartInfo[0].cartID
@@ -77,15 +78,17 @@ class CartVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         cell.productImage.setCornerRadius(radius: 8)
         if L10n.lang.localized == Language.arabic {
             cell.productName.text = cartInfo[indexPath.row].product?.name?.ar
+            cell.productQty.text = "الكميه: x\(cartInfo[indexPath.row].qty)"
         }
         else {
             cell.productName.text = cartInfo[indexPath.row].product?.name?.en
+            cell.productQty.text = "Quantity: x\(cartInfo[indexPath.row].qty)"
         }
         cell.productPrice.text = "\(cartInfo[indexPath.row].product?.price ?? 0) \(getCountryCurrency())"
         imageLoader.obtainImageWithPath(imagePath: cartInfo[indexPath.row].product?.image ?? "") { (image) in
             cell.productImage.image = image
         }
-        cell.productQty.text = "Quantity: x\(cartInfo[indexPath.row].qty)"
+        
         
         
         return cell

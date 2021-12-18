@@ -8,7 +8,7 @@ struct OrderResponse: Codable {
 struct OrderInfo: Codable {
     let id, userID: Int
     let orderNumber: String
-    let totalPrice: Int
+    let totalPrice: Double
     let status: Bool
     let createdAt: String
     let details: [ProductDetail]?
@@ -70,7 +70,8 @@ struct deliveryResponse: Codable {
 
 // MARK: - Datum
 struct deliveryInfo: Codable {
-    let id, sameCityPrice, diffCityPrice: Int?
+    let id: Int?
+    let sameCityPrice, diffCityPrice: Double?
 }
 struct TimeResponse: Codable {
     let data: [TimeInfo]?
