@@ -47,6 +47,7 @@ enum APIRouter: URLRequestConvertible {
     case serviceOrder(_ services_id: Int,  _ user_id: Int, _ notes: String)
     case searchService(_ name: String,_ country_id: Int, _ city_id: Int)
     case getServiceOrder(_ user_id: Int)
+    case deleteAllCart(_ user_id: Int)
     // MARK: - HttpMethod
     private var method: HTTPMethod {
         switch self {
@@ -127,6 +128,8 @@ enum APIRouter: URLRequestConvertible {
             return ["name": name, "country_id": country_id, "city_id": city_id]
         case .getServiceOrder(let user_id):
             return ["user_id": user_id]
+        case .deleteAllCart(let user_id):
+            return ["user_id": user_id]
         default:
             return nil
         }
@@ -203,6 +206,8 @@ enum APIRouter: URLRequestConvertible {
             return URLs.searchService
         case .getServiceOrder:
             return URLs.getServicesOrder
+        case .deleteAllCart:
+            return URLs.deleteAllCart
         }
     }
     
@@ -215,7 +220,7 @@ enum APIRouter: URLRequestConvertible {
         print(urlRequest)
         switch self {
        
-        case .countries, .getAllMainCategories, .getStores, .getStoreCategory, .getStoreSubCategory, .searchStores, .searchCatStores, .searchSubCatStores, .getProducts, .searchProducts, .sendReview, .getReview, .getUserData, .updateUserData, .allCountries, .addFavorite, .getFavorite, .deleteFavorite, .addCart, .getCart, .deleteCart, .confirmCart, .getOrders, .getCity, .getDelivery, .getTime, .getOffer, .getServices, .getSubServices, .serviceOrder, .searchService, .getServiceOrder:
+        case .countries, .getAllMainCategories, .getStores, .getStoreCategory, .getStoreSubCategory, .searchStores, .searchCatStores, .searchSubCatStores, .getProducts, .searchProducts, .sendReview, .getReview, .getUserData, .updateUserData, .allCountries, .addFavorite, .getFavorite, .deleteFavorite, .addCart, .getCart, .deleteCart, .confirmCart, .getOrders, .getCity, .getDelivery, .getTime, .getOffer, .getServices, .getSubServices, .serviceOrder, .searchService, .getServiceOrder, .deleteAllCart:
             urlRequest.setValue("Bearer \(UserDefaultsManager.shared().Token ?? "")",
                 forHTTPHeaderField: HeaderKeys.Authorization)
         default:

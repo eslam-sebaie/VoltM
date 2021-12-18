@@ -56,6 +56,13 @@ class ChooseCountryVC: UIViewController, UICollectionViewDataSource, UICollectio
         }
     }
     
+    func navigate(){
+        
+        let storyboard = UIStoryboard(name: Storyboards.home, bundle: nil)
+        let tabVC = storyboard.instantiateViewController(withIdentifier: "tabViewController")
+        self.present(tabVC, animated: true, completion: nil)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return nameArray.count
     }
@@ -71,11 +78,23 @@ class ChooseCountryVC: UIViewController, UICollectionViewDataSource, UICollectio
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        UserDefaultsManager.shared().country = nameArray[indexPath.row]
-        UserDefaultsManager.shared().countryId = countryDic[nameArray[indexPath.row]]
-        let storyboard = UIStoryboard(name: Storyboards.home, bundle: nil)
-        let tabVC = storyboard.instantiateViewController(withIdentifier: "tabViewController")
-        self.present(tabVC, animated: true, completion: nil)
+        self.view.showLoader()
+        APIManager.deleteAllCart(user_id: UserDefaultsManager.shared().userId ?? 0) { response in
+            switch response {
+            case .failure( _):
+                UserDefaultsManager.shared().country = self.nameArray[indexPath.row]
+                UserDefaultsManager.shared().countryId = self.countryDic[self.nameArray[indexPath.row]]
+                self.navigate()
+                self.view.hideLoader()
+            case .success( _):
+                UserDefaultsManager.shared().country = self.nameArray[indexPath.row]
+                UserDefaultsManager.shared().countryId = self.countryDic[self.nameArray[indexPath.row]]
+                self.view.hideLoader()
+                self.navigate()
+            }
+        }
+        
+        
         
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

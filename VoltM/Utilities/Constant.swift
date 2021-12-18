@@ -90,6 +90,7 @@ struct URLs {
     static let serviceOrder = "services/order"
     static let searchService = "search/mainServies"
     static let getServicesOrder = "get/services/order"
+    static let deleteAllCart = "delete/cart"
 }
 struct ParameterKeys {
    

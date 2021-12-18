@@ -184,6 +184,11 @@ class APIManager {
             completion(response)
         }
     }
+    class func deleteAllCart(user_id: Int, completion: @escaping(Result<CartResponse, Error>) -> Void) {
+        request(APIRouter.deleteAllCart(user_id)) { (response) in
+            completion(response)
+        }
+    }
     class func uploadPhoto(image: UIImage, completion: @escaping (_ error: Error?, _ upImage: uploadImage?)-> Void){
 
         AF.upload(multipartFormData: { (form: MultipartFormData) in
