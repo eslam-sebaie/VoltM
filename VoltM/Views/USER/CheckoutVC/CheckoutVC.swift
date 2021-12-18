@@ -56,16 +56,51 @@ class CheckoutVC: UIViewController {
                 self.view.hideLoader()
             case .success(let result):
                 if UserDefaultsManager.shared().gover == UserDefaultsManager.shared().cityId {
-                    self.checkoutView.deliveryVal.text = "\(result.data?[0].sameCityPrice ?? 0) \(self.getCountryCurrency())"
-                    self.checkoutView.subtotalVal.text = "\(self.subTotal) \(self.getCountryCurrency())"
-                    let total = (self.subTotal + (result.data?[0].sameCityPrice)!)
-                    self.checkoutView.totalPriceVal.text = "\(total) \(self.getCountryCurrency())"
+                    if UserDefaultsManager.shared().countryId == 2 {
+                        if L10n.lang.localized == Language.arabic {
+                            self.checkoutView.deliveryHeader.text = "التوصيل + الضريبه"
+                        }
+                        else {
+                            self.checkoutView.deliveryHeader.text = "Delivery + Tax"
+                        }
+                        let tax = 0.14 * Double(self.subTotal)
+                        let deliver = tax + Double(result.data?[0].sameCityPrice ?? 0)
+                        let deli = String(format:"%.1f", deliver)
+                        self.checkoutView.deliveryVal.text = "\(deli) \(self.getCountryCurrency())"
+                        self.checkoutView.subtotalVal.text = "\(self.subTotal) \(self.getCountryCurrency())"
+                        let total = (Double(self.subTotal) + deliver)
+                        self.checkoutView.totalPriceVal.text = "\(total) \(self.getCountryCurrency())"
+                    }
+                    else {
+                        self.checkoutView.deliveryVal.text = "\(result.data?[0].sameCityPrice ?? 0) \(self.getCountryCurrency())"
+                        self.checkoutView.subtotalVal.text = "\(self.subTotal) \(self.getCountryCurrency())"
+                        let total = (self.subTotal + (result.data?[0].sameCityPrice)!)
+                        self.checkoutView.totalPriceVal.text = "\(total) \(self.getCountryCurrency())"
+                    }
                 }
                 else {
-                    self.checkoutView.deliveryVal.text = "\(result.data?[0].diffCityPrice ?? 0) \(self.getCountryCurrency())"
-                    self.checkoutView.subtotalVal.text = "\(self.subTotal) \(self.getCountryCurrency())"
-                    let total = (self.subTotal + (result.data?[0].diffCityPrice)!)
-                    self.checkoutView.totalPriceVal.text = "\(total) \(self.getCountryCurrency())"
+                    if UserDefaultsManager.shared().countryId == 2 {
+                        if L10n.lang.localized == Language.arabic {
+                            self.checkoutView.deliveryHeader.text = "التوصيل + الضريبه"
+                        }
+                        else {
+                            self.checkoutView.deliveryHeader.text = "Delivery + Tax"
+                        }
+                        let tax = 0.14 * Double(self.subTotal)
+                        let deliver = tax + Double(result.data?[0].diffCityPrice ?? 0)
+                        let deli = String(format:"%.1f", deliver)
+                        self.checkoutView.deliveryVal.text = "\(deli) \(self.getCountryCurrency())"
+                        self.checkoutView.subtotalVal.text = "\(self.subTotal) \(self.getCountryCurrency())"
+                        let total = (Double(self.subTotal) + deliver)
+                        self.checkoutView.totalPriceVal.text = "\(total) \(self.getCountryCurrency())"
+                    }
+                    else {
+                        
+                        self.checkoutView.deliveryVal.text = "\(result.data?[0].diffCityPrice ?? 0) \(self.getCountryCurrency())"
+                        self.checkoutView.subtotalVal.text = "\(self.subTotal) \(self.getCountryCurrency())"
+                        let total = (self.subTotal + (result.data?[0].diffCityPrice)!)
+                        self.checkoutView.totalPriceVal.text = "\(total) \(self.getCountryCurrency())"
+                    }
                 }
                 self.view.hideLoader()
             }
