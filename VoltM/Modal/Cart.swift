@@ -36,7 +36,7 @@ struct getCartResponse: Codable {
 struct getCartInfo: Codable {
     let id, cartID, productID, qty: Int
     let createdAt, updatedAt: String?
-    let product: ProductInfo?
+    let product: ProductInfo1?
 
     enum CodingKeys: String, CodingKey {
         case id
@@ -49,3 +49,20 @@ struct getCartInfo: Codable {
     }
 }
 
+struct ProductInfo1: Codable {
+    let id: Int
+    let name: ProductLocalize?
+    let image: String?
+    let price: Double?
+    let newPrice: Double?
+    let desc: ProductLocalize?
+    let offer: String?
+    let review_number: Int?
+    let review_rate: Double?
+    let qty, store_id: Int?
+    enum CodingKeys: String, CodingKey {
+        case id, name, image, price, store_id
+        case newPrice = "new_price"
+        case desc, offer, review_number,review_rate, qty
+    }
+}

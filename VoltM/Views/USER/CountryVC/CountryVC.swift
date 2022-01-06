@@ -8,7 +8,7 @@
 import UIKit
 
 class CountryVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout  {
-
+    
     @IBOutlet var countryView: CountryView!
     var delegate: sideMenuProtocol?
     var image = ["Egypt":"egypt2", "Saudi Arabia":"saudi-arabia", "Kuwait":"kwait2", "Syrian":"syria","Lebanon":"lebanon", "Qatar":"qatar"]
@@ -35,7 +35,7 @@ class CountryVC: UIViewController, UICollectionViewDataSource, UICollectionViewD
                 self.show_Alert(L10n.sorry.localized, L10n.wentWrong.localized)
                 self.view.hideLoader()
             case .success(let result):
-               
+                
                 for i in result.data ?? []{
                     self.nameArray.append(i.country?.name ?? "")
                     self.idArray.append(i.countryID ?? 0)
@@ -76,26 +76,34 @@ class CountryVC: UIViewController, UICollectionViewDataSource, UICollectionViewD
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.view.showLoader()
-        APIManager.deleteAllCart(user_id: UserDefaultsManager.shared().userId ?? 0) { response in
-            switch response {
-            case .failure( _):
-                UserDefaultsManager.shared().country = self.nameArray[indexPath.row]
-                UserDefaultsManager.shared().countryId = self.countryDic[self.nameArray[indexPath.row]]
-                self.navigate()
-                self.view.hideLoader()
-            case .success( _):
-                UserDefaultsManager.shared().country = self.nameArray[indexPath.row]
-                UserDefaultsManager.shared().countryId = self.countryDic[self.nameArray[indexPath.row]]
-                self.view.hideLoader()
-                self.navigate()
+        if UserDefaultsManager.shared().guest! {
+            UserDefaultsManager.shared().country = self.nameArray[indexPath.row]
+            UserDefaultsManager.shared().countryId = self.countryDic[self.nameArray[indexPath.row]]
+            
+            self.navigate()
+        }
+        else {
+            self.view.showLoader()
+            APIManager.deleteAllCart(user_id: UserDefaultsManager.shared().userId ?? 0) { response in
+                switch response {
+                case .failure( _):
+                    UserDefaultsManager.shared().country = self.nameArray[indexPath.row]
+                    UserDefaultsManager.shared().countryId = self.countryDic[self.nameArray[indexPath.row]]
+                    self.navigate()
+                    self.view.hideLoader()
+                case .success( _):
+                    UserDefaultsManager.shared().country = self.nameArray[indexPath.row]
+                    UserDefaultsManager.shared().countryId = self.countryDic[self.nameArray[indexPath.row]]
+                    self.view.hideLoader()
+                    self.navigate()
+                }
             }
         }
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let yourWidth = CGFloat(100)
         let yourHeight = CGFloat(100)
-
+        
         return CGSize(width: yourWidth, height: yourHeight)
     }
     

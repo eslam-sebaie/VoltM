@@ -189,6 +189,16 @@ class APIManager {
             completion(response)
         }
     }
+    class func forgetPassword(email: String, completion: @escaping(Result<forgetResponse, Error>) -> Void) {
+        request(APIRouter.forgetPassword(email)) { (response) in
+            completion(response)
+        }
+    }
+    class func confirmPassword(email: String, password: String,completion: @escaping(Result<forgetResponse, Error>) -> Void) {
+        request(APIRouter.confirmPassword(email, password)) { (response) in
+            completion(response)
+        }
+    }
     class func uploadPhoto(image: UIImage, completion: @escaping (_ error: Error?, _ upImage: uploadImage?)-> Void){
 
         AF.upload(multipartFormData: { (form: MultipartFormData) in

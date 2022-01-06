@@ -88,3 +88,15 @@ struct countryLocalize: Codable {
     let en, ar: String
 }
 
+
+struct forgetResponse: Codable {
+    let data: forgetInfo?
+    let status: Bool
+    let message: String
+}
+
+// MARK: - Datum
+struct forgetInfo: Codable {
+    let id: Int?
+    let email: String?
+}

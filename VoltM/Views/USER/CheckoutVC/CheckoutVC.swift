@@ -12,6 +12,7 @@ class CheckoutVC: UIViewController {
     @IBOutlet var checkoutView: CheckoutView!
     var receiveCartID = 0
     var subTotal = 0.0
+    var storeArray = [Int]()
     override func viewDidLoad() {
         super.viewDidLoad()
         checkoutView.updateUI()
@@ -63,7 +64,7 @@ class CheckoutVC: UIViewController {
                         else {
                             self.checkoutView.deliveryHeader.text = "Delivery + Tax"
                         }
-                        let tax = 0.14 * Double(self.subTotal)
+                        let tax = 0.15 * Double(self.subTotal)
                         let deliver = tax + Double(result.data?[0].sameCityPrice ?? 0)
                         let deli = String(format:"%.1f", deliver)
                         self.checkoutView.deliveryVal.text = "\(deli) \(self.getCountryCurrency())"
@@ -86,7 +87,7 @@ class CheckoutVC: UIViewController {
                         else {
                             self.checkoutView.deliveryHeader.text = "Delivery + Tax"
                         }
-                        let tax = 0.14 * Double(self.subTotal)
+                        let tax = 0.15 * Double(self.subTotal)
                         let deliver = tax + Double(result.data?[0].diffCityPrice ?? 0)
                         let deli = String(format:"%.1f", deliver)
                         self.checkoutView.deliveryVal.text = "\(deli) \(self.getCountryCurrency())"
@@ -113,6 +114,7 @@ class CheckoutVC: UIViewController {
     
     @IBAction func continuePressed(_ sender: Any) {
         self.view.showLoader()
+        print("Sebbbb\(storeArray)")
         APIManager.confirmCart(cart_id: receiveCartID, user_id: UserDefaultsManager.shared().userId ?? 0) { response in
             switch response {
             case .failure( _):

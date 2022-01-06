@@ -91,7 +91,9 @@ class OrderDetailsVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = orderDetailsView.orderDetailsTableView.dequeueReusableCell(withIdentifier: TableCells.homeCell, for: indexPath) as! OrderDetailsTableViewCell
         cell.productImage.setCornerRadius(radius: 8)
-        imageLoader.obtainImageWithPath(imagePath: productDetails[indexPath.section].cart?.cartDetails?[indexPath.row].product?.image ?? "") { (image) in
+        let img = productDetails[indexPath.section].cart?.cartDetails?[indexPath.row].product?.image ?? ""
+        let image = img.replace(string: " ", replacement: "%20")
+        imageLoader.obtainImageWithPath(imagePath: image) { (image) in
             cell.productImage.image = image
         }
         cell.productQuantity.text = "Quantity: \(productDetails[indexPath.section].cart?.cartDetails?[indexPath.row].qty ?? 0)"

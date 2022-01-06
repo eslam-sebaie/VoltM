@@ -23,7 +23,13 @@ class FavoriteVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         return favoriteVC
     }
     override func viewWillAppear(_ animated: Bool) {
-        getFavorite()
+        if UserDefaultsManager.shared().guest ?? false {
+            print("Is Guest")
+        }
+        else {
+            getFavorite()
+        }
+        
     }
     func getFavorite() {
         

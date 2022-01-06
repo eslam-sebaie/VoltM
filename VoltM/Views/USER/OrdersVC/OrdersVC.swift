@@ -24,7 +24,12 @@ class OrdersVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         return ordersVC
     }
     override func viewWillAppear(_ animated: Bool) {
-        getOrders()
+        if UserDefaultsManager.shared().guest! {
+            print("Is Guest")
+        }
+        else {
+            getOrders()
+        }
     }
     
     func getOrders() {

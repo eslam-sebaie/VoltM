@@ -61,6 +61,8 @@
 		96B8D0222768F0E200840DDD /* ServiceOrderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B8D0212768F0E200840DDD /* ServiceOrderVC.swift */; };
 		96B8D0242768F0F300840DDD /* ServiceOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B8D0232768F0F300840DDD /* ServiceOrderView.swift */; };
 		96B8D0272768F10C00840DDD /* ServiceOrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B8D0262768F10C00840DDD /* ServiceOrderTableViewCell.swift */; };
+		96C4A5282784684500ED6261 /* ForgetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C4A5272784684500ED6261 /* ForgetPasswordVC.swift */; };
+		96C4A52A2784685B00ED6261 /* ForgetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C4A5292784685B00ED6261 /* ForgetPasswordView.swift */; };
 		96C6D6C6274E95B30057666D /* Orders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C6D6C5274E95B30057666D /* Orders.swift */; };
 		96CD1E4026E514E3000BC132 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CD1E3F26E514E3000BC132 /* AppDelegate.swift */; };
 		96CD1E4226E514E3000BC132 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CD1E4126E514E3000BC132 /* SceneDelegate.swift */; };
@@ -211,6 +213,8 @@
 		96B8D0212768F0E200840DDD /* ServiceOrderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceOrderVC.swift; sourceTree = "<group>"; };
 		96B8D0232768F0F300840DDD /* ServiceOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceOrderView.swift; sourceTree = "<group>"; };
 		96B8D0262768F10C00840DDD /* ServiceOrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceOrderTableViewCell.swift; sourceTree = "<group>"; };
+		96C4A5272784684500ED6261 /* ForgetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordVC.swift; sourceTree = "<group>"; };
+		96C4A5292784685B00ED6261 /* ForgetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordView.swift; sourceTree = "<group>"; };
 		96C6D6C5274E95B30057666D /* Orders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orders.swift; sourceTree = "<group>"; };
 		96CD1E3C26E514E3000BC132 /* VoltM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoltM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96CD1E3F26E514E3000BC132 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -397,6 +401,7 @@
 				96DC28552735806D00B397D4 /* PagesVC */,
 				96746ED5272458180074421B /* SignUpVC */,
 				96746ED4272458100074421B /* SignInVC */,
+				96C4A5262784682100ED6261 /* ForgetPasswordVC */,
 				96DC28442735635D00B397D4 /* ChooseCountryVC */,
 				96DC284E2735782000B397D4 /* MapVC */,
 				96E1155726F66327005EFA2C /* TabBarVC */,
@@ -602,6 +607,15 @@
 				96B8D0262768F10C00840DDD /* ServiceOrderTableViewCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		96C4A5262784682100ED6261 /* ForgetPasswordVC */ = {
+			isa = PBXGroup;
+			children = (
+				96C4A5272784684500ED6261 /* ForgetPasswordVC.swift */,
+				96C4A5292784685B00ED6261 /* ForgetPasswordView.swift */,
+			);
+			path = ForgetPasswordVC;
 			sourceTree = "<group>";
 		};
 		96CD1E3326E514E3000BC132 = {
@@ -1348,6 +1362,7 @@
 				960F6F31275A88CB0085A799 /* CheckoutView.swift in Sources */,
 				96E394BC27625B4A005B0E97 /* SubServiceTableViewCell.swift in Sources */,
 				9685236926F79940008C6E6A /* ProductDetailsView.swift in Sources */,
+				96C4A5282784684500ED6261 /* ForgetPasswordVC.swift in Sources */,
 				96DC28592735809B00B397D4 /* PagesView.swift in Sources */,
 				9685237B26F7C7FD008C6E6A /* CountryVC.swift in Sources */,
 				96D26D1626F68426009BD961 /* FavoriteVC.swift in Sources */,
@@ -1386,6 +1401,7 @@
 				9685235026F7774E008C6E6A /* CartVC.swift in Sources */,
 				96DC28522735785E00B397D4 /* MapVCView.swift in Sources */,
 				9685236726F7992E008C6E6A /* ProductDetailsVC.swift in Sources */,
+				96C4A52A2784685B00ED6261 /* ForgetPasswordView.swift in Sources */,
 				96D7B839275F9B980083CFBA /* ServiceTableViewCell.swift in Sources */,
 				96D26D2026F68C10009BD961 /* StoreCategoryView.swift in Sources */,
 				96EB065D2702048A00586EB4 /* RateVC.swift in Sources */,

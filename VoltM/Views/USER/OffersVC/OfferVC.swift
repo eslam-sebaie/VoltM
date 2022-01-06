@@ -20,8 +20,13 @@ class OfferVC: UIViewController,UITableViewDataSource, UITableViewDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        getOffers()
-        getOffers1()
+//        if UserDefaultsManager.shared().guest! {
+//            print("Is Guest")
+//        }
+//        else {
+            getOffers()
+            getOffers1()
+//        }
     }
     
     func getOffers(){

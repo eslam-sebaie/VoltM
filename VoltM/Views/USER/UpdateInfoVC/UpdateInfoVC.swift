@@ -15,6 +15,7 @@ class UpdateInfoVC: UIViewController {
     var changePass = false
     var img = ""
     var imagePicker = UIImagePickerController()
+    var newPass = false
     override func viewDidLoad() {
         super.viewDidLoad()
         updateInfoView.updateUI()
@@ -62,13 +63,34 @@ class UpdateInfoVC: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func eyePressed(_ sender: UIButton) {
+    @IBAction func editPassPressed(_ sender: UIButton) {
         if sender.isSelected {
-            updateInfoView.passTF.isSecureTextEntry = true
+            updateInfoView.newPassHeight.constant = 0
+            updateInfoView.newPassView.isHidden = true
+            updateInfoView.passTF.text = UserDefaultsManager.shared().Password
+            newPass = false
+            updateInfoView.passTF.isEnabled = false
             sender.isSelected = false
         }
         else {
-            updateInfoView.passTF.isSecureTextEntry = false
+            updateInfoView.newPassHeight.constant = 45
+            updateInfoView.newPassView.isHidden = false
+            updateInfoView.passTF.text = ""
+            updateInfoView.passTF.isEnabled = true
+            newPass = true
+            sender.isSelected = true
+        }
+        
+        
+    }
+    
+    @IBAction func eyePressed(_ sender: UIButton) {
+        if sender.isSelected {
+            updateInfoView.newPassTF.isSecureTextEntry = true
+            sender.isSelected = false
+        }
+        else {
+            updateInfoView.newPassTF.isSecureTextEntry = false
             sender.isSelected = true
         }
     }
@@ -103,6 +125,7 @@ class UpdateInfoVC: UIViewController {
         contact.userInfo = userInfo
         self.present(contact, animated: true, completion: nil)
     }
+    var newPassText = ""
     func update() {
         guard let fname = updateInfoView.fNameTF.text , fname != "" else {
             self.show_Alert(L10n.sorry.localized, L10n.pleaseEnterFirstName.localized)
@@ -112,12 +135,29 @@ class UpdateInfoVC: UIViewController {
             self.show_Alert(L10n.sorry.localized, L10n.pleaseEnterLastName.localized)
             return
         }
-        guard let pass = updateInfoView.passTF.text , pass != "" else {
-            self.show_Alert(L10n.sorry.localized, L10n.pleaseEnterPassword.localized)
-            return
+        if newPass {
+            if updateInfoView.passTF.text == UserDefaultsManager.shared().Password {
+                newPassText = updateInfoView.newPassTF.text ?? ""
+                guard let pass1 = updateInfoView.newPassTF.text , pass1 != "" else {
+                    self.show_Alert(L10n.sorry.localized, L10n.pleaseEnterNewPassword.localized)
+                    return
+                }
+            }
+            else {
+                self.show_Alert(L10n.sorry.localized, L10n.pleaseEnterCorrectPassword.localized)
+                return
+            }
         }
+        else {
+            newPassText = updateInfoView.passTF.text ?? ""
+            guard let pass = updateInfoView.passTF.text , pass != "" else {
+                self.show_Alert(L10n.sorry.localized, L10n.pleaseEnterPassword.localized)
+                return
+            }
+        }
+        
         self.view.showLoader()
-        APIManager.updateUser(id: UserDefaultsManager.shared().userId ?? 0,fname: fname, lname: lname, email: self.userInfo.email ?? "", password: pass, phone: self.userInfo.phone!, address: self.userInfo.address!, latitude: self.userInfo.latitude!, longitude: self.userInfo.longitude!, image: img) { (response) in
+        APIManager.updateUser(id: UserDefaultsManager.shared().userId ?? 0,fname: fname, lname: lname, email: self.userInfo.email ?? "", password: newPassText, phone: self.userInfo.phone!, address: self.userInfo.address!, latitude: self.userInfo.latitude!, longitude: self.userInfo.longitude!, image: img) { (response) in
             switch response {
             case .failure(let err):
                 print(err)
@@ -149,12 +189,17 @@ class UpdateInfoVC: UIViewController {
         if userInfo.image == self.img {
             if userInfo.fname == updateInfoView.fNameTF.text {
                 if userInfo.lname == updateInfoView.lNameTF.text {
-                    if UserDefaultsManager.shared().Password == updateInfoView.passTF.text{
-                        self.show_Alert(L10n.sorry.localized, L10n.youDidnTUpdateAnyThing.localized)
+                    if newPass {
+                        self.update()
                     }
                     else {
-                        changePass = true
-                        self.update()
+                        if UserDefaultsManager.shared().Password == updateInfoView.passTF.text{
+                            self.show_Alert(L10n.sorry.localized, L10n.youDidnTUpdateAnyThing.localized)
+                        }
+                        else {
+                            changePass = true
+                            self.update()
+                        }
                     }
                 }
                 else {

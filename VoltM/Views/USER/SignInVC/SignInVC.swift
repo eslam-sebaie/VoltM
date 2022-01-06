@@ -76,5 +76,16 @@ class SignInVC: UIViewController {
         self.present(signUp, animated: true, completion: nil)
     }
     
-   
+    @IBAction func forgetPressed(_ sender: Any) {
+        let forget = ForgetPasswordVC.create()
+        self.present(forget, animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func guestPressed(_ sender: Any) {
+        let country = ChooseCountryVC.create()
+        country.guest = true
+        self.present(country, animated: true, completion: nil)
+    }
+    
 }

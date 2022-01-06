@@ -161,5 +161,15 @@ class UserDefaultsManager {
             return UserDefaults.standard.integer(forKey: UserDefaultsKeys.cityId)
         }
     }
-    
+    var guest: Bool? {
+        set {
+            UserDefaults.standard.set(newValue, forKey: UserDefaultsKeys.guest)
+        }
+        get {
+            guard UserDefaults.standard.object(forKey: UserDefaultsKeys.guest) != nil else {
+                return nil
+            }
+            return UserDefaults.standard.bool(forKey: UserDefaultsKeys.guest)
+        }
+    }
 }

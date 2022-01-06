@@ -43,6 +43,9 @@ class RateVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         self.dismiss(animated: true, completion: nil)
     }
     override func viewWillAppear(_ animated: Bool) {
+        if UserDefaultsManager.shared().guest! {
+            self.rateView.reviewDesign.isHidden = true
+        }
         getReviews()
     }
     

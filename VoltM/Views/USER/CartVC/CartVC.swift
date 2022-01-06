@@ -26,7 +26,12 @@ class CartVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         return cartVC
     }
     override func viewWillAppear(_ animated: Bool) {
-        getCart()
+        if UserDefaultsManager.shared().guest! {
+            cartView.continueDesign.isHidden = true
+        }
+        else {
+            getCart()
+        }
     }
     func getCart() {
         self.view.showLoader()
@@ -57,8 +62,11 @@ class CartVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         }
     }
     var subPrice = 0.0
+    var storeArray = [Int]()
     @IBAction func continuePressed(_ sender: Any) {
-      
+        for i in cartInfo {
+            storeArray.append(i.product?.store_id ?? 0)
+        }
         for i in cartInfo {
             let doubleQTY = Double(i.qty)
             subPrice += ( doubleQTY * (i.product?.price ?? 0.0))
@@ -66,6 +74,7 @@ class CartVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         let deliveryInfo = DeliveryInfoVC.create()
         deliveryInfo.receiveCartID = cartInfo[0].cartID
         deliveryInfo.subTotal = subPrice
+        deliveryInfo.storeArray = storeArray
         self.present(deliveryInfo, animated: true, completion: nil)
     }
     
@@ -76,6 +85,8 @@ class CartVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.cartView.cartTableView.dequeueReusableCell(withIdentifier: TableCells.homeCell, for: indexPath) as! CartTableViewCell
         cell.productImage.setCornerRadius(radius: 8)
+        let img = cartInfo[indexPath.row].product?.image ?? ""
+                let image = img.replace(string: " ", replacement: "%20")
         if L10n.lang.localized == Language.arabic {
             cell.productName.text = cartInfo[indexPath.row].product?.name?.ar
             cell.productQty.text = "الكميه: x\(cartInfo[indexPath.row].qty)"
@@ -85,7 +96,7 @@ class CartVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             cell.productQty.text = "Quantity: x\(cartInfo[indexPath.row].qty)"
         }
         cell.productPrice.text = "\(cartInfo[indexPath.row].product?.price ?? 0) \(getCountryCurrency())"
-        imageLoader.obtainImageWithPath(imagePath: cartInfo[indexPath.row].product?.image ?? "") { (image) in
+        imageLoader.obtainImageWithPath(imagePath: image) { (image) in
             cell.productImage.image = image
         }
         

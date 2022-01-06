@@ -14,6 +14,7 @@ class ChooseCountryVC: UIViewController, UICollectionViewDataSource, UICollectio
     var countryDic = [String:Int]()
     var idArray = [Int]()
     var nameArray = [String]()
+    var guest = false
     override func viewDidLoad() {
         super.viewDidLoad()
         chooseCountryView.determineCollectionViewSpacing()
@@ -78,21 +79,33 @@ class ChooseCountryVC: UIViewController, UICollectionViewDataSource, UICollectio
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.view.showLoader()
-        APIManager.deleteAllCart(user_id: UserDefaultsManager.shared().userId ?? 0) { response in
-            switch response {
-            case .failure( _):
-                UserDefaultsManager.shared().country = self.nameArray[indexPath.row]
-                UserDefaultsManager.shared().countryId = self.countryDic[self.nameArray[indexPath.row]]
-                self.navigate()
-                self.view.hideLoader()
-            case .success( _):
-                UserDefaultsManager.shared().country = self.nameArray[indexPath.row]
-                UserDefaultsManager.shared().countryId = self.countryDic[self.nameArray[indexPath.row]]
-                self.view.hideLoader()
-                self.navigate()
+        
+        if guest {
+            UserDefaultsManager.shared().country = self.nameArray[indexPath.row]
+            UserDefaultsManager.shared().countryId = self.countryDic[self.nameArray[indexPath.row]]
+            UserDefaultsManager.shared().guest = true
+            self.navigate()
+        }
+        else {
+            self.view.showLoader()
+            APIManager.deleteAllCart(user_id: UserDefaultsManager.shared().userId ?? 0) { response in
+                switch response {
+                case .failure( _):
+                    UserDefaultsManager.shared().country = self.nameArray[indexPath.row]
+                    UserDefaultsManager.shared().countryId = self.countryDic[self.nameArray[indexPath.row]]
+                    self.navigate()
+                    UserDefaultsManager.shared().guest = false
+                    self.view.hideLoader()
+                case .success( _):
+                    UserDefaultsManager.shared().country = self.nameArray[indexPath.row]
+                    UserDefaultsManager.shared().countryId = self.countryDic[self.nameArray[indexPath.row]]
+                    self.view.hideLoader()
+                    UserDefaultsManager.shared().guest = false
+                    self.navigate()
+                }
             }
         }
+        
         
         
         

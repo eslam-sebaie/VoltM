@@ -52,3 +52,5 @@
 "No SubService Found." = "لا يوجد خدمات";
 "Enter Notes" = "ادخل ملاحظتك";
 "No Service‘s Orders Found." = "لا يوجد طلبات خدمه";
+"please Enter New Password" = "من فضلك ادخل الرقم السري الجديد";
+"please Enter Correct Password" = "من فضلك ادخل الرقم السري الصحيح";

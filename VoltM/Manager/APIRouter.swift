@@ -48,12 +48,14 @@ enum APIRouter: URLRequestConvertible {
     case searchService(_ name: String,_ country_id: Int, _ city_id: Int)
     case getServiceOrder(_ user_id: Int)
     case deleteAllCart(_ user_id: Int)
+    case forgetPassword(_ email: String)
+    case confirmPassword(_ email: String, _ password: String)
     // MARK: - HttpMethod
     private var method: HTTPMethod {
         switch self {
-        case .userRegister, .userLogin, .sendReview, .updateUserData, .addFavorite, .deleteFavorite, .addCart, .deleteCart, .confirmCart, .serviceOrder:
+        case .userRegister, .userLogin, .sendReview, .updateUserData, .addFavorite, .deleteFavorite, .addCart, .deleteCart, .confirmCart, .serviceOrder, .confirmPassword:
             return .post
-        case .countries, .getAllMainCategories, .getStores, .getStoreCategory, .getStoreSubCategory, .searchStores, .searchCatStores, .searchSubCatStores, .getProducts, .searchProducts, .getReview, .getUserData, .allCountries, .getFavorite, .getCart, .getOrders, .getCity, .getDelivery, .getTime, .getOffer, .getServices, .getSubServices, .searchService, .getServiceOrder:
+        case .countries, .getAllMainCategories, .getStores, .getStoreCategory, .getStoreSubCategory, .searchStores, .searchCatStores, .searchSubCatStores, .getProducts, .searchProducts, .getReview, .getUserData, .allCountries, .getFavorite, .getCart, .getOrders, .getCity, .getDelivery, .getTime, .getOffer, .getServices, .getSubServices, .searchService, .getServiceOrder, .forgetPassword:
             return .get
             
         default:
@@ -130,6 +132,10 @@ enum APIRouter: URLRequestConvertible {
             return ["user_id": user_id]
         case .deleteAllCart(let user_id):
             return ["user_id": user_id]
+        case .forgetPassword(let email):
+            return ["email": email]
+        case .confirmPassword(let email, let password):
+            return ["email": email, "password": password]
         default:
             return nil
         }
@@ -208,6 +214,10 @@ enum APIRouter: URLRequestConvertible {
             return URLs.getServicesOrder
         case .deleteAllCart:
             return URLs.deleteAllCart
+        case .forgetPassword:
+            return URLs.forgetPassword
+        case .confirmPassword:
+            return URLs.confirmPassword
         }
     }
     

@@ -17,6 +17,7 @@ class DeliveryInfoVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     var goverID = 0
     var receiveCartID = 0
     var subTotal = 0.0
+    var storeArray = [Int]()
     override func viewDidLoad() {
         super.viewDidLoad()
         pickerView.delegate = self
@@ -60,6 +61,7 @@ class DeliveryInfoVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         let checkout = CheckoutVC.create()
         checkout.receiveCartID = receiveCartID
         checkout.subTotal = subTotal
+        checkout.storeArray = storeArray
         self.present(checkout, animated: true, completion: nil)
     }
     

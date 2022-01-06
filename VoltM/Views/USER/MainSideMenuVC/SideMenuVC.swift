@@ -110,11 +110,23 @@ class SideMenuVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
         }
         
         if indexPath.row == 8 {
-            let account = UpdateInfoVC.create()
-            account.modalPresentationStyle = .fullScreen
-            account.modalTransitionStyle = .crossDissolve
-            self.present(account, animated: true, completion: nil)
-            
+            if UserDefaultsManager.shared().guest! {
+                showAlert1(title: "You Ara Guest.", massage: "Do You Want to Register?", present: self, titleBtn: L10n.ok.localized) {
+                    let signIn = SignInVC.create()
+                    UserDefaultsManager.shared().country = ""
+                    UserDefaultsManager.shared().countryId = 0
+                    UserDefaultsManager.shared().guest = false
+                    self.present(signIn, animated: true, completion: nil)
+                } completion1: {
+                    self.dismiss(animated: true, completion: nil)
+                }
+            }
+            else {
+                let account = UpdateInfoVC.create()
+                account.modalPresentationStyle = .fullScreen
+                account.modalTransitionStyle = .crossDissolve
+                self.present(account, animated: true, completion: nil)
+            }
         }
        
     }

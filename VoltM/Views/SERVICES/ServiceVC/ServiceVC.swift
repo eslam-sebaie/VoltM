@@ -11,7 +11,7 @@ import Alamofire
 class ServiceVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
-
+    
     @IBOutlet var serviceView: ServiceView!
     var serviceInfo = [ServiceInfo]()
     var imageLoader = ImageLoader()
@@ -27,18 +27,21 @@ class ServiceVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        if let city = UserDefaultsManager.shared().serviceCity, city != "" {
-            showAlert1(title: "", massage: L10n.doYouWantToChangeYourCity.localized, present: self, titleBtn: L10n.ok.localized) {
-                self.getUser1()
-            } completion1: {
-                self.getServices()
-            }
-
-            
-            
+        if UserDefaultsManager.shared().guest! {
+            print("Is Guest")
         }
         else {
-            getUser()
+            if let city = UserDefaultsManager.shared().serviceCity, city != "" {
+                showAlert1(title: "", massage: L10n.doYouWantToChangeYourCity.localized, present: self, titleBtn: L10n.ok.localized) {
+                    self.getUser1()
+                } completion1: {
+                    self.getServices()
+                }
+
+            }
+            else {
+                getUser()
+            }
         }
     }
     func getUser(){
@@ -85,14 +88,14 @@ class ServiceVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 else {
                     self.userInfo = result.data!
                     
-                  
-                        let address = UpdateAddressVC.create()
-                        address.modalPresentationStyle = .fullScreen
-                        address.modalTransitionStyle = .coverVertical
-                        address.userInfo = self.userInfo
-                        self.present(address, animated: true, completion: nil)
-                        self.view.hideLoader()
-                    }
+                    
+                    let address = UpdateAddressVC.create()
+                    address.modalPresentationStyle = .fullScreen
+                    address.modalTransitionStyle = .coverVertical
+                    address.userInfo = self.userInfo
+                    self.present(address, animated: true, completion: nil)
+                    self.view.hideLoader()
+                }
                 
             }
         }
@@ -119,7 +122,7 @@ class ServiceVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             }
         }
     }
-
+    
     @IBAction func searchPressed(_ sender: Any) {
         guard let name = serviceView.searchTF.text , name != "" else {
             show_Alert(L10n.please.localized, L10n.noServiceFound.localized)

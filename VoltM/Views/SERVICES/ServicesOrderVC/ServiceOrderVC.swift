@@ -25,7 +25,12 @@ class ServiceOrderVC: UIViewController, UITableViewDataSource, UITableViewDelega
    
     
     override func viewWillAppear(_ animated: Bool) {
-        getServiceOrder()
+        if UserDefaultsManager.shared().guest! {
+            print("Is Guest")
+        }
+        else {
+            getServiceOrder()
+        }
     }
     
     func getServiceOrder(){

@@ -23,6 +23,7 @@ struct Storyboards {
 struct ViewControllers {
     static let welcomeVC = "WelcomeVC"
     static let signInVC = "SignInVC"
+    static let forgetPasswordVC = "ForgetPasswordVC"
     static let signUpVC = "SignUpVC"
     static let homeVC = "HomeVC"
     static let offerVC = "OfferVC"
@@ -91,6 +92,8 @@ struct URLs {
     static let searchService = "search/mainServies"
     static let getServicesOrder = "get/services/order"
     static let deleteAllCart = "delete/cart"
+    static let forgetPassword = "forgot/password"
+    static let confirmPassword = "confirm/password"
 }
 struct ParameterKeys {
    
@@ -114,6 +117,7 @@ struct UserDefaultsKeys {
     static let cityId = "cityId"
     static let serviceCityId = "serviceCityId"
     static let serviceCity = "serviceCity"
+    static let guest = "guest"
 }
 struct TableCells {
     static let homeCell = "cell"

@@ -20,14 +20,21 @@ class UpdateInfoView: UIView {
     @IBOutlet weak var passTF: HooopTextfield!
     @IBOutlet weak var eyeDesign: UIButton!
     @IBOutlet weak var updateDesign: UIButton!
-    
     @IBOutlet weak var lastNameView: UIView!
-    
-    
     @IBOutlet weak var fNameImg: UIImageView!
-    
     @IBOutlet weak var lastImg: UIImageView!
     @IBOutlet weak var passImage: UIImageView!
+    
+    @IBOutlet weak var newPassIcon: UIImageView!
+    
+    @IBOutlet weak var newPassTF: HooopTextfield!
+    
+    @IBOutlet weak var newPassView: UIView!
+    
+    @IBOutlet weak var newPassHeight: NSLayoutConstraint!
+    
+    
+    
     func updateUI(){
         if L10n.lang.localized == Language.arabic {
             backDesign.setImage(Asset.backAr.image, for: .normal)
@@ -37,9 +44,12 @@ class UpdateInfoView: UIView {
             lNameTF.textAlignment = .right
             passTF.placeholder = "الرقم السري"
             passTF.textAlignment = .right
+            newPassTF.placeholder = "ادخل الرقم السري الجديد"
+            newPassTF.textAlignment = .right
             fNameImg.transform = CGAffineTransform(scaleX: -1, y: 1)
             lastImg.transform = CGAffineTransform(scaleX: -1, y: 1)
             passImage.transform = CGAffineTransform(scaleX: -1, y: 1)
+            newPassIcon.transform = CGAffineTransform(scaleX: -1, y: 1)
         }
         logoutDesign.setCornerRadius(radius: 8)
         userImg.setCornerRadius(radius: 45)
@@ -47,7 +57,10 @@ class UpdateInfoView: UIView {
         lastNameView.setCornerRadius(radius: 8)
         passView.setCornerRadius(radius: 8)
         updateDesign.setCornerRadius(radius: 8)
-        
+        newPassView.setCornerRadius(radius: 8)
+        newPassView.isHidden = true
+        newPassHeight.constant = 0
+        passTF.isEnabled = false
     }
 
 }

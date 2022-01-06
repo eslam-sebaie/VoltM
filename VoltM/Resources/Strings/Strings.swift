@@ -64,10 +64,14 @@ internal enum L10n {
   internal static let please = L10n.tr("Localizable", "Please")
   /// Please Enter Address
   internal static let pleaseEnterAddress = L10n.tr("Localizable", "Please Enter Address")
+  /// please Enter Correct Password
+  internal static let pleaseEnterCorrectPassword = L10n.tr("Localizable", "please Enter Correct Password")
   /// Please Enter FirstName
   internal static let pleaseEnterFirstName = L10n.tr("Localizable", "Please Enter FirstName")
   /// Please Enter LastName
   internal static let pleaseEnterLastName = L10n.tr("Localizable", "Please Enter LastName")
+  /// please Enter New Password
+  internal static let pleaseEnterNewPassword = L10n.tr("Localizable", "please Enter New Password")
   /// Please Enter Password
   internal static let pleaseEnterPassword = L10n.tr("Localizable", "Please Enter Password")
   /// Please Enter Phone

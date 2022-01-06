@@ -35,7 +35,12 @@ class ProductDetailsVC: UIViewController {
         return productDetailsVC
     }
     override func viewWillAppear(_ animated: Bool) {
-        getFavorite()
+        if UserDefaultsManager.shared().guest! {
+            print("")
+        }
+        else {
+            getFavorite()
+        }
     }
     func getFavorite() {
         
@@ -95,15 +100,29 @@ class ProductDetailsVC: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     @IBAction func stepperPressed(_ sender: UIStepper) {
-        productDetailsView.productQty.text = "\(sender.value)"
-        if sender.value == 0.0 {
-            productDetailsView.continueDesign.isEnabled = false
-            productDetailsView.continueDesign.backgroundColor = ColorName.diableButton.color
+        if UserDefaultsManager.shared().guest! {
+            productDetailsView.productQty.text = "\(sender.value)"
+            if sender.value == 0.0 {
+                productDetailsView.continueDesign.isEnabled = false
+                productDetailsView.continueDesign.backgroundColor = ColorName.diableButton.color
+            }
+            else {
+                productDetailsView.continueDesign.isEnabled = false
+                productDetailsView.continueDesign.backgroundColor = ColorName.diableButton.color
+            }
         }
         else {
-            productDetailsView.continueDesign.isEnabled = true
-            productDetailsView.continueDesign.backgroundColor = ColorName.ableColor.color
+            productDetailsView.productQty.text = "\(sender.value)"
+            if sender.value == 0.0 {
+                productDetailsView.continueDesign.isEnabled = false
+                productDetailsView.continueDesign.backgroundColor = ColorName.diableButton.color
+            }
+            else {
+                productDetailsView.continueDesign.isEnabled = true
+                productDetailsView.continueDesign.backgroundColor = ColorName.ableColor.color
+            }
         }
+        
     }
     var cartDic = [String:String]()
     var cartArrayDic = [[String:String]]()
