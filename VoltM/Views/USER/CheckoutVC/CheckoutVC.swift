@@ -13,6 +13,7 @@ class CheckoutVC: UIViewController {
     var receiveCartID = 0
     var subTotal = 0.0
     var storeArray = [Int]()
+    var total = 0.0
     override func viewDidLoad() {
         super.viewDidLoad()
         checkoutView.updateUI()
@@ -69,14 +70,14 @@ class CheckoutVC: UIViewController {
                         let deli = String(format:"%.1f", deliver)
                         self.checkoutView.deliveryVal.text = "\(deli) \(self.getCountryCurrency())"
                         self.checkoutView.subtotalVal.text = "\(self.subTotal) \(self.getCountryCurrency())"
-                        let total = (Double(self.subTotal) + deliver)
-                        self.checkoutView.totalPriceVal.text = "\(total) \(self.getCountryCurrency())"
+                        self.total = (Double(self.subTotal) + deliver)
+                        self.checkoutView.totalPriceVal.text = "\(self.total) \(self.getCountryCurrency())"
                     }
                     else {
                         self.checkoutView.deliveryVal.text = "\(result.data?[0].sameCityPrice ?? 0) \(self.getCountryCurrency())"
                         self.checkoutView.subtotalVal.text = "\(self.subTotal) \(self.getCountryCurrency())"
-                        let total = (self.subTotal + (result.data?[0].sameCityPrice)!)
-                        self.checkoutView.totalPriceVal.text = "\(total) \(self.getCountryCurrency())"
+                        self.total = (self.subTotal + (result.data?[0].sameCityPrice)!)
+                        self.checkoutView.totalPriceVal.text = "\(self.total) \(self.getCountryCurrency())"
                     }
                 }
                 else {
@@ -92,15 +93,15 @@ class CheckoutVC: UIViewController {
                         let deli = String(format:"%.1f", deliver)
                         self.checkoutView.deliveryVal.text = "\(deli) \(self.getCountryCurrency())"
                         self.checkoutView.subtotalVal.text = "\(self.subTotal) \(self.getCountryCurrency())"
-                        let total = (Double(self.subTotal) + deliver)
-                        self.checkoutView.totalPriceVal.text = "\(total) \(self.getCountryCurrency())"
+                        self.total = (Double(self.subTotal) + deliver)
+                        self.checkoutView.totalPriceVal.text = "\(self.total) \(self.getCountryCurrency())"
                     }
                     else {
                         
                         self.checkoutView.deliveryVal.text = "\(result.data?[0].diffCityPrice ?? 0) \(self.getCountryCurrency())"
                         self.checkoutView.subtotalVal.text = "\(self.subTotal) \(self.getCountryCurrency())"
-                        let total = (self.subTotal + (result.data?[0].diffCityPrice)!)
-                        self.checkoutView.totalPriceVal.text = "\(total) \(self.getCountryCurrency())"
+                        self.total = (self.subTotal + (result.data?[0].diffCityPrice)!)
+                        self.checkoutView.totalPriceVal.text = "\(self.total) \(self.getCountryCurrency())"
                     }
                 }
                 self.view.hideLoader()
@@ -111,31 +112,83 @@ class CheckoutVC: UIViewController {
     @IBAction func backPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    var cachChoice = false
+    var cardChoice = false
+    @IBAction func cashPressed(_ sender: UIButton) {
+        if sender.isSelected {
+            checkoutView.cachDesign.setImage(Asset.uncheck.image, for: .normal)
+            checkoutView.cardDesign.setImage(Asset.uncheck.image, for: .normal)
+            cachChoice = false
+            cardChoice = false
+            //checkoutView.cardDesign.isEnabled = true
+            sender.isSelected = false
+        }
+        else {
+            checkoutView.cachDesign.setImage(Asset.check.image, for: .normal)
+            checkoutView.cardDesign.setImage(Asset.uncheck.image, for: .normal)
+            cachChoice = true
+            cardChoice = false
+           // checkoutView.cardDesign.isEnabled = false
+            sender.isSelected = true
+        }
+    }
+    
+    @IBAction func cardPressed(_ sender: UIButton) {
+        if sender.isSelected {
+            checkoutView.cardDesign.setImage(Asset.uncheck.image, for: .normal)
+            checkoutView.cachDesign.setImage(Asset.uncheck.image, for: .normal)
+            cachChoice = false
+            cardChoice = false
+            //checkoutView.cachDesign.isEnabled = true
+            sender.isSelected = false
+        }
+        else {
+            checkoutView.cardDesign.setImage(Asset.check.image, for: .normal)
+            checkoutView.cachDesign.setImage(Asset.uncheck.image, for: .normal)
+            cachChoice = false
+            cardChoice = true
+           // checkoutView.cachDesign.isEnabled = false
+            sender.isSelected = true
+        }
+    }
     
     @IBAction func continuePressed(_ sender: Any) {
-        self.view.showLoader()
-        print("Sebbbb\(storeArray)")
-        APIManager.confirmCart(cart_id: receiveCartID, user_id: UserDefaultsManager.shared().userId ?? 0) { response in
-            switch response {
-            case .failure( _):
-                self.show_Alert(L10n.sorry.localized, L10n.wentWrong.localized)
-                self.view.hideLoader()
-            case .success(let result):
-                if result.status == false {
+        
+        if cachChoice {
+            self.view.showLoader()
+            
+            APIManager.confirmCart(cart_id: receiveCartID, user_id: UserDefaultsManager.shared().userId ?? 0) { response in
+                switch response {
+                case .failure( _):
                     self.show_Alert(L10n.sorry.localized, L10n.wentWrong.localized)
                     self.view.hideLoader()
-                }
-                else {
-                    self.view.hideLoader()
-                    self.showAlert(title: L10n.success.localized, massage: L10n.yourRequestWillBeProcced.localized, present: self, titleBtn: L10n.ok.localized) {
-                        let storyboard = UIStoryboard(name: Storyboards.home, bundle: nil)
-                        let tabVC = storyboard.instantiateViewController(withIdentifier: "tabViewController")
-                        self.present(tabVC, animated: true, completion: nil)
+                case .success(let result):
+                    if result.status == false {
+                        self.show_Alert(L10n.sorry.localized, L10n.wentWrong.localized)
+                        self.view.hideLoader()
                     }
-                    
+                    else {
+                        self.view.hideLoader()
+                        self.showAlert(title: L10n.success.localized, massage: L10n.yourRequestWillBeProcced.localized, present: self, titleBtn: L10n.ok.localized) {
+                            let storyboard = UIStoryboard(name: Storyboards.home, bundle: nil)
+                            let tabVC = storyboard.instantiateViewController(withIdentifier: "tabViewController")
+                            self.present(tabVC, animated: true, completion: nil)
+                        }
+                        
+                    }
                 }
             }
         }
+        else if cardChoice {
+            let pay = PaymentVC.create()
+            pay.receiveCartID = receiveCartID
+            pay.receiveTotalPrice = total
+            self.present(pay, animated: true, completion: nil)
+        }
+        else {
+            self.show_Alert(L10n.sorry.localized, L10n.youMustChoosePaymentWay.localized)
+        }
+        
     }
     
 }

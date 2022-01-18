@@ -132,6 +132,11 @@
 		96EB06742702363300586EB4 /* OrderDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB06732702363300586EB4 /* OrderDetailsVC.swift */; };
 		96EB06762702364300586EB4 /* OrderDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB06752702364300586EB4 /* OrderDetailsView.swift */; };
 		96EB06792702365A00586EB4 /* OrderDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB06782702365A00586EB4 /* OrderDetailsTableViewCell.swift */; };
+		96F14C4E2789E12F008AFE98 /* Payment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96F14C4D2789E12F008AFE98 /* Payment.storyboard */; };
+		96F14C532789E231008AFE98 /* PaymentMethodCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F14C4F2789E230008AFE98 /* PaymentMethodCollectionViewCell.swift */; };
+		96F14C542789E231008AFE98 /* PaymentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F14C502789E230008AFE98 /* PaymentVC.swift */; };
+		96F14C552789E231008AFE98 /* PaymentVC+MFSDKServicesCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F14C512789E230008AFE98 /* PaymentVC+MFSDKServicesCall.swift */; };
+		96F14C562789E231008AFE98 /* PaymentVC+CollectionViewDelegateAndDatSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F14C522789E231008AFE98 /* PaymentVC+CollectionViewDelegateAndDatSource.swift */; };
 		BAE0822F158DD86351FEC158 /* Pods_VoltM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5334F75A8B3197EACFE5AB26 /* Pods_VoltM.framework */; };
 /* End PBXBuildFile section */
 
@@ -295,6 +300,11 @@
 		96EB06732702363300586EB4 /* OrderDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsVC.swift; sourceTree = "<group>"; };
 		96EB06752702364300586EB4 /* OrderDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsView.swift; sourceTree = "<group>"; };
 		96EB06782702365A00586EB4 /* OrderDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		96F14C4D2789E12F008AFE98 /* Payment.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Payment.storyboard; sourceTree = "<group>"; };
+		96F14C4F2789E230008AFE98 /* PaymentMethodCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentMethodCollectionViewCell.swift; sourceTree = "<group>"; };
+		96F14C502789E230008AFE98 /* PaymentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentVC.swift; sourceTree = "<group>"; };
+		96F14C512789E230008AFE98 /* PaymentVC+MFSDKServicesCall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PaymentVC+MFSDKServicesCall.swift"; sourceTree = "<group>"; };
+		96F14C522789E231008AFE98 /* PaymentVC+CollectionViewDelegateAndDatSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PaymentVC+CollectionViewDelegateAndDatSource.swift"; sourceTree = "<group>"; };
 		9D27792DF1A00AF495E854F7 /* Pods-VoltM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoltM.release.xcconfig"; path = "Target Support Files/Pods-VoltM/Pods-VoltM.release.xcconfig"; sourceTree = "<group>"; };
 		C663011ABB7FF73429958092 /* Pods-VoltMTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoltMTests.release.xcconfig"; path = "Target Support Files/Pods-VoltMTests/Pods-VoltMTests.release.xcconfig"; sourceTree = "<group>"; };
 		DE4E4093761A76D8D10F4FEC /* Pods-VoltMTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoltMTests.debug.xcconfig"; path = "Target Support Files/Pods-VoltMTests/Pods-VoltMTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -422,6 +432,7 @@
 				9685234E26F77736008C6E6A /* CartVC */,
 				960F6F28275A791B0085A799 /* DeliveryInfoVC */,
 				960F6F2D275A88840085A799 /* CheckoutVC */,
+				96F14C4C2789E0B0008AFE98 /* PaymentVC */,
 				96EB066527022A3500586EB4 /* OrdersVC */,
 				96EB06722702360800586EB4 /* OrderDetailsVC */,
 				9685236C26F7A7E3008C6E6A /* MainSideMenuVC */,
@@ -755,6 +766,7 @@
 				9685236A26F7A5C6008C6E6A /* SideMenu.storyboard */,
 				96EB066F2702350C00586EB4 /* Orders.storyboard */,
 				9685238226F7D308008C6E6A /* Account.storyboard */,
+				96F14C4D2789E12F008AFE98 /* Payment.storyboard */,
 			);
 			path = StoryBoards;
 			sourceTree = "<group>";
@@ -1038,6 +1050,25 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		96F14C4C2789E0B0008AFE98 /* PaymentVC */ = {
+			isa = PBXGroup;
+			children = (
+				96F14C502789E230008AFE98 /* PaymentVC.swift */,
+				96F14C512789E230008AFE98 /* PaymentVC+MFSDKServicesCall.swift */,
+				96F14C522789E231008AFE98 /* PaymentVC+CollectionViewDelegateAndDatSource.swift */,
+				96F14C572789E643008AFE98 /* Cells */,
+			);
+			path = PaymentVC;
+			sourceTree = "<group>";
+		};
+		96F14C572789E643008AFE98 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				96F14C4F2789E230008AFE98 /* PaymentMethodCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		F8584F4DF29504CB50F10A94 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1167,6 +1198,7 @@
 				96CD1E9126E5201B000BC132 /* swiftgen.yml in Resources */,
 				96CD1E4726E514E3000BC132 /* Main.storyboard in Resources */,
 				965395DF274311600018F624 /* circle2.gif in Resources */,
+				96F14C4E2789E12F008AFE98 /* Payment.storyboard in Resources */,
 				96E1155326F65B06005EFA2C /* Localizable.strings in Resources */,
 				9685238026F7D308008C6E6A /* Account.storyboard in Resources */,
 				965395DD274309B60018F624 /* circle.gif in Resources */,
@@ -1324,6 +1356,7 @@
 				96B8D0242768F0F300840DDD /* ServiceOrderView.swift in Sources */,
 				96D26D0B26F6734D009BD961 /* MainCategoryTableViewCell.swift in Sources */,
 				96D26D2326F68C27009BD961 /* StoreCategoryTableViewCell.swift in Sources */,
+				96F14C562789E231008AFE98 /* PaymentVC+CollectionViewDelegateAndDatSource.swift in Sources */,
 				96D26D2B26F6900B009BD961 /* StoreSubCategoryTableViewCell.swift in Sources */,
 				96CD1EA926E52583000BC132 /* AssetsManager.swift in Sources */,
 				96DC28572735808800B397D4 /* PagesVC.swift in Sources */,
@@ -1350,6 +1383,7 @@
 				9618900C2766633000104C5E /* ServiceDetailsVC.swift in Sources */,
 				96D7B836275F9B810083CFBA /* ServiceView.swift in Sources */,
 				96E394B927625B35005B0E97 /* SubServiceView.swift in Sources */,
+				96F14C532789E231008AFE98 /* PaymentMethodCollectionViewCell.swift in Sources */,
 				96D26D1E26F68C01009BD961 /* StoreCategoryVC.swift in Sources */,
 				96D26D0826F67338009BD961 /* MainCategoryView.swift in Sources */,
 				96E394B727625B15005B0E97 /* SubServiceVC.swift in Sources */,
@@ -1385,6 +1419,7 @@
 				96746EDD2724586E0074421B /* SignUpView.swift in Sources */,
 				969FEF2E2741CD6E00BC2826 /* Products.swift in Sources */,
 				96D26D1B26F6844F009BD961 /* FavoriteTableViewCell.swift in Sources */,
+				96F14C552789E231008AFE98 /* PaymentVC+MFSDKServicesCall.swift in Sources */,
 				96746ED7272458380074421B /* SignInVC.swift in Sources */,
 				96CD1E4026E514E3000BC132 /* AppDelegate.swift in Sources */,
 				96EB066C27022A9300586EB4 /* OrdersTableViewCell.swift in Sources */,
@@ -1417,6 +1452,7 @@
 				96D26D0626F67325009BD961 /* MainCategoryVC.swift in Sources */,
 				96D26CF926F66C8A009BD961 /* OfferVC.swift in Sources */,
 				963474D9275BCC94006F0A28 /* AboutUsVC.swift in Sources */,
+				96F14C542789E231008AFE98 /* PaymentVC.swift in Sources */,
 				96D26CFB26F66C98009BD961 /* OfferView.swift in Sources */,
 				96EB0662270204B100586EB4 /* RateTableViewCell.swift in Sources */,
 				960F6F33275BB8710085A799 /* Offer.swift in Sources */,
@@ -1597,7 +1633,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1653,7 +1689,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1673,6 +1709,7 @@
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = K8C84U26G9;
 				INFOPLIST_FILE = VoltM/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1695,6 +1732,7 @@
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = K8C84U26G9;
 				INFOPLIST_FILE = VoltM/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

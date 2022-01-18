@@ -345,6 +345,7 @@ PODS:
   - Kingfisher/Core (5.15.8)
   - leveldb-library (1.22)
   - MOLH (1.4.3)
+  - MyFatoorah (2.0.110)
   - nanopb (2.30906.0):
     - nanopb/decode (= 2.30906.0)
     - nanopb/encode (= 2.30906.0)
@@ -373,6 +374,7 @@ DEPENDENCIES:
   - ImageSlideshow/Kingfisher
   - IQKeyboardManagerSwift (= 6.2.1)
   - MOLH
+  - MyFatoorah
   - SDWebImage (~> 5.0)
   - SGCodeTextField
   - SKCountryPicker
@@ -406,6 +408,7 @@ SPEC REPOS:
     - Kingfisher
     - leveldb-library
     - MOLH
+    - MyFatoorah
     - nanopb
     - pop
     - PromisesObjC
@@ -449,6 +452,7 @@ SPEC CHECKSUMS:
   Kingfisher: a3c03d702433fa6cfedabb2bddbe076fb8f2e902
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   MOLH: e45827d200aeb1310641090fd8cd03ad2b42ae72
+  MyFatoorah: 50ceef5b27fad435a11790438cd543644c378a26
   nanopb: 1bf24dd71191072e120b83dd02d08f3da0d65e53
   pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
   PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
@@ -459,6 +463,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   VBRRollingPit: fcb4403d60496b369bf64c449fd5e727742d6f45
 
-PODFILE CHECKSUM: 657c718836836a77d01f9959dffbd1d8e862dd96
+PODFILE CHECKSUM: 9797d98aaf1db4c5b3b6fbb281ce0bb947915ed9
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.11.2

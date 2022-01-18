@@ -172,4 +172,56 @@ class UserDefaultsManager {
             return UserDefaults.standard.bool(forKey: UserDefaultsKeys.guest)
         }
     }
+    
+    var cardNumber: String? {
+        set {
+            UserDefaults.standard.set(newValue, forKey: UserDefaultsKeys.cardNumber)
+        }
+        get {
+            guard UserDefaults.standard.object(forKey: UserDefaultsKeys.cardNumber) != nil else {
+                return nil
+            }
+            return UserDefaults.standard.string(forKey: UserDefaultsKeys.cardNumber)
+        }
+    }
+    
+    var cardHolderName: String? {
+        set {
+            UserDefaults.standard.set(newValue, forKey: UserDefaultsKeys.cardHolderName)
+        }
+        get {
+            guard UserDefaults.standard.object(forKey: UserDefaultsKeys.cardHolderName) != nil else {
+                return nil
+            }
+            return UserDefaults.standard.string(forKey: UserDefaultsKeys.cardHolderName)
+        }
+    }
+    var monthText: String? {
+        set {
+            UserDefaults.standard.set(newValue, forKey: UserDefaultsKeys.monthText)
+        }
+        get {
+            guard UserDefaults.standard.object(forKey: UserDefaultsKeys.monthText) != nil else {
+                return nil
+            }
+            return UserDefaults.standard.string(forKey: UserDefaultsKeys.monthText)
+        }
+    }
+    
+    var yearText: String? {
+        set {
+            UserDefaults.standard.set(newValue, forKey: UserDefaultsKeys.yearText)
+        }
+        get {
+            guard UserDefaults.standard.object(forKey: UserDefaultsKeys.yearText) != nil else {
+                return nil
+            }
+            return UserDefaults.standard.string(forKey: UserDefaultsKeys.yearText)
+        }
+    }
+    
+    
+    
+    
+    
 }

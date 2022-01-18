@@ -43,9 +43,12 @@ class CheckoutView: UIView {
     
     @IBOutlet weak var cashHeader: UILabel!
     
+    @IBOutlet weak var cardHeader: UILabel!
     @IBOutlet weak var payHeader: UILabel!
     @IBOutlet weak var continueDesign: UIButton!
     
+    @IBOutlet weak var cachDesign: UIButton!
+    @IBOutlet weak var cardDesign: UIButton!
     func updateUI(){
         if L10n.lang.localized == Language.arabic {
             backDesign.setImage(Asset.backAr.image, for: .normal)
@@ -60,6 +63,7 @@ class CheckoutView: UIView {
             payHeader.text = "إدفع بواسطه"
             cashHeader.text = "نقدا عند التسليم"
             continueDesign.setTitle("تأكيد", for: .normal)
+            cardHeader.text = "كارت دفع"
         }
         addressLabel.text = UserDefaultsManager.shared().address
         addressView.setCornerRadius(radius: 16)

@@ -102,6 +102,8 @@ internal enum L10n {
   internal static let wrongEmail = L10n.tr("Localizable", "Wrong Email")
   /// You Didn‘t Update Any Thing.
   internal static let youDidnTUpdateAnyThing = L10n.tr("Localizable", "You Didn‘t Update Any Thing.")
+  /// You Must Choose Payment Way.
+  internal static let youMustChoosePaymentWay = L10n.tr("Localizable", "You Must Choose Payment Way.")
   /// Your Request Will Be Procced
   internal static let yourRequestWillBeProcced = L10n.tr("Localizable", "Your Request Will Be Procced")
 }

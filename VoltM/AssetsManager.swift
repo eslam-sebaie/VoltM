@@ -100,6 +100,7 @@ internal enum Asset {
   internal static let cancelIcon = ImageAsset(name: "cancelIcon")
   internal static let cash = ImageAsset(name: "cash")
   internal static let check = ImageAsset(name: "check")
+  internal static let creditCard = ImageAsset(name: "credit-card")
   internal static let delivery = ImageAsset(name: "delivery")
   internal static let editIcon = ImageAsset(name: "editIcon")
   internal static let egypt = ImageAsset(name: "egypt")

@@ -1,3 +1,5 @@
 "welcomeBorder": #D6D6D6
 "diableButton": #C0C0C0
 "ableColor": #FFBF00
+"BGColor": #34404B
+"btnColor": #FFBF00

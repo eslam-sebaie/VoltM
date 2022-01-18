@@ -17,6 +17,7 @@ struct Storyboards {
     static let sideMenu = "SideMenu"
     static let account = "Account"
     static let Orders = "Orders"
+    static let payment = "Payment"
 }
 
 // View Controllers
@@ -53,6 +54,7 @@ struct ViewControllers {
     static let subServiceVC = "SubServiceVC"
     static let serviceDetailsVC = "ServiceDetailsVC"
     static let serviceOrderVC = "ServiceOrderVC"
+    static let paymentVC = "PaymentVC"
 }
 struct URLs {
     // MARK:- base
@@ -118,6 +120,10 @@ struct UserDefaultsKeys {
     static let serviceCityId = "serviceCityId"
     static let serviceCity = "serviceCity"
     static let guest = "guest"
+    static let cardNumber = "cardNumber"
+    static let cardHolderName = "cardHolderName"
+    static let monthText = "monthText"
+    static let yearText = "yearText"
 }
 struct TableCells {
     static let homeCell = "cell"
