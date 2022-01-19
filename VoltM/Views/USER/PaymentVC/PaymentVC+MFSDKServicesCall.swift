@@ -92,7 +92,7 @@ extension PaymentVC {
         return card
     }
     private func getExecutePaymentRequest(paymentMethodId: Int) -> MFExecutePaymentRequest {
-        let invoiceValue = Decimal(string: String(receiveTotalPrice)) ?? 0
+        let invoiceValue = Decimal(string: String(5.0)) ?? 0
         let request = MFExecutePaymentRequest(invoiceValue: invoiceValue , paymentMethod: paymentMethodId)
         request.customerEmail = "Muaddi.7@gmail.com"
         request.customerMobile = "1142373945"
