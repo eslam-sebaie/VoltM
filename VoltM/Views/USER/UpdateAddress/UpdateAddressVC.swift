@@ -21,8 +21,20 @@ class UpdateAddressVC: UIViewController, sendingAddress, UIPickerViewDelegate, U
     var pickerView = UIPickerView()
     var cityInfo = [CountryInfo]()
     var cityID = 0
+    var fromService = false
     override func viewDidLoad() {
         super.viewDidLoad()
+        if fromService {
+            updateAddressView.addressTF.isEnabled = false
+            updateAddressView.countryTF.isEnabled = false
+            updateAddressView.imageDesignButton.isEnabled = false
+            updateAddressView.locationButtonDesign.isEnabled = false
+        }
+        else {
+            updateAddressView.cityView.isHidden = true
+            updateAddressView.cityHeight.constant = 0
+            updateAddressView.updateHeight.constant = 0
+        }
         updateAddressView.updateUI()
         self.updateAddressView.userName.text = "\(self.userInfo.fname ?? "") \(self.userInfo.lname ?? "")"
         self.updateAddressView.userImage.sd_setImage(with: URL(string: self.userInfo.image ?? ""), completed: nil)
@@ -113,53 +125,66 @@ class UpdateAddressVC: UIViewController, sendingAddress, UIPickerViewDelegate, U
     }
     
     @IBAction func updatePressed(_ sender: Any) {
-        
-        guard let address = updateAddressView.addressTF.text , address != "" else {
-            self.show_Alert(L10n.sorry.localized, L10n.pleaseEnterAddress.localized)
-            return
-        }
-        if updateAddressView.addressTF.text == userInfo.address && userInfo.image == self.img  {
-            self.show_Alert(L10n.sorry.localized, L10n.youDidnTUpdateAnyThing.localized)
-
+        if fromService {
+            guard let city = updateAddressView.cityTF.text , city != "" else {
+                self.show_Alert(L10n.sorry.localized, L10n.chooseYourCity.localized)
+                return
+            }
+            UserDefaultsManager.shared().serviceCity = city
+            UserDefaultsManager.shared().serviceCityId = self.cityID
+            let storyboard = UIStoryboard(name: Storyboards.home, bundle: nil)
+            let tabVC = storyboard.instantiateViewController(withIdentifier: "tabViewController")
+            self.present(tabVC, animated: true, completion: nil)
         }
         else {
-            let searchRequest = MKLocalSearch.Request()
-            searchRequest.naturalLanguageQuery = self.updateAddressView.addressTF.text ?? ""
-            let activeSearch = MKLocalSearch(request: searchRequest)
-            activeSearch.start { (response, err) in
-                if response == nil {
-                    
-                    self.show_Alert(L10n.sorry.localized,L10n.noResultFound.localized)
-                    
-                }
-                else {
-                    
-                    let latitude = response?.boundingRegion.center.latitude
-                    let longitude = response?.boundingRegion.center.longitude
-                    
-                    self.lat = Double(latitude!)
-                    self.lng = Double(longitude!)
-                    self.view.showLoader()
-                    UserDefaultsManager.shared().address = address
-                    APIManager.updateUser(id: UserDefaultsManager.shared().userId ?? 0,fname: self.userInfo.fname!, lname: self.userInfo.lname!, email: self.userInfo.email ?? "", password: UserDefaultsManager.shared().Password ?? "", phone: self.userInfo.phone!, address: address, latitude: String(self.lat), longitude: String(self.lng), image: self.img) { (response) in
-                        switch response {
-                        case .failure(let err):
-                            print(err)
-                            self.show_Alert(L10n.sorry.localized, L10n.wentWrong.localized)
-                            self.view.hideLoader()
-                        case .success(let result):
-                            print(result)
-                            self.view.hideLoader()
-                            
-                                let storyboard = UIStoryboard(name: Storyboards.home, bundle: nil)
-                                let tabVC = storyboard.instantiateViewController(withIdentifier: "tabViewController")
-                                self.present(tabVC, animated: true, completion: nil)
-                            
+            guard let address = updateAddressView.addressTF.text , address != "" else {
+                self.show_Alert(L10n.sorry.localized, L10n.pleaseEnterAddress.localized)
+                return
+            }
+            if updateAddressView.addressTF.text == userInfo.address && userInfo.image == self.img  {
+                self.show_Alert(L10n.sorry.localized, L10n.youDidnTUpdateAnyThing.localized)
+
+            }
+            else {
+                let searchRequest = MKLocalSearch.Request()
+                searchRequest.naturalLanguageQuery = self.updateAddressView.addressTF.text ?? ""
+                let activeSearch = MKLocalSearch(request: searchRequest)
+                activeSearch.start { (response, err) in
+                    if response == nil {
+                        
+                        self.show_Alert(L10n.sorry.localized,L10n.noResultFound.localized)
+                        
+                    }
+                    else {
+                        
+                        let latitude = response?.boundingRegion.center.latitude
+                        let longitude = response?.boundingRegion.center.longitude
+                        
+                        self.lat = Double(latitude!)
+                        self.lng = Double(longitude!)
+                        self.view.showLoader()
+                        UserDefaultsManager.shared().address = address
+                        APIManager.updateUser(id: UserDefaultsManager.shared().userId ?? 0,fname: self.userInfo.fname!, lname: self.userInfo.lname!, email: self.userInfo.email ?? "", password: UserDefaultsManager.shared().Password ?? "", phone: self.userInfo.phone!, address: address, latitude: String(self.lat), longitude: String(self.lng), image: self.img) { (response) in
+                            switch response {
+                            case .failure(let err):
+                                print(err)
+                                self.show_Alert(L10n.sorry.localized, L10n.wentWrong.localized)
+                                self.view.hideLoader()
+                            case .success(let result):
+                                print(result)
+                                self.view.hideLoader()
+                                
+                                    let storyboard = UIStoryboard(name: Storyboards.home, bundle: nil)
+                                    let tabVC = storyboard.instantiateViewController(withIdentifier: "tabViewController")
+                                    self.present(tabVC, animated: true, completion: nil)
+                                
+                            }
                         }
                     }
                 }
             }
         }
+        
     }
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1

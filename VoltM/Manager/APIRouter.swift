@@ -36,7 +36,7 @@ enum APIRouter: URLRequestConvertible {
     case addCart( _ user_id: Int, _ store_id: Int, _ cart: [[String:AnyObject]])
     case getCart(_ user_id: Int)
     case deleteCart(_ cart_id: Int, _ product_id: Int, _ id: Int)
-    case confirmCart(_ cart_id: Int, _ user_id: Int)
+    case confirmCart(_ cart_id: Int, _ user_id: Int, _ payment_method: String, _ invoice_id: Int)
     case getOrders(_ user_id: Int)
     case getCity(_ country_id: Int)
     case getDelivery(_ country_id: Int)
@@ -108,8 +108,8 @@ enum APIRouter: URLRequestConvertible {
             return ["user_id": user_id]
         case .deleteCart(let cart_id, let product_id, let id):
             return ["cart_id": cart_id, "product_id":product_id, "id": id]
-        case .confirmCart(let cart_id,let user_id):
-            return ["cart_id": cart_id, "user_id": user_id]
+        case .confirmCart(let cart_id,let user_id, let payment_method, let invoice_id):
+            return ["cart_id": cart_id, "user_id": user_id, "payment_method": payment_method, "invoice_id": invoice_id]
         case .getOrders(let user_id):
             return ["user_id": user_id]
         case .getCity(let country_id):

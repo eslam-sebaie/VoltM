@@ -157,7 +157,7 @@ class CheckoutVC: UIViewController {
         if cachChoice {
             self.view.showLoader()
             
-            APIManager.confirmCart(cart_id: receiveCartID, user_id: UserDefaultsManager.shared().userId ?? 0) { response in
+            APIManager.confirmCart(cart_id: receiveCartID, user_id: UserDefaultsManager.shared().userId ?? 0, payment_method: "cache", invoice_id: 0) { response in
                 switch response {
                 case .failure( _):
                     self.show_Alert(L10n.sorry.localized, L10n.wentWrong.localized)

@@ -124,8 +124,8 @@ class APIManager {
             completion(response)
         }
     }
-    class func confirmCart(cart_id: Int, user_id: Int,completion: @escaping(Result<CartResponse, Error>) -> Void) {
-        request(APIRouter.confirmCart(cart_id,user_id)) { (response) in
+    class func confirmCart(cart_id: Int, user_id: Int, payment_method: String, invoice_id: Int,completion: @escaping(Result<CartResponse, Error>) -> Void) {
+        request(APIRouter.confirmCart(cart_id,user_id, payment_method, invoice_id)) { (response) in
             completion(response)
         }
     }

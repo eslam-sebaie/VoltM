@@ -68,7 +68,29 @@ class PaymentVC: UIViewController {
     
     func showSuccess(_ invoice: String) {
         print("SEBBBB in success")
-        self.show_Alert(L10n.success.localized, L10n.yourRequestWillBeProcced.localized)
+        self.view.showLoader()
+        
+        APIManager.confirmCart(cart_id: receiveCartID, user_id: UserDefaultsManager.shared().userId ?? 0, payment_method: "Payment Card", invoice_id: Int(invoice) ?? 0) { response in
+            switch response {
+            case .failure( _):
+                self.show_Alert(L10n.sorry.localized, L10n.wentWrong.localized)
+                self.view.hideLoader()
+            case .success(let result):
+                if result.status == false {
+                    self.show_Alert(L10n.sorry.localized, L10n.wentWrong.localized)
+                    self.view.hideLoader()
+                }
+                else {
+                    self.view.hideLoader()
+                    self.showAlert(title: L10n.success.localized, massage: L10n.yourRequestWillBeProcced.localized, present: self, titleBtn: L10n.ok.localized) {
+                        let storyboard = UIStoryboard(name: Storyboards.home, bundle: nil)
+                        let tabVC = storyboard.instantiateViewController(withIdentifier: "tabViewController")
+                        self.present(tabVC, animated: true, completion: nil)
+                    }
+                    
+                }
+            }
+        }
         // make delegation
         // confirm Order
     }
@@ -76,16 +98,16 @@ class PaymentVC: UIViewController {
     func showFailError() {
         print("SEBBBB in ERRORRO")
 //        make delegation
-//        APIManager.getAllCountriesStores { response in
-//            switch response {
-//            case .failure( _):
-//                self.show_Alert(L10n.sorry.localized, L10n.wentWrong.localized)
-//                self.view.hideLoader()
-//            case .success(let result):
-//                self.view.hideLoader()
-//                self.show_Alert(L10n.sorry.localized, L10n.wentWrong.localized)
-//            }
-//        }
+        APIManager.getAllCountriesStores { response in
+            switch response {
+            case .failure( _):
+                self.show_Alert(L10n.sorry.localized, L10n.wentWrong.localized)
+                self.view.hideLoader()
+            case .success( _):
+                self.view.hideLoader()
+                self.show_Alert(L10n.sorry.localized, L10n.wentWrong.localized)
+            }
+        }
     }
     func hideCardInfoStacksView(isHidden: Bool) {
         for stackView in cardInfoStackViews {

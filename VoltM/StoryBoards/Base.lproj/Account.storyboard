@@ -628,7 +628,7 @@
                                         </constraints>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="City" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5oH-tj-dTJ" customClass="HooopTextfield" customModule="VoltM" customModuleProvider="target">
-                                        <rect key="frame" x="66" y="0.0" width="257" height="45"/>
+                                        <rect key="frame" x="66" y="0.0" width="300" height="45"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -656,6 +656,7 @@
                                     <constraint firstItem="MrS-M6-C1f" firstAttribute="leading" secondItem="Bm5-Rr-osA" secondAttribute="leading" id="0WT-ok-gI0"/>
                                     <constraint firstItem="5oH-tj-dTJ" firstAttribute="top" secondItem="Bm5-Rr-osA" secondAttribute="top" id="J3U-3g-qqG"/>
                                     <constraint firstItem="5oH-tj-dTJ" firstAttribute="leading" secondItem="aCu-ty-RJQ" secondAttribute="trailing" constant="8" id="LQr-DK-Oyn"/>
+                                    <constraint firstAttribute="trailing" secondItem="5oH-tj-dTJ" secondAttribute="trailing" constant="8" id="Lz4-ku-U6h"/>
                                     <constraint firstItem="w4k-N0-gHe" firstAttribute="leading" secondItem="5oH-tj-dTJ" secondAttribute="trailing" constant="8" id="OmV-gN-zWX"/>
                                     <constraint firstItem="w4k-N0-gHe" firstAttribute="centerY" secondItem="Bm5-Rr-osA" secondAttribute="centerY" id="W8w-ah-O0L"/>
                                     <constraint firstItem="aCu-ty-RJQ" firstAttribute="centerY" secondItem="Bm5-Rr-osA" secondAttribute="centerY" id="Y7v-JG-ebO"/>
@@ -666,6 +667,11 @@
                                     <constraint firstAttribute="height" constant="45" id="wdF-zB-bud"/>
                                     <constraint firstAttribute="bottom" secondItem="MrS-M6-C1f" secondAttribute="bottom" id="zON-de-hzO"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="w4k-N0-gHe"/>
+                                    </mask>
+                                </variation>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="v2a-0R-8kY"/>
@@ -715,14 +721,18 @@
                             <outlet property="addressTF" destination="odc-oe-V7K" id="RUf-cS-PJ6"/>
                             <outlet property="addressView" destination="qhc-SD-65X" id="sER-Jl-n0r"/>
                             <outlet property="backDesign" destination="wdJ-ru-o2u" id="5YH-FR-D4i"/>
+                            <outlet property="cityHeight" destination="wdF-zB-bud" id="xTR-xO-fhX"/>
                             <outlet property="cityIcon" destination="aCu-ty-RJQ" id="YGx-Zj-fmZ"/>
                             <outlet property="cityTF" destination="5oH-tj-dTJ" id="tZj-OY-7pv"/>
                             <outlet property="cityView" destination="Bm5-Rr-osA" id="8gV-S2-4eZ"/>
                             <outlet property="countryIcon" destination="DYw-ES-ToH" id="bZX-08-pv7"/>
                             <outlet property="countryTF" destination="5Ti-eS-ebM" id="JIr-GJ-6EM"/>
                             <outlet property="countryView" destination="qdL-bf-nEO" id="KdK-6a-RL2"/>
+                            <outlet property="imageDesignButton" destination="NsH-GA-Pfr" id="kxI-b5-FI3"/>
+                            <outlet property="locationButtonDesign" destination="1Qp-F4-7A8" id="Ebh-oq-MIG"/>
                             <outlet property="logOutDesign" destination="yU3-pg-YdO" id="7hF-6P-nW4"/>
                             <outlet property="updateDesign" destination="ije-R6-5Qa" id="dxW-Nj-FX5"/>
+                            <outlet property="updateHeight" destination="WVl-PR-VeU" id="NCS-KQ-rEc"/>
                             <outlet property="userImage" destination="ssx-M5-3p9" id="Ri4-0t-MBn"/>
                             <outlet property="userName" destination="cB1-WI-hcm" id="g28-Lt-4CS"/>
                         </connections>

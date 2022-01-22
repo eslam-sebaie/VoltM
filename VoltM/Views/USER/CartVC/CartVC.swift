@@ -64,13 +64,19 @@ class CartVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var subPrice = 0.0
     var storeArray = [Int]()
     @IBAction func continuePressed(_ sender: Any) {
+        subPrice = 0.0
         for i in cartInfo {
             storeArray.append(i.product?.store_id ?? 0)
         }
+        print("Sebaie")
+        print(cartInfo.count)
+        
         for i in cartInfo {
             let doubleQTY = Double(i.qty)
+            print(doubleQTY)
             subPrice += ( doubleQTY * (i.product?.price ?? 0.0))
         }
+        print(subPrice)
         let deliveryInfo = DeliveryInfoVC.create()
         deliveryInfo.receiveCartID = cartInfo[0].cartID
         deliveryInfo.subTotal = subPrice

@@ -29,8 +29,11 @@ class UpdateAddressView: UIView {
     @IBOutlet weak var cityView: UIView!
     @IBOutlet weak var cityIcon: UIImageView!
     @IBOutlet weak var cityTF: HooopTextfield!
+    @IBOutlet weak var imageDesignButton: UIButton!
+    @IBOutlet weak var locationButtonDesign: UIButton!
     
-    
+    @IBOutlet weak var updateHeight: NSLayoutConstraint!
+    @IBOutlet weak var cityHeight: NSLayoutConstraint!
     func updateUI(){
         if L10n.lang.localized == Language.arabic {
             backDesign.setImage(Asset.backAr.image, for: .normal)

@@ -65,6 +65,7 @@ class ServiceVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                         address.modalPresentationStyle = .fullScreen
                         address.modalTransitionStyle = .coverVertical
                         address.userInfo = self.userInfo
+                        address.fromService = true
                         self.present(address, animated: true, completion: nil)
                         self.view.hideLoader()
                     }
@@ -93,6 +94,7 @@ class ServiceVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                     address.modalPresentationStyle = .fullScreen
                     address.modalTransitionStyle = .coverVertical
                     address.userInfo = self.userInfo
+                    address.fromService = true
                     self.present(address, animated: true, completion: nil)
                     self.view.hideLoader()
                 }
