@@ -25,6 +25,9 @@ class SignInView: UIView {
     @IBOutlet weak var passImage: UIImageView!
     
     @IBOutlet weak var guestDesign: UIButton!
+    
+    @IBOutlet weak var forgetDesign: UIButton!
+    
     func updateUI(){
         if L10n.lang.localized == Language.arabic {
             emailTF.placeholder = "البريد الالكتروني"
@@ -37,6 +40,7 @@ class SignInView: UIView {
             dontHaveAccount.text = "ليس لديك حساب؟"
             signUpDesign.setTitle("تسجيل", for: .normal)
             guestDesign.setTitle("دخول كضيف", for: .normal)
+            forgetDesign.setTitle("نسيت كلمه المرور؟", for: .normal)
             emailImage.transform = CGAffineTransform(scaleX: -1, y: 1)
             passImage.transform = CGAffineTransform(scaleX: -1, y: 1)
         }

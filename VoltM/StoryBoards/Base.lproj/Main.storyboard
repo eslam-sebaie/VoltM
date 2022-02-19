@@ -506,6 +506,7 @@ consequat. </string>
                             <outlet property="emailImage" destination="3jH-5U-mEC" id="0vy-3r-una"/>
                             <outlet property="emailTF" destination="UlI-QU-X3H" id="YJ9-jE-Fst"/>
                             <outlet property="emailView" destination="eUc-jl-hQy" id="gtN-eA-AbA"/>
+                            <outlet property="forgetDesign" destination="Mj4-41-ABp" id="XOm-dO-gYq"/>
                             <outlet property="guestDesign" destination="yBa-MG-brs" id="6Uu-pf-XHO"/>
                             <outlet property="loginDesign" destination="yLy-nt-HLs" id="IBT-as-cn1"/>
                             <outlet property="loginHeader" destination="tu9-5U-Ro1" id="vAG-uW-Iti"/>
@@ -779,6 +780,7 @@ consequat. </string>
                             <constraint firstItem="IH1-KZ-pgZ" firstAttribute="leading" secondItem="oZq-Q1-HdV" secondAttribute="leading" id="y6H-NP-JHf"/>
                         </constraints>
                         <connections>
+                            <outlet property="BackDesign" destination="fPI-Qc-7J5" id="KE9-98-f4B"/>
                             <outlet property="confirmMailDesign" destination="BF5-kt-ODE" id="tdb-ji-Pgc"/>
                             <outlet property="confirmPassDesign" destination="02J-Ir-ZVn" id="NqZ-oe-hkX"/>
                             <outlet property="confirmPassIcon" destination="Z3J-Bu-SB5" id="Old-i0-Vmn"/>
@@ -1557,10 +1559,10 @@ Country</string>
             <size key="intrinsicContentSize" width="90" height="18.5"/>
         </designable>
         <designable name="MKi-hp-khA">
-            <size key="intrinsicContentSize" width="123" height="18.5"/>
+            <size key="intrinsicContentSize" width="103" height="18.5"/>
         </designable>
         <designable name="Ri3-NY-0WY">
-            <size key="intrinsicContentSize" width="137.5" height="17"/>
+            <size key="intrinsicContentSize" width="117.5" height="17"/>
         </designable>
         <designable name="UlI-QU-X3H">
             <size key="intrinsicContentSize" width="54.5" height="18.5"/>
@@ -1581,7 +1583,7 @@ Country</string>
             <size key="intrinsicContentSize" width="54.5" height="18.5"/>
         </designable>
         <designable name="wZW-Ad-CY6">
-            <size key="intrinsicContentSize" width="115" height="17"/>
+            <size key="intrinsicContentSize" width="95" height="17"/>
         </designable>
         <designable name="zTW-9a-r95">
             <size key="intrinsicContentSize" width="82.5" height="17"/>

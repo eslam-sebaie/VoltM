@@ -17,9 +17,9 @@ class SideMenuVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
  
 
     @IBOutlet var sideMenuView: SideMenuView!
-    var menuNameEn = ["Products Orders","Services Orders","Offers", "Country", "Languages", "Privacy Policy", "Who Are We?", "Support", "Account"]
-    var menuImg = [Asset.orderImg.image,Asset.orderImg.image, Asset.offerImg.image, Asset.countryImg.image,Asset.languageImg.image, Asset.privacyImage.image, Asset.aboutImg.image, Asset.supportImg.image, Asset.accountImg.image]
-   var menuNameAr =  ["طلبات المنتجات","طلبات الخدمات","العروض", "الدوله", "اللغه", "سياسه الخصوصيه", "من نحن؟", "الدعم", "الحساب"]
+    var menuNameEn = ["Products Orders","Services Orders","Offers", "Country", "Languages", "Privacy Policy", "Who Are We?", "Terms & Conditions","Support", "Account"]
+    var menuImg = [Asset.orderImg.image,Asset.orderImg.image, Asset.offerImg.image, Asset.countryImg.image,Asset.languageImg.image, Asset.privacyImage.image, Asset.aboutImg.image,Asset.aboutImg.image, Asset.supportImg.image, Asset.accountImg.image]
+   var menuNameAr =  ["طلبات المنتجات","طلبات الخدمات","العروض", "الدوله", "اللغه", "سياسه الخصوصيه", "من نحن؟","الشروط والاحكام" ,"الدعم", "الحساب"]
 //    var menuNameAr1 = ["طلبات المنتجات", "طلبات الخدمه", "العروض"]
 //    var menuNameAr = ["الطلبات", "العروض", "الدول", "اللغه", "سياسه الخصوصيه", "من نحن؟", "الدعم", "حسابك"]
     override func viewDidLoad() {
@@ -97,6 +97,14 @@ class SideMenuVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
             self.present(lang, animated: true, completion: nil)
             
         }
+        if indexPath.row == 5{
+            let privacy = PrivacyVC.create()
+            privacy.modalPresentationStyle = .fullScreen
+            privacy.modalTransitionStyle = .crossDissolve
+            self.present(privacy, animated: true, completion: nil)
+            
+           
+        }
         if indexPath.row == 6{
             let about = AboutUsVC.create()
             about.modalPresentationStyle = .fullScreen
@@ -105,11 +113,19 @@ class SideMenuVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
             
         }
         if indexPath.row == 7{
+            let term = TermVC.create()
+            term.modalPresentationStyle = .fullScreen
+            term.modalTransitionStyle = .crossDissolve
+            self.present(term, animated: true, completion: nil)
+            
+           
+        }
+        if indexPath.row == 8{
             guard let number = URL(string: "tel://" + "0500472089") else { return }
             UIApplication.shared.open(number)
+            
         }
-        
-        if indexPath.row == 8 {
+        if indexPath.row == 9 {
             if UserDefaultsManager.shared().guest! {
                 showAlert1(title: "You Ara Guest.", massage: "Do You Want to Register?", present: self, titleBtn: L10n.ok.localized) {
                     let signIn = SignInVC.create()

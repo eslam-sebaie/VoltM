@@ -22,9 +22,10 @@ class ForgetPasswordView: UIView {
     @IBOutlet weak var confirmPassView: UIView!
     @IBOutlet weak var confirmPassIcon: UIImageView!
     @IBOutlet weak var confirmPassTF: HooopTextfield!
-    
+    @IBOutlet weak var BackDesign: UIButton!
     func updateUI() {
         if L10n.lang.localized == Language.arabic {
+            BackDesign.setImage(Asset.backAr.image, for: .normal)
             emailTF.placeholder = "البريد الالكتروني"
             emailTF.textAlignment = .right
             newPassTF.placeholder = "الرقم السري"

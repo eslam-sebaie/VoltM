@@ -1,0 +1,30 @@
+
+/* Class = "UILabel"; text = "Country"; ObjectID = "0NI-1x-Qdw"; */
+"0NI-1x-Qdw.text" = "Country";
+
+/* Class = "UILabel"; text = "Language"; ObjectID = "4cV-CL-BmC"; */
+"4cV-CL-BmC.text" = "Language";
+
+/* Class = "UILabel"; text = "Who Are We"; ObjectID = "4vr-Mn-AiG"; */
+"4vr-Mn-AiG.text" = "Who Are We";
+
+/* Class = "UILabel"; text = "Select your\nLanguage"; ObjectID = "5AV-GL-UTy"; */
+"5AV-GL-UTy.text" = "Select your\nLanguage";
+
+/* Class = "UILabel"; text = "العربيه"; ObjectID = "B5l-Bt-V2g"; */
+"B5l-Bt-V2g.text" = "العربيه";
+
+/* Class = "UILabel"; text = "Terms&Conditions"; ObjectID = "XNl-07-OkW"; */
+"XNl-07-OkW.text" = "Terms&Conditions";
+
+/* Class = "UILabel"; text = "English"; ObjectID = "YKW-uA-ixd"; */
+"YKW-uA-ixd.text" = "English";
+
+/* Class = "UILabel"; text = "Select your\nCountry"; ObjectID = "ZIc-Z2-KAc"; */
+"ZIc-Z2-KAc.text" = "Select your\nCountry";
+
+/* Class = "UILabel"; text = " An application specialized in home electrical maintenance that allows you to request specialized technicians to deliver you to your home\n\n In addition to the presence of specialized sections within the application\n Department of the field of lighting\n And Communications Department\n From various local stores on the ground, you place the order and get it to you on time\n\n We act as a link between you and the provider of the services provided."; ObjectID = "bk9-x9-zbe"; */
+"bk9-x9-zbe.text" = " An application specialized in home electrical maintenance that allows you to request specialized technicians to deliver you to your home\n\n In addition to the presence of specialized sections within the application\n Department of the field of lighting\n And Communications Department\n From various local stores on the ground, you place the order and get it to you on time\n\n We act as a link between you and the provider of the services provided.";
+
+/* Class = "UILabel"; text = "Orders"; ObjectID = "eWz-5f-kUn"; */
+"eWz-5f-kUn.text" = "Orders";
