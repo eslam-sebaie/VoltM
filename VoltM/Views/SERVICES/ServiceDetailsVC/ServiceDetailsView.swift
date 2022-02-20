@@ -28,6 +28,7 @@ class ServiceDetailsView: UIView {
             requestHeader.text = "الطلب"
             noteHeader.text = "ملاحظه"
             backDesign.setImage(Asset.backAr.image, for: .normal)
+            requestDesign.setTitle("إطلب", for: .normal)
 
         }
         serviceImage.setCornerRadius(radius: 10)

@@ -61,7 +61,7 @@ extension UIViewController {
                 completion()
             }))
           
-            alertError.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { action in
+        alertError.addAction(UIAlertAction(title: L10n.cancel.localized, style: .cancel, handler: { action in
                 completion1()
             }))
             

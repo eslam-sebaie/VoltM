@@ -127,7 +127,7 @@ class SideMenuVC: UIViewController, UITableViewDataSource, UITableViewDelegate, 
         }
         if indexPath.row == 9 {
             if UserDefaultsManager.shared().guest! {
-                showAlert1(title: "You Ara Guest.", massage: "Do You Want to Register?", present: self, titleBtn: L10n.ok.localized) {
+                showAlert1(title: L10n.youAraGuest.localized, massage: L10n.doYouWantToRegister.localized, present: self, titleBtn: L10n.ok.localized) {
                     let signIn = SignInVC.create()
                     UserDefaultsManager.shared().country = ""
                     UserDefaultsManager.shared().countryId = 0

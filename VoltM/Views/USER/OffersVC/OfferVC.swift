@@ -42,7 +42,7 @@ class OfferVC: UIViewController,UITableViewDataSource, UITableViewDelegate {
                     self.offerView.offerTableView.reloadData()
                 }
                 else {
-                    self.show_Alert(L10n.sorry.localized, L10n.noOrdersFound.localized)
+                    self.show_Alert(L10n.sorry.localized, L10n.noOfferFound.localized)
                     self.view.hideLoader()
                 }
                 self.view.hideLoader()

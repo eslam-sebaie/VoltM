@@ -10,6 +10,8 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
+  /// Cancel
+  internal static let cancel = L10n.tr("Localizable", "Cancel")
   /// catName
   internal static let catName = L10n.tr("Localizable", "catName")
   /// Choose Your city
@@ -18,6 +20,8 @@ internal enum L10n {
   internal static let `continue` = L10n.tr("Localizable", "Continue")
   /// Do You Want To Change Your City
   internal static let doYouWantToChangeYourCity = L10n.tr("Localizable", "Do You Want To Change Your City")
+  /// Do You Want to Register?
+  internal static let doYouWantToRegister = L10n.tr("Localizable", "Do You Want to Register")
   /// Email Or Password Is Wrong.
   internal static let emailOrPasswordIsWrong = L10n.tr("Localizable", "Email Or Password Is Wrong.")
   /// Email Or Phone are Aleardy Token.
@@ -100,6 +104,8 @@ internal enum L10n {
   internal static let wentWrong = L10n.tr("Localizable", "WentWrong")
   /// Wrong Email
   internal static let wrongEmail = L10n.tr("Localizable", "Wrong Email")
+  /// You Ara Guest.
+  internal static let youAraGuest = L10n.tr("Localizable", "You Ara Guest.")
   /// You Didn‘t Update Any Thing.
   internal static let youDidnTUpdateAnyThing = L10n.tr("Localizable", "You Didn‘t Update Any Thing.")
   /// You Must Choose Payment Way.

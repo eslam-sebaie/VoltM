@@ -101,14 +101,15 @@ class ProductDetailsVC: UIViewController {
     }
     @IBAction func stepperPressed(_ sender: UIStepper) {
         if UserDefaultsManager.shared().guest! {
-            productDetailsView.productQty.text = "\(sender.value)"
-            if sender.value == 0.0 {
-                productDetailsView.continueDesign.isEnabled = false
-                productDetailsView.continueDesign.backgroundColor = ColorName.diableButton.color
-            }
-            else {
-                productDetailsView.continueDesign.isEnabled = false
-                productDetailsView.continueDesign.backgroundColor = ColorName.diableButton.color
+            productDetailsView.productQty.text = "0"
+            showAlert1(title: L10n.youAraGuest.localized, massage: L10n.doYouWantToRegister.localized, present: self, titleBtn: L10n.ok.localized) {
+                let signIn = SignInVC.create()
+                UserDefaultsManager.shared().country = ""
+                UserDefaultsManager.shared().countryId = 0
+                UserDefaultsManager.shared().guest = false
+                self.present(signIn, animated: true, completion: nil)
+            } completion1: {
+                self.dismiss(animated: true, completion: nil)
             }
         }
         else {

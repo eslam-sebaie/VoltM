@@ -28,7 +28,15 @@ class ServiceVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     override func viewWillAppear(_ animated: Bool) {
         if UserDefaultsManager.shared().guest! {
-            print("Is Guest")
+            showAlert1(title: L10n.youAraGuest.localized, massage: L10n.doYouWantToRegister.localized, present: self, titleBtn: L10n.ok.localized) {
+                let signIn = SignInVC.create()
+                UserDefaultsManager.shared().country = ""
+                UserDefaultsManager.shared().countryId = 0
+                UserDefaultsManager.shared().guest = false
+                self.present(signIn, animated: true, completion: nil)
+            } completion1: {
+                //self.dismiss(animated: true, completion: nil)
+            }
         }
         else {
             if let city = UserDefaultsManager.shared().serviceCity, city != "" {
