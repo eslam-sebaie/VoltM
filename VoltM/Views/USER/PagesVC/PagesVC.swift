@@ -10,8 +10,8 @@ import UIKit
 class PagesVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     var pageImage = ["pageService", "pageUser"]
-    var pageContent = ["Voltm App, a Saudi team of cadres for home electrical maintenance, saves you the trouble of searching and effort for technicians specialized in maintenance in particular. ", "And the trouble of searching in the lighting and communications section by providing the best local products in lighting and communications of various known types, you can find them in their own sections within the application."]
-    var pageContentAR = ["تطبيق فولتم فريق عمل بكوادر سعوديه للصيانه الكهربيه المنزليه يوفر عليك عناء البحث والجهد عن فنيين مختصين بالصيانه بشكل خاص", "وعناء البحث في قسم الاناره والاتصالات بتوفير افضل المنتجات المحليه في الاناره والاتصالات من مختلف الانواع المعروفه تجدها في اقسامها الخاصه بها داخل التطبيق"]
+    var pageContent = ["Voltm App.. a high-level work team for home electrical maintenance saves you the trouble of searching and effort for technicians specialized in maintenance in particular. ", "And the trouble of searching in the lighting and communications section by providing the best local products in lighting and communications of various known types, you can find them in their own sections within the application."]
+    var pageContentAR = ["تطبيق فولتم..فريق عمل علي مستوي عالي للصيانه الكهربيه المنزليه يوفر عليك عناء البحث والجهد عن فنيين مختصين بالصيانه بشكل خاص", "وعناء البحث في قسم الاناره والاتصالات بتوفير افضل المنتجات المحليه في الاناره والاتصالات من مختلف الانواع المعروفه تجدها في اقسامها الخاصه بها داخل التطبيق"]
     @IBOutlet var pagesView: PagesView!
     var pageControl = 0 {
         didSet {
