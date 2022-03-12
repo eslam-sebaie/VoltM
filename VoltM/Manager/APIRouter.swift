@@ -50,12 +50,13 @@ enum APIRouter: URLRequestConvertible {
     case deleteAllCart(_ user_id: Int)
     case forgetPassword(_ email: String)
     case confirmPassword(_ email: String, _ password: String)
+    case allServcies
     // MARK: - HttpMethod
     private var method: HTTPMethod {
         switch self {
         case .userRegister, .userLogin, .sendReview, .updateUserData, .addFavorite, .deleteFavorite, .addCart, .deleteCart, .confirmCart, .serviceOrder, .confirmPassword:
             return .post
-        case .countries, .getAllMainCategories, .getStores, .getStoreCategory, .getStoreSubCategory, .searchStores, .searchCatStores, .searchSubCatStores, .getProducts, .searchProducts, .getReview, .getUserData, .allCountries, .getFavorite, .getCart, .getOrders, .getCity, .getDelivery, .getTime, .getOffer, .getServices, .getSubServices, .searchService, .getServiceOrder, .forgetPassword:
+        case .countries, .getAllMainCategories, .getStores, .getStoreCategory, .getStoreSubCategory, .searchStores, .searchCatStores, .searchSubCatStores, .getProducts, .searchProducts, .getReview, .getUserData, .allCountries, .getFavorite, .getCart, .getOrders, .getCity, .getDelivery, .getTime, .getOffer, .getServices, .getSubServices, .searchService, .getServiceOrder, .forgetPassword, .allServcies:
             return .get
             
         default:
@@ -218,6 +219,8 @@ enum APIRouter: URLRequestConvertible {
             return URLs.forgetPassword
         case .confirmPassword:
             return URLs.confirmPassword
+        case .allServcies:
+            return URLs.services
         }
     }
     

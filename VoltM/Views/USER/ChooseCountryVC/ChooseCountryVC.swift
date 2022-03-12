@@ -14,6 +14,7 @@ class ChooseCountryVC: UIViewController, UICollectionViewDataSource, UICollectio
     var countryDic = [String:Int]()
     var idArray = [Int]()
     var nameArray = [String]()
+    var nameArray1 = [String]()
     var guest = false
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +28,7 @@ class ChooseCountryVC: UIViewController, UICollectionViewDataSource, UICollectio
     }
     override func viewWillAppear(_ animated: Bool) {
         getAllCountries()
+        getAllServices()
     }
     
     @IBAction func backPressed(_ sender: Any) {
@@ -56,6 +58,30 @@ class ChooseCountryVC: UIViewController, UICollectionViewDataSource, UICollectio
             }
         }
     }
+    
+    func getAllServices(){
+        self.view.showLoader()
+        APIManager.getAllServcies { response in
+            switch response {
+            case .failure( _):
+                self.view.hideLoader()
+            case .success(let result):
+               
+                for i in result.data ?? []{
+                    self.nameArray.append(i.country.name)
+                    self.countryDic[i.country.name] = i.countryID
+                }
+                self.nameArray = Array(Set(self.nameArray))
+                print("Sebaie")
+                print(self.nameArray)
+                self.view.hideLoader()
+                self.chooseCountryView.countryCollectionView.reloadData()
+                
+            }
+        }
+    }
+    
+    
     
     func navigate(){
         

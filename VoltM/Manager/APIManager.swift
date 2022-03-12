@@ -199,6 +199,11 @@ class APIManager {
             completion(response)
         }
     }
+    class func getAllServcies(completion: @escaping(Result<allServicesResponse, Error>) -> Void ) {
+        request(APIRouter.allServcies) { (response) in
+            completion(response)
+        }
+    }
     class func uploadPhoto(image: UIImage, completion: @escaping (_ error: Error?, _ upImage: uploadImage?)-> Void){
 
         AF.upload(multipartFormData: { (form: MultipartFormData) in

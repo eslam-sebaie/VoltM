@@ -96,6 +96,7 @@ struct URLs {
     static let deleteAllCart = "delete/cart"
     static let forgetPassword = "forgot/password"
     static let confirmPassword = "confirm/password"
+    static let services = "services"
 }
 struct ParameterKeys {
    
