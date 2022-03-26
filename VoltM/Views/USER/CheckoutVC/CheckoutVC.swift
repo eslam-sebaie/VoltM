@@ -25,6 +25,14 @@ class CheckoutVC: UIViewController {
         return checkoutVC
     }
     override func viewWillAppear(_ animated: Bool) {
+        if UserDefaultsManager.shared().countryId != 3 {
+            checkoutView.paymentStack.isHidden = true
+            checkoutView.payCardHeight.constant = 120
+        }
+        else {
+            checkoutView.paymentStack.isHidden = false
+            checkoutView.payCardHeight.constant = 170
+        }
         getDelivery()
         getTime()
     }

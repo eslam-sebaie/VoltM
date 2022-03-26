@@ -1558,37 +1558,37 @@ Country</string>
     </scenes>
     <designables>
         <designable name="FM2-kC-NZP">
-            <size key="intrinsicContentSize" width="70" height="18.5"/>
+            <size key="intrinsicContentSize" width="90" height="18.5"/>
         </designable>
         <designable name="MKi-hp-khA">
-            <size key="intrinsicContentSize" width="103" height="18.5"/>
+            <size key="intrinsicContentSize" width="123" height="18.5"/>
         </designable>
         <designable name="Ri3-NY-0WY">
-            <size key="intrinsicContentSize" width="117.5" height="17"/>
+            <size key="intrinsicContentSize" width="137.5" height="17"/>
         </designable>
         <designable name="UlI-QU-X3H">
-            <size key="intrinsicContentSize" width="34.5" height="18.5"/>
+            <size key="intrinsicContentSize" width="54.5" height="18.5"/>
         </designable>
         <designable name="VAk-Od-Sdy">
-            <size key="intrinsicContentSize" width="69" height="18.5"/>
+            <size key="intrinsicContentSize" width="89" height="18.5"/>
         </designable>
         <designable name="Zfd-NO-sYk">
-            <size key="intrinsicContentSize" width="41" height="18.5"/>
+            <size key="intrinsicContentSize" width="61" height="18.5"/>
         </designable>
         <designable name="lUY-As-f74">
-            <size key="intrinsicContentSize" width="108.5" height="18.5"/>
+            <size key="intrinsicContentSize" width="128.5" height="18.5"/>
         </designable>
         <designable name="oJc-OG-8uI">
-            <size key="intrinsicContentSize" width="62.5" height="17"/>
+            <size key="intrinsicContentSize" width="82.5" height="17"/>
         </designable>
         <designable name="qKY-nM-4zF">
-            <size key="intrinsicContentSize" width="34.5" height="18.5"/>
+            <size key="intrinsicContentSize" width="54.5" height="18.5"/>
         </designable>
         <designable name="wZW-Ad-CY6">
-            <size key="intrinsicContentSize" width="95" height="17"/>
+            <size key="intrinsicContentSize" width="115" height="17"/>
         </designable>
         <designable name="zTW-9a-r95">
-            <size key="intrinsicContentSize" width="62.5" height="17"/>
+            <size key="intrinsicContentSize" width="82.5" height="17"/>
         </designable>
     </designables>
     <resources>

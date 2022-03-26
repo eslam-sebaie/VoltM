@@ -1192,8 +1192,10 @@
                             <outlet property="deliveryTimeView" destination="NET-2t-Jj1" id="U0m-jS-cFn"/>
                             <outlet property="deliveryVal" destination="Cp7-kT-Hng" id="YVW-q6-oat"/>
                             <outlet property="orderInfoHeader" destination="FiV-qy-tN8" id="JMR-eV-VMO"/>
+                            <outlet property="payCardHeight" destination="oUA-na-U1G" id="jcg-Cm-u9k"/>
                             <outlet property="payHeader" destination="0fs-CO-Ink" id="gG9-SO-Ihc"/>
                             <outlet property="payView" destination="UvD-z4-1ow" id="0FL-U2-0g5"/>
+                            <outlet property="paymentStack" destination="tuF-Ad-o1j" id="sPO-fi-67B"/>
                             <outlet property="secondDeliveryTimeHeader" destination="cIf-BP-hOe" id="426-Ph-wIF"/>
                             <outlet property="subtotalHeader" destination="TnQ-6X-pYI" id="4hS-Bn-SCT"/>
                             <outlet property="subtotalVal" destination="Geg-kh-gSq" id="5lg-6A-6Uy"/>

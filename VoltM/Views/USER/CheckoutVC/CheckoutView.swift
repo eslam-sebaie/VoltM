@@ -49,6 +49,10 @@ class CheckoutView: UIView {
     
     @IBOutlet weak var cachDesign: UIButton!
     @IBOutlet weak var cardDesign: UIButton!
+    
+    @IBOutlet weak var paymentStack: UIStackView!
+    
+    @IBOutlet weak var payCardHeight: NSLayoutConstraint!
     func updateUI(){
         if L10n.lang.localized == Language.arabic {
             backDesign.setImage(Asset.backAr.image, for: .normal)
