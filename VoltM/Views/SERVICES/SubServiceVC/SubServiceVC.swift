@@ -72,13 +72,25 @@ class SubServiceVC: UIViewController, UITableViewDataSource, UITableViewDelegate
             cell.subServiceImage.image = image
 
         }
+        let price = subServiceInfo[indexPath.row].price ?? 0
         if L10n.lang.localized == Language.arabic {
             cell.subServiceName.text = subServiceInfo[indexPath.row].name.ar
+            if price == 0 || price == 0.0 {
+                cell.subServicePrice.text = "حسب الاتفاق"
+            }
+            else {
+                cell.subServicePrice.text = "\(subServiceInfo[indexPath.row].price ?? 0) \(getCountryCurrency())"
+            }
         }
         else {
             cell.subServiceName.text = subServiceInfo[indexPath.row].name.en
+            if price == 0 || price == 0.0 {
+                cell.subServicePrice.text = "UAG"
+            }
+            else {
+                cell.subServicePrice.text = "\(subServiceInfo[indexPath.row].price ?? 0) \(getCountryCurrency())"
+            }
         }
-        cell.subServicePrice.text = "\(subServiceInfo[indexPath.row].price ?? 0) \(getCountryCurrency())"
         return cell
     }
     

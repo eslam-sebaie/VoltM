@@ -15,13 +15,27 @@ class ServiceDetailsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         serviceDetailsView.updateUI()
+        let price = subServiceInfo.price ?? 0
+        
         if L10n.lang.localized == Language.arabic {
             serviceDetailsView.serviceName.text = subServiceInfo.name.ar
+            if price == 0 || price == 0.0 {
+                serviceDetailsView.servicePrice.text = "حسب الاتفاق"
+            }
+            else {
+                serviceDetailsView.servicePrice.text = "\(subServiceInfo.price ?? 0) \(getCountryCurrency())"
+            }
         }
         else {
             serviceDetailsView.serviceName.text = subServiceInfo.name.en
+            if price == 0 || price == 0.0 {
+                serviceDetailsView.servicePrice.text = "UAG"
+            }
+            else {
+                serviceDetailsView.servicePrice.text = "\(subServiceInfo.price ?? 0) \(getCountryCurrency())"
+            }
         }
-        serviceDetailsView.servicePrice.text = "\(subServiceInfo.price ?? 0) \(getCountryCurrency())"
+        
         let img = subServiceInfo.image
         let image = img.replace(string: " ", replacement: "%20")
         imageLoader.obtainImageWithPath(imagePath: image) { (image) in
