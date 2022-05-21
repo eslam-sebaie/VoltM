@@ -49,9 +49,9 @@
 		</dict>
 	</dict>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>VoltM Want To Access Your Location</string>
+	<string>Turning on location services allows us to get your delivery address</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>VoltM Want To Access Your Location</string>
+	<string>Turning on location services allows us to get your delivery address</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

@@ -16,7 +16,8 @@ class StoreSubCategoryVC: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         StoreSubCatView.updateUI()
-        StoreSubCatView.storeImage.sd_setImage(with: URL(string: receiveCatImage), completed: nil)
+        let image = receiveCatImage.replace(string: " ", replacement: "%20")
+        StoreSubCatView.storeImage.sd_setImage(with: URL(string: image), completed: nil)
         // Do any additional setup after loading the view.
     }
     class func create() -> StoreSubCategoryVC {

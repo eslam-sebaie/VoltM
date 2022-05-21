@@ -8,6 +8,7 @@
 import UIKit
 import CoreLocation
 import MapKit
+import SDWebImage
 class UpdateAddressVC: UIViewController, sendingAddress, UIPickerViewDelegate, UIPickerViewDataSource {
     func send(address: String) {
         updateAddressView.addressTF.text = address

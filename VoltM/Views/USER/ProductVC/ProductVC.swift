@@ -50,7 +50,7 @@ class ProductVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
                 self.view.hideLoader()
             case .success(let result):
                 if result.status == false {
-                    self.show_Alert(L10n.sorry.localized, L10n.noSubCat.localized)
+                    self.show_Alert(L10n.sorry.localized, L10n.noproductName.localized)
                 }
                 else {
                     self.storeProducts = result.data ?? []

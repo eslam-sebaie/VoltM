@@ -23,7 +23,8 @@ class StoreCategoryVC: UIViewController, UITableViewDataSource, UITableViewDeleg
             storeCategoryView.storeName.text = receiveStoreInfo.name?.en
         }
         storeCategoryView.storeLocation.text = receiveStoreInfo.address
-        storeCategoryView.storeImage.sd_setImage(with: URL(string: receiveStoreInfo.image ?? ""), completed: nil)
+        let image = receiveStoreInfo.image?.replace(string: " ", replacement: "%20")
+        storeCategoryView.storeImage.sd_setImage(with: URL(string: image ?? ""), completed: nil)
         // Do any additional setup after loading the view.
     }
     

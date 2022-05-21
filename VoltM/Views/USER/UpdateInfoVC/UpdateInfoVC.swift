@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import SDWebImage
 class UpdateInfoVC: UIViewController {
     
     @IBOutlet var updateInfoView: UpdateInfoView!
