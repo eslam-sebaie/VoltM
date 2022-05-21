@@ -39,17 +39,24 @@ class ServiceVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             }
         }
         else {
-            if let city = UserDefaultsManager.shared().serviceCity, city != "" {
-                showAlert1(title: "", massage: L10n.doYouWantToChangeYourCity.localized, present: self, titleBtn: L10n.ok.localized) {
-                    self.getUser1()
-                } completion1: {
-                    self.getServices()
-                }
-
+            if UserDefaultsManager.shared().countryId == 3 {
+                UserDefaultsManager.shared().serviceCityId = 41
+                self.getServices()
             }
             else {
-                getUser()
+                if let city = UserDefaultsManager.shared().serviceCity, city != "" {
+                    showAlert1(title: "", massage: L10n.doYouWantToChangeYourCity.localized, present: self, titleBtn: L10n.ok.localized) {
+                        self.getUser1()
+                    } completion1: {
+                        self.getServices()
+                    }
+
+                }
+                else {
+                    getUser()
+                }
             }
+            
         }
     }
     func getUser(){
